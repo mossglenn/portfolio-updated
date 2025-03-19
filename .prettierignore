@@ -3,3 +3,7 @@ node_modules
 build
 dist
 public
+
+# Ignore reference files
+.reference-files/
+.reference-files/**

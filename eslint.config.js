@@ -10,6 +10,9 @@ const compat = new FlatCompat({
 });
 
 export default [
+  {
+    ignores: ['.reference-files/**', '.reference-files/']
+  },
   js.configs.recommended,
   ...compat.config({
     extends: [
