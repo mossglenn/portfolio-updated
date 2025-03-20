@@ -12,12 +12,14 @@
     "lint:fix": "eslint --fix .",
     "docs:structure": "find . -type f -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" -not -path \"*/.next/*\" > .reference-files/project-structure.txt",
     "docs:gen": "mkdir -p .reference-files/docs && node scripts/generate-docs.js",
-    "docs:project": "node scripts/document-project.js"
+    "docs:project": "node scripts/document-project.js",
+    "docs:v0": "node scripts/document-project-single.js"
   },
   "scriptDescriptions": {
     "docs:structure": "Generate a list of all files in the project (excluding node_modules and .git) and save it to .reference-files/project-structure.txt",
     "docs:gen": "Generate documentation for the project and save it to .reference-files/docs",
-    "docs:project": "creates a comprehensive set of documentation in `.reference-files/project-docs/`for v0"
+    "docs:project": "creates a comprehensive set of documentation in `.reference-files/project-docs/`for v0",
+    "docs:v0": "creates a single compregensive file for v0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
