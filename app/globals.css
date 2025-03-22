@@ -4,26 +4,77 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    /* Original theme variables */
+    --background: 43 50% 95%;
+    --foreground: 220 10% 8%;
+    --card: 43 30% 90%;
+    --card-foreground: 220 10% 8%;
+    --popover: 43 30% 90%;
+    --popover-foreground: 220 10% 8%;
+    --primary: 38 60% 57%;
+    --primary-foreground: 220 10% 8%;
+    --secondary: 219 27% 31%;
+    --secondary-foreground: 43 50% 95%;
+    --accent: 130 25% 68%;
+    --accent-foreground: 220 10% 8%;
+    --muted: 43 20% 87%;
+    --muted-foreground: 219 27% 31%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 20% 80%;
+    --input: 43 20% 87%;
+    --ring: 38 60% 57%;
     --radius: 0.5rem;
+    --font-sans: Inter, system-ui, sans-serif;
+
+    /* Color scales as CSS variables */
+    --ochre-50: #fff8e6;
+    --ochre-100: #ffefc4;
+    --ochre-200: #ffe3a3;
+    --ochre-300: #ffd682;
+    --ochre-400: #f0b861;
+    --ochre-500: #d6a04f;
+    --ochre-600: #c9913f;
+    --ochre-700: #b07c39;
+    --ochre-800: #8c6330;
+    --ochre-900: #6b4b24;
+    --ochre-950: #422d16;
+
+    --slate-50: #f0f4f8;
+    --slate-100: #d9e2ec;
+    --slate-200: #bcccdc;
+    --slate-300: #9fb3c8;
+    --slate-400: #829ab1;
+    --slate-500: #627d98;
+    --slate-600: #50627e;
+    --slate-700: #3a4a64;
+    --slate-800: #2c3b52;
+    --slate-900: #1e2a3a;
+    --slate-950: #0f172a;
+
+    --sage-50: #f1f8f3;
+    --sage-100: #e2f1e7;
+    --sage-200: #d6e6cc;
+    --sage-300: #b7d3b7;
+    --sage-400: #99c2a2;
+    --sage-500: #89b293;
+    --sage-600: #7ea78c;
+    --sage-700: #5e8c6a;
+    --sage-800: #4a6e53;
+    --sage-900: #395a43;
+    --sage-950: #1f3024;
+
+    --sand-50: #f8f4ec;
+    --sand-100: #eae3d6;
+    --sand-200: #dfd3c3;
+    --sand-300: #d3c3af;
+    --sand-400: #c7b39c;
+    --sand-500: #bba389;
+    --sand-600: #a99377;
+    --sand-700: #8c7a63;
+    --sand-800: #6f6151;
+    --sand-900: #524840;
+    --sand-950: #352e29;
   }
 
   .dark {
@@ -55,9 +106,20 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(58, 74, 100, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(58, 74, 100, 0.1) 0%, transparent 40%),
+      linear-gradient(rgba(58, 74, 100, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58, 74, 100, 0.05) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      100% 100%,
+      40px 40px,
+      40px 40px;
   }
 }
 
+/* Animation styles from local project */
 .animate-in {
   animation: animateIn 0.3s ease-in-out;
 }
@@ -73,3 +135,70 @@
   }
 }
 
+/* Prose styles from v0 project */
+.prose {
+  @apply max-w-none;
+}
+
+.prose p {
+  @apply mb-4 text-foreground/90;
+}
+
+.prose em {
+  @apply font-medium text-primary;
+}
+
+/* Gradient text utilities from v0 project */
+.gradient-text-ochre {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #d6a04f, #f0b861, #ffe3ac);
+}
+
+.gradient-text-slate {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #3a4a64, #50627e, #8494ac);
+}
+
+.gradient-text-sage {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #99c2a2, #b7d3b7, #d6e6cc);
+}
+
+.gradient-text-warm-dark {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #121417, #2a2f36, #3a4a64);
+}
+
+.gradient-text-light-wash {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #f8f4ec, #f1eadf, #e6dfd3);
+}
+
+/* Navigation styles from v0 project */
+.nav-item {
+  @apply rounded-full px-4 py-2 transition-colors;
+}
+
+.nav-item.active {
+  @apply bg-muted text-foreground;
+}
+
+.nav-item:not(.active) {
+  @apply text-muted-foreground hover:text-foreground;
+}
+
+/* Add radial gradient utility from v0 project */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Card component styles from v0 project */
+@layer components {
+  .card {
+    @apply rounded-lg border border-border bg-card p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-primary/30 shadow-lg shadow-primary/5;
+  }
+}

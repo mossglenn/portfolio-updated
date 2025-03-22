@@ -1,0 +1,68 @@
+/* TransOcean swatches */
+.Transocean-1 {
+  color: #00060d;
+}
+.Transocean-2 {
+  color: #1b2b40;
+}
+.Transocean-3 {
+  color: #80a2a6;
+}
+.Transocean-4 {
+  color: #bf5934;
+}
+.Transocean-5 {
+  color: #f2f2f2;
+}
+
+/* Jade-Green-and-Indigo-Blue Swatches */
+.Jade-Green-and-Indigo-Blue-1 {
+  color: #164673;
+}
+.Jade-Green-and-Indigo-Blue-2 {
+  color: #0b2b41;
+}
+.Jade-Green-and-Indigo-Blue-3 {
+  color: #1e585a;
+}
+.Jade-Green-and-Indigo-Blue-4 {
+  color: #3b8b6f;
+}
+.Jade-Green-and-Indigo-Blue-5 {
+  color: #8ad89d;
+}
+
+/* Wilson-Blue Swatches */
+.Wilson-Blue-1 {
+  color: #020659;
+}
+.Wilson-Blue-2 {
+  color: #c1c7d9;
+}
+.Wilson-Blue-3 {
+  color: #041840;
+}
+.Wilson-Blue-4 {
+  color: #4886d9;
+}
+.Wilson-Blue-5 {
+  color: #d5f26d;
+}
+
+/* Valiant Theme Swatches */
+.valiant-1 {
+  color: #370140;
+}
+.valiant-2 {
+  color: #3f0259;
+}
+.valiant-3 {
+  color: #bf0436;
+}
+.valiant-4 {
+  color: #d9d2c3;
+}
+.valiant-5 {
+  color: #49a684;
+}
+

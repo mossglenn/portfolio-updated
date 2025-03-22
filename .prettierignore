@@ -7,3 +7,8 @@ public
 # Ignore reference files
 .reference-files/
 .reference-files/**
+
+.DS_Store
+.gitignore
+.prettierignore
+.prettierrc.js

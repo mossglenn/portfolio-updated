@@ -92,6 +92,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "globals": "^16.0.0",
+    "playwright": "^1.51.1",
     "postcss": "^8.4.31",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",

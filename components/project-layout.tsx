@@ -1,12 +1,12 @@
-import type { ReactNode } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import type { Project, ProjectCategory } from "@/data/projects"
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import MarkdownContent from "@/components/markdown-content"
+import type { ReactNode } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import type { Project, ProjectCategory } from '@/data/projects'
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import MarkdownContent from '@/components/markdown-content'
 
 interface ProjectContent {
   fullDescription: string
@@ -23,7 +23,12 @@ interface ProjectLayoutProps {
   children?: ReactNode
 }
 
-export default function ProjectLayout({ project, category, content, children }: ProjectLayoutProps) {
+export default function ProjectLayout({
+  project,
+  category,
+  content,
+  children,
+}: ProjectLayoutProps) {
   return (
     <div className="flex flex-col gap-8 py-8 md:py-12">
       <section className="container px-4 md:px-6">
@@ -34,7 +39,7 @@ export default function ProjectLayout({ project, category, content, children }: 
           </Link>
         </Button>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid items-start gap-8 md:grid-cols-2">
           <div className="space-y-6">
             <div>
               {category && (
@@ -44,8 +49,10 @@ export default function ProjectLayout({ project, category, content, children }: 
                   </Badge>
                 </div>
               )}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-4">{project.label}</h1>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <h1 className="mb-4 text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+                {project.label}
+              </h1>
+              <div className="mb-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <Badge key={tag}>{tag}</Badge>
                 ))}
@@ -71,7 +78,7 @@ export default function ProjectLayout({ project, category, content, children }: 
 
           <div className="relative aspect-video overflow-hidden rounded-lg">
             <Image
-              src={project.image || "/placeholder.svg?height=600&width=800"}
+              src={project.image || '/placeholder.svg?height=600&width=800'}
               alt={project.label}
               fill
               className="object-cover"
@@ -81,11 +88,11 @@ export default function ProjectLayout({ project, category, content, children }: 
       </section>
 
       <section className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           {content.gallery.map((image, index) => (
             <div key={index} className="relative aspect-video overflow-hidden rounded-lg">
               <Image
-                src={image || "/placeholder.svg"}
+                src={image || '/placeholder.svg'}
                 alt={`${project.label} - Gallery image ${index + 1}`}
                 fill
                 className="object-cover"
@@ -97,7 +104,8 @@ export default function ProjectLayout({ project, category, content, children }: 
 
       <section className="container px-4 md:px-6">
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          {typeof content.fullDescription === "string" && content.fullDescription.startsWith("<") ? (
+          {typeof content.fullDescription === 'string' &&
+          content.fullDescription.startsWith('<') ? (
             <div dangerouslySetInnerHTML={{ __html: content.fullDescription }} />
           ) : (
             <MarkdownContent content={content.fullDescription} />
@@ -107,9 +115,11 @@ export default function ProjectLayout({ project, category, content, children }: 
       </section>
 
       {category && category.children.length > 1 && (
-        <section className="container px-4 md:px-6 border-t pt-8">
-          <h2 className="text-2xl font-bold tracking-tighter mb-6">More Projects in {category.label}</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="container border-t px-4 pt-8 md:px-6">
+          <h2 className="mb-6 text-2xl font-bold tracking-tighter">
+            More Projects in {category.label}
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {category.children
               .filter((p) => p.path !== project.path)
               .slice(0, 3)
@@ -117,7 +127,7 @@ export default function ProjectLayout({ project, category, content, children }: 
                 <Card key={relatedProject.path} className="overflow-hidden">
                   <div className="relative h-40 overflow-hidden">
                     <Image
-                      src={relatedProject.image || "/placeholder.svg?height=600&width=800"}
+                      src={relatedProject.image || '/placeholder.svg?height=600&width=800'}
                       alt={relatedProject.label}
                       fill
                       className="object-cover"
@@ -125,13 +135,15 @@ export default function ProjectLayout({ project, category, content, children }: 
                   </div>
                   <CardHeader>
                     <CardTitle className="line-clamp-1">{relatedProject.label}</CardTitle>
-                    <CardDescription className="line-clamp-2">{relatedProject.subLabel}</CardDescription>
+                    <CardDescription className="line-clamp-2">
+                      {relatedProject.subLabel}
+                    </CardDescription>
                   </CardHeader>
                   <CardFooter>
                     <Button asChild variant="ghost" className="w-full justify-between">
                       <Link href={relatedProject.path}>
                         View Case Study
-                        <ChevronRight className="h-4 w-4 ml-2" />
+                        <ChevronRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardFooter>
@@ -143,4 +155,3 @@ export default function ProjectLayout({ project, category, content, children }: 
     </div>
   )
 }
-
