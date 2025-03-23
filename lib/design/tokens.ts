@@ -243,7 +243,7 @@ export const metadata = {
 }
 
 // Export all tokens
-export const tokens = {
+const tokens = {
   colors,
   semanticColors,
   gradients,

@@ -13,7 +13,8 @@
     "docs:structure": "find . -type f -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" -not -path \"*/.next/*\" > .reference-files/project-structure.txt",
     "docs:gen": "mkdir -p .reference-files/docs && node scripts/generate-docs.js",
     "docs:project": "node scripts/document-project.js",
-    "docs:v0": "node scripts/document-project-single.js"
+    "docs:v0": "node scripts/document-project-single.js",
+    "knip": "knip"
   },
   "scriptDescriptions": {
     "docs:structure": "Generate a list of all files in the project (excluding node_modules and .git) and save it to .reference-files/project-structure.txt",
@@ -56,6 +57,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "3.0.0",
     "embla-carousel-react": "^8.5.2",
+    "execa": "^9.5.2",
     "framer-motion": "^10.16.4",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.483.0",
@@ -76,7 +78,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
-    "@types/node": "^20.9.0",
+    "@types/node": "^20.17.24",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
@@ -92,12 +94,14 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "globals": "^16.0.0",
+    "knip": "^5.46.0",
     "playwright": "^1.51.1",
     "postcss": "^8.4.31",
+    "postcss-load-config": "^6.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.8.2"
   }
 }

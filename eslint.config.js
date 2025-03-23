@@ -7,6 +7,15 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/out/**',
+      '**/.reference-files/**',
+    ],
+  },
   js.configs.recommended,
   ...compat.config({
     extends: [
@@ -17,7 +26,6 @@ const eslintConfig = [
       'plugin:jsx-a11y/recommended',
       'plugin:tailwindcss/recommended',
       'prettier',
-      'plugin:storybook/recommended',
     ],
     plugins: ['react', '@typescript-eslint', 'import', 'jsx-a11y', 'tailwindcss'],
   }),

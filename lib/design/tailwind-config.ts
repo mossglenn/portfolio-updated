@@ -3,7 +3,7 @@ import tokens from './tokens'
 /**
  * Generates Tailwind config from design tokens
  */
-export function generateTailwindConfig() {
+function generateTailwindConfig() {
   return {
     colors: {
       // Color scales
