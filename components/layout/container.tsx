@@ -1,5 +1,6 @@
 import type React from 'react'
 import { cn } from '@/lib/utils'
+import { ReactElement } from 'react'
 
 interface ContainerProps {
   children: React.ReactNode
@@ -7,7 +8,7 @@ interface ContainerProps {
   size?: 'sm' | 'default' | 'lg' | 'full'
 }
 
-export function Container({ children, className, size = 'default' }: ContainerProps) {
+export function Container({ children, className, size = 'default' }: ContainerProps): ReactElement {
   const sizes = {
     sm: 'max-w-3xl',
     default: 'max-w-5xl',

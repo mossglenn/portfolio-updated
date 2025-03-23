@@ -8,8 +8,9 @@ import { MainContentSection } from '@/components/sections/home/main-content-sect
 import { ExpertiseSection } from '@/components/sections/home/expertise-section'
 import { ToolstackSection } from '@/components/sections/home/toolstack-section'
 import { CtaSection } from '@/components/sections/home/cta-section'
+import { ReactElement } from 'react'
 
-export default function HomePage() {
+export default function HomePage(): ReactElement {
   return (
     <PageLayout>
       <Container>

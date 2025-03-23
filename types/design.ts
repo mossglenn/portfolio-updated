@@ -92,5 +92,5 @@ export type DesignTokens = {
 
 // Component tokens
 export type ComponentTokens = {
-  [component: string]: any
+  [component: string]: unknown
 }

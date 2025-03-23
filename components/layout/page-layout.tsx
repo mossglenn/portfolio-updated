@@ -1,6 +1,7 @@
 import type React from 'react'
 import Navigation from '@/components/layout/navigation'
 import { Footer } from '@/components/layout/footer'
+import { ReactElement } from 'react'
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -8,7 +9,7 @@ interface PageLayoutProps {
   footer?: boolean
 }
 
-export function PageLayout({ children, header, footer = true }: PageLayoutProps) {
+export function PageLayout({ children, header, footer = true }: PageLayoutProps): ReactElement {
   return (
     <div className="min-h-screen">
       {header || <Navigation />}

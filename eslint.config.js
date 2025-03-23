@@ -36,6 +36,7 @@ const eslintConfig = [
       'tailwindcss/no-custom-classname': 'warn',
       'tailwindcss/classnames-order': 'error',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
     },
     settings: {
       react: {

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ReactElement } from 'react'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Instructional Design Portfolio',
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
     'Explore my portfolio of innovative instructional design projects and educational solutions',
 }
 
-export default function PortfolioPage() {
+export default function PortfolioPage(): ReactElement {
   return (
     <div className="container px-4 py-12 md:px-6">
       <h1 className="mb-6 text-3xl font-bold">Portfolio</h1>

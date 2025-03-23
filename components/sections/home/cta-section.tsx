@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { ReactElement } from 'react'
 
-export function CtaSection() {
+export function CtaSection(): ReactElement {
   return (
     <Card className="mb-12">
       <CardContent className="p-6">

@@ -23,8 +23,9 @@ import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { GradientText } from '@/components/common/gradient-text'
 import tokens from '@/lib/design/tokens'
+import { ReactElement } from 'react'
 
-export default function PlaygroundPage() {
+export default function PlaygroundPage(): ReactElement {
   const [isChecked, setIsChecked] = useState(false)
 
   const gradientVariants = ['ochre', 'slate', 'sage', 'warm-dark', 'light-wash'] as const

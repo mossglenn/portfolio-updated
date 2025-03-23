@@ -7,7 +7,7 @@ import tokens from './design/tokens'
 /**
  * Gets a color from the design tokens
  */
-export function getColor(colorName: string, variant = 'DEFAULT') {
+export function getColor(colorName: string, variant = 'DEFAULT'): string | null {
   const colorPath = colorName.split('.')
 
   if (colorPath.length === 1) {
@@ -37,7 +37,7 @@ export function getColor(colorName: string, variant = 'DEFAULT') {
 /**
  * Gets a gradient from the design tokens
  */
-export function getGradient(gradientName: string) {
+export function getGradient(gradientName: string): string | null {
   if (gradientName in tokens.gradients) {
     return tokens.gradients[gradientName as keyof typeof tokens.gradients]
   }

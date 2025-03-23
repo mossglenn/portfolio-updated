@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
+import { ReactElement } from 'react'
 
-export default function Navigation() {
+export default function Navigation(): ReactElement {
   const [scrolled, setScrolled] = useState(false)
   const [currentPath, setCurrentPath] = useState('')
 

@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { ReactElement } from 'react'
 
-export function MainContentSection() {
+export function MainContentSection(): ReactElement {
   return (
     <Card>
       <CardContent className="p-6">

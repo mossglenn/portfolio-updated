@@ -1,5 +1,6 @@
 import type React from 'react'
 import { cn } from '@/lib/utils'
+import { ReactElement } from 'react'
 
 interface SectionProps {
   children: React.ReactNode
@@ -8,7 +9,7 @@ interface SectionProps {
   description?: string
 }
 
-export function Section({ children, className, title, description }: SectionProps) {
+export function Section({ children, className, title, description }: SectionProps): ReactElement {
   return (
     <section className={cn('py-12', className)}>
       {(title || description) && (

@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { ReactElement } from 'react'
 
-export function ToolstackSection() {
+export function ToolstackSection(): ReactElement {
   return (
     <Card>
       <CardContent className="p-6">

@@ -5,8 +5,9 @@ import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { ReactElement } from 'react'
 
-export function HeroSection() {
+export function HeroSection(): ReactElement {
   return (
     <Card className="mb-12">
       <CardContent className="p-6">

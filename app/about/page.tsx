@@ -1,5 +1,5 @@
 'use client'
-
+import type { ReactElement } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -10,7 +10,7 @@ import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
 import { GradientText } from '@/components/common/gradient-text'
 
-export default function AboutPage() {
+export default function AboutPage(): ReactElement {
   return (
     <PageLayout>
       <Container>

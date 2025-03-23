@@ -1,7 +1,8 @@
 import { Target, Lightbulb, Users, CheckCircle } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
+import { ReactElement } from 'react'
 
-export function ExpertiseSection() {
+export function ExpertiseSection(): ReactElement {
   return (
     <Card>
       <CardContent className="p-6">

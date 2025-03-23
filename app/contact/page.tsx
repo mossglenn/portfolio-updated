@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import ContactForm from '@/components/contact-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Mail, MapPin, Phone } from 'lucide-react'
+import { ReactElement } from 'react'
 
 export const metadata: Metadata = {
   title: 'Contact | Instructional Design Portfolio',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     'Get in touch to discuss your instructional design needs and potential collaborations',
 }
 
-export default function ContactPage() {
+export default function ContactPage(): ReactElement {
   return (
     <div className="flex flex-col gap-8 py-8 md:py-12">
       <section className="container px-4 md:px-6">

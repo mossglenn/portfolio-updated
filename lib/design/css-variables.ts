@@ -3,7 +3,7 @@ import tokens from './tokens'
 /**
  * Generates CSS variables from design tokens
  */
-export function generateCssVariables() {
+export function generateCssVariables(): Record<string, string> {
   return {
     // HSL values for shadcn/ui compatibility
     ...Object.entries(tokens.hslValues).reduce(
@@ -25,7 +25,7 @@ export function generateCssVariables() {
 /**
  * Generates CSS variable declarations as a string
  */
-export function generateCssVariablesString() {
+export function generateCssVariablesString(): string {
   const variables = generateCssVariables()
   return Object.entries(variables)
     .map(([key, value]) => `${key}: ${value};`)

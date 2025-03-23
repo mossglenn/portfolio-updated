@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { Mail, Linkedin, Github } from 'lucide-react'
 import { siteConfig } from '@/config/site'
+import { ReactElement } from 'react'
 
-export function Footer() {
+export function Footer(): ReactElement {
   return (
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-4">
