@@ -11,9 +11,9 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col gap-12 py-8 md:py-12">
       <section className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid items-center gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">About Me</h1>
+            <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">About Me</h1>
             <p className="text-xl text-muted-foreground">
               Passionate instructional designer with expertise in creating innovative, research-based learning
               experiences.
@@ -32,7 +32,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden">
+          <div className="relative h-[400px] overflow-hidden rounded-lg">
             <Image
               src="/placeholder.svg?height=800&width=600"
               alt="Professional portrait"
@@ -45,14 +45,14 @@ export default function AboutPage() {
 
       <section className="bg-muted/50 py-12">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center text-center space-y-4 mb-8">
+          <div className="mb-8 flex flex-col items-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter">My Approach</h2>
-            <p className="text-muted-foreground max-w-2xl">
+            <p className="max-w-2xl text-muted-foreground">
               I believe in creating learning experiences that are evidence-based, learner-centered, and results-driven.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <CardHeader>
                 <CardTitle>Research-Based</CardTitle>
@@ -93,14 +93,14 @@ export default function AboutPage() {
       </section>
 
       <section className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-4 mb-8">
+        <div className="mb-8 flex flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter">Education & Certifications</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="max-w-2xl text-muted-foreground">
             Continuous learning is a core value that drives my professional development.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>Education</CardTitle>

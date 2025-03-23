@@ -1,17 +1,20 @@
 // eslint.config.js
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import globals from 'globals';
-import prettierConfig from 'eslint-config-prettier';
-import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
-});
+})
 
-export default [
+const eslintConfig = [
   {
-    ignores: ['.reference-files/**', '.reference-files/']
+    ignores: [
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/out/**',
+      '**/.reference-files/**',
+    ],
   },
   js.configs.recommended,
   ...compat.config({
@@ -22,26 +25,11 @@ export default [
       'plugin:react-hooks/recommended',
       'plugin:jsx-a11y/recommended',
       'plugin:tailwindcss/recommended',
+      'prettier',
     ],
-    plugins: [
-      'react',
-      '@typescript-eslint',
-      'import',
-      'jsx-a11y',
-      'tailwindcss',
-    ],
+    plugins: ['react', '@typescript-eslint', 'import', 'jsx-a11y', 'tailwindcss'],
   }),
-  // Prettier plugin needs to be loaded separately in flat config
-  prettierPlugin,
-  // Prettier config needs to be loaded last to override other formatting rules
-  prettierConfig,
   {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
     rules: {
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
@@ -55,7 +43,10 @@ export default [
       },
       tailwindcss: {
         callees: ['cn', 'cva'],
+        whitelist: ['gradient-text-*'], // Allow custom classnames
       },
     },
   },
-];
+]
+
+export default eslintConfig

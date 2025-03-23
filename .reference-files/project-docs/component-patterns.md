@@ -188,7 +188,7 @@ export default function ContactPage() {
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">Get in Touch</h1>
           <p className="text-xl text-muted-foreground max-w-2xl">
-            Let's discuss how we can collaborate on your next instructional design project.
+            Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
 
@@ -228,7 +228,7 @@ export default function ContactPage() {
           <Card className="md:sticky md:top-24">
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+              <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
             </CardHeader>
             <CardContent>
               <ContactForm />
@@ -237,11 +237,11 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold tracking-tighter mb-4">Let's Collaborate</h2>
+              <h2 className="text-2xl font-bold tracking-tighter mb-4">Let&apos;s Collaborate</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm always interested in new projects and collaborations. Whether you have a specific project in mind
-                  or just want to explore possibilities, I'd love to hear from you.
+                  I&apos;m always interested in new projects and collaborations. Whether you have a specific project in mind
+                  or just want to explore possibilities, I&apos;d love to hear from you.
                 </p>
                 <p>My expertise spans various areas of instructional design, including:</p>
                 <ul className="list-disc pl-6 space-y-2">
@@ -258,7 +258,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold tracking-tighter mb-4">Availability</h2>
               <p className="text-muted-foreground">
-                I'm currently available for freelance projects, consulting, and speaking engagements. My typical
+                I&apos;m currently available for freelance projects, consulting, and speaking engagements. My typical
                 response time is within 24-48 hours.
               </p>
             </div>
@@ -432,7 +432,7 @@ export default function CallToAction() {
           <div className="relative z-10 flex flex-col items-center text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Collaborate?</h2>
             <p className="text-lg md:text-xl max-w-2xl">
-              Let's discuss how we can create innovative learning solutions that drive real impact for your
+              Let&apos;s discuss how we can create innovative learning solutions that drive real impact for your
               organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -498,7 +498,7 @@ export default function ContactForm() {
     // Show success message
     toast({
       title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      description: "Thank you for your message. I&apos;ll get back to you soon.",
     })
 
     // Reset form

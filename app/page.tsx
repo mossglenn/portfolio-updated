@@ -1,16 +1,42 @@
-import Hero from "@/components/hero"
-import FeaturedProjects from "@/components/featured-projects"
-import Skills from "@/components/skills"
-import CallToAction from "@/components/call-to-action"
+'use client'
 
-export default function Home() {
+import { PageLayout } from '@/components/layout/page-layout'
+import { Container } from '@/components/layout/container'
+import { Section } from '@/components/layout/section'
+import { HeroSection } from '@/components/sections/home/hero-section'
+import { MainContentSection } from '@/components/sections/home/main-content-section'
+import { ExpertiseSection } from '@/components/sections/home/expertise-section'
+import { ToolstackSection } from '@/components/sections/home/toolstack-section'
+import { CtaSection } from '@/components/sections/home/cta-section'
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col gap-16 pb-16">
-      <Hero />
-      <FeaturedProjects />
-      <Skills />
-      <CallToAction />
-    </div>
+    <PageLayout>
+      <Container>
+        {/* Hero Section */}
+        <Section>
+          <HeroSection />
+        </Section>
+
+        {/* Main Content Section */}
+        <Section>
+          <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div className="lg:col-span-2">
+              <MainContentSection />
+            </div>
+
+            <div className="space-y-8">
+              <ExpertiseSection />
+              <ToolstackSection />
+            </div>
+          </div>
+        </Section>
+
+        {/* Call to Action */}
+        <Section>
+          <CtaSection />
+        </Section>
+      </Container>
+    </PageLayout>
   )
 }
-

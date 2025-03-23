@@ -34,7 +34,7 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200",
-        scrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent",
+        scrolled ? "border-b bg-background/80 backdrop-blur-md" : "bg-transparent",
       )}
     >
       <div className="container flex h-16 items-center justify-between">
@@ -43,13 +43,13 @@ export default function Header() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-bold text-xl"
+            className="text-xl font-bold"
           >
             ID Portfolio
           </motion.div>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden items-center space-x-6 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -65,7 +65,7 @@ export default function Header() {
           <ThemeToggle />
         </nav>
 
-        <div className="flex md:hidden items-center">
+        <div className="flex items-center md:hidden">
           <ThemeToggle />
           <Button
             variant="ghost"
@@ -74,7 +74,7 @@ export default function Header() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
         </div>
       </div>
@@ -85,9 +85,9 @@ export default function Header() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden border-b"
+          className="border-b md:hidden"
         >
-          <div className="container py-4 space-y-3">
+          <div className="container space-y-3 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
