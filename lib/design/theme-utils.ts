@@ -1,39 +1,27 @@
 import tokens from './tokens'
 
 /**
- * Utility functions for working with the design system
- */
-
-/**
  * Converts a hex color to HSL format
  * @param hex Hex color code (e.g., #ffffff)
  * @returns HSL values as a string (e.g., "0 0% 100%")
  */
 export function hexToHSL(hex: string): string {
-  // Remove the # if present
   hex = hex.replace('#', '')
-
-  // Convert hex to RGB
   const r = Number.parseInt(hex.substring(0, 2), 16) / 255
   const g = Number.parseInt(hex.substring(2, 4), 16) / 255
   const b = Number.parseInt(hex.substring(4, 6), 16) / 255
 
-  // Find the min and max values to calculate the lightness
   const max = Math.max(r, g, b)
   const min = Math.min(r, g, b)
-
-  // Calculate the lightness
   const l = (max + min) / 2
 
   let h = 0
   let s = 0
 
-  // Calculate the saturation
   if (max !== min) {
     const d = max - min
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
 
-    // Calculate the hue
     switch (max) {
       case r:
         h = ((g - b) / d + (g < b ? 6 : 0)) * 60
@@ -47,7 +35,6 @@ export function hexToHSL(hex: string): string {
     }
   }
 
-  // Round the values
   h = Math.round(h)
   s = Math.round(s * 100)
   const lightness = Math.round(l * 100)
@@ -60,8 +47,7 @@ export function hexToHSL(hex: string): string {
  * @param baseColor Base color in hex format
  * @returns Object with color variants from 50 to 950
  */
-export function generateColorPalette(baseColor: string) {
-  // This is a simplified version - in a real app, you'd use a more sophisticated algorithm
+export function generateColorPalette(baseColor: string): Record<number, string> {
   const hsl = hexToHSL(baseColor)
   const [h, s, l] = hsl.split(' ').map((val) => Number.parseInt(val))
 
@@ -81,27 +67,29 @@ export function generateColorPalette(baseColor: string) {
 }
 
 /**
- * Gets a specific token value
- * @param path Path to the token (e.g., "colors.primary.500")
- * @returns Token value or undefined if not found
+ * Gets a specific token value from the token object
+ * @param path Path like "colors.ochre.500"
+ * @returns Token value or undefined
  */
-export function getToken(path: string): any {
+export function getToken<T = unknown>(path: string): T | undefined {
   const parts = path.split('.')
-  let result: any = tokens
+  let result: unknown = tokens
 
   for (const part of parts) {
     if (result && typeof result === 'object' && part in result) {
-      result = result[part]
+      result = (result as Record<string, unknown>)[part]
     } else {
       return undefined
     }
   }
 
-  return result
+  return result as T
 }
 
-export default {
+const themeUtils = {
   hexToHSL,
   generateColorPalette,
   getToken,
 }
+
+export default themeUtils

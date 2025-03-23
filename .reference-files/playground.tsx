@@ -10,13 +10,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PlaygroundPage() {
   return (
-    <main className="p-8 space-y-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">UI Component Playground</h1>
+    <main className="mx-auto max-w-4xl space-y-8 p-8">
+      <h1 className="mb-4 text-3xl font-bold">UI Component Playground</h1>
 
       {/* Buttons */}
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">Buttons</h2>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex flex-wrap gap-4">
           <Button>Default</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="destructive">Destructive</Button>
@@ -40,7 +40,7 @@ export default function PlaygroundPage() {
       {/* Form Inputs */}
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">Form Elements</h2>
-        <div className="flex flex-col gap-4 max-w-sm">
+        <div className="flex max-w-sm flex-col gap-4">
           <Input placeholder="Example input" />
           <Switch id="example-switch" />
         </div>

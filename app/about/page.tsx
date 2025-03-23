@@ -26,7 +26,7 @@ export default function AboutPage() {
                 About <GradientText variant="ochre">Amos Glenn</GradientText>
               </h1>
               <p className="mb-8 text-xl text-muted-foreground">
-                I'm a learning design professional with over a decade of experience creating
+                I&apos;m a learning design professional with over a decade of experience creating
                 effective learning solutions that drive meaningful change in organizations. My
                 approach combines deep instructional design expertise with a focus on business
                 outcomes and learner experience.
@@ -43,15 +43,15 @@ export default function AboutPage() {
               <div className="prose prose-lg prose-invert max-w-none">
                 <p>
                   With a background in education and organizational psychology, I bring a unique
-                  perspective to learning design. I've worked across industries including
+                  perspective to learning design. I&apos;ve worked across industries including
                   technology, healthcare, finance, and retail, helping organizations develop their
                   people and improve performance.
                 </p>
                 <p>
                   My career began in traditional classroom training, but I quickly became fascinated
                   with the potential of technology to transform learning experiences. Since then,
-                  I've specialized in creating blended learning solutions that leverage the best of
-                  both worlds—human connection and technological innovation.
+                  I&apos;ve specialized in creating blended learning solutions that leverage the
+                  best of both worlds—human connection and technological innovation.
                 </p>
                 <p>
                   What sets my approach apart is a relentless focus on{' '}
@@ -61,9 +61,9 @@ export default function AboutPage() {
                   experience I create delivers measurable results.
                 </p>
                 <p>
-                  When I'm not designing learning experiences, you'll find me exploring new
-                  technologies, reading about cognitive science, or hiking in the mountains with my
-                  dog, Charlie.
+                  When I&apos;m not designing learning experiences, you&apos;ll find me exploring
+                  new technologies, reading about cognitive science, or hiking in the mountains with
+                  my dog, Charlie.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
             <div className="text-center">
               <h2 className="mb-4 text-2xl font-bold md:text-3xl">Want to work together?</h2>
               <p className="mb-8 text-lg text-muted-foreground">
-                Let's discuss how I can help your organization create{' '}
+                Let&apos;s discuss how I can help your organization create{' '}
                 <GradientText variant="slate">effective</GradientText> learning experiences.
               </p>
               <Button

@@ -66,7 +66,7 @@ export default function PortfolioGrid() {
                 <CardTitle>{project.label}</CardTitle>
                 <CardDescription>{project.subLabel}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="grow">
                 <div className="flex flex-wrap gap-2">
                   {project.tags.slice(0, 3).map((tag) => (
                     <Badge key={tag} variant="secondary">
@@ -82,7 +82,7 @@ export default function PortfolioGrid() {
                 <Button asChild variant="ghost" className="w-full justify-between">
                   <Link href={project.path}>
                     View Case Study
-                    <ChevronRight className="ml-2 h-4 w-4" />
+                    <ChevronRight className="ml-2 size-4" />
                   </Link>
                 </Button>
               </CardFooter>

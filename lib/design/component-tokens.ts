@@ -144,8 +144,9 @@ export const inputTokens = {
   },
 }
 
-export default {
+const componentTokens = {
   button: buttonTokens,
   card: cardTokens,
   input: inputTokens,
 }
+export default componentTokens

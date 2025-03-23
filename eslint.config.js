@@ -35,6 +35,7 @@ const eslintConfig = [
       },
       tailwindcss: {
         callees: ['cn', 'cva'],
+        whitelist: ['gradient-text-*'], // Allow custom classnames
       },
     },
   },

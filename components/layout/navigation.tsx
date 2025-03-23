@@ -21,7 +21,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 py-3 backdrop-blur-md' : 'py-6'}`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 py-3 backdrop-blur-md' : 'py-6'}`}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -29,7 +29,7 @@ export default function Navigation() {
             <span className="gradient-text-ochre">{siteConfig.name}</span>
           </Link>
           <div className="flex items-center gap-2">
-            <div className="mr-4 hidden items-center gap-2 rounded-full bg-muted/70 px-1 py-1 backdrop-blur-sm md:flex">
+            <div className="mr-4 hidden items-center gap-2 rounded-full bg-muted/70 p-1 backdrop-blur-sm md:flex">
               {siteConfig.nav.map((item) => (
                 <Link
                   key={item.href}

@@ -10,7 +10,7 @@ export function ExpertiseSection() {
         </h2>
         <ul className="space-y-3">
           <li className="flex items-start gap-3">
-            <Target className="mt-0.5 h-5 w-5 text-primary" />
+            <Target className="mt-0.5 size-5 text-primary" />
             <div>
               <div className="font-medium">Needs Analysis</div>
               <div className="text-sm text-muted-foreground">
@@ -19,7 +19,7 @@ export function ExpertiseSection() {
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 h-5 w-5 text-primary" />
+            <Lightbulb className="mt-0.5 size-5 text-primary" />
             <div>
               <div className="font-medium">Learning Design</div>
               <div className="text-sm text-muted-foreground">
@@ -28,7 +28,7 @@ export function ExpertiseSection() {
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <Users className="mt-0.5 h-5 w-5 text-secondary" />
+            <Users className="mt-0.5 size-5 text-secondary" />
             <div>
               <div className="font-medium">Team Leadership</div>
               <div className="text-sm text-muted-foreground">
@@ -37,7 +37,7 @@ export function ExpertiseSection() {
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <CheckCircle className="mt-0.5 h-5 w-5 text-primary" />
+            <CheckCircle className="mt-0.5 size-5 text-primary" />
             <div>
               <div className="font-medium">Impact Measurement</div>
               <div className="text-sm text-muted-foreground">

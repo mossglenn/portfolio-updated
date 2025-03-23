@@ -9,8 +9,8 @@ export default function Hero() {
     <section className="relative overflow-hidden py-20 md:py-28">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute right-0 top-0 -z-10 h-96 w-96 -translate-y-1/4 translate-x-1/4 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 -z-10 h-96 w-96 -translate-x-1/4 translate-y-1/4 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-0 top-0 -z-10 size-96 -translate-y-1/4 translate-x-1/4 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -z-10 size-96 -translate-x-1/4 translate-y-1/4 rounded-full bg-primary/10 blur-3xl" />
       </div>
 
       <div className="container px-4 md:px-6">

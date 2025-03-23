@@ -17,10 +17,10 @@ export function HeroSection() {
         >
           <div className="mb-6 text-left">
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              I'm <span className="gradient-text-ochre">Amos Glenn</span>.
+              I&apos;m <span className="gradient-text-ochre">Amos Glenn</span>.
             </h1>
             <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              I <span className="gradient-text-slate">don't build</span> courses.
+              I <span className="gradient-text-slate">don&apos;t build</span> courses.
             </h1>
             <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               I <span className="gradient-text-ochre">design solutions</span> that make a
@@ -36,7 +36,7 @@ export function HeroSection() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Button size="lg" asChild>
               <Link href="/work">
-                View my work <ArrowRight className="ml-2 h-4 w-4" />
+                View my work <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>

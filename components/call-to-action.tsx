@@ -21,8 +21,8 @@ export default function CallToAction() {
               Ready to Collaborate?
             </h2>
             <p className="max-w-2xl text-lg md:text-xl">
-              Let's discuss how we can create innovative learning solutions that drive real impact
-              for your organization.
+              Let&apos;s discuss how we can create innovative learning solutions that drive real
+              impact for your organization.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" variant="secondary" className="px-8">

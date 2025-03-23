@@ -24,7 +24,7 @@ export default function ContactForm() {
     // Show success message
     toast({
       title: 'Message sent!',
-      description: "Thank you for your message. I'll get back to you soon.",
+      description: 'Thank you for your message. I&apos;ll get back to you soon.',
     })
 
     // Reset form

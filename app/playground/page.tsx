@@ -72,7 +72,8 @@ export default function PlaygroundPage() {
                 <CardFooter className="flex justify-between text-sm text-muted-foreground">
                   <div>
                     <code className="rounded bg-muted px-1 py-0.5 text-xs">
-                      variant="default" | "secondary" | "outline" | "ghost" | "link" | "destructive"
+                      variant=&quot;default&quot; | &quot;secondary&quot; | &quot;outline&quot; |
+                      &quot;ghost&quot; | &quot;link&quot; | &quot;destructive&quot;
                     </code>
                   </div>
                 </CardFooter>
@@ -88,13 +89,13 @@ export default function PlaygroundPage() {
                   <Button>Default</Button>
                   <Button size="lg">Large</Button>
                   <Button size="icon" className="ml-4">
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="size-4" />
                   </Button>
                 </CardContent>
                 <CardFooter className="flex justify-between text-sm text-muted-foreground">
                   <div>
                     <code className="rounded bg-muted px-1 py-0.5 text-xs">
-                      size="sm" | "default" | "lg" | "icon"
+                      size=&quot;sm&quot; | &quot;default&quot; | &quot;lg&quot; | &quot;icon&quot;
                     </code>
                   </div>
                 </CardFooter>
@@ -263,8 +264,8 @@ export default function PlaygroundPage() {
                 <CardContent className="space-y-6">
                   <div>
                     <blockquote className="mt-6 border-l-2 pl-6 italic">
-                      "After all," he said, "everyone makes mistakes. The important thing is to
-                      learn from them."
+                      &quot;After all,&quot; he said, &quot;everyone makes mistakes. The important
+                      thing is to learn from them.&quot;
                     </blockquote>
                     <code className="mt-2 block text-xs text-muted-foreground">
                       border-l-2 pl-6 italic
@@ -273,7 +274,7 @@ export default function PlaygroundPage() {
 
                   <div className="flex flex-col gap-1">
                     <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-                      console.log('Hello World')
+                      console.log(&apos;Hello World&apos;)
                     </code>
                     <code className="text-xs text-muted-foreground">
                       bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm

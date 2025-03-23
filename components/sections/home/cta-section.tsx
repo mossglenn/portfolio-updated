@@ -13,12 +13,12 @@ export function CtaSection() {
             <span className="gradient-text-slate">difference</span>?
           </h2>
           <p className="mb-8 text-lg text-muted-foreground">
-            Let's discuss how I can help your organization create{' '}
+            Let&apos;s discuss how I can help your organization create{' '}
             <span className="gradient-text-slate">effective</span> learning experiences.
           </p>
           <Button size="lg" asChild>
             <Link href="/contact">
-              Get in touch <ArrowRight className="ml-2 h-4 w-4" />
+              Get in touch <ArrowRight className="ml-2 size-4" />
             </Link>
           </Button>
         </div>

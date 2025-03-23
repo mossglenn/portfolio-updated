@@ -13,16 +13,16 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-lg bg-primary text-primary-foreground p-8 md:p-12"
+          className="relative overflow-hidden rounded-lg bg-primary p-8 text-primary-foreground md:p-12"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
-          <div className="relative z-10 flex flex-col items-center text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Collaborate?</h2>
-            <p className="text-lg md:text-xl max-w-2xl">
-              Let's discuss how we can create innovative learning solutions that drive real impact for your
+          <div className="relative z-10 flex flex-col items-center space-y-6 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Ready to Collaborate?</h2>
+            <p className="max-w-2xl text-lg md:text-xl">
+              Let&apos;s discuss how we can create innovative learning solutions that drive real impact for your
               organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" variant="secondary" className="px-8">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
@@ -30,7 +30,7 @@ export default function CallToAction() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white hover:bg-white/10 px-8"
+                className="border-white bg-transparent px-8 hover:bg-white/10"
               >
                 <Link href="/portfolio">Explore Portfolio</Link>
               </Button>

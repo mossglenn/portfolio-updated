@@ -18,14 +18,14 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="max-w-2xl text-xl text-muted-foreground">
-            Let's discuss how we can collaborate on your next instructional design project.
+            Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
 
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Mail className="h-6 w-6 text-primary" />
+              <Mail className="size-6 text-primary" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Phone className="h-6 w-6 text-primary" />
+              <Phone className="size-6 text-primary" />
               <CardTitle>Phone</CardTitle>
             </CardHeader>
             <CardContent>
@@ -45,7 +45,7 @@ export default function ContactPage() {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="h-6 w-6 text-primary" />
+              <MapPin className="size-6 text-primary" />
               <CardTitle>Location</CardTitle>
             </CardHeader>
             <CardContent>
@@ -59,7 +59,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you as soon as possible.
+                Fill out the form below and I&apos;ll get back to you as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -69,12 +69,12 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             <div>
-              <h2 className="mb-4 text-2xl font-bold tracking-tighter">Let's Collaborate</h2>
+              <h2 className="mb-4 text-2xl font-bold tracking-tighter">Let&apos;s Collaborate</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm always interested in new projects and collaborations. Whether you have a
-                  specific project in mind or just want to explore possibilities, I'd love to hear
-                  from you.
+                  I&apos;m always interested in new projects and collaborations. Whether you have a
+                  specific project in mind or just want to explore possibilities, I&apos;d love to
+                  hear from you.
                 </p>
                 <p>My expertise spans various areas of instructional design, including:</p>
                 <ul className="list-disc space-y-2 pl-6">
@@ -91,7 +91,7 @@ export default function ContactPage() {
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Availability</h2>
               <p className="text-muted-foreground">
-                I'm currently available for freelance projects, consulting, and speaking
+                I&apos;m currently available for freelance projects, consulting, and speaking
                 engagements. My typical response time is within 24-48 hours.
               </p>
             </div>

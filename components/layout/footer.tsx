@@ -13,21 +13,21 @@ export function Footer() {
               href={`mailto:${siteConfig.contact.email}`}
               className="text-muted-foreground transition-colors hover:text-primary"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="size-5" />
               <span className="sr-only">Email</span>
             </Link>
             <Link
               href={siteConfig.links.linkedin}
               className="text-muted-foreground transition-colors hover:text-primary"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
               href={siteConfig.links.github}
               className="text-muted-foreground transition-colors hover:text-primary"
             >
-              <Github className="h-5 w-5" />
+              <Github className="size-5" />
               <span className="sr-only">GitHub</span>
             </Link>
           </div>

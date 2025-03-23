@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <div className="container px-4 py-12 md:px-6">
-      <h1 className="text-3xl font-bold mb-6">Portfolio</h1>
+      <h1 className="mb-6 text-3xl font-bold">Portfolio</h1>
       <p>Portfolio content will be added here.</p>
     </div>
   )

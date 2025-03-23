@@ -34,7 +34,7 @@ export default function ProjectLayout({
       <section className="container px-4 md:px-6">
         <Button asChild variant="ghost" className="mb-6">
           <Link href="/portfolio">
-            <ChevronLeft className="mr-2 h-4 w-4" />
+            <ChevronLeft className="mr-2 size-4" />
             Back to Portfolio
           </Link>
         </Button>
@@ -143,7 +143,7 @@ export default function ProjectLayout({
                     <Button asChild variant="ghost" className="w-full justify-between">
                       <Link href={relatedProject.path}>
                         View Case Study
-                        <ChevronRight className="ml-2 h-4 w-4" />
+                        <ChevronRight className="ml-2 size-4" />
                       </Link>
                     </Button>
                   </CardFooter>

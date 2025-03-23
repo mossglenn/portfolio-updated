@@ -1020,7 +1020,7 @@ export default function CallToAction() {
           <div className="relative z-10 flex flex-col items-center text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Collaborate?</h2>
             <p className="text-lg md:text-xl max-w-2xl">
-              Let's discuss how we can create innovative learning solutions that drive real impact for your
+              Let&apos;s discuss how we can create innovative learning solutions that drive real impact for your
               organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -1086,7 +1086,7 @@ export default function ContactForm() {
     // Show success message
     toast({
       title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      description: "Thank you for your message. I&apos;ll get back to you soon.",
     })
 
     // Reset form

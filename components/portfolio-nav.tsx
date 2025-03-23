@@ -35,7 +35,7 @@ export default function PortfolioNav() {
               {category.label}
               <ChevronDown
                 className={cn(
-                  'h-4 w-4 transition-transform',
+                  'size-4 transition-transform',
                   openCategory === category.label ? 'rotate-180' : ''
                 )}
               />

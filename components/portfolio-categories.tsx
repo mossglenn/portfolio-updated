@@ -35,7 +35,7 @@ export default function PortfolioCategories() {
                 <div className="flex items-center justify-between">
                   <CardTitle>{category.label}</CardTitle>
                   <ChevronRight
-                    className={`h-5 w-5 transition-transform ${expandedCategory === category.label ? 'rotate-90' : ''}`}
+                    className={`size-5 transition-transform ${expandedCategory === category.label ? 'rotate-90' : ''}`}
                   />
                 </div>
                 <CardDescription>{category.subLabel}</CardDescription>
@@ -57,7 +57,7 @@ export default function PortfolioCategories() {
                           <Button asChild variant="ghost" size="sm">
                             <Link href={project.path}>
                               View
-                              <ChevronRight className="ml-1 h-4 w-4" />
+                              <ChevronRight className="ml-1 size-4" />
                             </Link>
                           </Button>
                         </div>
