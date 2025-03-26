@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import { generateTailwindConfig } from './lib/design/tailwind-config'
+import animate from 'tailwindcss-animate'
 
 const config = {
   darkMode: ['class'],
@@ -33,6 +33,7 @@ const config = {
           light: 'hsl(var(--primary-light, var(--primary)))',
           dark: 'hsl(var(--primary-dark, var(--primary)))',
           muted: 'hsl(var(--primary-muted, var(--primary) / 0.6))',
+          alternative: 'hsl(var(--primary-alternative))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -66,58 +67,57 @@ const config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Color scales from v0 project
         ochre: {
-          50: 'hsl(var(--ochre-50))',
-          100: 'hsl(var(--ochre-100))',
-          200: 'hsl(var(--ochre-200))',
-          300: 'hsl(var(--ochre-300))',
-          400: 'hsl(var(--ochre-400))',
-          500: 'hsl(var(--ochre-500))',
-          600: 'hsl(var(--ochre-600))',
-          700: 'hsl(var(--ochre-700))',
-          800: 'hsl(var(--ochre-800))',
-          900: 'hsl(var(--ochre-900))',
-          950: 'hsl(var(--ochre-950))',
+          '50': 'hsl(var(--ochre-50))',
+          '100': 'hsl(var(--ochre-100))',
+          '200': 'hsl(var(--ochre-200))',
+          '300': 'hsl(var(--ochre-300))',
+          '400': 'hsl(var(--ochre-400))',
+          '500': 'hsl(var(--ochre-500))',
+          '600': 'hsl(var(--ochre-600))',
+          '700': 'hsl(var(--ochre-700))',
+          '800': 'hsl(var(--ochre-800))',
+          '900': 'hsl(var(--ochre-900))',
+          '950': 'hsl(var(--ochre-950))',
         },
         slate: {
-          50: 'hsl(var(--slate-50))',
-          100: 'hsl(var(--slate-100))',
-          200: 'hsl(var(--slate-200))',
-          300: 'hsl(var(--slate-300))',
-          400: 'hsl(var(--slate-400))',
-          500: 'hsl(var(--slate-500))',
-          600: 'hsl(var(--slate-600))',
-          700: 'hsl(var(--slate-700))',
-          800: 'hsl(var(--slate-800))',
-          900: 'hsl(var(--slate-900))',
-          950: 'hsl(var(--slate-950))',
+          '50': 'hsl(var(--slate-50))',
+          '100': 'hsl(var(--slate-100))',
+          '200': 'hsl(var(--slate-200))',
+          '300': 'hsl(var(--slate-300))',
+          '400': 'hsl(var(--slate-400))',
+          '500': 'hsl(var(--slate-500))',
+          '600': 'hsl(var(--slate-600))',
+          '700': 'hsl(var(--slate-700))',
+          '800': 'hsl(var(--slate-800))',
+          '900': 'hsl(var(--slate-900))',
+          '950': 'hsl(var(--slate-950))',
         },
         sage: {
-          50: 'hsl(var(--sage-50))',
-          100: 'hsl(var(--sage-100))',
-          200: 'hsl(var(--sage-200))',
-          300: 'hsl(var(--sage-300))',
-          400: 'hsl(var(--sage-400))',
-          500: 'hsl(var(--sage-500))',
-          600: 'hsl(var(--sage-600))',
-          700: 'hsl(var(--sage-700))',
-          800: 'hsl(var(--sage-800))',
-          900: 'hsl(var(--sage-900))',
-          950: 'hsl(var(--sage-950))',
+          '50': 'hsl(var(--sage-50))',
+          '100': 'hsl(var(--sage-100))',
+          '200': 'hsl(var(--sage-200))',
+          '300': 'hsl(var(--sage-300))',
+          '400': 'hsl(var(--sage-400))',
+          '500': 'hsl(var(--sage-500))',
+          '600': 'hsl(var(--sage-600))',
+          '700': 'hsl(var(--sage-700))',
+          '800': 'hsl(var(--sage-800))',
+          '900': 'hsl(var(--sage-900))',
+          '950': 'hsl(var(--sage-950))',
         },
         sand: {
-          50: 'hsl(var(--sand-50))',
-          100: 'hsl(var(--sand-100))',
-          200: 'hsl(var(--sand-200))',
-          300: 'hsl(var(--sand-300))',
-          400: 'hsl(var(--sand-400))',
-          500: 'hsl(var(--sand-500))',
-          600: 'hsl(var(--sand-600))',
-          700: 'hsl(var(--sand-700))',
-          800: 'hsl(var(--sand-800))',
-          900: 'hsl(var(--sand-900))',
-          950: 'hsl(var(--sand-950))',
+          '50': 'hsl(var(--sand-50))',
+          '100': 'hsl(var(--sand-100))',
+          '200': 'hsl(var(--sand-200))',
+          '300': 'hsl(var(--sand-300))',
+          '400': 'hsl(var(--sand-400))',
+          '500': 'hsl(var(--sand-500))',
+          '600': 'hsl(var(--sand-600))',
+          '700': 'hsl(var(--sand-700))',
+          '800': 'hsl(var(--sand-800))',
+          '900': 'hsl(var(--sand-900))',
+          '950': 'hsl(var(--sand-950))',
         },
         'soft-sand': {
           DEFAULT: 'hsl(var(--soft-sand, var(--sand-50)))',
@@ -129,8 +129,14 @@ const config = {
           light: 'hsl(var(--foundation-black-light, var(--carbon-800)))',
           muted: 'hsl(var(--foundation-black-muted, var(--carbon-950) / 0.5))',
         },
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
+        },
       },
-      // Background gradients from v0 project
       backgroundImage: {
         'gradient-ochre':
           'linear-gradient(to right, var(--ochre-500), var(--ochre-400), var(--ochre-200))',
@@ -150,19 +156,43 @@ const config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+        slideInRight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(2rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        slideOutFromLeft: {
+          '0%': { transform: 'translateX(-10rem)', opacity: '0' },
+          '20%': { opacity: '1' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-in-right': 'slideInRight 0.4s ease-out both',
+        'slide-out-left': 'slideOutFromLeft 900ms ease-out forwards',
       },
-      // Gradient color stops from v0 project
       gradientColorStops: {
         ochre: {
           from: '#d6a04f',
@@ -180,9 +210,13 @@ const config = {
           to: '#d6e6cc',
         },
       },
+      skew: {
+        '20': '20deg',
+        '-20': '-20deg',
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [animate],
 } satisfies Config
 
 export default config

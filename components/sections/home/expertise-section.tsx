@@ -1,5 +1,5 @@
 import { Target, Lightbulb, Users, CheckCircle } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card_OLD'
 import { ReactElement } from 'react'
 
 export function ExpertiseSection(): ReactElement {

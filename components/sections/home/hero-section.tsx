@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button_OLD'
+import { Card, CardContent } from '@/components/ui/card_OLD'
 import { ReactElement } from 'react'
 
 export function HeroSection(): ReactElement {
@@ -17,15 +17,14 @@ export function HeroSection(): ReactElement {
           transition={{ duration: 0.5 }}
         >
           <div className="mb-6 text-left">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              I&apos;m <span className="gradient-text-ochre">Amos Glenn</span>.
+            <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-foreground/80">
+              I don&apos;t build courses.
+            </h2>
+            <h1 className="mt-2 text-[clamp(1.5rem,9vw,4rem)] font-bold">
+              I <span className="gradient-text-ochre">design solutions</span>
             </h1>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              I <span className="gradient-text-slate">don&apos;t build</span> courses.
-            </h1>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              I <span className="gradient-text-ochre">design solutions</span> that make a
-              difference.
+            <h1 className="mt-2 text-right text-[clamp(1.5rem,6vw,3rem)] font-bold">
+              that make a difference.
             </h1>
           </div>
           <p className="mb-8 text-xl text-muted-foreground">

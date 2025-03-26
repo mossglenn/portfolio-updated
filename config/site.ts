@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Amos Glenn',
+  name: 'AmosGlenn',
   description: 'Learning Design Professional',
   url: 'https://amosglenn.com',
   ogImage: 'https://amosglenn.com/og.jpg',
@@ -17,5 +17,6 @@ export const siteConfig = {
     { title: 'Work', href: '/work' },
     { title: 'Approach', href: '/approach' },
     { title: 'Playground', href: '/playground' },
+    { title: 'Contact', href: '/contact' },
   ],
 }

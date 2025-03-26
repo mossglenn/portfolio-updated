@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/contact-form'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card_OLD'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { ReactElement } from 'react'
 

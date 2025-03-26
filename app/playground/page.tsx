@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button_OLD'
 import {
   Card,
   CardContent,
@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '@/components/ui/card_OLD'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
@@ -41,11 +41,12 @@ export default function PlaygroundPage(): ReactElement {
         </div>
 
         <Tabs defaultValue="components" className="mb-12 w-full">
-          <TabsList className="mb-8 grid w-full grid-cols-4">
+          <TabsList className="mb-8 grid w-full grid-cols-5">
             <TabsTrigger value="components">Components</TabsTrigger>
             <TabsTrigger value="typography">Typography</TabsTrigger>
             <TabsTrigger value="colors">Colors</TabsTrigger>
             <TabsTrigger value="gradients">Gradients</TabsTrigger>
+            <TabsTrigger value="grids">Grids</TabsTrigger> {/* <- Add this line */}
           </TabsList>
 
           {/* Components Tab */}
@@ -677,6 +678,41 @@ export default function PlaygroundPage(): ReactElement {
                       <p className="text-sm text-slate-600">
                         bg-gradient-radial from-sand-100 to-sand-300
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Section>
+          </TabsContent>
+          <TabsContent value="grids" className="space-y-8">
+            <Section title="Skewed Grid Layout" className="space-y-4">
+              <div className="overflow-hidden bg-background p-8">
+                <div className="skew-x-[-6]">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-card p-4">
+                      <div className="flex h-32 skew-x-[6] items-center justify-center rounded-md text-center shadow-md">
+                        <span className="text-lg font-bold">Card 1</span>
+                      </div>
+                    </div>
+                    <div className="row-span-2 bg-card p-4">
+                      <div className="flex h-full min-h-64 skew-x-[6] items-center justify-center rounded-md text-center shadow-md">
+                        <span className="text-lg font-bold">Tall Card</span>
+                      </div>
+                    </div>
+                    <div className="bg-card p-4">
+                      <div className="flex h-32 skew-x-[6] items-center justify-center rounded-md text-center shadow-md">
+                        <span className="text-lg font-bold">Card 2</span>
+                      </div>
+                    </div>
+                    <div className="bg-card p-4">
+                      <div className="flex h-32 skew-x-[6] items-center justify-center rounded-md text-center shadow-md">
+                        <span className="text-lg font-bold">Card 3</span>
+                      </div>
+                    </div>
+                    <div className="bg-card p-4">
+                      <div className="flex h-32 skew-x-[6] items-center justify-center rounded-md text-center shadow-md">
+                        <span className="text-lg font-bold">Card 4</span>
+                      </div>
                     </div>
                   </div>
                 </div>

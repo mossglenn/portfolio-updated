@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button_OLD'
+import { Card, CardContent } from '@/components/ui/card_OLD'
 import { ReactElement } from 'react'
 
 export function CtaSection(): ReactElement {

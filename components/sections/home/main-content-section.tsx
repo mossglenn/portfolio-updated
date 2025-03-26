@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card_OLD'
 import { ReactElement } from 'react'
 
 export function MainContentSection(): ReactElement {

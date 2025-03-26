@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button_OLD'
 import { PageLayout } from '@/components/layout/page-layout'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
