@@ -1,195 +1,236 @@
+/* globals.css */
+
+/* Tailwind Base Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Define color variables */
+:root {
+  --color-brand: #734CA9;      /* Brand color */
+  --color-light: #D1A7E4;      /* Light violet for subtle accents */
+  --color-dark: #39344B;       /* Deep purple for backgrounds */
+  --color-neutral: #BEB8CD;    /* Light gray text */
+  --color-dark-text: #5C3C87;  /* Darker violet for subtitle */
+  --color-accent: #E3A34E;     /* Amber accent */
+  --color-light-text: #FFFFFF; /* White text for contrast */
+  --color-muted-text: #5C3C87; /* Muted purple for text */
+  --color-background: #292A3E; /* Background color (dark slate) */
+  --color-card: #343A47;       /* Card background */
+
+  /* Color Scales based on Brand Color */
+  --color-brand-light: #8C74C2;      /* Lighter shade of brand color */
+  --color-brand-dark: #5C3C87;       /* Darker shade of brand color */
+  --color-brand-darker: #4A2D6B;     /* Even darker shade of brand */
+  --color-accent-light: #F0B36D;     /* Lighter amber shade */
+  --color-accent-dark: #C26A2A;      /* Darker amber shade */
+  --color-muted-light: #6A4D72;      /* Lighter muted text */
+  --color-muted-dark: #4A2D52;       /* Darker muted text */
+
+  /* Previous Theme css variables with the new colors */
+
+  /* Background and Foreground */
+  --background: hsl(237, 18%, 14%); /* Deep slate blue */
+  --foreground: hsl(43, 50%, 95%); /* Warm sand-like white */
+
+  /* Card Styles */
+  --card: hsl(216, 30%, 20%); /* Muted brand color for cards */
+  --card-foreground: hsl(43, 50%, 95%); /* Same as foreground for card text */
+  
+  /* Popover Styles */
+  --popover: hsl(43, 30%, 90%); /* Lighter version of background */
+  --popover-foreground: hsl(220, 10%, 8%); /* Darker for popover text */
+
+  /* Primary Colors */
+  --primary: #734CA9; /* Brand color */
+  --primary-foreground: hsl(220, 10%, 8%); /* Dark background for primary text */
+  --primary-alternative: hsl(244, 52.4%, 32.9%); /* Alternate color for primary use */
+
+  /* Secondary Colors */
+  --secondary: #5A3E87; /* Muted purple */
+  --secondary-foreground: hsl(218, 29.4%, 87%); /* Light text for secondary elements */
+
+  /* Accent Colors */
+  --accent: #E3A34E; /* Amber accent */
+  --accent-foreground: hsl(220, 10%, 8%); /* Darker text for accent items */
+  
+  /* Muted Colors */
+  --muted: #BEB8CD; /* Muted purple */
+  --muted-foreground: hsl(219, 27%, 30%); /* Darker text for muted sections */
+  
+  /* Destructive Colors */
+  --destructive: hsl(0, 84%, 60%); /* Red for destructive actions */
+  --destructive-foreground: hsl(0, 0%, 98%); /* White text for destructive */
+  
+  /* Border, Input, Ring */
+  --border: hsl(43, 20%, 75%); /* Muted border color */
+  --input: hsl(43, 20%, 85%); /* Soft input background */
+  --ring: hsl(38, 70%, 55%); /* Brand color ring for focus states */
+
+}
+
+/* Apply colors globally to body and text */
+body {
+  background-color: var(--color-background);
+  color: var(--color-light-text);
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Default font */
+}
+
+/* Define Tailwind Theme Colors using CSS Variables */
 @layer base {
+  /* Update default colors for Tailwind */
   :root {
-    --background: 237 18% 14%; /* Deep slate blue */
-    --foreground: 43 50% 95%; /* Warm sand-like white */
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-border-opacity: 1;
 
-    --card: 216 30% 20%;
-    --card-foreground: 43 50% 95%;
-
-    --popover: 43 30% 90%;
-    --popover-foreground: 220 10% 8%;
-
-    --primary: 38 70% 55%; /* Bold ochre */
-    --primary-foreground: 220 10% 8%;
-    --primary-alternative: 244 52.4% 32.9%;
-
-    --secondary: 220 28% 35%; /* Slate blue */
-    --secondary-foreground: 218 29.4% 87%;
-
-    --accent: 201 60% 53%; /* Sage green */
-    --accent-foreground: 220 10% 8%;
-
-    --muted: 43 20% 85%;
-    --muted-foreground: 219 27% 30%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 43 20% 75%;
-    --input: 43 20% 85%;
-    --ring: 38 70% 55%;
-
-    --radius: 0.5rem;
-    --font-sans: Inter, system-ui, sans-serif;
-
-    /* Color scales as CSS variables */
-    --ochre-50: #fff8e6;
-    --ochre-100: #ffefc4;
-    --ochre-200: #ffe3a3;
-    --ochre-300: #ffd682;
-    --ochre-400: #f0b861;
-    --ochre-500: #d6a04f;
-    --ochre-600: #c9913f;
-    --ochre-700: #b07c39;
-    --ochre-800: #8c6330;
-    --ochre-900: #6b4b24;
-    --ochre-950: #422d16;
-
-    --slate-50: #f0f4f8;
-    --slate-100: #d9e2ec;
-    --slate-200: #bcccdc;
-    --slate-300: #9fb3c8;
-    --slate-400: #829ab1;
-    --slate-500: #627d98;
-    --slate-600: #50627e;
-    --slate-700: #3a4a64;
-    --slate-800: #2c3b52;
-    --slate-900: #1e2a3a;
-    --slate-950: #0f172a;
-
-    --sage-50: #f1f8f3;
-    --sage-100: #e2f1e7;
-    --sage-200: #d6e6cc;
-    --sage-300: #b7d3b7;
-    --sage-400: #99c2a2;
-    --sage-500: #89b293;
-    --sage-600: #7ea78c;
-    --sage-700: #5e8c6a;
-    --sage-800: #4a6e53;
-    --sage-900: #395a43;
-    --sage-950: #1f3024;
-
-    --sand-50: #f8f4ec;
-    --sand-100: #eae3d6;
-    --sand-200: #dfd3c3;
-    --sand-300: #d3c3af;
-    --sand-400: #c7b39c;
-    --sand-500: #bba389;
-    --sand-600: #a99377;
-    --sand-700: #8c7a63;
-    --sand-800: #6f6151;
-    --sand-900: #524840;
-    --sand-950: #352e29;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --tw-text-color: var(--color-light-text);
+    --tw-bg-color: var(--color-background);
+    --tw-border-color: var(--color-card);
+    --tw-placeholder-color: var(--color-muted-text);
+    --tw-link-color: var(--color-accent);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Tailwind Custom Theme Configurations */
+@layer components {
+  /* Buttons with background color and hover effects */
+  .btn {
+    background-color: var(--color-brand);
+    color: var(--color-light-text);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
   }
-  body {
-    @apply bg-background text-foreground;
-    background-image:
-      radial-gradient(circle at 15% 50%, rgba(58, 74, 100, 0.15) 0%, transparent 40%),
-      radial-gradient(circle at 85% 30%, rgba(58, 74, 100, 0.1) 0%, transparent 40%),
-      linear-gradient(rgba(58, 74, 100, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(58, 74, 100, 0.05) 1px, transparent 1px);
-    background-size:
-      100% 100%,
-      100% 100%,
-      40px 40px,
-      40px 40px;
+  .btn:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Outline buttons */
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-brand);
+    color: var(--color-brand);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-brand);
+    color: var(--color-light-text);
+  }
+
+  /* Gradient Buttons */
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-accent) 100%);
+    color: var(--color-light-text);
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-brand) 100%);
+  }
+
+  /* Cards with background color */
+  .card {
+    background-color: var(--color-card);
+    color: var(--color-light-text);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .card-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .card-footer {
+    font-size: 0.875rem;
+    color: var(--color-muted-text);
   }
 }
 
-/* Animation styles from local project */
-.animate-in {
-  animation: animateIn 0.3s ease-in-out;
-}
-
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+/* Typography and text adjustments */
+@layer utilities {
+  .text-primary {
+    color: var(--color-brand);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .text-secondary {
+    color: var(--color-accent);
+  }
+
+  .text-muted {
+    color: var(--color-muted-text);
+  }
+
+  .text-light {
+    color: var(--color-light-text);
+  }
+
+  .text-dark {
+    color: var(--color-dark-text);
+  }
+
+  .bg-gradient-light {
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-light) 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-text) 100%);
   }
 }
 
-/* Prose styles from v0 project */
-.prose {
-  @apply max-w-none;
+/* Define Tailwind Colors using CSS Variables */
+@layer theme {
+  /* Update colors for Tailwind */
+  --color-primary: var(--color-brand);
+  --color-secondary: var(--color-accent);
+  --color-tertiary: var(--color-light);
+  --color-neutral-100: var(--color-muted-text);
+  --color-neutral-200: var(--color-light-text);
+  --color-background: var(--color-background);
+  --color-card: var(--color-card);
+  --color-text: var(--color-light-text);
+  --color-link: var(--color-accent);
+  --color-heading: var(--color-dark-text);
 }
 
-.prose p {
-  @apply mb-4 text-foreground/90;
-}
+/* Customize the Tailwind colors if needed */
+@layer utilities {
+  .bg-brand {
+    background-color: var(--color-brand);
+  }
 
-.prose em {
-  @apply font-medium text-primary;
-}
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
 
-/* Gradient text utilities from v0 project */
-.gradient-text-ochre {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(to right, #d6a04f, #f0b861, #ffe3ac);
-}
+  .bg-light {
+    background-color: var(--color-light);
+  }
 
-.gradient-text-slate {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(to right, #3a4a64, #50627e, #8494ac);
-}
+  .bg-muted {
+    background-color: var(--color-muted-text);
+  }
 
-.gradient-text-sage {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(to right, #99c2a2, #b7d3b7, #d6e6cc);
-}
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
 
-.gradient-text-warm-dark {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(to right, #121417, #2a2f36, #3a4a64);
-}
+  .text-brand {
+    color: var(--color-brand);
+  }
 
-.gradient-text-light-wash {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(to right, #f8f4ec, #f1eadf, #e6dfd3);
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .text-muted {
+    color: var(--color-muted-text);
+  }
+
+  .text-dark {
+    color: var(--color-dark-text);
+  }
+
+  .text-light {
+    color: var(--color-light-text);
+  }
 }

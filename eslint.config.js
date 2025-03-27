@@ -14,6 +14,7 @@ const eslintConfig = [
       '**/dist/**',
       '**/out/**',
       '**/.reference-files/**',
+      '/.reference-files/**',
     ],
   },
   js.configs.recommended,

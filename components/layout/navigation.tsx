@@ -37,7 +37,7 @@ export default function Navigation(): ReactElement {
             <div className="flex items-center text-primary">
               <LogoBadge backgroundColorClass="bg-secondary" />
               <div
-                className="animate-slide-out-left -ml-1 hidden md:flex"
+                className="-ml-1 hidden animate-slide-out-left md:flex"
                 style={{ animationDelay: '300ms' }}
               >
                 <div className="w-max -skew-x-20 rounded-md bg-card px-4 py-1 text-sm shadow-md md:inline-block">

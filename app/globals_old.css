@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 237 18% 14%; /* Deep slate blue */
+    --foreground: 43 50% 95%; /* Warm sand-like white */
+
+    --card: 216 30% 20%;
+    --card-foreground: 43 50% 95%;
+
+    --popover: 43 30% 90%;
+    --popover-foreground: 220 10% 8%;
+
+    --primary: 38 70% 55%; /* Bold ochre */
+    --primary-foreground: 220 10% 8%;
+    --primary-alternative: 244 52.4% 32.9%;
+
+    --secondary: 220 28% 35%; /* Slate blue */
+    --secondary-foreground: 218 29.4% 87%;
+
+    --accent: 201 60% 53%; /* Sage green */
+    --accent-foreground: 220 10% 8%;
+
+    --muted: 43 20% 85%;
+    --muted-foreground: 219 27% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 43 20% 75%;
+    --input: 43 20% 85%;
+    --ring: 38 70% 55%;
+
+    --radius: 0.5rem;
+    --font-sans: Inter, system-ui, sans-serif;
+
+    /* Color scales as CSS variables */
+    --ochre-50: #fff8e6;
+    --ochre-100: #ffefc4;
+    --ochre-200: #ffe3a3;
+    --ochre-300: #ffd682;
+    --ochre-400: #f0b861;
+    --ochre-500: #d6a04f;
+    --ochre-600: #c9913f;
+    --ochre-700: #b07c39;
+    --ochre-800: #8c6330;
+    --ochre-900: #6b4b24;
+    --ochre-950: #422d16;
+
+    --slate-50: #f0f4f8;
+    --slate-100: #d9e2ec;
+    --slate-200: #bcccdc;
+    --slate-300: #9fb3c8;
+    --slate-400: #829ab1;
+    --slate-500: #627d98;
+    --slate-600: #50627e;
+    --slate-700: #3a4a64;
+    --slate-800: #2c3b52;
+    --slate-900: #1e2a3a;
+    --slate-950: #0f172a;
+
+    --sage-50: #f1f8f3;
+    --sage-100: #e2f1e7;
+    --sage-200: #d6e6cc;
+    --sage-300: #b7d3b7;
+    --sage-400: #99c2a2;
+    --sage-500: #89b293;
+    --sage-600: #7ea78c;
+    --sage-700: #5e8c6a;
+    --sage-800: #4a6e53;
+    --sage-900: #395a43;
+    --sage-950: #1f3024;
+
+    --sand-50: #f8f4ec;
+    --sand-100: #eae3d6;
+    --sand-200: #dfd3c3;
+    --sand-300: #d3c3af;
+    --sand-400: #c7b39c;
+    --sand-500: #bba389;
+    --sand-600: #a99377;
+    --sand-700: #8c7a63;
+    --sand-800: #6f6151;
+    --sand-900: #524840;
+    --sand-950: #352e29;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(58, 74, 100, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(58, 74, 100, 0.1) 0%, transparent 40%),
+      linear-gradient(rgba(58, 74, 100, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58, 74, 100, 0.05) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      100% 100%,
+      40px 40px,
+      40px 40px;
+  }
+}
+
+/* Gradient text utilities from v0 project */
+.gradient-text-ochre {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #d6a04f, #f0b861, #ffe3ac);
+}
+
+.gradient-text-slate {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #3a4a64, #50627e, #8494ac);
+}
+
+.gradient-text-sage {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #99c2a2, #b7d3b7, #d6e6cc);
+}
+
+.gradient-text-warm-dark {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #121417, #2a2f36, #3a4a64);
+}
+
+.gradient-text-light-wash {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #f8f4ec, #f1eadf, #e6dfd3);
+}
