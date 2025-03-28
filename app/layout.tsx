@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }): ReactElement {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable}`}>
+      <body className={`${plusJakartaSans.className} ${plusJakartaSans.variable} test-theme`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -24,6 +24,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
@@ -38,7 +39,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".reference-files/**/*.ts",
-    "types"
+    "types",
+    ".reference-files/playground-page-old.tsx"
   ],
   "exclude": ["node_modules"]
 }

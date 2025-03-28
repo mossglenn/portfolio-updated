@@ -63,3 +63,8 @@ export interface GradientTextProps {
   variant: 'ochre' | 'slate' | 'sage' | 'warm-dark' | 'light-wash'
   className?: string
 }
+
+export interface ToggleState {
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}

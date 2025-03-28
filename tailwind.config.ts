@@ -20,166 +20,97 @@ const config = {
       },
     },
     extend: {
+      /* === Colors (from CSS variables) === */
       colors: {
+        /* Semantic Backgrounds */
+        background: 'hsl(var(--background))',
+        'background-alt': 'hsl(var(--background-alt))',
+        card: 'hsl(var(--card))',
+        'card-alt': 'hsl(var(--card-alt))',
+
+        /* Text / Foreground */
+        foreground: 'hsl(var(--foreground))',
+        'foreground-muted': 'hsl(var(--foreground-muted))',
+        'foreground-light': 'hsl(var(--foreground-light))',
+        'foreground-dark': 'hsl(var(--foreground-dark))',
+
+        /* Brand */
+        brand: 'hsl(var(--brand))',
+        'brand-light': 'hsl(var(--brand-light))',
+        'brand-dark': 'hsl(var(--brand-dark))',
+        'brand-darker': 'hsl(var(--brand-darker))',
+
+        /* Accent */
+        accent: 'hsl(var(--accent))',
+        'accent-light': 'hsl(var(--accent-light))',
+        'accent-dark': 'hsl(var(--accent-dark))',
+
+        /* Supporting / Secondary */
+        secondary: 'hsl(var(--secondary))',
+        'secondary-light': 'hsl(var(--secondary-light))',
+
+        /* Neutral / Muted */
+        neutral: 'hsl(var(--neutral))',
+        muted: 'hsl(var(--muted))',
+        'muted-dark': 'hsl(var(--muted-dark))',
+
+        /* UI Tokens */
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-          hover: 'hsl(var(--primary-hover, var(--primary)))',
-          light: 'hsl(var(--primary-light, var(--primary)))',
-          dark: 'hsl(var(--primary-dark, var(--primary)))',
-          muted: 'hsl(var(--primary-muted, var(--primary) / 0.6))',
-          alternative: 'hsl(var(--primary-alternative))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-          hover: 'hsl(var(--secondary-hover, var(--secondary)))',
-          light: 'hsl(var(--secondary-light, var(--secondary)))',
-          dark: 'hsl(var(--secondary-dark, var(--secondary)))',
-          muted: 'hsl(var(--secondary-muted, var(--secondary) / 0.6))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-          hover: 'hsl(var(--accent-hover, var(--accent)))',
-          light: 'hsl(var(--accent-light, var(--accent)))',
-          dark: 'hsl(var(--accent-dark, var(--accent)))',
-          muted: 'hsl(var(--accent-muted, var(--accent) / 0.6))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        ochre: {
-          '50': 'hsl(var(--ochre-50))',
-          '100': 'hsl(var(--ochre-100))',
-          '200': 'hsl(var(--ochre-200))',
-          '300': 'hsl(var(--ochre-300))',
-          '400': 'hsl(var(--ochre-400))',
-          '500': 'hsl(var(--ochre-500))',
-          '600': 'hsl(var(--ochre-600))',
-          '700': 'hsl(var(--ochre-700))',
-          '800': 'hsl(var(--ochre-800))',
-          '900': 'hsl(var(--ochre-900))',
-          '950': 'hsl(var(--ochre-950))',
-        },
-        slate: {
-          '50': 'hsl(var(--slate-50))',
-          '100': 'hsl(var(--slate-100))',
-          '200': 'hsl(var(--slate-200))',
-          '300': 'hsl(var(--slate-300))',
-          '400': 'hsl(var(--slate-400))',
-          '500': 'hsl(var(--slate-500))',
-          '600': 'hsl(var(--slate-600))',
-          '700': 'hsl(var(--slate-700))',
-          '800': 'hsl(var(--slate-800))',
-          '900': 'hsl(var(--slate-900))',
-          '950': 'hsl(var(--slate-950))',
-        },
-        sage: {
-          '50': 'hsl(var(--sage-50))',
-          '100': 'hsl(var(--sage-100))',
-          '200': 'hsl(var(--sage-200))',
-          '300': 'hsl(var(--sage-300))',
-          '400': 'hsl(var(--sage-400))',
-          '500': 'hsl(var(--sage-500))',
-          '600': 'hsl(var(--sage-600))',
-          '700': 'hsl(var(--sage-700))',
-          '800': 'hsl(var(--sage-800))',
-          '900': 'hsl(var(--sage-900))',
-          '950': 'hsl(var(--sage-950))',
-        },
-        sand: {
-          '50': 'hsl(var(--sand-50))',
-          '100': 'hsl(var(--sand-100))',
-          '200': 'hsl(var(--sand-200))',
-          '300': 'hsl(var(--sand-300))',
-          '400': 'hsl(var(--sand-400))',
-          '500': 'hsl(var(--sand-500))',
-          '600': 'hsl(var(--sand-600))',
-          '700': 'hsl(var(--sand-700))',
-          '800': 'hsl(var(--sand-800))',
-          '900': 'hsl(var(--sand-900))',
-          '950': 'hsl(var(--sand-950))',
-        },
-        'soft-sand': {
-          DEFAULT: 'hsl(var(--soft-sand, var(--sand-50)))',
-          dark: 'hsl(var(--soft-sand-dark, var(--sand-100)))',
-          muted: 'hsl(var(--soft-sand-muted, var(--sand-50) / 0.7))',
-        },
-        'foundation-black': {
-          DEFAULT: 'hsl(var(--foundation-black, var(--carbon-950)))',
-          light: 'hsl(var(--foundation-black-light, var(--carbon-800)))',
-          muted: 'hsl(var(--foundation-black-muted, var(--carbon-950) / 0.5))',
-        },
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
+
+        /* Popover & Error */
+        popover: 'hsl(var(--popover))',
+        'popover-foreground': 'hsl(var(--popover-foreground))',
+        destructive: 'hsl(var(--destructive))',
+        'destructive-foreground': 'hsl(var(--destructive-foreground))',
+
+        /* Additional Gradient Tokens */
+        sage: 'hsl(var(--sage))',
+        sky: 'hsl(var(--sky))',
+        'slate-light': 'hsl(var(--slate-light))',
+        pink: 'hsl(var(--pink))',
+        lavender: 'hsl(var(--lavender))',
+        'lavender-light': 'hsl(var(--lavender-light))',
       },
+
       backgroundImage: {
-        'gradient-ochre':
-          'linear-gradient(to right, var(--ochre-500), var(--ochre-400), var(--ochre-200))',
-        'gradient-slate':
-          'linear-gradient(to right, var(--slate-700), var(--slate-600), var(--slate-400))',
-        'gradient-sage':
-          'linear-gradient(to right, var(--sage-400), var(--sage-300), var(--sage-200))',
-        'gradient-warm-dark':
-          'linear-gradient(to right, var(--carbon-950), var(--carbon-800), var(--slate-700))',
-        'gradient-light-wash':
-          'linear-gradient(to right, var(--sand-50), var(--sand-100), var(--sand-200))',
+        /* === UI Gradient Themes === */
+
+        'gradient-purple-amber': 'linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)))',
+        'gradient-dark-light':
+          'linear-gradient(to right, hsl(var(--background)), hsl(var(--slate-light)))',
+        'gradient-amber-sage': 'linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)))',
+        'gradient-ochre-sage': 'linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)))', // same sage token reused
+        'gradient-muted-purple-blue':
+          'linear-gradient(to right, hsl(var(--brand)), hsl(var(--sky)))',
+        'gradient-slate-sky': 'linear-gradient(to right, hsl(var(--background)), hsl(var(--sky)))',
+        'gradient-pink-lavender':
+          'linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)))',
+        'gradient-purple-lavender':
+          'linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)))',
       },
+
+      /* === Border Radius === */
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+
+      /* === Animations === */
       keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+        accordionDown: {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+        accordionUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
         slideInRight: {
-          '0%': {
-            opacity: '0',
-            transform: 'translateX(2rem)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateX(0)',
-          },
+          '0%': { opacity: '0', transform: 'translateX(2rem)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideOutFromLeft: {
           '0%': { transform: 'translateX(-10rem)', opacity: '0' },
@@ -188,28 +119,13 @@ const config = {
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'slide-in-right': 'slideInRight 0.4s ease-out both',
-        'slide-out-left': 'slideOutFromLeft 900ms ease-out forwards',
+        accordionDown: 'accordionDown 0.2s ease-out',
+        accordionUp: 'accordionUp 0.2s ease-out',
+        slideInRight: 'slideInRight 0.4s ease-out both',
+        slideOutLeft: 'slideOutFromLeft 900ms ease-out forwards',
       },
-      gradientColorStops: {
-        ochre: {
-          from: '#d6a04f',
-          via: '#f0b861',
-          to: '#ffe3ac',
-        },
-        slate: {
-          from: '#3a4a64',
-          via: '#50627e',
-          to: '#8494ac',
-        },
-        sage: {
-          from: '#99c2a2',
-          via: '#b7d3b7',
-          to: '#d6e6cc',
-        },
-      },
+
+      /* === Skew === */
       skew: {
         '20': '20deg',
         '-20': '-20deg',

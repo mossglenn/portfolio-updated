@@ -1,0 +1,68 @@
+
+/* OLD color variables */
+:root {
+--color-brand: hsl(267, 39%, 48%);       /* #734CA9 */
+--color-light: hsl(288, 50%, 78%);       /* #D1A7E4 */
+--color-dark: hsl(253, 19%, 25%);        /* #39344B */
+--color-neutral: hsl(258, 22%, 76%);     /* #BEB8CD */
+--color-dark-text: hsl(267, 39%, 39%);   /* #5C3C87 */
+--color-accent: hsl(35, 76%, 60%);       /* #E3A34E */
+--color-light-text: hsl(0, 0%, 100%);    /* #FFFFFF */
+--color-muted-text: hsl(267, 39%, 39%);  /* #5C3C87 */
+--color-background: hsl(237, 19%, 20%);  /* #292A3E */
+--color-card: hsl(214, 15%, 25%);        /* #343A47 */
+
+
+  /* Color Scales based on Brand Color */
+--color-brand-light: hsl(267, 39%, 61%);   /* #8C74C2 */
+--color-brand-dark: hsl(267, 39%, 39%);    /* #5C3C87 */
+--color-brand-darker: hsl(267, 42%, 30%);  /* #4A2D6B */
+
+--color-accent-light: hsl(35, 79%, 68%);   /* #F0B36D */
+--color-accent-dark: hsl(25, 65%, 46%);    /* #C26A2A */
+
+--color-muted-light: hsl(310, 18%, 37%);   /* #6A4D72 */
+--color-muted-dark: hsl(310, 28%, 25%);    /* #4A2D52 */
+
+
+  /* Previous Theme css variables with the new colors */
+
+  /* Background and Foreground */
+  --background: hsl(237, 18%, 14%); /* Deep slate blue */
+  --foreground: hsl(43, 50%, 95%); /* Warm sand-like white */
+
+  /* Card Styles */
+  --card: hsl(216, 30%, 20%); /* Muted brand color for cards */
+  --card-foreground: hsl(43, 50%, 95%); /* Same as foreground for card text */
+  
+  /* Popover Styles */
+  --popover: hsl(43, 30%, 90%); /* Lighter version of background */
+  --popover-foreground: hsl(220, 10%, 8%); /* Darker for popover text */
+
+  /* Primary Colors */
+  --primary: #734CA9; /* Brand color */
+  --primary-foreground: hsl(220, 10%, 8%); /* Dark background for primary text */
+  --primary-alternative: hsl(244, 52.4%, 32.9%); /* Alternate color for primary use */
+
+  /* Secondary Colors */
+  --secondary: #5A3E87; /* Muted purple */
+  --secondary-foreground: hsl(218, 29.4%, 87%); /* Light text for secondary elements */
+
+  /* Accent Colors */
+  --accent: #E3A34E; /* Amber accent */
+  --accent-foreground: hsl(220, 10%, 8%); /* Darker text for accent items */
+  
+  /* Muted Colors */
+  --muted: #BEB8CD; /* Muted purple */
+  --muted-foreground: hsl(219, 27%, 30%); /* Darker text for muted sections */
+  
+  /* Destructive Colors */
+  --destructive: hsl(0, 84%, 60%); /* Red for destructive actions */
+  --destructive-foreground: hsl(0, 0%, 98%); /* White text for destructive */
+  
+  /* Border, Input, Ring */
+  --border: hsl(43, 20%, 75%); /* Muted border color */
+  --input: hsl(43, 20%, 85%); /* Soft input background */
+  --ring: hsl(38, 70%, 55%); /* Brand color ring for focus states */
+
+}
