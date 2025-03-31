@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card_OLD'
+import { Card, CardContent } from '@/components/ui/card'
 import { ReactElement } from 'react'
 
 export function ToolstackSection(): ReactElement {

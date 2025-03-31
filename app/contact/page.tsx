@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/contact-form'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card_OLD'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { ReactElement } from 'react'
 
@@ -18,7 +18,7 @@ export default function ContactPage(): ReactElement {
           <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
             Get in Touch
           </h1>
-          <p className="max-w-2xl text-xl text-muted-foreground">
+          <p className="text-muted-foreground max-w-2xl text-xl">
             Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function ContactPage(): ReactElement {
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Mail className="size-6 text-primary" />
+              <Mail className="text-primary size-6" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -36,7 +36,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Phone className="size-6 text-primary" />
+              <Phone className="text-primary size-6" />
               <CardTitle>Phone</CardTitle>
             </CardHeader>
             <CardContent>
@@ -46,7 +46,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="size-6 text-primary" />
+              <MapPin className="text-primary size-6" />
               <CardTitle>Location</CardTitle>
             </CardHeader>
             <CardContent>
@@ -71,7 +71,7 @@ export default function ContactPage(): ReactElement {
           <div className="space-y-6">
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Let&apos;s Collaborate</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="text-muted-foreground space-y-4">
                 <p>
                   I&apos;m always interested in new projects and collaborations. Whether you have a
                   specific project in mind or just want to explore possibilities, I&apos;d love to

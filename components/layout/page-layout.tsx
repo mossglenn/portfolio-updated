@@ -13,7 +13,7 @@ export function PageLayout({ children, header, footer = true }: PageLayoutProps)
   return (
     <div className="min-h-screen">
       {header || <Navigation />}
-      <main className="pt-16">{children}</main>
+      <main className="pt-28">{children}</main>
       {footer && <Footer />}
     </div>
   )

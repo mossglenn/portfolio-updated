@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Mail, Linkedin, Github } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-import { Button } from '@/components/ui/button_OLD'
+import { Button } from '@/components/ui/button'
 import { PageLayout } from '@/components/layout/page-layout'
 import { Container } from '@/components/layout/container'
 import { Section } from '@/components/layout/section'
@@ -25,7 +25,7 @@ export default function AboutPage(): ReactElement {
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
                 About <GradientText variant="ochre">Amos Glenn</GradientText>
               </h1>
-              <p className="mb-8 text-xl text-muted-foreground">
+              <p className="text-muted-foreground mb-8 text-xl">
                 I&apos;m a learning design professional with over a decade of experience creating
                 effective learning solutions that drive meaningful change in organizations. My
                 approach combines deep instructional design expertise with a focus on business
@@ -74,11 +74,11 @@ export default function AboutPage(): ReactElement {
                 <ul className="space-y-4">
                   <li>
                     <div className="font-medium">M.S. Instructional Design & Technology</div>
-                    <div className="text-sm text-muted-foreground">Stanford University, 2012</div>
+                    <div className="text-muted-foreground text-sm">Stanford University, 2012</div>
                   </li>
                   <li>
                     <div className="font-medium">B.A. Psychology</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-muted-foreground text-sm">
                       University of California, Berkeley, 2008
                     </div>
                   </li>
@@ -86,7 +86,7 @@ export default function AboutPage(): ReactElement {
                     <div className="font-medium">
                       Certified Professional in Learning & Performance
                     </div>
-                    <div className="text-sm text-muted-foreground">ATD, 2014</div>
+                    <div className="text-muted-foreground text-sm">ATD, 2014</div>
                   </li>
                 </ul>
               </div>
@@ -96,21 +96,21 @@ export default function AboutPage(): ReactElement {
                 <div className="flex flex-col gap-4">
                   <Link
                     href="mailto:your.email@example.com"
-                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
                   >
                     <Mail className="size-5" />
                     <span>your.email@example.com</span>
                   </Link>
                   <Link
                     href="https://linkedin.com/in/yourprofile"
-                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
                   >
                     <Linkedin className="size-5" />
                     <span>linkedin.com/in/yourprofile</span>
                   </Link>
                   <Link
                     href="https://github.com/yourusername"
-                    className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
                   >
                     <Github className="size-5" />
                     <span>github.com/yourusername</span>
@@ -128,35 +128,35 @@ export default function AboutPage(): ReactElement {
             <div className="space-y-4">
               {/* Only refined gradients */}
               <p className="text-2xl font-bold">
-                <span className="mr-4 font-mono text-sm text-muted-foreground">
+                <span className="text-muted-foreground mr-4 font-mono text-sm">
                   .gradient-text-ochre
                 </span>
                 I <GradientText variant="ochre">design solutions</GradientText> that make a
                 difference.
               </p>
               <p className="text-2xl font-bold">
-                <span className="mr-4 font-mono text-sm text-muted-foreground">
+                <span className="text-muted-foreground mr-4 font-mono text-sm">
                   .gradient-text-slate
                 </span>
                 I <GradientText variant="slate">design solutions</GradientText> that make a
                 difference.
               </p>
               <p className="text-2xl font-bold">
-                <span className="mr-4 font-mono text-sm text-muted-foreground">
+                <span className="text-muted-foreground mr-4 font-mono text-sm">
                   .gradient-text-sage
                 </span>
                 I <GradientText variant="sage">design solutions</GradientText> that make a
                 difference.
               </p>
               <p className="text-2xl font-bold">
-                <span className="mr-4 font-mono text-sm text-muted-foreground">
+                <span className="text-muted-foreground mr-4 font-mono text-sm">
                   .gradient-text-warm-dark
                 </span>
                 I <GradientText variant="warm-dark">design solutions</GradientText> that make a
                 difference.
               </p>
               <p className="text-2xl font-bold">
-                <span className="mr-4 font-mono text-sm text-muted-foreground">
+                <span className="text-muted-foreground mr-4 font-mono text-sm">
                   .gradient-text-light-wash
                 </span>
                 I <GradientText variant="light-wash">design solutions</GradientText> that make a
@@ -171,13 +171,13 @@ export default function AboutPage(): ReactElement {
           <div className="card mb-12">
             <div className="text-center">
               <h2 className="mb-4 text-2xl font-bold md:text-3xl">Want to work together?</h2>
-              <p className="mb-8 text-lg text-muted-foreground">
+              <p className="text-muted-foreground mb-8 text-lg">
                 Let&apos;s discuss how I can help your organization create{' '}
                 <GradientText variant="slate">effective</GradientText> learning experiences.
               </p>
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                className="text-primary-foreground bg-primary hover:bg-primary/90"
                 asChild
               >
                 <Link href="/contact">

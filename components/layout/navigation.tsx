@@ -19,23 +19,21 @@ export default function Navigation(): ReactElement {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 min-h-[72px] transition-all duration-300 ${
         scrolled ? 'bg-background/90 py-3 backdrop-blur-md' : 'py-6'
       }`}
     >
       <Container>
         <div className="flex flex-col gap-1">
           <nav className="mx-4 flex items-center justify-between">
-            <div className="text-primary flex items-center">
+            <div className="flex flex-wrap items-center">
               <LogoBadge backgroundColorClass="bg-secondary" />
               <div
-                className="animate-slide-out-left -ml-1 hidden md:flex"
+                className="animate-slide-out-from-left -ml-3 flex"
                 style={{ animationDelay: '300ms' }}
               >
-                <div className="w-max -skew-x-20 rounded-md bg-card px-4 py-1 text-sm shadow-md md:inline-block">
-                  <div className="text-card-foreground/70 skew-x-20">
-                    Learning Experience Architect
-                  </div>
+                <div className="bg-slate-light inline-block w-max -skew-x-20 rounded-md px-4 py-1 text-sm shadow-md">
+                  <div className="skew-x-20 text-foreground">Learning Experience Architect</div>
                 </div>
               </div>
             </div>
@@ -45,11 +43,6 @@ export default function Navigation(): ReactElement {
               <NavigationMobile />
             </div>
           </nav>
-          <div className="flex align-middle">
-            <div className="inline-block w-max -skew-x-20 rounded-md bg-card px-4 py-1 text-xs shadow-md md:hidden">
-              <div className="text-card-foreground/70 skew-x-20">Learning Experience Architect</div>
-            </div>
-          </div>
         </div>
       </Container>
     </header>

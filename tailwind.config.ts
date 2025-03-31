@@ -27,18 +27,25 @@ const config = {
         'background-alt': 'hsl(var(--background-alt))',
         card: 'hsl(var(--card))',
         'card-alt': 'hsl(var(--card-alt))',
+        'card-background': 'hsl(var(--card-background))',
 
         /* Text / Foreground */
         foreground: 'hsl(var(--foreground))',
         'foreground-muted': 'hsl(var(--foreground-muted))',
         'foreground-light': 'hsl(var(--foreground-light))',
         'foreground-dark': 'hsl(var(--foreground-dark))',
+        'foreground-lavender': 'hsl(var(--foreground-lavender))',
 
         /* Brand */
         brand: 'hsl(var(--brand))',
         'brand-light': 'hsl(var(--brand-light))',
         'brand-dark': 'hsl(var(--brand-dark))',
         'brand-darker': 'hsl(var(--brand-darker))',
+        /* Primary Duplicated Brand for Convienience */
+        primary: 'hsl(var(--brand))',
+        'primary-light': 'hsl(var(--brand-light))',
+        'primary-dark': 'hsl(var(--brand-dark))',
+        'primary-darker': 'hsl(var(--brand-darker))',
 
         /* Accent */
         accent: 'hsl(var(--accent))',
@@ -76,26 +83,16 @@ const config = {
 
       backgroundImage: {
         /* === UI Gradient Themes === */
-
-        'gradient-purple-amber': 'linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)))',
-        'gradient-dark-light':
-          'linear-gradient(to right, hsl(var(--background)), hsl(var(--slate-light)))',
-        'gradient-amber-sage': 'linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)))',
-        'gradient-ochre-sage': 'linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)))', // same sage token reused
-        'gradient-muted-purple-blue':
-          'linear-gradient(to right, hsl(var(--brand)), hsl(var(--sky)))',
-        'gradient-slate-sky': 'linear-gradient(to right, hsl(var(--background)), hsl(var(--sky)))',
-        'gradient-pink-lavender':
-          'linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)))',
-        'gradient-purple-lavender':
-          'linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)))',
-      },
-
-      /* === Border Radius === */
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        'gradient-brand': 'var(--gradient-brand)',
+        'gradient-muted': 'var(--gradient-muted)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-dark': 'var(--gradient-dark)',
+        'gradient-slate-sky': 'var(--gradient-slate-sky)',
+        'gradient-earth': 'var(--gradient-earth)',
+        'gradient-playful': 'var(--gradient-playful)',
+        'gradient-lavender': 'var(--gradient-lavender)',
+        'gradient-accent-light': 'var(--gradient-accent-light)',
+        'gradient-accent-light-vertical': 'var(--gradient-accent-light-vertical)',
       },
 
       /* === Animations === */
@@ -121,8 +118,8 @@ const config = {
       animation: {
         accordionDown: 'accordionDown 0.2s ease-out',
         accordionUp: 'accordionUp 0.2s ease-out',
-        slideInRight: 'slideInRight 0.4s ease-out both',
-        slideOutLeft: 'slideOutFromLeft 900ms ease-out forwards',
+        'slide-in-from-right': 'slideInRight 0.4s ease-out both',
+        'slide-out-from-left': 'slideOutFromLeft 900ms ease-out forwards',
       },
 
       /* === Skew === */

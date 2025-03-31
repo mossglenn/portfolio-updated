@@ -28,7 +28,7 @@ export function LogoBadge({
       <Link
         href={href}
         className={cn(
-          'relative z-10 inline-flex items-center justify-center rounded-lg px-4 py-2 shadow-md',
+          'relative z-10 mr-2 inline-flex items-center justify-center rounded-md px-4 py-2 shadow-md',
           negSkew,
           backgroundColorClass
         )}
@@ -37,7 +37,7 @@ export function LogoBadge({
           className={cn(
             'inline-block text-lg font-extrabold',
             skew,
-            'text-accent' // feel free to make this a prop too
+            'text-foreground hover:text-accent-light' // feel free to make this a prop too
           )}
         >
           {label}

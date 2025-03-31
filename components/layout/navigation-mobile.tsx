@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button_OLD'
+import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { SkewedNavLink } from '@/components/ui/skewed-nav-link'
 import { siteConfig } from '@/config/site'
@@ -12,9 +12,9 @@ const NavigationMobile = (): React.ReactElement => {
     <div className="md:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <div className="mr-1 w-max -skew-x-20 rounded-md border-2 border-secondary bg-card pl-1 text-sm shadow-md">
+          <div className="mr-1 -skew-x-20 rounded-md bg-card pl-1 shadow-md hover:bg-accent hover:text-card">
             <div className="skew-x-20">
-              <Button variant="ghost" size="sm" className="mr-2 text-accent">
+              <Button variant="none" size="sm" className="mr-2">
                 <Menu strokeWidth={3} className="ml-1" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
@@ -31,7 +31,7 @@ const NavigationMobile = (): React.ReactElement => {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="animate-slide-in-right"
+                className="animate-slide-in-from-right"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.title}

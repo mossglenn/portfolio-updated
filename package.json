@@ -15,14 +15,16 @@
     "docs:project": "node scripts/document-project.js",
     "docs:v0": "node scripts/document-project-single.js",
     "knip": "knip",
-    "add": "npx shadcn@2.3.0 add"
+    "add:component": "npx shadcn@2.3.0 add",
+    "generate:colors": "python3 scripts/generate-color-reference.py"
   },
   "scriptDescriptions": {
     "docs:structure": "Generate a list of all files in the project (excluding node_modules and .git) and save it to .reference-files/project-structure.txt",
     "docs:gen": "Generate documentation for the project and save it to .reference-files/docs",
     "docs:project": "creates a comprehensive set of documentation in `.reference-files/project-docs/`for v0",
     "docs:v0": "creates a single compregensive file for v0",
-    "add": "follow the command with the name of a shadcn/ui component to add it to the project"
+    "add": "follow the command with the name of a shadcn/ui component to add it to the project",
+    "generate:colors": "generate a new color reference file based on current :root variables"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",

@@ -11,7 +11,7 @@ interface SectionProps {
 
 export function Section({ children, className, title, description }: SectionProps): ReactElement {
   return (
-    <section className={cn('py-12', className)}>
+    <section className={cn('py-6', className)}>
       {(title || description) && (
         <div className="mb-8">
           {title && <h2 className="text-2xl font-bold">{title}</h2>}

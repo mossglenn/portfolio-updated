@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button_OLD'
-import { Card, CardContent } from '@/components/ui/card_OLD'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 import { ReactElement } from 'react'
 
 export function CtaSection(): ReactElement {
@@ -13,7 +13,7 @@ export function CtaSection(): ReactElement {
             Ready to design learning that makes a{' '}
             <span className="gradient-text-slate">difference</span>?
           </h2>
-          <p className="mb-8 text-lg text-muted-foreground">
+          <p className="text-muted-foreground mb-8 text-lg">
             Let&apos;s discuss how I can help your organization create{' '}
             <span className="gradient-text-slate">effective</span> learning experiences.
           </p>

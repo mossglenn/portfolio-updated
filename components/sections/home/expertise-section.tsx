@@ -1,5 +1,5 @@
 import { Target, Lightbulb, Users, CheckCircle } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card_OLD'
+import { Card, CardContent } from '@/components/ui/card'
 import { ReactElement } from 'react'
 
 export function ExpertiseSection(): ReactElement {
@@ -11,19 +11,19 @@ export function ExpertiseSection(): ReactElement {
         </h2>
         <ul className="space-y-3">
           <li className="flex items-start gap-3">
-            <Target className="mt-0.5 size-5 text-primary" />
+            <Target className="text-primary mt-0.5 size-5" />
             <div>
               <div className="font-medium">Needs Analysis</div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-muted-foreground text-sm">
                 Identifying the real problems behind learning requests
               </div>
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 text-primary" />
+            <Lightbulb className="text-primary mt-0.5 size-5" />
             <div>
               <div className="font-medium">Learning Design</div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-muted-foreground text-sm">
                 Creating engaging, effective learning experiences
               </div>
             </div>
@@ -32,16 +32,16 @@ export function ExpertiseSection(): ReactElement {
             <Users className="mt-0.5 size-5 text-secondary" />
             <div>
               <div className="font-medium">Team Leadership</div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-muted-foreground text-sm">
                 Guiding cross-functional teams to deliver results
               </div>
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <CheckCircle className="mt-0.5 size-5 text-primary" />
+            <CheckCircle className="text-primary mt-0.5 size-5" />
             <div>
               <div className="font-medium">Impact Measurement</div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-muted-foreground text-sm">
                 Evaluating learning effectiveness and ROI
               </div>
             </div>

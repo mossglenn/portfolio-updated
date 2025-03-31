@@ -20,11 +20,13 @@
   --accent: 35, 76%, 60%;
   --accent-light: 35, 79%, 68%;
   --accent-dark: 25, 65%, 46%;
+  --accent-softer: 46 68% 72%;
 
   /* === Backgrounds & Cards === */
   --background: 237, 19%, 20%;
   --background-alt: 237, 18%, 14%;;
-  --card: 214, 15%, 25%;
+  --card: 240 20% 20%; /* original 214, 15%, 25%; */
+  --card-light: 240 20% 32%;
   --card-alt: 216, 30%, 20%;
 
   /* === Foreground/Text === */
@@ -32,6 +34,7 @@
   --foreground-muted: 267, 39%, 39%;
   --foreground-light: 0, 0%, 100%;
   --foreground-dark: 220, 10%, 8%;
+  --foreground-lavender:270 36% 92%;
 
   /* === Neutral / Muted === */
   --neutral: 258, 22%, 76%;
@@ -69,6 +72,12 @@
   --gradient-playful: linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)));
   --gradient-lavender: linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)));
 
+  --gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(var(--accent-softer))));
+  --gradient-accent-light-vertical: linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--accent-softer)));
+  --gradient-accent-lighter-left: linear-gradient(to right, hsl(var(--accent-softer)), hsl(var(--accent)));
+
+  --gradient-card-background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)));
+
 }
 
 /* =========================== */
@@ -76,8 +85,7 @@
 /* =========================== */
 .theme-test {
   /* Test Theme */
-  --background: 43, 50%, 95%; /* Light Background */
-  --foreground: 220, 10%, 8%; /* Dark Text */
+--card-background:267.1, 52.54%, 11.57%%;
 }
 .theme-experimental {
   /* Experimental Theme */
@@ -124,61 +132,122 @@
   .bg-gradient-lavender {
     background-image: var(--gradient-lavender);
   }
-    .text-gradient-brand {
+  .bg-gradient-card-background {
+    background-image: var(--gradient-card-background);
+  }
+  .text-gradient-brand {
     background-image: var(--gradient-brand);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-muted {
     background-image: var(--gradient-muted);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-secondary {
     background-image: var(--gradient-secondary);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-dark {
     background-image: var(--gradient-dark);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-slate-sky {
     background-image: var(--gradient-slate-sky);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-earth {
     background-image: var(--gradient-earth);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-playful {
     background-image: var(--gradient-playful);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-
   .text-gradient-lavender {
     background-image: var(--gradient-lavender);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  .text-gradient-accent-light {
+    background-image: var(--gradient-accent-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-accent-light-vertical{
+    background-image: var(--gradient-accent-light-vertical);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+   .text-gradient-accent-lighter-left{
+    background-image: var(--gradient-accent-lighter-left);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-outline {
+text-shadow:
+      2px 2px 1px hsl(var(--brand)),
+      -2px -2px 1px hsl(var(--brand)),
+      2px -2px 1px hsl(var(--brand)),
+      -2px 2px 1px hsl(var(--brand));
+
+  }
+
+.speech-bubble {
+  position: relative;
+  display: inline-block;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-style: solid;
+  border-width: 0 16px 16px 0;
+  border-color: transparent hsl(var(--slate-light)) transparent transparent;
+  translate: -100% calc(-50% - 0.4px);
+  transform:  scaleX(1.5);
+  transform-origin: right;
+}
+
+
+  /* === Increase Inherited Font size === */
+  .text-inherit-115 {
+    font-size: 1.15em;
+  }
+
+  .text-inherit-200 {
+    font-size: 2em;
+  }
+
+  /* === Animate Background Gradient === */
+    .animated-gradient {
+    background-size: 200% 200%;
+    transition: background-position 0.5s ease;
+  }
+
+  .animated-gradient-hover:hover {
+    background-position: right center;
+  }
+
   @keyframes gradient-pan {
     0% {
       background-position: 0% 50%;

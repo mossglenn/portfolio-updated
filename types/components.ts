@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
 import type { VariantProps } from 'class-variance-authority'
-import type { buttonVariants } from '@/components/ui/button_OLD'
+import type { buttonVariants } from '@/components/ui/button'
 
 /**
  * Common component prop types

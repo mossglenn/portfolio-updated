@@ -23,12 +23,12 @@ export function SkewedNavLink({
   const pathname = usePathname()
   const isActive = pathname === href
   return (
-    <div className={cn('w-full', className)} style={style}>
+    <div className={cn('flex w-full grow justify-evenly', className)} style={style}>
       <div
         className={cn(
-          '-skew-x-20 rounded-md bg-card transition-colors duration-200',
-          !isActive && 'hover:bg-background',
-          isActive && 'bg-primary text-secondary'
+          'flex grow -skew-x-20 justify-center rounded-md bg-card transition-colors duration-200',
+          !isActive && 'hover:bg-accent',
+          isActive && 'bg-gradient-muted'
         )}
       >
         <Link
@@ -36,7 +36,7 @@ export function SkewedNavLink({
           onClick={onClick}
           className={cn(
             'inline-block skew-x-20 px-4 py-2 text-sm font-bold transition-colors duration-200',
-            isActive ? 'text-secondary' : 'text-foreground/60 hover:text-foreground'
+            isActive ? 'text-foreground-light' : 'text-foreground hover:text-card'
           )}
         >
           {children}
