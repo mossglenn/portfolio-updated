@@ -1,12 +1,13 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { SkewedBox } from '@/components/ui/skew-box'
+import { SkewedBox } from '@/components/ui/skewed-box'
 import { useSkewOffset } from '@/hooks/use-skew-offset'
 import { ArrowRight, Bot, Brain, Gamepad2, Timer } from 'lucide-react'
 import { ReactElement } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SkewTag } from '@/components/ui/skew-tag'
+import { motion } from 'framer-motion'
 
 export function ProjectTest(): ReactElement {
   const { ref, offset, mounted, width } = useSkewOffset()
@@ -19,79 +20,88 @@ export function ProjectTest(): ReactElement {
   return (
     <Card className="@container">
       <CardContent className="p-6">
-        <div
-          className="flex flex-col"
-          style={
-            mounted
-              ? ({ '--offset': `${offset}px`, '--box-width': `${width}px` } as React.CSSProperties)
-              : ({ '--offset': '23px', '--box-width': '283px' } as React.CSSProperties)
-          }
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <SkewedBox
-            className="ml-offset w-max rounded-b-none rounded-t-md bg-accent"
-            innerClassName=" px-2 font-bold text-background"
-          >
-            F<span className="text-inherit-075">EATURED </span>P
-            <span className="text-inherit-075">ROJECT</span>
-          </SkewedBox>
-          <SkewedBox className="pl-offset pr-offset w-max max-w-full bg-brand" ref={ref}>
-            <h1 className="font-display text-2xl font-bold">From Complex to Efficient</h1>
-          </SkewedBox>
           <div
-            className="mr-offset project-title-card mb-8 ml-[calc(var(--offset)-var(--offset)/2)] inline-block whitespace-normal rounded-b-md bg-slate-light px-4 py-2"
-            style={{
-              maxWidth: 'calc(var(--box-width) - var(--caption-max-adjust))',
-            }}
+            className="flex flex-col"
+            style={
+              mounted
+                ? ({
+                    '--offset': `${offset}px`,
+                    '--box-width': `${width}px`,
+                  } as React.CSSProperties)
+                : ({ '--offset': '23px', '--box-width': '283px' } as React.CSSProperties)
+            }
           >
-            <p className="text-accent">Gamified and Personalized Statistics Tutor</p>
+            <SkewedBox
+              className="ml-offset w-max rounded-b-none rounded-t-md bg-accent"
+              innerClassName=" px-2 font-bold text-background"
+            >
+              F<span className="text-inherit-075">EATURED </span>P
+              <span className="text-inherit-075">ROJECT</span>
+            </SkewedBox>
+            <SkewedBox className="pl-offset pr-offset w-max max-w-full bg-brand" ref={ref}>
+              <h1 className="font-display text-2xl font-bold">From Complex to Efficient</h1>
+            </SkewedBox>
+            <div
+              className="mr-offset project-title-card mb-8 ml-[calc(var(--offset)-var(--offset)/2)] inline-block whitespace-normal rounded-b-md bg-slate-light px-4 py-2"
+              style={{
+                maxWidth: 'calc(var(--box-width) - var(--caption-max-adjust))',
+              }}
+            >
+              <p className="text-accent">Gamified and Personalized Statistics Tutor</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
-            Instead of digitizing the content, <br className="hidden" /> I{' '}
-            <span className="text-gradient-playful">reimagined the learning experience.</span>
-          </p>
-        </div>
-
-        <div className="ml-offset mr-offset">
-          <p className="mb-4">
-            They asked for a digital version of their paper-based content. I delivered a gamified,
-            adaptive tutor that interactively corrected misconceptions — doing what static content
-            never could.
-          </p>
           <div>
-            <Link href="/work">
-              <Image
-                src="portfolio-images/escape-room-preview.gif"
-                alt="Animation of the Escape Room gamified statistics tutor highlighting a learner misconception."
-                className="rounded-md object-contain py-4 pr-4"
-                width={471}
-                height={353}
-                sizes="(min-width: 768px) 384px, 100vw"
-              />
-            </Link>
+            <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
+              Instead of digitizing the content, <br className="hidden" /> I{' '}
+              <span className="text-gradient-playful">reimagined the learning experience.</span>
+            </p>
           </div>
-          <p>
-            Complex information became easier to learn through real-time feedback and personalized
-            pathways that reinforced understanding and built confidence.
-          </p>
-        </div>
 
-        <div className="my-6 flex flex-wrap gap-2 text-xs font-medium text-foreground">
-          {tags.map(({ label, icon }) => (
-            <SkewTag key={label} icon={icon}>
-              {label}
-            </SkewTag>
-          ))}
-        </div>
+          <div className="ml-offset mr-offset">
+            <p className="mb-4">
+              They asked for a digital version of their paper-based content. I delivered a gamified,
+              adaptive tutor that interactively corrected misconceptions — doing what static content
+              never could.
+            </p>
+            <div>
+              <Link href="/work">
+                <Image
+                  src="portfolio-images/escape-room-preview.gif"
+                  alt="Animation of the Escape Room gamified statistics tutor highlighting a learner misconception."
+                  className="rounded-md object-contain py-4 pr-4"
+                  width={471}
+                  height={353}
+                  sizes="(min-width: 768px) 384px, 100vw"
+                />
+              </Link>
+            </div>
+            <p>
+              Complex information became easier to learn through real-time feedback and personalized
+              pathways that reinforced understanding and built confidence.
+            </p>
+          </div>
 
-        <div className="@sm:flex-row mt-4 flex flex-col justify-center gap-4">
-          <Button size="lg" variant="secondary" className="text-base" asChild>
-            <Link href="/work">
-              Learn More <ArrowRight className="ml-2 size-4" />
-            </Link>
-          </Button>
-        </div>
+          <div className="my-6 flex flex-wrap gap-2 text-xs font-medium text-foreground">
+            {tags.map(({ label, icon }) => (
+              <SkewTag key={label} icon={icon}>
+                {label}
+              </SkewTag>
+            ))}
+          </div>
+
+          <div className="@sm:flex-row mt-4 flex flex-col justify-center gap-4">
+            <Button size="lg" variant="secondary" className="text-base" asChild>
+              <Link href="/work">
+                Learn More <ArrowRight className="ml-2 size-4" />
+              </Link>
+            </Button>
+          </div>
+        </motion.div>
       </CardContent>
     </Card>
   )

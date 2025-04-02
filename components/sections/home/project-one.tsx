@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { SkewedBox } from '@/components/ui/skew-box'
+import { SkewedBox } from '@/components/ui/skewed-box'
 import { ArrowRight, Bot, Brain, Gamepad2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
