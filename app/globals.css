@@ -11,56 +11,56 @@
 @layer base {
 :root {
   /* === Brand === */
-  --brand: 267, 39%, 48%;
-  --brand-light: 267, 39%, 61%;
-  --brand-dark: 267, 39%, 39%;
-  --brand-darker: 267, 42%, 30%;
+  --brand: 267 39% 48%;
+  --brand-light: 267 39% 61%;
+  --brand-dark: 267 39% 39%;
+  --brand-darker: 267 42% 30%;
 
   /* === Accent (Amber) === */
-  --accent: 35, 76%, 60%;
-  --accent-light: 35, 79%, 68%;
-  --accent-dark: 25, 65%, 46%;
+  --accent: 35 76% 60%;
+  --accent-light: 35 79% 68%;
+  --accent-dark: 25 65% 46%;
   --accent-softer: 46 68% 72%;
 
   /* === Backgrounds & Cards === */
-  --background: 237, 19%, 20%;
-  --background-alt: 237, 18%, 14%;;
-  --card: 240 20% 20%; /* original 214, 15%, 25%; */
+  --background: 237 19% 20%;
+  --background-alt: 237 18% 14%;
+  --card: 240 20% 20%; /* original 214 15% 25%; */
   --card-light: 240 20% 32%;
-  --card-alt: 216, 30%, 20%;
+  --card-alt: 216 30% 20%;
 
   /* === Foreground/Text === */
-  --foreground: 43, 50%, 95%;
-  --foreground-muted: 267, 39%, 39%;
-  --foreground-light: 0, 0%, 100%;
-  --foreground-dark: 220, 10%, 8%;
+  --foreground: 43 50% 95%;
+  --foreground-muted: 267 39% 39%;
+  --foreground-light: 0 0% 100%;
+  --foreground-dark: 220 10% 8%;
   --foreground-lavender:270 36% 92%;
 
   /* === Neutral / Muted === */
-  --neutral: 258, 22%, 76%;
-  --muted: 310, 18%, 37%;
-  --muted-dark: 310, 28%, 25%;
+  --neutral: 258 22% 76%;
+  --muted: 310 18% 37%;
+  --muted-dark: 310 28% 25%;
 
   /* === Secondary === */
-  --secondary: 267, 39%, 39%;
-  --secondary-light: 288, 50%, 78%;
+  --secondary: 267 39% 39%;
+  --secondary-light: 288 50% 78%;
 
   /* === Additional Color Tokens for Gradients === */
-  --sage: 125, 18%, 71%;
-  --sky: 195, 42%, 74%;
-  --slate-light: 234, 21%, 27%;
-  --pink: 324, 69%, 79%;
-  --lavender: 256, 100%, 75%;
-  --lavender-light: 270, 36%, 75%;
+  --sage: 125 18% 71%;
+  --sky: 195 42% 74%;
+  --slate-light: 234 21% 27%;
+  --pink: 324 69% 79%;
+  --lavender: 256 100% 75%;
+  --lavender-light: 270 36% 75%;
  
   /* === UI / System === */
-  --popover: 43, 30%, 90%;
-  --popover-foreground: 220, 10%, 8%;
-  --destructive: 0, 84%, 60%;
-  --destructive-foreground: 0, 0%, 98%;
-  --border: 43, 20%, 75%;
-  --input: 43, 20%, 85%;
-  --ring: 38, 70%, 55%;
+  --popover: 43 30% 90%;
+  --popover-foreground: 220 10% 8%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 43 20% 75%;
+  --input: 43 20% 85%;
+  --ring: 38 70% 55%;
 
    /* === Gradient Tokens (All Token-Based) === */
   --gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
@@ -72,13 +72,39 @@
   --gradient-playful: linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)));
   --gradient-lavender: linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)));
 
-  --gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(var(--accent-softer))));
+  --gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(--accent-softer))));
   --gradient-accent-light-vertical: linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--accent-softer)));
   --gradient-accent-lighter-left: linear-gradient(to right, hsl(var(--accent-softer)), hsl(var(--accent)));
 
   --gradient-card-background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)));
 
+ 
+
 }
+
+.project-title-card {
+    --caption-max-adjust: calc(var(--offset) * 3);
+  }
+
+
+
+/* tablet and up */
+@container (min-width: 350px) {
+  .project-title-card {
+    --caption-max-adjust: calc(var(--offset) * 6);
+  }
+}
+
+
+
+@font-face {
+  font-family: 'Gimlet Sans Variable';
+  src: url('/fonts/gimlet/Gimlet_Sans_Variable_Regular.otf') format('opentype');
+  font-weight: 1 999;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
 
 /* =========================== */
 /* ✨ Custom Themes (optional) */
@@ -107,6 +133,22 @@
 /* 📐 Optional Utility Shortcuts */
 /* ========================= */
 @layer utilities {
+  .clip-parallelogram {
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  }
+  .ml-offset {
+    margin-left: var(--offset);
+  }
+  .mr-offset {
+    margin-right: var(--offset);
+  }
+  .pl-offset {
+    padding-left: var(--offset);
+  }
+  .pr-offset {
+    padding-right: var(--offset);
+  }
+
   .bg-gradient-brand {
     background-image: var(--gradient-brand);
   }
@@ -228,13 +270,16 @@ text-shadow:
 }
 
 
-  /* === Increase Inherited Font size === */
+  /* === Change Inherited Font size === */
   .text-inherit-115 {
     font-size: 1.15em;
   }
 
   .text-inherit-200 {
     font-size: 2em;
+  }
+  .text-inherit-075 {
+    font-size: 0.75em;
   }
 
   /* === Animate Background Gradient === */

@@ -9,6 +9,8 @@ import { ExpertiseSection } from '@/components/sections/home/expertise-section'
 import { ToolstackSection } from '@/components/sections/home/toolstack-section'
 import { CtaSection } from '@/components/sections/home/cta-section'
 import { ReactElement } from 'react'
+import { ProjectOne } from '@/components/sections/home/project-one'
+import { ProjectTest } from '@/components/sections/home/project-test'
 
 export default function HomePage(): ReactElement {
   return (
@@ -27,8 +29,8 @@ export default function HomePage(): ReactElement {
             </div>
 
             <div className="space-y-8">
+              <ProjectTest />
               <ExpertiseSection />
-              <ToolstackSection />
             </div>
           </div>
         </Section>

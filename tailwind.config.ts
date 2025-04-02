@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
 import { fontFamily } from 'tailwindcss/defaultTheme'
+import containerQueries from '@tailwindcss/container-queries'
 
 const config = {
   darkMode: ['class'],
@@ -23,6 +24,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        display: ['"Gimlet Sans Variable"', ...fontFamily.sans],
       },
       /* === Colors (from CSS variables) === */
       colors: {
@@ -32,6 +34,7 @@ const config = {
         card: 'hsl(var(--card))',
         'card-alt': 'hsl(var(--card-alt))',
         'card-background': 'hsl(var(--card-background))',
+        'card-light': 'hsl(var(--card-light))',
 
         /* Text / Foreground */
         foreground: 'hsl(var(--foreground))',
@@ -114,16 +117,22 @@ const config = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideOutFromLeft: {
-          '0%': { transform: 'translateX(-10rem)', opacity: '0' },
+          '0%': { transform: 'translateX(-10rem)', opacity: '0', visibility: 'hidden' },
+          '1%': { visibility: 'visible' },
           '20%': { opacity: '1' },
           '100%': { transform: 'translateX(0)' },
+        },
+        slideOutToLeft: {
+          '0%': { transform: 'translateX(0)', opacity: '1' },
+          '100%': { transform: 'translateX(-100%)', opacity: '0', visibility: 'hidden' },
         },
       },
       animation: {
         accordionDown: 'accordionDown 0.2s ease-out',
         accordionUp: 'accordionUp 0.2s ease-out',
         'slide-in-from-right': 'slideInRight 0.4s ease-out both',
-        'slide-out-from-left': 'slideOutFromLeft 900ms ease-out forwards',
+        'slide-out-from-left': 'slideOutFromLeft 600ms ease-out forwards',
+        'slide-out-to-left': 'slideOutToLeft 0.4s ease-out forwards',
       },
 
       /* === Skew === */
@@ -133,7 +142,7 @@ const config = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, containerQueries],
 } satisfies Config
 
 export default config

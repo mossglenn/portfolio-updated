@@ -20,7 +20,7 @@ export default function Navigation(): ReactElement {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 min-h-[72px] transition-all duration-300 ${
-        scrolled ? 'bg-background/90 py-3 backdrop-blur-md' : 'py-6'
+        scrolled ? 'bg-background/50 py-3 backdrop-blur-md backdrop-brightness-75' : 'py-6'
       }`}
     >
       <Container>
@@ -29,10 +29,9 @@ export default function Navigation(): ReactElement {
             <div className="flex flex-wrap items-center">
               <LogoBadge backgroundColorClass="bg-secondary" />
               <div
-                className="animate-slide-out-from-left -ml-3 flex"
-                style={{ animationDelay: '300ms' }}
+                className={`-ml-3 flex animate-slide-out-from-left ${scrolled ? 'animate-slide-out-to-left -mb-8 md:relative md:animate-none' : 'relative'}`}
               >
-                <div className="bg-slate-light inline-block w-max -skew-x-20 rounded-md px-4 py-1 text-sm shadow-md">
+                <div className="inline-block w-max -skew-x-20 rounded-md bg-slate-light px-4 py-1 text-sm shadow-md">
                   <div className="skew-x-20 text-foreground">Learning Experience Architect</div>
                 </div>
               </div>

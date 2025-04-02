@@ -16,12 +16,12 @@ export function HeroSection(): ReactElement {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex flex-wrap items-end justify-between">
-            <div className="mb-6 basis-full text-left lg:basis-2/3">
-              <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,2.5rem)] text-foreground/80">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="font-display mb-6 basis-full text-left lg:basis-2/3">
+              <h2 className="mt-2 pb-2 text-[clamp(1.5rem,7.5vw,2.5rem)] leading-none text-foreground/80">
                 I don&apos;t build courses.
               </h2>
-              <h1 className="mt-2 text-[clamp(1.25rem,8vw,3.5rem)] font-bold">
+              <h1 className="mt-2 text-[clamp(1.25rem,8vw,3.5rem)] font-bold leading-none">
                 I{' '}
                 <span className="text-gradient-accent-lighter-left text-inherit-115 font-black">
                   design solutions
@@ -30,10 +30,8 @@ export function HeroSection(): ReactElement {
               <h2 className="text-[clamp(1.5rem,7vw,3rem)] font-bold">that make a difference.</h2>
             </div>
             <div className="basis-full lg:basis-1/3">
-              {/* eslint-disable-next-line tailwindcss/classnames-order */}
-              <p className="text-foreground-lavender mb-10 text-base md:text-lg lg:text-xl">
-                I lead cross-functional teams
-                <br className="hidden lg:block" />
+              <p className="mb-4 text-lg leading-snug text-foreground-lavender md:text-xl lg:text-2xl">
+                I lead cross-functional teams <br className="hidden lg:block" />
                 to help organizations{' '}
                 <span className="font-semibold text-foreground-light">
                   translate goals into effective learning experiences
@@ -75,6 +73,7 @@ export function HeroSection(): ReactElement {
             >
               <Link href="/contact">Get in touch</Link>
             </Button>
+            <div className="hidden min-w-[50%] md:inline-block"></div>
           </div>
         </motion.div>
       </CardContent>

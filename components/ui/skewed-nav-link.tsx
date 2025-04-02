@@ -26,7 +26,7 @@ export function SkewedNavLink({
     <div className={cn('flex w-full grow justify-evenly', className)} style={style}>
       <div
         className={cn(
-          'flex grow -skew-x-20 justify-center rounded-md bg-card transition-colors duration-200',
+          'flex grow -skew-x-20 justify-center rounded-md bg-slate-light transition-colors duration-200',
           !isActive && 'hover:bg-accent',
           isActive && 'bg-gradient-muted'
         )}

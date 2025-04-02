@@ -12,7 +12,7 @@ const NavigationMobile = (): React.ReactElement => {
     <div className="md:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <div className="mr-1 -skew-x-20 rounded-md bg-card pl-1 shadow-md hover:bg-accent hover:text-card">
+          <div className="mr-1 -skew-x-20 rounded-md bg-slate-light pl-1 shadow-md hover:bg-accent hover:text-card">
             <div className="skew-x-20">
               <Button variant="none" size="sm" className="mr-2">
                 <Menu strokeWidth={3} className="ml-1" />
@@ -21,11 +21,11 @@ const NavigationMobile = (): React.ReactElement => {
             </div>
           </div>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[80vw] px-0 sm:w-[350px]">
+        <SheetContent side="right" className="w-[80vw] sm:w-[350px]">
           <SheetHeader>
             <SheetTitle className="sr-only">Menu</SheetTitle>
           </SheetHeader>
-          <div className="mt-8 flex translate-x-8 flex-col space-y-6">
+          <div className="mt-8 flex flex-col space-y-6">
             {siteConfig.nav.map((item, index) => (
               <SkewedNavLink
                 key={item.href}
