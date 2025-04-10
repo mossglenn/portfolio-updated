@@ -27,16 +27,18 @@ export default function Navigation(): ReactElement {
         <div className="flex flex-col gap-1">
           <nav className="mx-4 flex items-center justify-between">
             <div className="flex flex-wrap items-center">
-              <LogoBadge backgroundColorClass="bg-brand" />
+              <LogoBadge
+                backgroundColorClass={`bg-brand ${scrolled ? 'mt-8 sm:mt-0' : 'mt-0 sm:mt-0'}`}
+              />
               <div
-                className={`-ml-3 flex animate-slide-out-from-left ${scrolled ? 'animate-slide-out-to-left -mb-8 md:relative md:animate-none' : 'relative'}`}
+                className={`-ml-3 flex animate-slide-out-from-left ${scrolled ? 'hidden sm:flex md:relative md:animate-none' : 'relative'}`}
               >
                 <div className="inline-block w-max -skew-x-20 rounded-md bg-secondary px-4 py-1 text-sm shadow-md">
                   <div className="skew-x-20 text-foreground">Learning Experience Architect</div>
                 </div>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className={`flex items-center ${scrolled ? 'mt-8 sm:mt-0' : 'mt-0'}`}>
               <NavigationDesktop />
 
               <NavigationMobile />

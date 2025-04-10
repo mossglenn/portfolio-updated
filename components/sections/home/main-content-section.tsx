@@ -1,10 +1,20 @@
+import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Iceberg } from '@/components/ui/iceberg-svg'
+import { SkewTag } from '@/components/ui/skew-tag'
 import { SkewedBox } from '@/components/ui/skewed-box'
 import { motion } from 'framer-motion'
+import { ArrowBigRight, ArrowRight, Cpu, Microscope, Origami, PersonStanding } from 'lucide-react'
+import Link from 'next/link'
 import { ReactElement } from 'react'
 
 export function MainContentSection(): ReactElement {
+  const tags = [
+    { label: 'Microlearning', icon: Microscope },
+    { label: 'Design Thinking', icon: Origami },
+    { label: 'Human-Centered Design', icon: PersonStanding },
+    { label: 'Digital Learning', icon: Cpu },
+  ]
   return (
     <Card className="@container">
       <CardContent className="p-6">
@@ -35,7 +45,7 @@ export function MainContentSection(): ReactElement {
             </div>
           </div>
           <div>
-            <div className="hidden sm:float-right sm:block">
+            <div className="hidden sm:float-right sm:block sm:pl-8">
               <div className="mx-auto mb-4 flex max-w-[400px] flex-col justify-center rounded-md bg-[hsl(var(--ice-layer-4))] pt-2 sm:ml-4 sm:max-w-[200px]">
                 <SkewedBox className="mx-4 mb-4 bg-secondary px-4 text-center">
                   <p className="text-sm text-lavender-light">Instructional Design</p>
@@ -97,6 +107,20 @@ export function MainContentSection(): ReactElement {
               focused learning activities, curate purposeful content, and build diagnostic
               assessments that lead to meaningful, lasting change.
             </p>
+            <div className="mt-8">
+              <SkewedBox className="mx-auto mb-4 bg-brand-darker px-4 py-2 text-center">
+                <p className="text-neutral">
+                  See this in action by exploring my work tagged with these keyterms:
+                </p>
+              </SkewedBox>
+              <div className="flex flex-wrap gap-2 text-xs font-medium text-foreground">
+                {tags.map(({ label, icon }) => (
+                  <SkewTag key={label} icon={icon}>
+                    {label}
+                  </SkewTag>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </CardContent>

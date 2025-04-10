@@ -13,12 +13,13 @@
   /* === Brand === */
   --brand: 267 39% 48%;
   --brand-light: 267 39% 61%;
+  --brand-lighter: 267 39% 70%;
   --brand-dark: 267 39% 39%;
   --brand-darker: 267 42% 30%;
 
   /* === Accent (Amber) === */
   --accent: 35 76% 60%;
-  --accent-light: 35 79% 68%;
+  --accent-light: 35 80% 80%;
   --accent-dark: 25 65% 46%;
   --accent-softer: 46 68% 72%;
 
@@ -26,8 +27,9 @@
   --background: 237 19% 15%;
   --background-alt: 237 19% 20%;
   --card: 240 20% 20%; /* original 214 15% 25%; */
-  --card-light: 240 20% 32%;
+  --card-light: 240 16% 70%;
   --card-alt: 216 30% 20%;
+  --card-dark: 267 20% 18%;
 
   /* === Foreground/Text === */
   --foreground: 43 50% 95%;
@@ -38,6 +40,7 @@
 
   /* === Neutral / Muted === */
   --neutral: 258 22% 76%;
+  --neutral-dark: 258 10% 65%;
   --muted: 310 18% 37%;
   --muted-dark: 310 28% 25%;
 
@@ -74,6 +77,8 @@
 
    /* === Gradient Tokens (All Token-Based) === */
   --gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
+  --gradient-brand-light: linear-gradient(340deg, hsl(var(--brand)), hsl(var(--brand-lighter)), hsl(var(--brand)));
+
   --gradient-muted: linear-gradient(to right, hsl(var(--brand)), hsl(var(--muted)));
   --gradient-secondary: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
   --gradient-dark: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--slate-light)));
@@ -87,6 +92,11 @@
   --gradient-accent-lighter-left: linear-gradient(to right, hsl(var(--accent-softer)), hsl(var(--accent)));
 
   --gradient-card-background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)));
+
+  --gradient-lavender-light: linear-gradient(to right, hsl(256 100% 75.1%), hsl(270 35.9% 74.9%));
+
+
+
 
  
 
@@ -129,7 +139,10 @@
   /* Experimental Theme */
   --background: 220, 10%, 8%; /* Dark Background */
 }
-
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* match your sticky header height */
+}
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -205,6 +218,13 @@ body {
     background-clip: text;
     color: transparent;
   }
+.text-gradient-brand-light {
+    background-image: var(--gradient-brand-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .text-gradient-muted {
     background-image: var(--gradient-muted);
     -webkit-background-clip: text;
@@ -265,6 +285,15 @@ body {
     background-clip: text;
     color: transparent;
   }
+
+ .text-gradient-lavender-light {
+    background-image: var(--gradient-lavender-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+
   .text-outline {
 text-shadow:
       2px 2px 1px hsl(var(--brand)),

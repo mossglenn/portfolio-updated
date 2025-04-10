@@ -52,13 +52,37 @@ export function ProjectTest(): ReactElement {
                 maxWidth: 'calc(var(--box-width) - var(--caption-max-adjust))',
               }}
             >
-              <p className="text-accent">Gamified and Personalized Statistics Tutor</p>
+              <p className="text-accent">Gamified, Personalized Statistics Tutor</p>
+            </div>
+            <div>
+              {/* eslint-disable-next-line tailwindcss/classnames-order */}
+              <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
+                Instead of digitizing the content, <br className="hidden" /> I{' '}
+                <span className="text-gradient-lavender-light">
+                  reimagined the learning experience.
+                </span>
+              </p>
             </div>
           </div>
+          <div className="hidden max-w-[300px] pl-8 md:float-right md:block">
+            <Link href="/work">
+              <Image
+                src="portfolio-images/escape-room-preview.gif"
+                alt="Animation of the Escape Room gamified statistics tutor highlighting a learner misconception."
+                className="rounded-md object-contain py-4 pr-4"
+                width={471}
+                height={353}
+                sizes="(min-width: 768px) 384px, 100vw"
+              />
+            </Link>
+          </div>
           <div>
+            {/* eslint-disable-next-line tailwindcss/classnames-order */}
             <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
               Instead of digitizing the content, <br className="hidden" /> I{' '}
-              <span className="text-gradient-playful">reimagined the learning experience.</span>
+              <span className="text-gradient-lavender-light">
+                reimagined the learning experience.
+              </span>
             </p>
           </div>
 
@@ -68,7 +92,7 @@ export function ProjectTest(): ReactElement {
               adaptive tutor that interactively corrected misconceptions — doing what static content
               never could.
             </p>
-            <div>
+            <div className="md:hidden">
               <Link href="/work">
                 <Image
                   src="portfolio-images/escape-room-preview.gif"
@@ -93,7 +117,7 @@ export function ProjectTest(): ReactElement {
               </SkewTag>
             ))}
           </div>
-
+          {/* eslint-disable-next-line tailwindcss/classnames-order */}
           <div className="@sm:flex-row mt-4 flex flex-col justify-center gap-4">
             <Button size="lg" variant="secondary" className="text-base" asChild>
               <Link href="/work">

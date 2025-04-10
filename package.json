@@ -29,7 +29,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@hookform/resolvers": "^3.9.1",
-    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-accordion": "^1.2.4",
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.2",
     "@radix-ui/react-avatar": "^1.1.2",
@@ -83,6 +83,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "^20.17.24",
     "@types/react": "^18.2.37",
