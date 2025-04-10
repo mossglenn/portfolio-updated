@@ -4,7 +4,6 @@ import { type ReactElement } from 'react'
 
 import { siteConfig } from '@/config/site'
 
-
 export function Footer(): ReactElement {
   return (
     <footer className="border-t border-border py-12">
@@ -13,21 +12,21 @@ export function Footer(): ReactElement {
           <div className="text-lg font-medium">{siteConfig.name}</div>
           <div className="flex items-center gap-6">
             <Link
-              className="text-foreground transition-colors hover:text-primary"
+              className="text-foreground transition-colors hover:text-brand"
               href={`mailto:${siteConfig.contact.email}`}
             >
               <Mail className="size-5" />
               <span className="sr-only">Email</span>
             </Link>
             <Link
-              className="text-foreground transition-colors hover:text-primary"
+              className="text-foreground transition-colors hover:text-brand"
               href={siteConfig.links.linkedin}
             >
               <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
-              className="text-foreground transition-colors hover:text-primary"
+              className="text-foreground transition-colors hover:text-brand"
               href={siteConfig.links.github}
             >
               <Github className="size-5" />

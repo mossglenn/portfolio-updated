@@ -10,16 +10,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'animated-gradient animated-gradient-hover bg-primary text-foreground hover:bg-gradient-brand',
+          'animated-gradient animated-gradient-hover bg-brand text-foreground hover:bg-gradient-brand',
         destructive: 'bg-destructive text-foreground hover:bg-destructive/90',
         outline: 'border border-input bg-background hover:bg-accent hover:text-foreground',
         secondary: 'bg-accent text-background hover:bg-gradient-brand hover:text-foreground',
         ghost: 'hover:bg-accent hover:text-accent',
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'text-brand underline-offset-4 hover:underline',
         skewed: 'skew-x-20 bg-none p-0 text-secondary hover:text-foreground',
         none: 'bg-none',
         display:
-          'animated-gradient animated-gradient-hover bg-primary font-display text-xl font-bold text-foreground hover:bg-gradient-brand',
+          'animated-gradient animated-gradient-hover bg-brand font-display text-xl font-bold text-foreground hover:bg-gradient-brand',
       },
       size: {
         default: 'h-10 px-4 py-2',

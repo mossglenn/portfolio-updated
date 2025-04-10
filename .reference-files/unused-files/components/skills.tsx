@@ -6,37 +6,37 @@ import { Lightbulb, Users, BarChart, Layers, BookOpen, Code } from 'lucide-react
 
 const skills = [
   {
-    icon: <Lightbulb className="size-10 text-primary" />,
+    icon: <Lightbulb className="size-10 text-brand" />,
     title: 'Learning Strategy',
     description:
       'Developing comprehensive learning strategies aligned with organizational goals and learner needs.',
   },
   {
-    icon: <Users className="size-10 text-primary" />,
+    icon: <Users className="size-10 text-brand" />,
     title: 'User-Centered Design',
     description:
       'Creating learning experiences that prioritize the needs, preferences, and contexts of the learners.',
   },
   {
-    icon: <BarChart className="size-10 text-primary" />,
+    icon: <BarChart className="size-10 text-brand" />,
     title: 'Data-Driven Approach',
     description:
       'Utilizing analytics and research to inform design decisions and measure learning outcomes.',
   },
   {
-    icon: <Layers className="size-10 text-primary" />,
+    icon: <Layers className="size-10 text-brand" />,
     title: 'Multimedia Development',
     description:
       'Producing engaging video, audio, and interactive content to enhance learning experiences.',
   },
   {
-    icon: <BookOpen className="size-10 text-primary" />,
+    icon: <BookOpen className="size-10 text-brand" />,
     title: 'Curriculum Design',
     description:
       'Structuring comprehensive learning programs with clear objectives and assessment strategies.',
   },
   {
-    icon: <Code className="size-10 text-primary" />,
+    icon: <Code className="size-10 text-brand" />,
     title: 'Educational Technology',
     description:
       'Leveraging cutting-edge tools and platforms to create innovative learning solutions.',

@@ -13,7 +13,7 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-lg bg-primary p-8 text-primary-foreground md:p-12"
+          className="relative overflow-hidden rounded-lg bg-brand p-8 text-brand-foreground md:p-12"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
           <div className="relative z-10 flex flex-col items-center space-y-6 text-center">

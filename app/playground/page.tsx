@@ -12,7 +12,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-
 const themeOptions = [
   { label: 'Default', className: '' },
   { label: 'Test Theme', className: 'theme-test' },
@@ -261,7 +260,7 @@ export default function PlaygroundPage(): ReactElement {
                       <div
                         className="h-12 w-full"
                         style={{ backgroundColor: `hsl(var(--${token}))` }}
-                       />
+                      />
                       <CardContent className="py-2">
                         <p className="text-xs font-medium">--{token}</p>
                       </CardContent>
@@ -280,7 +279,7 @@ export default function PlaygroundPage(): ReactElement {
                     <div
                       className="h-32 w-full rounded-t-lg"
                       style={{ backgroundImage: `var(--gradient-${gradient})` }}
-                     />
+                    />
                     <CardContent className="p-6 text-foreground-light">
                       <h3 className="text-xl font-bold capitalize">
                         {gradient.replace('gradient-', '').replace(/-/g, ' ')}

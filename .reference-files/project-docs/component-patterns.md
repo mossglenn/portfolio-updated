@@ -195,7 +195,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Mail className="h-6 w-6 text-primary" />
+              <Mail className="h-6 w-6 text-brand" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -205,7 +205,7 @@ export default function ContactPage() {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Phone className="h-6 w-6 text-primary" />
+              <Phone className="h-6 w-6 text-brand" />
               <CardTitle>Phone</CardTitle>
             </CardHeader>
             <CardContent>
@@ -215,7 +215,7 @@ export default function ContactPage() {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="h-6 w-6 text-primary" />
+              <MapPin className="h-6 w-6 text-brand" />
               <CardTitle>Location</CardTitle>
             </CardHeader>
             <CardContent>
@@ -426,7 +426,7 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-lg bg-primary text-primary-foreground p-8 md:p-12"
+          className="relative overflow-hidden rounded-lg bg-brand text-brand-foreground p-8 md:p-12"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
           <div className="relative z-10 flex flex-col items-center text-center space-y-6">
@@ -698,16 +698,16 @@ export default function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-sm text-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-sm text-foreground hover:text-brand transition-colors">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-sm text-foreground hover:text-primary transition-colors">
+              <Link href="/portfolio" className="text-sm text-foreground hover:text-brand transition-colors">
                 Portfolio
               </Link>
-              <Link href="/about" className="text-sm text-foreground hover:text-primary transition-colors">
+              <Link href="/about" className="text-sm text-foreground hover:text-brand transition-colors">
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-foreground hover:text-primary transition-colors">
+              <Link href="/contact" className="text-sm text-foreground hover:text-brand transition-colors">
                 Contact
               </Link>
             </nav>
@@ -717,13 +717,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
               <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
+                <Github className="h-5 w-5 text-foreground hover:text-brand transition-colors" />
               </Link>
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
+                <Linkedin className="h-5 w-5 text-foreground hover:text-brand transition-colors" />
               </Link>
               <Link href="mailto:contact@example.com" aria-label="Email">
-                <Mail className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
+                <Mail className="h-5 w-5 text-foreground hover:text-brand transition-colors" />
               </Link>
             </div>
           </div>
@@ -810,8 +810,8 @@ export default function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.href ? "text-primary" : "text-foreground",
+                "text-sm font-medium transition-colors hover:text-brand",
+                pathname === item.href ? "text-brand" : "text-foreground",
               )}
             >
               {item.name}
@@ -848,8 +848,8 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "block py-2 text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href ? "text-primary" : "text-foreground",
+                  "block py-2 text-sm font-medium transition-colors hover:text-brand",
+                  pathname === item.href ? "text-brand" : "text-foreground",
                 )}
                 onClick={() => setIsOpen(false)}
               >

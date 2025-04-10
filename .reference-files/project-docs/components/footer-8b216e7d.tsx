@@ -17,16 +17,16 @@ export default function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-sm text-foreground transition-colors hover:text-primary">
+              <Link href="/" className="text-sm text-foreground transition-colors hover:text-brand">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-sm text-foreground transition-colors hover:text-primary">
+              <Link href="/portfolio" className="text-sm text-foreground transition-colors hover:text-brand">
                 Portfolio
               </Link>
-              <Link href="/about" className="text-sm text-foreground transition-colors hover:text-primary">
+              <Link href="/about" className="text-sm text-foreground transition-colors hover:text-brand">
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-foreground transition-colors hover:text-primary">
+              <Link href="/contact" className="text-sm text-foreground transition-colors hover:text-brand">
                 Contact
               </Link>
             </nav>
@@ -36,13 +36,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
               <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="size-5 text-foreground transition-colors hover:text-primary" />
+                <Github className="size-5 text-foreground transition-colors hover:text-brand" />
               </Link>
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="size-5 text-foreground transition-colors hover:text-primary" />
+                <Linkedin className="size-5 text-foreground transition-colors hover:text-brand" />
               </Link>
               <Link href="mailto:contact@example.com" aria-label="Email">
-                <Mail className="size-5 text-foreground transition-colors hover:text-primary" />
+                <Mail className="size-5 text-foreground transition-colors hover:text-brand" />
               </Link>
             </div>
           </div>

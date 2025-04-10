@@ -29,7 +29,7 @@ export function MainContentSection(): ReactElement {
             <div className="inline-block skew-x-20 font-display">The Hidden Problem</div>
           </div>
 
-          <div className="mb-8 rounded-r-lg border-l-4 border-primary p-2">
+          <div className="mb-8 rounded-r-lg border-l-4 border-brand p-2">
             <div className="mb-4 flex">
               <div className="text-xl text-foreground/90">You:</div>
               <div className="speech-bubble ml-8 rounded-2xl bg-slate-light px-4 py-2">
@@ -80,7 +80,7 @@ export function MainContentSection(): ReactElement {
               .
             </p>
             <div className="relative my-8">
-              <blockquote className="border-l-2 border-primary pl-8 font-display text-2xl font-bold italic text-foreground">
+              <blockquote className="border-l-2 border-brand pl-8 font-display text-2xl font-bold italic text-foreground">
                 <span className="text-brand-light"> When we build training around content, </span>
                 <span className="text-gradient-accent-light-vertical">
                   we miss the opportunity to design solutions.

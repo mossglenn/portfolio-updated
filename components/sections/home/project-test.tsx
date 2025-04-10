@@ -10,8 +10,6 @@ import { SkewTag } from '@/components/ui/skew-tag'
 import { SkewedBox } from '@/components/ui/skewed-box'
 import { useSkewOffset } from '@/hooks/use-skew-offset'
 
-
-
 export function ProjectTest(): ReactElement {
   const { ref, offset, mounted, width } = useSkewOffset()
   const tags = [
@@ -58,7 +56,7 @@ export function ProjectTest(): ReactElement {
               <p className="text-accent">Gamified, Personalized Statistics Tutor</p>
             </div>
             <div>
-              { }
+              {}
               <p className="mb-4 font-display text-2xl font-bold leading-tight @md:text-2xl">
                 Instead of digitizing the content, <br className="hidden" /> I{' '}
                 <span className="text-gradient-lavender-light">
@@ -80,7 +78,7 @@ export function ProjectTest(): ReactElement {
             </Link>
           </div>
           <div>
-            { }
+            {}
             <p className="mb-4 font-display text-2xl font-bold leading-tight @md:text-2xl">
               Instead of digitizing the content, <br className="hidden" /> I{' '}
               <span className="text-gradient-lavender-light">
@@ -120,7 +118,7 @@ export function ProjectTest(): ReactElement {
               </SkewTag>
             ))}
           </div>
-          { }
+          {}
           <div className="mt-4 flex flex-col justify-center gap-4 @sm:flex-row">
             <Button asChild className="text-base" size="lg" variant="secondary">
               <Link href="/work">

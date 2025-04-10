@@ -28,7 +28,7 @@ export default function ContactPage(): ReactElement {
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Mail className="size-6 text-primary" />
+              <Mail className="size-6 text-brand" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -38,7 +38,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Phone className="size-6 text-primary" />
+              <Phone className="size-6 text-brand" />
               <CardTitle>Phone</CardTitle>
             </CardHeader>
             <CardContent>
@@ -48,7 +48,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="size-6 text-primary" />
+              <MapPin className="size-6 text-brand" />
               <CardTitle>Location</CardTitle>
             </CardHeader>
             <CardContent>

@@ -1,6 +1,6 @@
 # Project Documentation for v0
 
-Generated: 4/10/2025, 1:11:12 PM
+Generated: 4/10/2025, 6:11:47 PM
 
 ## Table of Contents
 
@@ -77,6 +77,7 @@ Generated: 4/10/2025, 1:11:12 PM
   - `@styles/*` → `./styles/*`
   - `@types/*` → `./types/*`
   - `@data/*` → `./data/*`
+  - `@theme/*` → `./styles/theme/*`
 
 ### Project Structure Summary
 
@@ -203,6 +204,7 @@ Generated: 4/10/2025, 1:11:12 PM
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
+    "ts-prune": "^0.10.3",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.2"
   }
@@ -246,7 +248,8 @@ Generated: 4/10/2025, 1:11:12 PM
       "@lib/*": ["./lib/*"],
       "@styles/*": ["./styles/*"],
       "@types/*": ["./types/*"],
-      "@data/*": ["./data/*"]
+      "@data/*": ["./data/*"],
+      "@theme/*": ["./styles/theme/*"]
     }
   },
   "include": [
@@ -266,14 +269,16 @@ Generated: 4/10/2025, 1:11:12 PM
 ### tailwind.config.ts
 
 ```javascript
-import type { Config } from 'tailwindcss'
-import animate from 'tailwindcss-animate'
-import { fontFamily } from 'tailwindcss/defaultTheme'
 import containerQueries from '@tailwindcss/container-queries'
-import aspectRatio from '@tailwindcss/aspect-ratio'
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import animate from 'tailwindcss-animate'
+
+import { colors } from './styles/theme/colors'
+import { backgroundImage } from './styles/theme/gradients'
+
+import type { Config } from 'tailwindcss'
 
 const config = {
-  darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -283,205 +288,99 @@ const config = {
   ],
   prefix: '',
   theme: {
-  	container: {
-  		center: true,
-  		padding: '2rem',
-  		screens: {
-  			'2xl': '1400px'
-  		}
-  	},
-  	extend: {
-  		listStyleImage: {
-  			cross: 'url("/icons/cross.png")',
-  			commit: 'url("/icons/commit-bullet.svg")',
-  			'key-foreground': 'url("/icons/key-foreground.svg")',
-  			'key-solid-foreground': 'url("/icons/key-foreground-left-large.svg")',
-  			'gem-lavender': 'url("/icons/gem-lavender.svg")'
-  		},
-  		fontFamily: {
-  			sans: [
-  				'var(--font-space-grotesk)',
-                    ...fontFamily.sans
-                ],
-  			display: [
-  				'Gimlet Sans Variable"',
-                    ...fontFamily.sans
-                ]
-  		},
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			'background-alt': 'hsl(var(--background-alt))',
-  			card: 'hsl(var(--card))',
-  			'card-alt': 'hsl(var(--card-alt))',
-  			'card-background': 'hsl(var(--card-background))',
-  			'card-light': 'hsl(var(--card-light))',
-  			'card-dark': 'hsl(var(--card-dark))',
-  			foreground: 'hsl(var(--foreground))',
-  			'foreground-muted': 'hsl(var(--foreground-muted))',
-  			'foreground-light': 'hsl(var(--foreground-light))',
-  			'foreground-dark': 'hsl(var(--foreground-dark))',
-  			'foreground-lavender': 'hsl(var(--foreground-lavender))',
-  			brand: 'hsl(var(--brand))',
-  			'brand-light': 'hsl(var(--brand-light))',
-  			'brand-dark': 'hsl(var(--brand-dark))',
-  			'brand-darker': 'hsl(var(--brand-darker))',
-  			'brand-lighter': 'hsl(var(--brand-lighter))',
-  			primary: 'hsl(var(--brand))',
-  			'primary-light': 'hsl(var(--brand-light))',
-  			'primary-dark': 'hsl(var(--brand-dark))',
-  			'primary-darker': 'hsl(var(--brand-darker))',
-  			accent: 'hsl(var(--accent))',
-  			'accent-light': 'hsl(var(--accent-light))',
-  			'accent-dark': 'hsl(var(--accent-dark))',
-  			'accent-softer': 'hsl(var(--accent-softer))',
-  			secondary: 'hsl(var(--secondary))',
-  			'secondary-light': 'hsl(var(--secondary-light))',
-  			neutral: 'hsl(var(--neutral))',
-  			'neutral-dark': 'hsl(var(--neutral-dark))',
-  			muted: 'hsl(var(--muted))',
-  			'muted-dark': 'hsl(var(--muted-dark))',
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			popover: 'hsl(var(--popover))',
-  			'popover-foreground': 'hsl(var(--popover-foreground))',
-  			destructive: 'hsl(var(--destructive))',
-  			'destructive-foreground': 'hsl(var(--destructive-foreground))',
-  			sage: 'hsl(var(--sage))',
-  			sky: 'hsl(var(--sky))',
-  			'slate-light': 'hsl(var(--slate-light))',
-  			pink: 'hsl(var(--pink))',
-  			lavender: 'hsl(var(--lavender))',
-  			'lavender-light': 'hsl(var(--lavender-light))'
-  		},
-  		backgroundImage: {
-  			'gradient-brand': 'var(--gradient-brand)',
-  			'gradient-muted': 'var(--gradient-muted)',
-  			'gradient-secondary': 'var(--gradient-secondary)',
-  			'gradient-dark': 'var(--gradient-dark)',
-  			'gradient-slate-sky': 'var(--gradient-slate-sky)',
-  			'gradient-earth': 'var(--gradient-earth)',
-  			'gradient-playful': 'var(--gradient-playful)',
-  			'gradient-lavender': 'var(--gradient-lavender)',
-  			'gradient-accent-light': 'var(--gradient-accent-light)',
-  			'gradient-accent-light-vertical': 'var(--gradient-accent-light-vertical)',
-  			'gradient-lavender-light': 'var(--gradient-lavender-light)'
-  		},
-  		keyframes: {
-  			accordionDown: {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			accordionUp: {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			},
-  			slideInRight: {
-  				'0%': {
-  					opacity: '0',
-  					transform: 'translateX(2rem)'
-  				},
-  				'100%': {
-  					opacity: '1',
-  					transform: 'translateX(0)'
-  				}
-  			},
-  			slideOutFromLeft: {
-  				'0%': {
-  					transform: 'translateX(-10rem)',
-  					opacity: '0',
-  					visibility: 'hidden'
-  				},
-  				'1%': {
-  					visibility: 'visible'
-  				},
-  				'20%': {
-  					opacity: '1'
-  				},
-  				'100%': {
-  					transform: 'translateX(0)'
-  				}
-  			},
-  			slideOutToLeft: {
-  				'0%': {
-  					transform: 'translateX(0)',
-  					opacity: '1'
-  				},
-  				'100%': {
-  					transform: 'translateX(-100%)',
-  					opacity: '0',
-  					visibility: 'hidden'
-  				}
-  			},
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
-  		},
-  		animation: {
-  			accordionDown: 'accordionDown 0.2s ease-out',
-  			accordionUp: 'accordionUp 0.2s ease-out',
-  			'slide-in-from-right': 'slideInRight 0.4s ease-out both',
-  			'slide-out-from-left': 'slideOutFromLeft 600ms ease-out forwards',
-  			'slide-out-to-left': 'slideOutToLeft 0.4s ease-out forwards',
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		},
-  		skew: {
-  			'20': '20deg',
-  			'-20': '-20deg'
-  		}
-  	}
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      listStyleImage: {
+        cross: 'url("/icons/cross.png")',
+        commit: 'url("/icons/commit-bullet.svg")',
+        'key-foreground': 'url("/icons/key-foreground.svg")',
+        'key-solid-foreground': 'url("/icons/key-foreground-left-large.svg")',
+        'gem-lavender': 'url("/icons/gem-lavender.svg")',
+      },
+      fontFamily: {
+        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        display: ['Gimlet Sans Variable"', ...fontFamily.sans],
+      },
+      colors,
+      backgroundImage,
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+        'slide-in-right': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(2rem)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        'slide-out-from-left': {
+          '0%': {
+            transform: 'translateX(-10rem)',
+            opacity: '0',
+            visibility: 'hidden',
+          },
+          '1%': {
+            visibility: 'visible',
+          },
+          '20%': {
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          },
+        },
+        'slide-out-to-left': {
+          '0%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateX(-100%)',
+            opacity: '0',
+            visibility: 'hidden',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-in-right': 'slide-in-right 0.4s ease-out both',
+        'slide-out-from-left': 'slide-out-from-left 600ms ease-out forwards',
+        'slide-out-to-left': 'slide-out-to-left 0.4s ease-out forwards',
+      },
+      skew: {
+        '20': '20deg',
+        '-20': '-20deg',
+      },
+    },
   },
-  plugins: [animate, containerQueries, aspectRatio],
+  plugins: [animate, containerQueries],
 } satisfies Config
 
 export default config
-
-```
-
-### next.config.mjs
-
-```javascript
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-  experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
-  },
-}
-
-export default nextConfig
 
 ```
 
@@ -505,6 +404,8 @@ const eslintConfig = [
       '**/out/**',
       '**/.reference-files/**',
       '/.reference-files/**',
+      '**/learning-objects/**',
+      '**/scripts/**',
     ],
   },
   js.configs.recommended,
@@ -523,7 +424,7 @@ const eslintConfig = [
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      'react/prop-types': 'warn',
       'tailwindcss/no-custom-classname': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -533,6 +434,36 @@ const eslintConfig = [
         },
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
+      'react/self-closing-comp': 'error',
+      'react/jsx-sort-props': [
+        'warn',
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          reservedFirst: true,
+        },
+      ],
     },
     settings: {
       react: {
@@ -552,7 +483,7 @@ export default eslintConfig
 
 ## Project Structure
 
-Total files: 572
+Total files: 573
 
 ### Directories
 
@@ -562,11 +493,10 @@ Total files: 572
 - .prettierignore
 - color-reference.html
 - components.json
-- componentsOLD.json
 - eslint.config.js
 - knip.json
 - next-env.d.ts
-- next.config.mjs
+- next.config.ts
 - package.json
 - postcss.config.mjs
 - prettier.config.js
@@ -727,6 +657,10 @@ Total files: 572
 
 - page.tsx
 
+#### ./components/common
+
+- gradient-text.tsx
+
 #### ./components
 
 - contact-form.tsx
@@ -760,7 +694,6 @@ Total files: 572
 - accordion.tsx
 - aspect-ratio.tsx
 - badge.tsx
-- bullet-image.tsx
 - button-icon.tsx
 - button.tsx
 - card.tsx
@@ -830,81 +763,8 @@ Total files: 572
 - placeholder.svg
 - spotlight.svg
 
-#### ./public/portfolio-images
+#### ./public/learning-objects/escape-room-learning-activity
 
-- adaptive-statistics-tutor.png
-- escape-room-preview-optimized.gif
-- escape-room-preview-reoptimized.gif
-- escape-room-preview.gif
-
-#### ./public/portfolio-images/game-based-learning-design
-
-- BIOSTATSfEATURE.png
-- Balance-Scale-Levels-v5-WITH-INQUIRY.pptx
-- Beanstalk Videos – ETC s Darpa Engage 2.png
-- Beanstalk Videos – ETC s Darpa Engage 3.png
-- Beanstalk Videos – ETC s Darpa Engage.png
-- BiostaticiansTreasure.mp4
-- ENGAGE poster border.png
-- ENGAGE-poster-20120912-1.png
-- ENGAGE-poster-20120912.pdf
-- INQ-Item-by-item-slides.pdf
-- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.pdf
-- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.png
-- Projects – ETC s Darpa Engage 2.png
-- Projects – ETC s Darpa Engage 3.png
-- Projects – ETC s Darpa Engage 4.png
-- Projects – ETC s Darpa Engage.png
-- Slide10.jpg
-- beanstalkfeature.png
-- gamedesignttm_feature.png
-- interactiveproblemset_dragging_cropped.png
-- tt,14.png
-- tt14.png
-- ttm1.png
-- ttm10.png
-- ttm11.png
-- ttm12.png
-- ttm15.png
-- ttm2.png
-- ttm3.png
-- ttm5.png
-- ttm6.png
-- ttm7.png
-- ttm8.png
-- ttm9.png
-
-#### ./public/portfolio-images/gamified-statistics-tutor
-
-- Biostatistics Inference Instructional analysis.xlsx
-- Course  Applied Biostatistics.png
-- Escape Room Feedback.pptx
-- Escape Room Tutor Instructions.png
-- EscapeRoomComments-1.mp4
-- escape-room-statistic-tutor-hint.png
-- escaperoom.PNG
-- escaperoomfeature-1024x1024.png
-- escaperoomfeature.png
-- interactive_1.PNG
-- interactive_2.PNG
-- interactive_3.PNG
-- interactive_4.PNG
-- interactive_5.PNG
-- interactive_6.PNG
-- interactive_7.PNG
-- interactive_8.PNG
-- interactiveproblemset_dragging.PNG
-- interactiveproblemset_dragging_cropped.png
-- learning-path.svg
-- magic-book-brand-light.png
-- treasureCover.PNG
-- treasure_feature.png
-
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity
-
-- SCORM_utilities.js
-- ScormEnginePackageProperties.xsd
-- Utilities.js
 - adlcp_rootv1p2.xsd
 - browsersniff.js
 - goodbye.html
@@ -915,9 +775,12 @@ Total files: 572
 - index_scorm.html
 - metadata.xml
 - project.txt
+- SCORM_utilities.js
 - scormdriver.js
+- ScormEnginePackageProperties.xsd
+- Utilities.js
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar
+#### ./public/learning-objects/escape-room-learning-activity/ar
 
 - 12633.mp3
 - 15812.mp3
@@ -925,17 +788,11 @@ Total files: 572
 - 166512.mp3
 - Mouse.mp3
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons
-
-- collapseIcon.png
-- expandIcon.png
-- photo.png
-
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css
+#### ./public/learning-objects/escape-room-learning-activity/assets/css
 
 - CPLibraryAll.css
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images
+#### ./public/learning-objects/escape-room-learning-activity/assets/css/start/images
 
 - animated-overlay.gif
 - ui-bg_flat_55_999999_40x100.png
@@ -955,18 +812,13 @@ Total files: 572
 - ui-icons_f7a50d_256x240.png
 - ui-icons_fcd113_256x240.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start
+#### ./public/learning-objects/escape-room-learning-activity/assets/css/start
 
 - jquery-ui-1.11.4.custom.css
 - jquery-ui-1.11.4.custom.min.css
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages
+#### ./public/learning-objects/escape-room-learning-activity/assets/htmlimages
 
-- Pause.gif
-- Pause2x.gif
-- Play.gif
-- Play2x.gif
-- Play_icon.png
 - arrow_right.gif
 - ccClose.png
 - checkBox_disabled.png
@@ -986,20 +838,25 @@ Total files: 572
 - gesturemobileimage2.png
 - gesturemobilelandscape.png
 - gesturetabletimage.png
-- hotspot.gif
 - hotspot_correct_answer_normal.png
 - hotspot_incorrect_answer_normal.png
+- hotspot.gif
 - img_trans.gif
 - incorrect_answer_normal.png
 - incorrect_answer_small.png
 - incorrect_question_normal.png
 - incorrect_question_small.png
-- loader.gif
 - loader_transparent.gif
+- loader.gif
 - movieexpire.png
 - partial_correct_question_normal.png
 - partial_correct_question_small.png
+- Pause.gif
+- Pause2x.gif
 - placeholder.png
+- Play_icon.png
+- Play.gif
+- Play2x.gif
 - radioButton_disabled.png
 - radioButton_normal.png
 - radioButton_selected.png
@@ -1021,13 +878,13 @@ Total files: 572
 - vidvolume2.png
 - vidvolumemute.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js
+#### ./public/learning-objects/escape-room-learning-activity/assets/js
 
 - CPM.js
 - CPXHRLoader.js
 - jquery-1.11.3.min.js
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons
+#### ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons
 
 - AudioOff.png
 - AudioOn.png
@@ -1054,15 +911,21 @@ Total files: 572
 - ShadeSmall.png
 - Stroke.png
 - StrokeSmall.png
-- TOC.png
 - Thumb.png
 - ThumbBase.png
+- TOC.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar
+#### ./public/learning-objects/escape-room-learning-activity/assets/playbar
 
 - playbarScript.js
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons
+#### ./public/learning-objects/escape-room-learning-activity/assets/TOC_icons
+
+- collapseIcon.png
+- expandIcon.png
+- photo.png
+
+#### ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons
 
 - blankBookmark.png
 - clear.png
@@ -1075,7 +938,7 @@ Total files: 572
 - searchBtnSelect.png
 - visited.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr
+#### ./public/learning-objects/escape-room-learning-activity/dr
 
 - img1.json
 - img2.json
@@ -1086,22 +949,16 @@ Total files: 572
 - imgmd.json
 - loading.gif
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar
+#### ./public/learning-objects/stats-zoo-learning-activity/ar
 
 - 47974.mp3
 - Mouse.mp3
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons
-
-- collapseIcon.png
-- expandIcon.png
-- photo.png
-
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/css
 
 - CPLibraryAll.css
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images
 
 - animated-overlay.gif
 - ui-bg_flat_55_999999_40x100.png
@@ -1121,18 +978,13 @@ Total files: 572
 - ui-icons_f7a50d_256x240.png
 - ui-icons_fcd113_256x240.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/css/start
 
 - jquery-ui-1.11.4.custom.css
 - jquery-ui-1.11.4.custom.min.css
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages
 
-- Pause.gif
-- Pause2x.gif
-- Play.gif
-- Play2x.gif
-- Play_icon.png
 - arrow_right.gif
 - ccClose.png
 - checkBox_disabled.png
@@ -1152,20 +1004,25 @@ Total files: 572
 - gesturemobileimage2.png
 - gesturemobilelandscape.png
 - gesturetabletimage.png
-- hotspot.gif
 - hotspot_correct_answer_normal.png
 - hotspot_incorrect_answer_normal.png
+- hotspot.gif
 - img_trans.gif
 - incorrect_answer_normal.png
 - incorrect_answer_small.png
 - incorrect_question_normal.png
 - incorrect_question_small.png
-- loader.gif
 - loader_transparent.gif
+- loader.gif
 - movieexpire.png
 - partial_correct_question_normal.png
 - partial_correct_question_small.png
+- Pause.gif
+- Pause2x.gif
 - placeholder.png
+- Play_icon.png
+- Play.gif
+- Play2x.gif
 - radioButton_disabled.png
 - radioButton_normal.png
 - radioButton_selected.png
@@ -1187,13 +1044,19 @@ Total files: 572
 - vidvolume2.png
 - vidvolumemute.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/js
 
 - CPM.js
 - CPXHRLoader.js
 - jquery-1.11.3.min.js
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/TOC_icons
+
+- collapseIcon.png
+- expandIcon.png
+- photo.png
+
+#### ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons
 
 - blankBookmark.png
 - clear.png
@@ -1206,7 +1069,7 @@ Total files: 572
 - searchBtnSelect.png
 - visited.png
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr
+#### ./public/learning-objects/stats-zoo-learning-activity/dr
 
 - img1.json
 - img10.json
@@ -1240,11 +1103,81 @@ Total files: 572
 - imgmd.json
 - loading.gif
 
-#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity
+#### ./public/learning-objects/stats-zoo-learning-activity
 
 - goodbye.html
 - index.html
 - project.txt
+
+#### ./public/portfolio-images
+
+- adaptive-statistics-tutor.png
+- escape-room-preview-optimized.gif
+- escape-room-preview-reoptimized.gif
+- escape-room-preview.gif
+
+#### ./public/portfolio-images/game-based-learning-design
+
+- Balance-Scale-Levels-v5-WITH-INQUIRY.pptx
+- Beanstalk Videos – ETC s Darpa Engage 2.png
+- Beanstalk Videos – ETC s Darpa Engage 3.png
+- Beanstalk Videos – ETC s Darpa Engage.png
+- beanstalkfeature.png
+- BiostaticiansTreasure.mp4
+- BIOSTATSfEATURE.png
+- ENGAGE poster border.png
+- ENGAGE-poster-20120912-1.png
+- ENGAGE-poster-20120912.pdf
+- gamedesignttm_feature.png
+- INQ-Item-by-item-slides.pdf
+- interactiveproblemset_dragging_cropped.png
+- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.pdf
+- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.png
+- Projects – ETC s Darpa Engage 2.png
+- Projects – ETC s Darpa Engage 3.png
+- Projects – ETC s Darpa Engage 4.png
+- Projects – ETC s Darpa Engage.png
+- Slide10.jpg
+- tt,14.png
+- tt14.png
+- ttm1.png
+- ttm10.png
+- ttm11.png
+- ttm12.png
+- ttm15.png
+- ttm2.png
+- ttm3.png
+- ttm5.png
+- ttm6.png
+- ttm7.png
+- ttm8.png
+- ttm9.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor
+
+- Biostatistics Inference Instructional analysis.xlsx
+- Course  Applied Biostatistics.png
+- Escape Room Feedback.pptx
+- Escape Room Tutor Instructions.png
+- escape-room-statistic-tutor-hint.png
+- escaperoom.PNG
+- EscapeRoomComments-1.mp4
+- escaperoomfeature-1024x1024.png
+- escaperoomfeature.png
+- interactive_1.PNG
+- interactive_2.PNG
+- interactive_3.PNG
+- interactive_4.PNG
+- interactive_5.PNG
+- interactive_6.PNG
+- interactive_7.PNG
+- interactive_8.PNG
+- interactiveproblemset_dragging_cropped.png
+- interactiveproblemset_dragging.PNG
+- learning-path.svg
+- magic-book-brand-light.png
+- treasure_feature.png
+- treasureCover.PNG
 
 #### ./scripts
 
@@ -1252,6 +1185,11 @@ Total files: 572
 - document-project.js
 - generate-color-reference.py
 - move-unused-files.ts
+
+#### ./styles/theme
+
+- colors.ts
+- gradients.ts
 
 #### ./types
 
@@ -1267,14 +1205,14 @@ Total files: 572
 
 - ./.reference-files/color-reference.html
 - ./color-reference.html
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/goodbye.html
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/index_scorm.html
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/goodbye.html
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/index.html
+- ./public/learning-objects/escape-room-learning-activity/goodbye.html
+- ./public/learning-objects/escape-room-learning-activity/index_scorm.html
+- ./public/learning-objects/stats-zoo-learning-activity/goodbye.html
+- ./public/learning-objects/stats-zoo-learning-activity/index.html
 
 </details>
 
-#### .ts (21 files)
+#### .ts (24 files)
 
 <details>
 <summary>Show files</summary>
@@ -1296,7 +1234,10 @@ Total files: 572
 - ./hooks/use-toast.ts
 - ./lib/utils.ts
 - ./next-env.d.ts
+- ./next.config.ts
 - ./scripts/move-unused-files.ts
+- ./styles/theme/colors.ts
+- ./styles/theme/gradients.ts
 - ./tailwind.config.ts
 - ./types/components.ts
 - ./types/design.ts
@@ -1313,12 +1254,12 @@ Total files: 572
 - ./.reference-files/root-css-variables-OLD.css
 - ./.reference-files/shadcn-defaults.css
 - ./app/globals.css
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/CPLibraryAll.css
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/CPLibraryAll.css
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
+- ./public/learning-objects/escape-room-learning-activity/assets/css/CPLibraryAll.css
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/CPLibraryAll.css
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
 
 </details>
 
@@ -1421,6 +1362,7 @@ Total files: 572
 - ./app/playground/page.tsx
 - ./app/portfolio/gamified-adaptive-statistics-tutor/page.tsx
 - ./app/portfolio/page.tsx
+- ./components/common/gradient-text.tsx
 - ./components/contact-form.tsx
 - ./components/layout/container.tsx
 - ./components/layout/footer.tsx
@@ -1443,7 +1385,6 @@ Total files: 572
 - ./components/ui/accordion.tsx
 - ./components/ui/aspect-ratio.tsx
 - ./components/ui/badge.tsx
-- ./components/ui/bullet-image.tsx
 - ./components/ui/button-icon.tsx
 - ./components/ui/button.tsx
 - ./components/ui/card.tsx
@@ -1487,34 +1428,33 @@ Total files: 572
 - ./.reference-files/project-docs/configs/eslint.config.js
 - ./eslint.config.js
 - ./prettier.config.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/SCORM_utilities.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/Utilities.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/CPM.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/CPXHRLoader.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/jquery-1.11.3.min.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/playbarScript.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/browsersniff.js
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/scormdriver.js
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/CPM.js
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/CPXHRLoader.js
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/jquery-1.11.3.min.js
+- ./public/learning-objects/escape-room-learning-activity/assets/js/CPM.js
+- ./public/learning-objects/escape-room-learning-activity/assets/js/CPXHRLoader.js
+- ./public/learning-objects/escape-room-learning-activity/assets/js/jquery-1.11.3.min.js
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/playbarScript.js
+- ./public/learning-objects/escape-room-learning-activity/browsersniff.js
+- ./public/learning-objects/escape-room-learning-activity/SCORM_utilities.js
+- ./public/learning-objects/escape-room-learning-activity/scormdriver.js
+- ./public/learning-objects/escape-room-learning-activity/Utilities.js
+- ./public/learning-objects/stats-zoo-learning-activity/assets/js/CPM.js
+- ./public/learning-objects/stats-zoo-learning-activity/assets/js/CPXHRLoader.js
+- ./public/learning-objects/stats-zoo-learning-activity/assets/js/jquery-1.11.3.min.js
 - ./scripts/document-project-single.js
 - ./scripts/document-project.js
 
 </details>
 
-#### .mjs (3 files)
+#### .mjs (2 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./.reference-files/project-docs/configs/next.config.mjs
-- ./next.config.mjs
 - ./postcss.config.mjs
 
 </details>
 
-#### .json (47 files)
+#### .json (46 files)
 
 <details>
 <summary>Show files</summary>
@@ -1525,46 +1465,45 @@ Total files: 572
 - ./.vscode/launch.json
 - ./.vscode/settings.json
 - ./components.json
-- ./componentsOLD.json
 - ./knip.json
 - ./package.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img1.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img2.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img3.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img4.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img5.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img6.json
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/imgmd.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img1.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img10.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img11.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img12.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img13.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img14.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img15.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img16.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img17.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img18.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img19.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img2.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img20.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img21.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img22.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img23.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img24.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img25.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img26.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img27.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img28.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img29.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img3.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img4.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img5.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img6.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img7.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img8.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img9.json
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/imgmd.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img1.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img2.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img3.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img4.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img5.json
+- ./public/learning-objects/escape-room-learning-activity/dr/img6.json
+- ./public/learning-objects/escape-room-learning-activity/dr/imgmd.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img1.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img10.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img11.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img12.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img13.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img14.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img15.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img16.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img17.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img18.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img19.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img2.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img20.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img21.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img22.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img23.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img24.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img25.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img26.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img27.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img28.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img29.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img3.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img4.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img5.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img6.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img7.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img8.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/img9.json
+- ./public/learning-objects/stats-zoo-learning-activity/dr/imgmd.json
 - ./tsconfig.json
 
 </details>
@@ -1575,8 +1514,8 @@ Total files: 572
 <summary>Show files</summary>
 
 - ./.reference-files/spotlight-wide-code.txt
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/project.txt
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/project.txt
+- ./public/learning-objects/escape-room-learning-activity/project.txt
+- ./public/learning-objects/stats-zoo-learning-activity/project.txt
 
 </details>
 
@@ -1619,14 +1558,64 @@ Total files: 572
 
 </details>
 
-#### .jpg (3 files)
+#### .xsd (5 files)
 
 <details>
 <summary>Show files</summary>
 
-- ./public/placeholder-user.jpg
-- ./public/placeholder.jpg
-- ./public/portfolio-images/game-based-learning-design/Slide10.jpg
+- ./public/learning-objects/escape-room-learning-activity/adlcp_rootv1p2.xsd
+- ./public/learning-objects/escape-room-learning-activity/ims_xml.xsd
+- ./public/learning-objects/escape-room-learning-activity/imscp_rootv1p1p2.xsd
+- ./public/learning-objects/escape-room-learning-activity/imsmd_rootv1p2p1.xsd
+- ./public/learning-objects/escape-room-learning-activity/ScormEnginePackageProperties.xsd
+
+</details>
+
+#### .mp3 (7 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/learning-objects/escape-room-learning-activity/ar/12633.mp3
+- ./public/learning-objects/escape-room-learning-activity/ar/15812.mp3
+- ./public/learning-objects/escape-room-learning-activity/ar/15839.mp3
+- ./public/learning-objects/escape-room-learning-activity/ar/166512.mp3
+- ./public/learning-objects/escape-room-learning-activity/ar/Mouse.mp3
+- ./public/learning-objects/stats-zoo-learning-activity/ar/47974.mp3
+- ./public/learning-objects/stats-zoo-learning-activity/ar/Mouse.mp3
+
+</details>
+
+#### .gif (25 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/animated-overlay.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/arrow_right.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/hotspot.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/img_trans.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/loader_transparent.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/loader.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/Pause.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/Pause2x.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/Play.gif
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/Play2x.gif
+- ./public/learning-objects/escape-room-learning-activity/dr/loading.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/animated-overlay.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/arrow_right.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/hotspot.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/img_trans.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/loader_transparent.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/loader.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/Pause.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/Pause2x.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/Play.gif
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/Play2x.gif
+- ./public/learning-objects/stats-zoo-learning-activity/dr/loading.gif
+- ./public/portfolio-images/escape-room-preview-optimized.gif
+- ./public/portfolio-images/escape-room-preview-reoptimized.gif
+- ./public/portfolio-images/escape-room-preview.gif
 
 </details>
 
@@ -1635,21 +1624,205 @@ Total files: 572
 <details>
 <summary>Show files</summary>
 
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/ccClose.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/checkBox_disabled.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/checkBox_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/checkBox_selected.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/closeReviewButton.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/correct_answer_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/correct_answer_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/correct_question_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/correct_question_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/dd_arrow.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/expand_icon.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/expand_icon@2x.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/gesturemobileicon.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/gesturemobileimage2.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/gesturemobilelandscape.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/gesturetabletimage.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/incorrect_answer_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/incorrect_answer_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/incorrect_question_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/incorrect_question_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/movieexpire.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/partial_correct_question_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/partial_correct_question_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/placeholder.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/Play_icon.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/radioButton_disabled.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/radioButton_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/radioButton_selected.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/sequenceReview.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/skip_answer_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/skip_answer_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/skip_question_normal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/skip_question_small.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/toc.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidbg.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidfullscreen.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidpause.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidplay.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidrewind.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidslider.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidstop.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidvolume.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidvolume2.png
+- ./public/learning-objects/escape-room-learning-activity/assets/htmlimages/vidvolumemute.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOff.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOn.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/BackGround.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Backward.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/CC.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Color.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/ColorSmall.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Exit.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward1.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward2.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Forward.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Glow.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/GlowSmall.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Height.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStroke.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStrokeSmall.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Pause.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Play.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Progress.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Rewind.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Shade.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/ShadeSmall.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Stroke.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/StrokeSmall.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/Thumb.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/ThumbBase.png
+- ./public/learning-objects/escape-room-learning-activity/assets/playbar/PlaybarIcons/TOC.png
+- ./public/learning-objects/escape-room-learning-activity/assets/TOC_icons/collapseIcon.png
+- ./public/learning-objects/escape-room-learning-activity/assets/TOC_icons/expandIcon.png
+- ./public/learning-objects/escape-room-learning-activity/assets/TOC_icons/photo.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/blankBookmark.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/clear.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/expander.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/fullBookmark.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/go.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/infoClose.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/moreinfo.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
+- ./public/learning-objects/escape-room-learning-activity/assets/toc/tocIcons/visited.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/ccClose.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/checkBox_disabled.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/checkBox_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/checkBox_selected.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/closeReviewButton.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/correct_answer_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/correct_answer_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/correct_question_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/correct_question_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/dd_arrow.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/expand_icon.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/expand_icon@2x.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/gesturemobileimage2.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/gesturemobilelandscape.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/gesturetabletimage.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/movieexpire.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/placeholder.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/Play_icon.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/radioButton_disabled.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/radioButton_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/radioButton_selected.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/sequenceReview.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/skip_answer_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/skip_answer_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/skip_question_normal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/skip_question_small.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/toc.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidbg.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidfullscreen.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidpause.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidplay.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidrewind.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidslider.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidstop.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidvolume.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidvolume2.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/htmlimages/vidvolumemute.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/TOC_icons/collapseIcon.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/TOC_icons/expandIcon.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/TOC_icons/photo.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/blankBookmark.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/clear.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/expander.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/fullBookmark.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/go.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/infoClose.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/moreinfo.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
+- ./public/learning-objects/stats-zoo-learning-activity/assets/toc/tocIcons/visited.png
 - ./public/portfolio-images/adaptive-statistics-tutor.png
-- ./public/portfolio-images/game-based-learning-design/BIOSTATSfEATURE.png
 - ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage 2.png
 - ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage 3.png
 - ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage.png
+- ./public/portfolio-images/game-based-learning-design/beanstalkfeature.png
+- ./public/portfolio-images/game-based-learning-design/BIOSTATSfEATURE.png
 - ./public/portfolio-images/game-based-learning-design/ENGAGE poster border.png
 - ./public/portfolio-images/game-based-learning-design/ENGAGE-poster-20120912-1.png
+- ./public/portfolio-images/game-based-learning-design/gamedesignttm_feature.png
+- ./public/portfolio-images/game-based-learning-design/interactiveproblemset_dragging_cropped.png
 - ./public/portfolio-images/game-based-learning-design/Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.png
 - ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 2.png
 - ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 3.png
 - ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 4.png
 - ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage.png
-- ./public/portfolio-images/game-based-learning-design/beanstalkfeature.png
-- ./public/portfolio-images/game-based-learning-design/gamedesignttm_feature.png
-- ./public/portfolio-images/game-based-learning-design/interactiveproblemset_dragging_cropped.png
 - ./public/portfolio-images/game-based-learning-design/tt,14.png
 - ./public/portfolio-images/game-based-learning-design/tt14.png
 - ./public/portfolio-images/game-based-learning-design/ttm1.png
@@ -1666,229 +1839,33 @@ Total files: 572
 - ./public/portfolio-images/game-based-learning-design/ttm9.png
 - ./public/portfolio-images/gamified-statistics-tutor/Course  Applied Biostatistics.png
 - ./public/portfolio-images/gamified-statistics-tutor/Escape Room Tutor Instructions.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/collapseIcon.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/expandIcon.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/photo.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play_icon.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/ccClose.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_disabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_selected.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/closeReviewButton.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/dd_arrow.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/expand_icon.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/expand_icon@2x.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileicon.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileimage2.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobilelandscape.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturetabletimage.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/movieexpire.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/partial_correct_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/partial_correct_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/placeholder.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_disabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_selected.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/sequenceReview.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/toc.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidbg.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidfullscreen.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidpause.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidplay.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidrewind.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidslider.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidstop.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolume.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolume2.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolumemute.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOff.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOn.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/BackGround.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Backward.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/CC.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Color.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ColorSmall.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Exit.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward1.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward2.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Forward.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Glow.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/GlowSmall.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Height.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStroke.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStrokeSmall.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Pause.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Play.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Progress.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Rewind.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Shade.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ShadeSmall.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Stroke.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/StrokeSmall.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/TOC.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Thumb.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ThumbBase.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/blankBookmark.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/clear.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/expander.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/fullBookmark.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/go.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/infoClose.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/moreinfo.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/visited.png
 - ./public/portfolio-images/gamified-statistics-tutor/escape-room-statistic-tutor-hint.png
 - ./public/portfolio-images/gamified-statistics-tutor/escaperoomfeature-1024x1024.png
 - ./public/portfolio-images/gamified-statistics-tutor/escaperoomfeature.png
 - ./public/portfolio-images/gamified-statistics-tutor/interactiveproblemset_dragging_cropped.png
 - ./public/portfolio-images/gamified-statistics-tutor/magic-book-brand-light.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/collapseIcon.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/expandIcon.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/photo.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play_icon.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/ccClose.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_disabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_selected.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/closeReviewButton.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/dd_arrow.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/expand_icon.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/expand_icon@2x.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileimage2.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobilelandscape.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturetabletimage.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/movieexpire.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/placeholder.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_disabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_selected.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/sequenceReview.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_answer_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_answer_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_question_normal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_question_small.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/toc.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidbg.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidfullscreen.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidpause.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidplay.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidrewind.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidslider.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidstop.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolume.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolume2.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolumemute.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/blankBookmark.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/clear.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/expander.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/fullBookmark.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/go.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/infoClose.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/moreinfo.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/visited.png
 - ./public/portfolio-images/gamified-statistics-tutor/treasure_feature.png
 
 </details>
 
-#### .gif (25 files)
+#### .xml (2 files)
 
 <details>
 <summary>Show files</summary>
 
-- ./public/portfolio-images/escape-room-preview-optimized.gif
-- ./public/portfolio-images/escape-room-preview-reoptimized.gif
-- ./public/portfolio-images/escape-room-preview.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/animated-overlay.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Pause.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Pause2x.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play2x.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/arrow_right.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/img_trans.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/loader.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/loader_transparent.gif
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/loading.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/animated-overlay.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Pause.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Pause2x.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play2x.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/arrow_right.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/img_trans.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/loader.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/loader_transparent.gif
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/loading.gif
+- ./public/learning-objects/escape-room-learning-activity/imsmanifest.xml
+- ./public/learning-objects/escape-room-learning-activity/metadata.xml
+
+</details>
+
+#### .jpg (3 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/placeholder-user.jpg
+- ./public/placeholder.jpg
+- ./public/portfolio-images/game-based-learning-design/Slide10.jpg
 
 </details>
 
@@ -1929,44 +1906,6 @@ Total files: 572
 <summary>Show files</summary>
 
 - ./public/portfolio-images/gamified-statistics-tutor/Biostatistics Inference Instructional analysis.xlsx
-
-</details>
-
-#### .xsd (5 files)
-
-<details>
-<summary>Show files</summary>
-
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ScormEnginePackageProperties.xsd
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/adlcp_rootv1p2.xsd
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ims_xml.xsd
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imscp_rootv1p1p2.xsd
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imsmd_rootv1p2p1.xsd
-
-</details>
-
-#### .mp3 (7 files)
-
-<details>
-<summary>Show files</summary>
-
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/12633.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/15812.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/15839.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/166512.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/Mouse.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar/47974.mp3
-- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar/Mouse.mp3
-
-</details>
-
-#### .xml (2 files)
-
-<details>
-<summary>Show files</summary>
-
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imsmanifest.xml
-- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/metadata.xml
 
 </details>
 
@@ -3271,7 +3210,7 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-lg bg-primary p-8 text-primary-foreground md:p-12"
+          className="relative overflow-hidden rounded-lg bg-brand p-8 text-brand-foreground md:p-12"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
           <div className="relative z-10 flex flex-col items-center space-y-6 text-center">

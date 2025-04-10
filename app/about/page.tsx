@@ -96,21 +96,21 @@ export default function AboutPage(): ReactElement {
                 <h2 className="mb-4 text-xl font-semibold">Connect</h2>
                 <div className="flex flex-col gap-4">
                   <Link
-                    className="flex items-center gap-2 text-muted transition-colors hover:text-primary"
+                    className="flex items-center gap-2 text-muted transition-colors hover:text-brand"
                     href="mailto:your.email@example.com"
                   >
                     <Mail className="size-5" />
                     <span>your.email@example.com</span>
                   </Link>
                   <Link
-                    className="flex items-center gap-2 text-muted transition-colors hover:text-primary"
+                    className="flex items-center gap-2 text-muted transition-colors hover:text-brand"
                     href="https://linkedin.com/in/yourprofile"
                   >
                     <Linkedin className="size-5" />
                     <span>linkedin.com/in/yourprofile</span>
                   </Link>
                   <Link
-                    className="flex items-center gap-2 text-muted transition-colors hover:text-primary"
+                    className="flex items-center gap-2 text-muted transition-colors hover:text-brand"
                     href="https://github.com/yourusername"
                   >
                     <Github className="size-5" />
@@ -165,7 +165,7 @@ export default function AboutPage(): ReactElement {
                 Let&apos;s discuss how I can help your organization create{' '}
                 <GradientText variant="slate">effective</GradientText> learning experiences.
               </p>
-              <Button asChild className="bg-primary text-foreground hover:bg-primary/90" size="lg">
+              <Button asChild className="bg-brand text-foreground hover:bg-brand/90" size="lg">
                 <Link href="/contact">
                   Get in touch <ArrowRight className="ml-2 size-4" />
                 </Link>

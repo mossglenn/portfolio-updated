@@ -5,7 +5,6 @@ import Navigation from '@/components/layout/navigation'
 
 import type React from 'react'
 
-
 interface PageLayoutProps {
   children: React.ReactNode
   header?: React.ReactNode

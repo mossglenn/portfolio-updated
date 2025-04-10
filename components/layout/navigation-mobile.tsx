@@ -30,7 +30,7 @@ const NavigationMobile = (): React.ReactElement => {
             {siteConfig.nav.map((item, index) => (
               <SkewedNavLink
                 key={item.href}
-                className="animate-slide-in-from-right"
+                className="animate-slide-in-right"
                 href={item.href}
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => setIsOpen(false)}

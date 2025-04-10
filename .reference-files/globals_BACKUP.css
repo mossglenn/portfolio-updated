@@ -165,7 +165,7 @@
 }
 
 .prose em {
-  @apply font-medium text-primary;
+  @apply font-medium text-brand;
 }
 
 /* Gradient text utilities from v0 project */

@@ -7,7 +7,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { SkewedBox } from '@/components/ui/skewed-box'
 import { testimonials } from '@/data/testamonials'
 
-
 export default function RotatingQuoteCard(): ReactElement {
   const [index, setIndex] = useState(0)
   const [maxHeight, setMaxHeight] = useState(0)
@@ -72,7 +71,7 @@ export default function RotatingQuoteCard(): ReactElement {
                 <div
                   dangerouslySetInnerHTML={{ __html: `&ldquo;${quote.category}&rdquo;` }}
                   className="text-lg font-medium text-muted"
-                 />
+                />
                 <div
                   dangerouslySetInnerHTML={{ __html: `&ldquo;${quote.text}&rdquo;` }}
                   className="text-xl font-semibold italic text-foreground"

@@ -13,7 +13,7 @@ export function ExpertiseSection(): ReactElement {
           </h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
-              <Target className="mt-0.5 size-5 text-primary" />
+              <Target className="mt-0.5 size-5 text-brand" />
               <div>
                 <div className="font-medium">Needs Analysis</div>
                 <div className="text-sm text-foreground">
@@ -22,7 +22,7 @@ export function ExpertiseSection(): ReactElement {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <Lightbulb className="mt-0.5 size-5 text-primary" />
+              <Lightbulb className="mt-0.5 size-5 text-brand" />
               <div>
                 <div className="font-medium">Learning Design</div>
                 <div className="text-sm text-foreground">
@@ -40,7 +40,7 @@ export function ExpertiseSection(): ReactElement {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle className="mt-0.5 size-5 text-primary" />
+              <CheckCircle className="mt-0.5 size-5 text-brand" />
               <div>
                 <div className="font-medium">Impact Measurement</div>
                 <div className="text-sm text-foreground">

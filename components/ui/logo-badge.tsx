@@ -9,7 +9,7 @@ interface LogoBadgeProps {
   href?: string
   label?: string
   skewAmount?: number // e.g. 20 means skew-x-20
-  backgroundColorClass?: string // e.g. "bg-primary"
+  backgroundColorClass?: string // e.g. "bg-brand"
   className?: string
 }
 
@@ -17,7 +17,7 @@ export function LogoBadge({
   href = '/',
   label = 'AmosGlenn',
   skewAmount = 20,
-  backgroundColorClass = 'bg-primary',
+  backgroundColorClass = 'bg-brand',
   className,
 }: LogoBadgeProps): React.ReactElement {
   const skew = `skew-x-${skewAmount}`

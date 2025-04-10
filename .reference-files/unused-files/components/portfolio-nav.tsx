@@ -28,7 +28,7 @@ export default function PortfolioNav() {
               className={cn(
                 'flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium',
                 openCategory === category.label
-                  ? 'bg-primary text-primary-foreground'
+                  ? 'bg-brand text-brand-foreground'
                   : 'hover:bg-muted'
               )}
             >
