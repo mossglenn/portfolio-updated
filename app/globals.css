@@ -6,112 +6,82 @@
 @tailwind utilities;
 
 /* ======================= */
-/* 🌈 Base Color Variables */
+/* 🎈 Base CSS Variables   */
 /* ======================= */
 @layer base {
   :root {
-    /* === Brand === */
-    --brand: 267 39% 48%;
-    --brand-light: 267 39% 61%;
-    --brand-lighter: 267 39% 70%;
-    --brand-dark: 267 39% 39%;
-    --brand-darker: 267 42% 30%;
-
-    /* === Accent (Amber) === */
+    /* === Accent === */
     --accent: 35 76% 60%;
-    --accent-light: 35 80% 80%;
     --accent-dark: 25 65% 46%;
+    --accent-light: 35 80% 80%;
     --accent-softer: 46 68% 72%;
 
-    /* === Backgrounds & Cards === */
+    /* === Background === */
     --background: 237 19% 15%;
     --background-alt: 237 19% 20%;
-    --card: 240 20% 20%; /* original 214 15% 25%; */
-    --card-light: 240 16% 70%;
+
+    /* === Brand === */
+    --brand: 267 39% 48%;
+    --brand-dark: 267 39% 39%;
+    --brand-darker: 267 42% 30%;
+    --brand-light: 267 39% 61%;
+    --brand-lighter: 267 39% 70%;
+
+    /* === Card === */
+    --card: 240 20% 20%;
     --card-alt: 216 30% 20%;
     --card-dark: 267 20% 18%;
+    --card-light: 240 16% 70%;
 
-    /* === Foreground/Text === */
+    /* === Foreground === */
     --foreground: 43 50% 95%;
-    --foreground-muted: 267 39% 39%;
-    --foreground-light: 0 0% 100%;
     --foreground-dark: 220 10% 8%;
+    --foreground-light: 0 0% 100%;
     --foreground-lavender: 270 36% 92%;
+    --foreground-muted: 267 39% 39%;
 
-    /* === Neutral / Muted === */
-    --neutral: 258 22% 76%;
-    --neutral-dark: 258 10% 65%;
+    /* === Muted === */
     --muted: 310 18% 37%;
     --muted-dark: 310 28% 25%;
+
+    /* === Neutral === */
+    --neutral: 258 22% 76%;
+    --neutral-dark: 258 10% 65%;
 
     /* === Secondary === */
     --secondary: 234 21% 27%;
     --secondary-light: 234 21% 39%;
 
-    /* === Additional Color Tokens for Gradients === */
-    --sage: 125 18% 71%;
-    --sky: 195 42% 74%;
-    --slate-light: 234 21% 27%;
-    --pink: 324 69% 79%;
-    --lavender: 256 100% 75%;
-    --lavender-light: 270 36% 75%;
-
-    /* === UI / System === */
-    --popover: 43 30% 90%;
-    --popover-foreground: 220 10% 8%;
+    /* === System/UI === */
+    --border: 43 20% 75%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 43 20% 75%;
     --input: 43 20% 85%;
+    --popover: 43 30% 90%;
+    --popover-foreground: 220 10% 8%;
     --ring: 38 70% 55%;
 
-    /* === Iceberg Graphic Additions === */
-    --ice-water: 220 40% 27%;
-    --ice-top: 220 40% 80%;
+    /* === Visual Tokens (Project-Specific) === */
     --ice-layer-1: 210 40% 60%;
     --ice-layer-2: 210 45% 46%;
     --ice-layer-3: 215 50% 32%;
     --ice-layer-4: 225 52% 22%;
+    --ice-top: 220 40% 80%;
+    --ice-water: 220 40% 27%;
 
-    /* === Gradient Tokens (All Token-Based) === */
-    --gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
-    --gradient-brand-light: linear-gradient(
-      340deg,
-      hsl(var(--brand)),
-      hsl(var(--brand-lighter)),
-      hsl(var(--brand))
-    );
-
-    --gradient-muted: linear-gradient(to right, hsl(var(--brand)), hsl(var(--muted)));
-    --gradient-secondary: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
-    --gradient-dark: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--slate-light)));
-    --gradient-slate-sky: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--sky)));
-    --gradient-earth: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
-    --gradient-playful: linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)));
-    --gradient-lavender: linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)));
-
-    --gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(--accent-softer)));
-    --gradient-accent-light-vertical: linear-gradient(
-      to bottom,
-      hsl(var(--accent)),
-      hsl(var(--accent-softer))
-    );
-    --gradient-accent-lighter-left: linear-gradient(
-      to right,
-      hsl(var(--accent-softer)),
-      hsl(var(--accent))
-    );
-
-    --gradient-card-background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)));
-
-    --gradient-lavender-light: linear-gradient(to right, hsl(256 100% 75.1%), hsl(270 35.9% 74.9%));
+    /* === Additional Colors === */
+    --lavender: 256 100% 75%;
+    --lavender-light: 270 36% 75%;
+    --pink: 324 69% 79%;
+    --sage: 125 18% 71%;
+    --sky: 195 42% 74%;
+    --slate-light: 234 21% 27%;
   }
 
   .project-title-card {
     --caption-max-adjust: calc(var(--offset) * 3);
   }
 
-  /* tablet and up */
   @container (min-width: 350px) {
     .project-title-card {
       --caption-max-adjust: calc(var(--offset) * 6);
@@ -126,43 +96,31 @@
     font-display: swap;
   }
 
-  /* =========================== */
-  /* ✨ Custom Themes (optional) */
-  /* =========================== */
   .theme-test {
-    /* Test Theme */
     --card-background: 267.1, 52.54%, 11.57%;
   }
+
   .theme-experimental {
-    /* Experimental Theme */
-    --background: 220, 10%, 8%; /* Dark Background */
+    --background: 220, 10%, 8%;
   }
+
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; /* match your sticky header height */
+    scroll-padding-top: 5rem;
   }
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
 }
 
-/* =========================== */
-/* ✨ Custom Components (optional) */
-/* =========================== */
-@layer components {
-}
-
-/* ========================= */
-/* 📐 Optional Utility Shortcuts */
-/* ========================= */
 @layer utilities {
   @media (min-width: 768px) and (max-width: 913px) {
     .text-md-squish {
       font-size: 2.8rem;
     }
-  }
-  @media (min-width: 768px) and (max-width: 913px) {
+
     .text-md-squish-subtext {
       font-size: 2rem;
     }
@@ -171,125 +129,21 @@
   .clip-parallelogram {
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
   }
+
   .ml-offset {
     margin-left: var(--offset);
   }
+
   .mr-offset {
     margin-right: var(--offset);
   }
+
   .pl-offset {
     padding-left: var(--offset);
   }
+
   .pr-offset {
     padding-right: var(--offset);
-  }
-
-  .bg-gradient-brand {
-    background-image: var(--gradient-brand);
-  }
-  .bg-gradient-muted {
-    background-image: var(--gradient-muted);
-  }
-  .bg-gradient-secondary {
-    background-image: var(--gradient-secondary);
-  }
-  .bg-gradient-dark {
-    background-image: var(--gradient-dark);
-  }
-  .bg-gradient-slate-sky {
-    background-image: var(--gradient-slate-sky);
-  }
-  .bg-gradient-earth {
-    background-image: var(--gradient-earth);
-  }
-  .bg-gradient-playful {
-    background-image: var(--gradient-playful);
-  }
-  .bg-gradient-lavender {
-    background-image: var(--gradient-lavender);
-  }
-  .bg-gradient-card-background {
-    background-image: var(--gradient-card-background);
-  }
-  .text-gradient-brand {
-    background-image: var(--gradient-brand);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-brand-light {
-    background-image: var(--gradient-brand-light);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .text-gradient-muted {
-    background-image: var(--gradient-muted);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-secondary {
-    background-image: var(--gradient-secondary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-dark {
-    background-image: var(--gradient-dark);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-slate-sky {
-    background-image: var(--gradient-slate-sky);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-earth {
-    background-image: var(--gradient-earth);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-playful {
-    background-image: var(--gradient-playful);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-lavender {
-    background-image: var(--gradient-lavender);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-accent-light {
-    background-image: var(--gradient-accent-light);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-accent-light-vertical {
-    background-image: var(--gradient-accent-light-vertical);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-accent-lighter-left {
-    background-image: var(--gradient-accent-lighter-left);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .text-gradient-lavender-light {
-    background-image: var(--gradient-lavender-light);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
   }
 
   .text-outline {
@@ -318,7 +172,14 @@
     transform-origin: right;
   }
 
-  /* === Change Inherited Font size === */
+  .text-inherit-075 {
+    font-size: 0.75em;
+  }
+
+  .text-inherit-085 {
+    font-size: 0.85em;
+  }
+
   .text-inherit-115 {
     font-size: 1.15em;
   }
@@ -326,14 +187,7 @@
   .text-inherit-200 {
     font-size: 2em;
   }
-  .text-inherit-075 {
-    font-size: 0.75em;
-  }
-  .text-inherit-085 {
-    font-size: 0.85em;
-  }
 
-  /* === Animate Background Gradient === */
   .animated-gradient {
     background-size: 200% 200%;
     transition: background-position 0.5s ease;

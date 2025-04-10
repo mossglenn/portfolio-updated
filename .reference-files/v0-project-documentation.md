@@ -1,6 +1,6 @@
 # Project Documentation for v0
 
-Generated: 4/10/2025, 6:11:47 PM
+Generated: 4/10/2025, 6:24:29 PM
 
 ## Table of Contents
 
@@ -483,7 +483,7 @@ export default eslintConfig
 
 ## Project Structure
 
-Total files: 573
+Total files: 572
 
 ### Directories
 
@@ -664,7 +664,6 @@ Total files: 573
 #### ./components
 
 - contact-form.tsx
-- theme-provider.tsx
 
 #### ./components/layout
 
@@ -1293,7 +1292,7 @@ Total files: 573
 
 </details>
 
-#### .tsx (108 files)
+#### .tsx (107 files)
 
 <details>
 <summary>Show files</summary>
@@ -1381,7 +1380,6 @@ Total files: 573
 - ./components/sections/home/project-test.tsx
 - ./components/sections/home/rotating-quote-section.tsx
 - ./components/sections/home/toolstack-section.tsx
-- ./components/theme-provider.tsx
 - ./components/ui/accordion.tsx
 - ./components/ui/aspect-ratio.tsx
 - ./components/ui/badge.tsx

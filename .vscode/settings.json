@@ -9,6 +9,17 @@
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
 
+  // Language-specific formatter overrides
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[plaintext]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // Enable ESLint integration
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.useFlatConfig": true,
@@ -27,5 +38,6 @@
   "tailwindCSS.experimental.classRegex": [["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "prettier.configPath": "./prettier.config.js"
 }

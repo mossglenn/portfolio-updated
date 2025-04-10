@@ -2,7 +2,6 @@ import { Plus_Jakarta_Sans } from 'next/font/google'
 import { Space_Grotesk } from 'next/font/google'
 import { type ReactElement } from 'react'
 
-import { ThemeProvider } from '@/components/theme-provider'
 import { siteConfig } from '@/config/site'
 
 import type { Metadata } from 'next'
@@ -35,9 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }): ReactElement {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.className} ${spaceGrotesk.variable}`}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className={`${spaceGrotesk.className} ${spaceGrotesk.variable}`}>{children}</body>
     </html>
   )
 }
