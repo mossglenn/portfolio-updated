@@ -1,7 +1,8 @@
 // scripts/move-unused-files.ts
-import path from 'path'
 import fs from 'fs'
 import { mkdir } from 'fs/promises'
+import path from 'path'
+
 import { execa } from 'execa'
 
 const UNUSED_FILES = [

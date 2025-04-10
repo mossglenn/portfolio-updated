@@ -24,7 +24,7 @@ export default function Hero() {
             <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl">
               Innovative <span className="text-primary">Instructional Design</span> Solutions
             </h1>
-            <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+            <p className="mx-auto max-w-2xl text-xl text-foreground">
               Creating cutting-edge, research-based learning experiences that bridge theory and
               practice for real-world impact.
             </p>

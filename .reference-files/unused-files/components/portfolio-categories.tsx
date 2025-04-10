@@ -52,7 +52,7 @@ export default function PortfolioCategories() {
                         <div className="flex items-start justify-between">
                           <div>
                             <h3 className="font-medium">{project.label}</h3>
-                            <p className="mt-1 text-sm text-muted-foreground">{project.subLabel}</p>
+                            <p className="mt-1 text-sm text-foreground">{project.subLabel}</p>
                           </div>
                           <Button asChild variant="ghost" size="sm">
                             <Link href={project.path}>

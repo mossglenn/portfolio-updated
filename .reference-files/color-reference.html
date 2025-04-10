@@ -8,56 +8,72 @@
   <style>
 :root {
   /* === Brand === */
-  --brand: 267, 39%, 48%;
-  --brand-light: 267, 39%, 61%;
-  --brand-dark: 267, 39%, 39%;
-  --brand-darker: 267, 42%, 30%;
+  --brand: 267 39% 48%;
+  --brand-light: 267 39% 61%;
+  --brand-lighter: 267 39% 70%;
+  --brand-dark: 267 39% 39%;
+  --brand-darker: 267 42% 30%;
 
   /* === Accent (Amber) === */
-  --accent: 35, 76%, 60%;
-  --accent-light: 35, 79%, 68%;
-  --accent-dark: 25, 65%, 46%;
+  --accent: 35 76% 60%;
+  --accent-light: 35 80% 80%;
+  --accent-dark: 25 65% 46%;
+  --accent-softer: 46 68% 72%;
 
   /* === Backgrounds & Cards === */
-  --background: 237, 19%, 20%;
-  --background-alt: 237, 18%, 14%;;
-  --card: 214, 15%, 25%;
-  --card-alt: 216, 30%, 20%;
+  --background: 237 19% 15%;
+  --background-alt: 237 19% 20%;
+  --card: 240 20% 20%; /* original 214 15% 25%; */
+  --card-light: 240 20% 32%;
+  --card-alt: 216 30% 20%;
 
   /* === Foreground/Text === */
-  --foreground: 43, 50%, 95%;
-  --foreground-muted: 267, 39%, 39%;
-  --foreground-light: 0, 0%, 100%;
-  --foreground-dark: 220, 10%, 8%;
+  --foreground: 43 50% 95%;
+  --foreground-muted: 267 39% 39%;
+  --foreground-light: 0 0% 100%;
+  --foreground-dark: 220 10% 8%;
+  --foreground-lavender:270 36% 92%;
 
   /* === Neutral / Muted === */
-  --neutral: 258, 22%, 76%;
-  --muted: 310, 18%, 37%;
-  --muted-dark: 310, 28%, 25%;
+  --neutral: 258 22% 76%;
+  --muted: 310 18% 37%;
+  --muted-dark: 310 28% 25%;
 
   /* === Secondary === */
-  --secondary: 267, 39%, 39%;
-  --secondary-light: 288, 50%, 78%;
+  --secondary: 234 21% 27%;
+  --secondary-light: 234 21% 39%;
 
   /* === Additional Color Tokens for Gradients === */
-  --sage: 125, 18%, 71%;
-  --sky: 195, 42%, 74%;
-  --slate-light: 234, 21%, 27%;
-  --pink: 324, 69%, 79%;
-  --lavender: 256, 100%, 75%;
-  --lavender-light: 270, 36%, 75%;
+  --sage: 125 18% 71%;
+  --sky: 195 42% 74%;
+  --slate-light: 234 21% 27%;
+  --pink: 324 69% 79%;
+  --lavender: 256 100% 75%;
+  --lavender-light: 270 36% 75%;
  
   /* === UI / System === */
-  --popover: 43, 30%, 90%;
-  --popover-foreground: 220, 10%, 8%;
-  --destructive: 0, 84%, 60%;
-  --destructive-foreground: 0, 0%, 98%;
-  --border: 43, 20%, 75%;
-  --input: 43, 20%, 85%;
-  --ring: 38, 70%, 55%;
+  --popover: 43 30% 90%;
+  --popover-foreground: 220 10% 8%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 43 20% 75%;
+  --input: 43 20% 85%;
+  --ring: 38 70% 55%;
+
+    /* === Iceberg Graphic Additions === */
+  --ice-water: 220 40% 27%;
+  --ice-top: 220 40% 80%;
+  --ice-layer-1: 210 40% 60%;
+  --ice-layer-2: 210 45% 46%;
+  --ice-layer-3: 215 50% 32%;
+  --ice-layer-4: 225 52% 22%;
+
+
 
    /* === Gradient Tokens (All Token-Based) === */
   --gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
+  --gradient-brand-light: linear-gradient(340deg, hsl(var(--brand)), hsl(var(--brand-lighter)), hsl(var(--brand)));
+
   --gradient-muted: linear-gradient(to right, hsl(var(--brand)), hsl(var(--muted)));
   --gradient-secondary: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
   --gradient-dark: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--slate-light)));
@@ -65,6 +81,19 @@
   --gradient-earth: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
   --gradient-playful: linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)));
   --gradient-lavender: linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)));
+
+  --gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(--accent-softer))));
+  --gradient-accent-light-vertical: linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--accent-softer)));
+  --gradient-accent-lighter-left: linear-gradient(to right, hsl(var(--accent-softer)), hsl(var(--accent)));
+
+  --gradient-card-background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)));
+
+  --gradient-lavender-light: linear-gradient(to right, hsl(256 100% 75.1%), hsl(270 35.9% 74.9%));
+
+
+
+
+ 
 
 }
     body { font-family: sans-serif; background: #0a0a0a; padding: 2rem; color: #e0e0e0; }
@@ -79,7 +108,7 @@
 </head>
 <body>
   <h1>Color Tokens Reference</h1>
-  <div class='timestamp'>Generated on 2025-03-28 19:24:16</div>
+  <div class='timestamp'>Generated on 2025-04-09 11:47:48</div>
   <div class='sort-controls' style='margin-bottom: 1rem;'>
     <button onclick="sortBy('alphabet')">Sort: A–Z</button>
     <button onclick="sortBy('hue')">Sort: Hue</button>
@@ -87,10 +116,10 @@
   </div>
   <div class='grid'>
 
-        <div class='swatch' data-name='brand' data-hue='267' data-group='brand'>
+        <div class='swatch' data-name='brand' data-hue='267 39% 48%' data-group='brand'>
           <div class='color-box' style='background-color: hsl(var(--brand));'></div>
           <div><strong>--brand</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 39%, 48%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 39% 48%</code></div>
           <div>HEX: <code>#754aaa</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--brand)); color: #fff;'>bg</div>
@@ -100,10 +129,10 @@
             
         </div>
 
-        <div class='swatch' data-name='brand-light' data-hue='267' data-group='brand'>
+        <div class='swatch' data-name='brand-light' data-hue='267 39% 61%' data-group='brand'>
           <div class='color-box' style='background-color: hsl(var(--brand-light));'></div>
           <div><strong>--brand-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 39%, 61%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 39% 61%</code></div>
           <div>HEX: <code>#9774c2</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--brand-light)); color: #fff;'>bg</div>
@@ -113,10 +142,23 @@
             
         </div>
 
-        <div class='swatch' data-name='brand-dark' data-hue='267' data-group='brand'>
+        <div class='swatch' data-name='brand-lighter' data-hue='267 39% 70%' data-group='brand'>
+          <div class='color-box' style='background-color: hsl(var(--brand-lighter));'></div>
+          <div><strong>--brand-lighter</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 39% 70%</code></div>
+          <div>HEX: <code>#af94d0</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--brand-lighter)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--brand-lighter)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--brand-lighter));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='brand-dark' data-hue='267 39% 39%' data-group='brand'>
           <div class='color-box' style='background-color: hsl(var(--brand-dark));'></div>
           <div><strong>--brand-dark</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 39%, 39%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 39% 39%</code></div>
           <div>HEX: <code>#5f3c8a</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--brand-dark)); color: #fff;'>bg</div>
@@ -126,10 +168,10 @@
             
         </div>
 
-        <div class='swatch' data-name='brand-darker' data-hue='267' data-group='brand'>
+        <div class='swatch' data-name='brand-darker' data-hue='267 42% 30%' data-group='brand'>
           <div class='color-box' style='background-color: hsl(var(--brand-darker));'></div>
           <div><strong>--brand-darker</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 42%, 30%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 42% 30%</code></div>
           <div>HEX: <code>#492c6c</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--brand-darker)); color: #fff;'>bg</div>
@@ -139,10 +181,10 @@
             
         </div>
 
-        <div class='swatch' data-name='accent' data-hue='35' data-group='accent'>
+        <div class='swatch' data-name='accent' data-hue='35 76% 60%' data-group='accent'>
           <div class='color-box' style='background-color: hsl(var(--accent));'></div>
           <div><strong>--accent</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>35, 76%, 60%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>35 76% 60%</code></div>
           <div>HEX: <code>#e6a54b</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--accent)); color: #fff;'>bg</div>
@@ -152,11 +194,11 @@
             
         </div>
 
-        <div class='swatch' data-name='accent-light' data-hue='35' data-group='accent'>
+        <div class='swatch' data-name='accent-light' data-hue='35 80% 80%' data-group='accent'>
           <div class='color-box' style='background-color: hsl(var(--accent-light));'></div>
           <div><strong>--accent-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>35, 79%, 68%</code></div>
-          <div>HEX: <code>#edb86c</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>35 80% 80%</code></div>
+          <div>HEX: <code>#f4d2a3</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--accent-light)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--accent-light)); background: #333;'>text</div>
@@ -165,10 +207,10 @@
             
         </div>
 
-        <div class='swatch' data-name='accent-dark' data-hue='25' data-group='accent'>
+        <div class='swatch' data-name='accent-dark' data-hue='25 65% 46%' data-group='accent'>
           <div class='color-box' style='background-color: hsl(var(--accent-dark));'></div>
           <div><strong>--accent-dark</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>25, 65%, 46%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>25 65% 46%</code></div>
           <div>HEX: <code>#c16829</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--accent-dark)); color: #fff;'>bg</div>
@@ -178,11 +220,24 @@
             
         </div>
 
-        <div class='swatch' data-name='background' data-hue='237' data-group='background'>
+        <div class='swatch' data-name='accent-softer' data-hue='46 68% 72%' data-group='accent'>
+          <div class='color-box' style='background-color: hsl(var(--accent-softer));'></div>
+          <div><strong>--accent-softer</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>46 68% 72%</code></div>
+          <div>HEX: <code>#e8d187</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--accent-softer)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--accent-softer)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--accent-softer));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='background' data-hue='237 19% 15%' data-group='background'>
           <div class='color-box' style='background-color: hsl(var(--background));'></div>
           <div><strong>--background</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>237, 19%, 20%</code></div>
-          <div>HEX: <code>#292a3c</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>237 19% 15%</code></div>
+          <div>HEX: <code>#1e1f2d</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--background)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--background)); background: #333;'>text</div>
@@ -191,11 +246,11 @@
             
         </div>
 
-        <div class='swatch' data-name='background-alt' data-hue='237' data-group='background'>
+        <div class='swatch' data-name='background-alt' data-hue='237 19% 20%' data-group='background'>
           <div class='color-box' style='background-color: hsl(var(--background-alt));'></div>
           <div><strong>--background-alt</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>237, 18%, 14%</code></div>
-          <div>HEX: <code>#1d1d2a</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>237 19% 20%</code></div>
+          <div>HEX: <code>#292a3c</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--background-alt)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--background-alt)); background: #333;'>text</div>
@@ -204,11 +259,11 @@
             
         </div>
 
-        <div class='swatch' data-name='card' data-hue='214' data-group='card'>
+        <div class='swatch' data-name='card' data-hue='240 20% 20%' data-group='card'>
           <div class='color-box' style='background-color: hsl(var(--card));'></div>
           <div><strong>--card</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>214, 15%, 25%</code></div>
-          <div>HEX: <code>#363e49</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>240 20% 20%</code></div>
+          <div>HEX: <code>#28283d</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--card)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--card)); background: #333;'>text</div>
@@ -217,10 +272,23 @@
             
         </div>
 
-        <div class='swatch' data-name='card-alt' data-hue='216' data-group='card'>
+        <div class='swatch' data-name='card-light' data-hue='240 20% 32%' data-group='card'>
+          <div class='color-box' style='background-color: hsl(var(--card-light));'></div>
+          <div><strong>--card-light</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>240 20% 32%</code></div>
+          <div>HEX: <code>#414161</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--card-light)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--card-light)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--card-light));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='card-alt' data-hue='216 30% 20%' data-group='card'>
           <div class='color-box' style='background-color: hsl(var(--card-alt));'></div>
           <div><strong>--card-alt</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>216, 30%, 20%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>216 30% 20%</code></div>
           <div>HEX: <code>#232f42</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--card-alt)); color: #fff;'>bg</div>
@@ -230,10 +298,10 @@
             
         </div>
 
-        <div class='swatch' data-name='foreground' data-hue='43' data-group='foreground'>
+        <div class='swatch' data-name='foreground' data-hue='43 50% 95%' data-group='foreground'>
           <div class='color-box' style='background-color: hsl(var(--foreground));'></div>
           <div><strong>--foreground</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>43, 50%, 95%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>43 50% 95%</code></div>
           <div>HEX: <code>#f8f5eb</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--foreground)); color: #fff;'>bg</div>
@@ -243,10 +311,10 @@
             
         </div>
 
-        <div class='swatch' data-name='foreground-muted' data-hue='267' data-group='foreground'>
+        <div class='swatch' data-name='foreground-muted' data-hue='267 39% 39%' data-group='foreground'>
           <div class='color-box' style='background-color: hsl(var(--foreground-muted));'></div>
           <div><strong>--foreground-muted</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 39%, 39%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>267 39% 39%</code></div>
           <div>HEX: <code>#5f3c8a</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--foreground-muted)); color: #fff;'>bg</div>
@@ -256,10 +324,10 @@
             
         </div>
 
-        <div class='swatch' data-name='foreground-light' data-hue='0' data-group='foreground'>
+        <div class='swatch' data-name='foreground-light' data-hue='0 0% 100%' data-group='foreground'>
           <div class='color-box' style='background-color: hsl(var(--foreground-light));'></div>
           <div><strong>--foreground-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>0, 0%, 100%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>0 0% 100%</code></div>
           <div>HEX: <code>#ffffff</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--foreground-light)); color: #fff;'>bg</div>
@@ -269,10 +337,10 @@
             
         </div>
 
-        <div class='swatch' data-name='foreground-dark' data-hue='220' data-group='foreground'>
+        <div class='swatch' data-name='foreground-dark' data-hue='220 10% 8%' data-group='foreground'>
           <div class='color-box' style='background-color: hsl(var(--foreground-dark));'></div>
           <div><strong>--foreground-dark</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>220, 10%, 8%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>220 10% 8%</code></div>
           <div>HEX: <code>#121316</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--foreground-dark)); color: #fff;'>bg</div>
@@ -282,10 +350,23 @@
             
         </div>
 
-        <div class='swatch' data-name='neutral' data-hue='258' data-group='neutral'>
+        <div class='swatch' data-name='foreground-lavender' data-hue='270 36% 92%' data-group='foreground'>
+          <div class='color-box' style='background-color: hsl(var(--foreground-lavender));'></div>
+          <div><strong>--foreground-lavender</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>270 36% 92%</code></div>
+          <div>HEX: <code>#eae3f1</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--foreground-lavender)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--foreground-lavender)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--foreground-lavender));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='neutral' data-hue='258 22% 76%' data-group='neutral'>
           <div class='color-box' style='background-color: hsl(var(--neutral));'></div>
           <div><strong>--neutral</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>258, 22%, 76%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>258 22% 76%</code></div>
           <div>HEX: <code>#bcb4cf</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--neutral)); color: #fff;'>bg</div>
@@ -295,10 +376,10 @@
             
         </div>
 
-        <div class='swatch' data-name='muted' data-hue='310' data-group='muted'>
+        <div class='swatch' data-name='muted' data-hue='310 18% 37%' data-group='muted'>
           <div class='color-box' style='background-color: hsl(var(--muted));'></div>
           <div><strong>--muted</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>310, 18%, 37%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>310 18% 37%</code></div>
           <div>HEX: <code>#6f4d69</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--muted)); color: #fff;'>bg</div>
@@ -308,10 +389,10 @@
             
         </div>
 
-        <div class='swatch' data-name='muted-dark' data-hue='310' data-group='muted'>
+        <div class='swatch' data-name='muted-dark' data-hue='310 28% 25%' data-group='muted'>
           <div class='color-box' style='background-color: hsl(var(--muted-dark));'></div>
           <div><strong>--muted-dark</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>310, 28%, 25%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>310 28% 25%</code></div>
           <div>HEX: <code>#512d4b</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--muted-dark)); color: #fff;'>bg</div>
@@ -321,11 +402,11 @@
             
         </div>
 
-        <div class='swatch' data-name='secondary' data-hue='267' data-group='secondary'>
+        <div class='swatch' data-name='secondary' data-hue='234 21% 27%' data-group='secondary'>
           <div class='color-box' style='background-color: hsl(var(--secondary));'></div>
           <div><strong>--secondary</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>267, 39%, 39%</code></div>
-          <div>HEX: <code>#5f3c8a</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>234 21% 27%</code></div>
+          <div>HEX: <code>#363953</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--secondary)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--secondary)); background: #333;'>text</div>
@@ -334,11 +415,11 @@
             
         </div>
 
-        <div class='swatch' data-name='secondary-light' data-hue='288' data-group='secondary'>
+        <div class='swatch' data-name='secondary-light' data-hue='234 21% 39%' data-group='secondary'>
           <div class='color-box' style='background-color: hsl(var(--secondary-light));'></div>
           <div><strong>--secondary-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>288, 50%, 78%</code></div>
-          <div>HEX: <code>#d7aae2</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>234 21% 39%</code></div>
+          <div>HEX: <code>#4e5278</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--secondary-light)); color: #fff;'>bg</div>
               <div style='color: hsl(var(--secondary-light)); background: #333;'>text</div>
@@ -347,10 +428,10 @@
             
         </div>
 
-        <div class='swatch' data-name='sage' data-hue='125' data-group='sage'>
+        <div class='swatch' data-name='sage' data-hue='125 18% 71%' data-group='sage'>
           <div class='color-box' style='background-color: hsl(var(--sage));'></div>
           <div><strong>--sage</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>125, 18%, 71%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>125 18% 71%</code></div>
           <div>HEX: <code>#a7c2a9</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--sage)); color: #fff;'>bg</div>
@@ -360,10 +441,10 @@
             
         </div>
 
-        <div class='swatch' data-name='sky' data-hue='195' data-group='sky'>
+        <div class='swatch' data-name='sky' data-hue='195 42% 74%' data-group='sky'>
           <div class='color-box' style='background-color: hsl(var(--sky));'></div>
           <div><strong>--sky</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>195, 42%, 74%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>195 42% 74%</code></div>
           <div>HEX: <code>#a0cad8</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--sky)); color: #fff;'>bg</div>
@@ -373,10 +454,10 @@
             
         </div>
 
-        <div class='swatch' data-name='slate-light' data-hue='234' data-group='slate'>
+        <div class='swatch' data-name='slate-light' data-hue='234 21% 27%' data-group='slate'>
           <div class='color-box' style='background-color: hsl(var(--slate-light));'></div>
           <div><strong>--slate-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>234, 21%, 27%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>234 21% 27%</code></div>
           <div>HEX: <code>#363953</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--slate-light)); color: #fff;'>bg</div>
@@ -386,10 +467,10 @@
             
         </div>
 
-        <div class='swatch' data-name='pink' data-hue='324' data-group='pink'>
+        <div class='swatch' data-name='pink' data-hue='324 69% 79%' data-group='pink'>
           <div class='color-box' style='background-color: hsl(var(--pink));'></div>
           <div><strong>--pink</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>324, 69%, 79%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>324 69% 79%</code></div>
           <div>HEX: <code>#eea4d0</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--pink)); color: #fff;'>bg</div>
@@ -399,10 +480,10 @@
             
         </div>
 
-        <div class='swatch' data-name='lavender' data-hue='256' data-group='lavender'>
+        <div class='swatch' data-name='lavender' data-hue='256 100% 75%' data-group='lavender'>
           <div class='color-box' style='background-color: hsl(var(--lavender));'></div>
           <div><strong>--lavender</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>256, 100%, 75%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>256 100% 75%</code></div>
           <div>HEX: <code>#a17fff</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--lavender)); color: #fff;'>bg</div>
@@ -412,10 +493,10 @@
             
         </div>
 
-        <div class='swatch' data-name='lavender-light' data-hue='270' data-group='lavender'>
+        <div class='swatch' data-name='lavender-light' data-hue='270 36% 75%' data-group='lavender'>
           <div class='color-box' style='background-color: hsl(var(--lavender-light));'></div>
           <div><strong>--lavender-light</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>270, 36%, 75%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>270 36% 75%</code></div>
           <div>HEX: <code>#bfa8d6</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--lavender-light)); color: #fff;'>bg</div>
@@ -425,10 +506,10 @@
             
         </div>
 
-        <div class='swatch' data-name='popover' data-hue='43' data-group='popover'>
+        <div class='swatch' data-name='popover' data-hue='43 30% 90%' data-group='popover'>
           <div class='color-box' style='background-color: hsl(var(--popover));'></div>
           <div><strong>--popover</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>43, 30%, 90%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>43 30% 90%</code></div>
           <div>HEX: <code>#ede8dd</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--popover)); color: #fff;'>bg</div>
@@ -438,10 +519,10 @@
             
         </div>
 
-        <div class='swatch' data-name='popover-foreground' data-hue='220' data-group='popover'>
+        <div class='swatch' data-name='popover-foreground' data-hue='220 10% 8%' data-group='popover'>
           <div class='color-box' style='background-color: hsl(var(--popover-foreground));'></div>
           <div><strong>--popover-foreground</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>220, 10%, 8%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>220 10% 8%</code></div>
           <div>HEX: <code>#121316</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--popover-foreground)); color: #fff;'>bg</div>
@@ -451,10 +532,10 @@
             
         </div>
 
-        <div class='swatch' data-name='destructive' data-hue='0' data-group='destructive'>
+        <div class='swatch' data-name='destructive' data-hue='0 84% 60%' data-group='destructive'>
           <div class='color-box' style='background-color: hsl(var(--destructive));'></div>
           <div><strong>--destructive</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>0, 84%, 60%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>0 84% 60%</code></div>
           <div>HEX: <code>#ee4343</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--destructive)); color: #fff;'>bg</div>
@@ -464,10 +545,10 @@
             
         </div>
 
-        <div class='swatch' data-name='destructive-foreground' data-hue='0' data-group='destructive'>
+        <div class='swatch' data-name='destructive-foreground' data-hue='0 0% 98%' data-group='destructive'>
           <div class='color-box' style='background-color: hsl(var(--destructive-foreground));'></div>
           <div><strong>--destructive-foreground</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>0, 0%, 98%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>0 0% 98%</code></div>
           <div>HEX: <code>#f9f9f9</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--destructive-foreground)); color: #fff;'>bg</div>
@@ -477,10 +558,10 @@
             
         </div>
 
-        <div class='swatch' data-name='border' data-hue='43' data-group='border'>
+        <div class='swatch' data-name='border' data-hue='43 20% 75%' data-group='border'>
           <div class='color-box' style='background-color: hsl(var(--border));'></div>
           <div><strong>--border</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>43, 20%, 75%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>43 20% 75%</code></div>
           <div>HEX: <code>#cbc4b2</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--border)); color: #fff;'>bg</div>
@@ -490,10 +571,10 @@
             
         </div>
 
-        <div class='swatch' data-name='input' data-hue='43' data-group='input'>
+        <div class='swatch' data-name='input' data-hue='43 20% 85%' data-group='input'>
           <div class='color-box' style='background-color: hsl(var(--input));'></div>
           <div><strong>--input</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>43, 20%, 85%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>43 20% 85%</code></div>
           <div>HEX: <code>#e0dcd1</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--input)); color: #fff;'>bg</div>
@@ -503,10 +584,10 @@
             
         </div>
 
-        <div class='swatch' data-name='ring' data-hue='38' data-group='ring'>
+        <div class='swatch' data-name='ring' data-hue='38 70% 55%' data-group='ring'>
           <div class='color-box' style='background-color: hsl(var(--ring));'></div>
           <div><strong>--ring</strong></div>
-          <div style='margin-bottom: 0.5rem;'>HSL: <code>38, 70%, 55%</code></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>38 70% 55%</code></div>
           <div>HEX: <code>#dca13b</code></div>
             <div class='preview-block'>
               <div style='background-color: hsl(var(--ring)); color: #fff;'>bg</div>
@@ -516,10 +597,95 @@
             
         </div>
 
+        <div class='swatch' data-name='ice-water' data-hue='220 40% 27%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-water));'></div>
+          <div><strong>--ice-water</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>220 40% 27%</code></div>
+          <div>HEX: <code>#293b60</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-water)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-water)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-water));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='ice-top' data-hue='220 40% 80%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-top));'></div>
+          <div><strong>--ice-top</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>220 40% 80%</code></div>
+          <div>HEX: <code>#b7c5e0</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-top)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-top)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-top));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='ice-layer-1' data-hue='210 40% 60%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-layer-1));'></div>
+          <div><strong>--ice-layer-1</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>210 40% 60%</code></div>
+          <div>HEX: <code>#7098c1</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-layer-1)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-layer-1)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-layer-1));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='ice-layer-2' data-hue='210 45% 46%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-layer-2));'></div>
+          <div><strong>--ice-layer-2</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>210 45% 46%</code></div>
+          <div>HEX: <code>#4075aa</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-layer-2)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-layer-2)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-layer-2));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='ice-layer-3' data-hue='215 50% 32%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-layer-3));'></div>
+          <div><strong>--ice-layer-3</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>215 50% 32%</code></div>
+          <div>HEX: <code>#284a7a</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-layer-3)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-layer-3)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-layer-3));'>border</div>
+            </div>
+            
+        </div>
+
+        <div class='swatch' data-name='ice-layer-4' data-hue='225 52% 22%' data-group='ice'>
+          <div class='color-box' style='background-color: hsl(var(--ice-layer-4));'></div>
+          <div><strong>--ice-layer-4</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>225 52% 22%</code></div>
+          <div>HEX: <code>#1a2955</code></div>
+            <div class='preview-block'>
+              <div style='background-color: hsl(var(--ice-layer-4)); color: #fff;'>bg</div>
+              <div style='color: hsl(var(--ice-layer-4)); background: #333;'>text</div>
+              <div style='border: 2px solid hsl(var(--ice-layer-4));'>border</div>
+            </div>
+            
+        </div>
+
         <div class='swatch' data-name='gradient-brand' data-hue='0' data-group='gradient'>
           <div class='color-box' style='background-image: var(--gradient-brand);'></div>
           <div><strong>Gradient: --gradient-brand</strong></div>
           <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-brand-light' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-brand-light);'></div>
+          <div><strong>Gradient: --gradient-brand-light</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(340deg, hsl(var(--brand)), hsl(var(--brand-lighter)), hsl(var(--brand)))</code></div>
           
         </div>
 
@@ -569,6 +735,41 @@
           <div class='color-box' style='background-image: var(--gradient-lavender);'></div>
           <div><strong>Gradient: --gradient-lavender</strong></div>
           <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-accent-light' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-accent-light);'></div>
+          <div><strong>Gradient: --gradient-accent-light</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(hsl(var(--accent)), hsl(var(--accent-softer))))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-accent-light-vertical' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-accent-light-vertical);'></div>
+          <div><strong>Gradient: --gradient-accent-light-vertical</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to bottom, hsl(var(--accent)), hsl(var(--accent-softer)))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-accent-lighter-left' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-accent-lighter-left);'></div>
+          <div><strong>Gradient: --gradient-accent-lighter-left</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to right, hsl(var(--accent-softer)), hsl(var(--accent)))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-card-background' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-card-background);'></div>
+          <div><strong>Gradient: --gradient-card-background</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to right, hsl(var(--card)), hsl(var(--card-light)))</code></div>
+          
+        </div>
+
+        <div class='swatch' data-name='gradient-lavender-light' data-hue='0' data-group='gradient'>
+          <div class='color-box' style='background-image: var(--gradient-lavender-light);'></div>
+          <div><strong>Gradient: --gradient-lavender-light</strong></div>
+          <div style='margin-bottom: 0.5rem;'>HSL: <code>linear-gradient(to right, hsl(256 100% 75.1%), hsl(270 35.9% 74.9%))</code></div>
           
         </div>
   </div>

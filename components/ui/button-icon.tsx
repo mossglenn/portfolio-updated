@@ -1,11 +1,11 @@
 import { ChevronRight } from 'lucide-react'
+import { type ReactElement } from 'react'
 
 import { Button } from '@/components/ui/button'
-import { ReactElement } from 'react'
 
 export default function ButtonIcon(): ReactElement {
   return (
-    <Button variant="outline" size="icon">
+    <Button size="icon" variant="outline">
       <ChevronRight />
     </Button>
   )

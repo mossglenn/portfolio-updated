@@ -40,7 +40,7 @@ export default function FeaturedProjects() {
       <div className="container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Featured Projects</h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="max-w-2xl text-foreground">
             Explore my portfolio of innovative instructional design solutions that solve real
             learning challenges.
           </p>

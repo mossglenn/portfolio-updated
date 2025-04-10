@@ -1,6 +1,8 @@
-import type React from 'react'
+import { type ReactElement } from 'react'
+
 import { cn } from '@/lib/utils'
-import { ReactElement } from 'react'
+
+import type React from 'react'
 
 interface SectionProps {
   children: React.ReactNode
@@ -15,7 +17,7 @@ export function Section({ children, className, title, description }: SectionProp
       {(title || description) && (
         <div className="mb-8">
           {title && <h2 className="text-2xl font-bold">{title}</h2>}
-          {description && <p className="text-muted-foreground">{description}</p>}
+          {description && <p className="text-foreground">{description}</p>}
         </div>
       )}
       {children}

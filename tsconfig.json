@@ -30,7 +30,9 @@
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
       "@styles/*": ["./styles/*"],
-      "@types/*": ["./types/*"]
+      "@types/*": ["./types/*"],
+      "@data/*": ["./data/*"],
+      "@theme/*": ["./styles/theme/*"]
     }
   },
   "include": [

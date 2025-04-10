@@ -1,8 +1,10 @@
-import type { Metadata } from 'next'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { type ReactElement } from 'react'
+
 import ContactForm from '@/components/contact-form'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, MapPin, Phone } from 'lucide-react'
-import { ReactElement } from 'react'
+
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact | Instructional Design Portfolio',
@@ -18,7 +20,7 @@ export default function ContactPage(): ReactElement {
           <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
             Get in Touch
           </h1>
-          <p className="text-muted-foreground max-w-2xl text-xl">
+          <p className="max-w-2xl text-xl text-muted">
             Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
@@ -26,7 +28,7 @@ export default function ContactPage(): ReactElement {
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Mail className="text-primary size-6" />
+              <Mail className="size-6 text-primary" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -36,7 +38,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <Phone className="text-primary size-6" />
+              <Phone className="size-6 text-primary" />
               <CardTitle>Phone</CardTitle>
             </CardHeader>
             <CardContent>
@@ -46,7 +48,7 @@ export default function ContactPage(): ReactElement {
 
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="text-primary size-6" />
+              <MapPin className="size-6 text-primary" />
               <CardTitle>Location</CardTitle>
             </CardHeader>
             <CardContent>
@@ -71,7 +73,7 @@ export default function ContactPage(): ReactElement {
           <div className="space-y-6">
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Let&apos;s Collaborate</h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="space-y-4 text-muted">
                 <p>
                   I&apos;m always interested in new projects and collaborations. Whether you have a
                   specific project in mind or just want to explore possibilities, I&apos;d love to
@@ -91,7 +93,7 @@ export default function ContactPage(): ReactElement {
 
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Availability</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted">
                 I&apos;m currently available for freelance projects, consulting, and speaking
                 engagements. My typical response time is within 24-48 hours.
               </p>

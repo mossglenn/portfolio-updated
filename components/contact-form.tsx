@@ -1,14 +1,16 @@
 'use client'
 
-import type React from 'react'
 
 import { useState } from 'react'
+import { type ReactElement } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from '@/components/ui/use-toast'
-import { ReactElement } from 'react'
+
+import type React from 'react'
 
 export default function ContactForm(): ReactElement {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -33,28 +35,28 @@ export default function ContactForm(): ReactElement {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form className="space-y-6" onSubmit={handleSubmit}>
       <div className="space-y-2">
         <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" required />
+        <Input required id="name" name="name" />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" name="email" type="email" required />
+        <Input required id="email" name="email" type="email" />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="subject">Subject</Label>
-        <Input id="subject" name="subject" required />
+        <Input required id="subject" name="subject" />
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="message">Message</Label>
-        <Textarea id="message" name="message" rows={5} required />
+        <Textarea required id="message" name="message" rows={5} />
       </div>
 
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button className="w-full" disabled={isSubmitting} type="submit">
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
     </form>

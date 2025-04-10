@@ -1,454 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Tokens Reference</title>
+    <style>
+      {css_vars}
 
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Color Tokens Reference</title>
-  <style>
-    {css_vars}
-
-    body { font-family: sans-serif; background: #f9f9f9; padding: 2rem; color: #333; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
-    .swatch { background: #fff; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    .color-box { height: 48px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 0.5rem; }
-    code { background: #eee; padding: 2px 4px; border-radius: 4px; font-size: 0.875rem; }
-    h2 { margin-top: 3rem; }
-    .preview-block div { margin-bottom: 4px; padding: 4px; border-radius: 4px; font-size: 0.875rem; text-align: center; }
-  </style>
-</head>
-<body>
-  <h1>Color Tokens Reference</h1>
-  <div class='grid'>
-
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--background));'></div>
-          <div><strong>--background</strong></div>
-          <div>HSL: <code>0 0% 100%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--background)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--background)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--background));'>border</div>
-            </div>
-            
+      body { font-family: sans-serif; background: #f9f9f9; padding: 2rem; color: #333; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+      .swatch { background: #fff; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+      .color-box { height: 48px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 0.5rem; }
+      code { background: #eee; padding: 2px 4px; border-radius: 4px; font-size: 0.875rem; }
+      h2 { margin-top: 3rem; }
+      .preview-block div { margin-bottom: 4px; padding: 4px; border-radius: 4px; font-size: 0.875rem; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <h1>Color Tokens Reference</h1>
+    <div class="grid">
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--background))"></div>
+        <div><strong>--background</strong></div>
+        <div>HSL: <code>0 0% 100%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--background)); color: #fff">bg</div>
+          <div style="color: hsl(var(--background)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--background))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--foreground));'></div>
-          <div><strong>--foreground</strong></div>
-          <div>HSL: <code>0 0% 3.9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--foreground))"></div>
+        <div><strong>--foreground</strong></div>
+        <div>HSL: <code>0 0% 3.9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--card));'></div>
-          <div><strong>--card</strong></div>
-          <div>HSL: <code>0 0% 100%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--card)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--card)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--card));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--card))"></div>
+        <div><strong>--card</strong></div>
+        <div>HSL: <code>0 0% 100%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--card)); color: #fff">bg</div>
+          <div style="color: hsl(var(--card)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--card))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--card-foreground));'></div>
-          <div><strong>--card-foreground</strong></div>
-          <div>HSL: <code>0 0% 3.9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--card-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--card-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--card-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--card-foreground))"></div>
+        <div><strong>--card-foreground</strong></div>
+        <div>HSL: <code>0 0% 3.9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--card-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--card-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--card-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--popover));'></div>
-          <div><strong>--popover</strong></div>
-          <div>HSL: <code>0 0% 100%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--popover)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--popover)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--popover));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--popover))"></div>
+        <div><strong>--popover</strong></div>
+        <div>HSL: <code>0 0% 100%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--popover)); color: #fff">bg</div>
+          <div style="color: hsl(var(--popover)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--popover))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--popover-foreground));'></div>
-          <div><strong>--popover-foreground</strong></div>
-          <div>HSL: <code>0 0% 3.9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--popover-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--popover-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--popover-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--popover-foreground))"></div>
+        <div><strong>--popover-foreground</strong></div>
+        <div>HSL: <code>0 0% 3.9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--popover-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--popover-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--popover-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--primary));'></div>
-          <div><strong>--primary</strong></div>
-          <div>HSL: <code>0 0% 9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--primary)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--primary)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--primary));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--primary))"></div>
+        <div><strong>--primary</strong></div>
+        <div>HSL: <code>0 0% 9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--primary)); color: #fff">bg</div>
+          <div style="color: hsl(var(--primary)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--primary))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--primary-foreground));'></div>
-          <div><strong>--primary-foreground</strong></div>
-          <div>HSL: <code>0 0% 98%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--primary-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--primary-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--primary-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--primary-foreground))"></div>
+        <div><strong>--primary-foreground</strong></div>
+        <div>HSL: <code>0 0% 98%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--primary-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--primary-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--primary-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--secondary));'></div>
-          <div><strong>--secondary</strong></div>
-          <div>HSL: <code>0 0% 96.1%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--secondary)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--secondary)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--secondary));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--secondary))"></div>
+        <div><strong>--secondary</strong></div>
+        <div>HSL: <code>0 0% 96.1%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--secondary)); color: #fff">bg</div>
+          <div style="color: hsl(var(--secondary)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--secondary))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--secondary-foreground));'></div>
-          <div><strong>--secondary-foreground</strong></div>
-          <div>HSL: <code>0 0% 9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--secondary-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--secondary-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--secondary-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--secondary-foreground))"></div>
+        <div><strong>--secondary-foreground</strong></div>
+        <div>HSL: <code>0 0% 9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--secondary-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--secondary-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--secondary-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--muted));'></div>
-          <div><strong>--muted</strong></div>
-          <div>HSL: <code>0 0% 96.1%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--muted)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--muted)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--muted));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--muted))"></div>
+        <div><strong>--muted</strong></div>
+        <div>HSL: <code>0 0% 96.1%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--muted)); color: #fff">bg</div>
+          <div style="color: hsl(var(--muted)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--muted))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--muted-foreground));'></div>
-          <div><strong>--muted-foreground</strong></div>
-          <div>HSL: <code>0 0% 45.1%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--muted-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--muted-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--muted-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--muted-foreground))"></div>
+        <div><strong>--muted-foreground</strong></div>
+        <div>HSL: <code>0 0% 45.1%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--muted-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--muted-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--muted-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--accent));'></div>
-          <div><strong>--accent</strong></div>
-          <div>HSL: <code>0 0% 96.1%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--accent)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--accent)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--accent));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--accent))"></div>
+        <div><strong>--accent</strong></div>
+        <div>HSL: <code>0 0% 96.1%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--accent)); color: #fff">bg</div>
+          <div style="color: hsl(var(--accent)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--accent))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--accent-foreground));'></div>
-          <div><strong>--accent-foreground</strong></div>
-          <div>HSL: <code>0 0% 9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--accent-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--accent-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--accent-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--accent-foreground))"></div>
+        <div><strong>--accent-foreground</strong></div>
+        <div>HSL: <code>0 0% 9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--accent-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--accent-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--accent-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--destructive));'></div>
-          <div><strong>--destructive</strong></div>
-          <div>HSL: <code>0 84.2% 60.2%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--destructive)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--destructive)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--destructive));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--destructive))"></div>
+        <div><strong>--destructive</strong></div>
+        <div>HSL: <code>0 84.2% 60.2%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--destructive)); color: #fff">bg</div>
+          <div style="color: hsl(var(--destructive)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--destructive))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--destructive-foreground));'></div>
-          <div><strong>--destructive-foreground</strong></div>
-          <div>HSL: <code>0 0% 98%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--destructive-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--destructive-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--destructive-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--destructive-foreground))"></div>
+        <div><strong>--destructive-foreground</strong></div>
+        <div>HSL: <code>0 0% 98%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--destructive-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--destructive-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--destructive-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--border));'></div>
-          <div><strong>--border</strong></div>
-          <div>HSL: <code>0 0% 89.8%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--border)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--border)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--border));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--border))"></div>
+        <div><strong>--border</strong></div>
+        <div>HSL: <code>0 0% 89.8%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--border)); color: #fff">bg</div>
+          <div style="color: hsl(var(--border)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--border))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--input));'></div>
-          <div><strong>--input</strong></div>
-          <div>HSL: <code>0 0% 89.8%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--input)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--input)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--input));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--input))"></div>
+        <div><strong>--input</strong></div>
+        <div>HSL: <code>0 0% 89.8%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--input)); color: #fff">bg</div>
+          <div style="color: hsl(var(--input)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--input))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--ring));'></div>
-          <div><strong>--ring</strong></div>
-          <div>HSL: <code>0 0% 3.9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--ring)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--ring)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--ring));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--ring))"></div>
+        <div><strong>--ring</strong></div>
+        <div>HSL: <code>0 0% 3.9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--ring)); color: #fff">bg</div>
+          <div style="color: hsl(var(--ring)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--ring))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--chart-1));'></div>
-          <div><strong>--chart-1</strong></div>
-          <div>HSL: <code>12 76% 61%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--chart-1)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--chart-1)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--chart-1));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--chart-1))"></div>
+        <div><strong>--chart-1</strong></div>
+        <div>HSL: <code>12 76% 61%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--chart-1)); color: #fff">bg</div>
+          <div style="color: hsl(var(--chart-1)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--chart-1))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--chart-2));'></div>
-          <div><strong>--chart-2</strong></div>
-          <div>HSL: <code>173 58% 39%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--chart-2)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--chart-2)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--chart-2));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--chart-2))"></div>
+        <div><strong>--chart-2</strong></div>
+        <div>HSL: <code>173 58% 39%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--chart-2)); color: #fff">bg</div>
+          <div style="color: hsl(var(--chart-2)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--chart-2))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--chart-3));'></div>
-          <div><strong>--chart-3</strong></div>
-          <div>HSL: <code>197 37% 24%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--chart-3)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--chart-3)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--chart-3));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--chart-3))"></div>
+        <div><strong>--chart-3</strong></div>
+        <div>HSL: <code>197 37% 24%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--chart-3)); color: #fff">bg</div>
+          <div style="color: hsl(var(--chart-3)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--chart-3))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--chart-4));'></div>
-          <div><strong>--chart-4</strong></div>
-          <div>HSL: <code>43 74% 66%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--chart-4)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--chart-4)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--chart-4));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--chart-4))"></div>
+        <div><strong>--chart-4</strong></div>
+        <div>HSL: <code>43 74% 66%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--chart-4)); color: #fff">bg</div>
+          <div style="color: hsl(var(--chart-4)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--chart-4))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--chart-5));'></div>
-          <div><strong>--chart-5</strong></div>
-          <div>HSL: <code>27 87% 67%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--chart-5)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--chart-5)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--chart-5));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--chart-5))"></div>
+        <div><strong>--chart-5</strong></div>
+        <div>HSL: <code>27 87% 67%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--chart-5)); color: #fff">bg</div>
+          <div style="color: hsl(var(--chart-5)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--chart-5))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--radius));'></div>
-          <div><strong>--radius</strong></div>
-          <div>HSL: <code>0.5rem</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--radius)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--radius)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--radius));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--radius))"></div>
+        <div><strong>--radius</strong></div>
+        <div>HSL: <code>0.5rem</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--radius)); color: #fff">bg</div>
+          <div style="color: hsl(var(--radius)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--radius))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-background));'></div>
-          <div><strong>--sidebar-background</strong></div>
-          <div>HSL: <code>0 0% 98%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-background)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-background)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-background));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-background))"></div>
+        <div><strong>--sidebar-background</strong></div>
+        <div>HSL: <code>0 0% 98%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-background)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-background)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-background))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-foreground));'></div>
-          <div><strong>--sidebar-foreground</strong></div>
-          <div>HSL: <code>240 5.3% 26.1%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-foreground))"></div>
+        <div><strong>--sidebar-foreground</strong></div>
+        <div>HSL: <code>240 5.3% 26.1%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-primary));'></div>
-          <div><strong>--sidebar-primary</strong></div>
-          <div>HSL: <code>240 5.9% 10%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-primary)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-primary)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-primary));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-primary))"></div>
+        <div><strong>--sidebar-primary</strong></div>
+        <div>HSL: <code>240 5.9% 10%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-primary)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-primary)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-primary))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-primary-foreground));'></div>
-          <div><strong>--sidebar-primary-foreground</strong></div>
-          <div>HSL: <code>0 0% 98%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-primary-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-primary-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-primary-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div
+          class="color-box"
+          style="background-color: hsl(var(--sidebar-primary-foreground))"
+        ></div>
+        <div><strong>--sidebar-primary-foreground</strong></div>
+        <div>HSL: <code>0 0% 98%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-primary-foreground)); color: #fff">
+            bg
+          </div>
+          <div style="color: hsl(var(--sidebar-primary-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-primary-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-accent));'></div>
-          <div><strong>--sidebar-accent</strong></div>
-          <div>HSL: <code>240 4.8% 95.9%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-accent)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-accent)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-accent));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-accent))"></div>
+        <div><strong>--sidebar-accent</strong></div>
+        <div>HSL: <code>240 4.8% 95.9%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-accent)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-accent)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-accent))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-accent-foreground));'></div>
-          <div><strong>--sidebar-accent-foreground</strong></div>
-          <div>HSL: <code>240 5.9% 10%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-accent-foreground)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-accent-foreground)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-accent-foreground));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div
+          class="color-box"
+          style="background-color: hsl(var(--sidebar-accent-foreground))"
+        ></div>
+        <div><strong>--sidebar-accent-foreground</strong></div>
+        <div>HSL: <code>240 5.9% 10%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-accent-foreground)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-accent-foreground)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-accent-foreground))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-border));'></div>
-          <div><strong>--sidebar-border</strong></div>
-          <div>HSL: <code>220 13% 91%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-border)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-border)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-border));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-border))"></div>
+        <div><strong>--sidebar-border</strong></div>
+        <div>HSL: <code>220 13% 91%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-border)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-border)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-border))">border</div>
         </div>
+      </div>
 
-        <div class='swatch'>
-          <div class='color-box' style='background-color: hsl(var(--sidebar-ring));'></div>
-          <div><strong>--sidebar-ring</strong></div>
-          <div>HSL: <code>217.2 91.2% 59.8%</code></div>
-          <div>HEX: <code></code></div>
-            <div class='preview-block'>
-              <div style='background-color: hsl(var(--sidebar-ring)); color: #fff;'>bg</div>
-              <div style='color: hsl(var(--sidebar-ring)); background: #f0f0f0;'>text</div>
-              <div style='border: 2px solid hsl(var(--sidebar-ring));'>border</div>
-            </div>
-            
+      <div class="swatch">
+        <div class="color-box" style="background-color: hsl(var(--sidebar-ring))"></div>
+        <div><strong>--sidebar-ring</strong></div>
+        <div>HSL: <code>217.2 91.2% 59.8%</code></div>
+        <div>HEX: <code></code></div>
+        <div class="preview-block">
+          <div style="background-color: hsl(var(--sidebar-ring)); color: #fff">bg</div>
+          <div style="color: hsl(var(--sidebar-ring)); background: #f0f0f0">text</div>
+          <div style="border: 2px solid hsl(var(--sidebar-ring))">border</div>
         </div>
-  </div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>

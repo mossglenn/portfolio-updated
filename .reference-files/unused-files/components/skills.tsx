@@ -49,7 +49,7 @@ export default function Skills() {
       <div className="container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Expertise & Skills</h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="max-w-2xl text-foreground">
             Combining instructional design principles with innovative approaches to create impactful
             learning experiences.
           </p>

@@ -1,15 +1,17 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { type ReactElement, useEffect, useState } from 'react'
+
+import { Container } from '@/components/layout/container'
+import { PageLayout } from '@/components/layout/page-layout'
+import { Section } from '@/components/layout/section'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Separator } from '@/components/ui/separator'
-import { Badge } from '@/components/ui/badge'
-import { PageLayout } from '@/components/layout/page-layout'
-import { Container } from '@/components/layout/container'
-import { Section } from '@/components/layout/section'
-import { ReactElement, useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
 
 const themeOptions = [
   { label: 'Default', className: '' },
@@ -101,7 +103,7 @@ export default function PlaygroundPage(): ReactElement {
           ))}
         </div>
 
-        <Tabs defaultValue="components" className="mb-12 w-full">
+        <Tabs className="mb-12 w-full" defaultValue="components">
           <TabsList className="mb-8 grid w-full grid-cols-4">
             <TabsTrigger value="components">Components</TabsTrigger>
             <TabsTrigger value="typography">Typography</TabsTrigger>
@@ -109,8 +111,8 @@ export default function PlaygroundPage(): ReactElement {
             <TabsTrigger value="gradients">Gradients</TabsTrigger>
           </TabsList>
           {/* Components Tab */}
-          <TabsContent value="components" className="space-y-8">
-            <Section title="Buttons" className="space-y-4">
+          <TabsContent className="space-y-8" value="components">
+            <Section className="space-y-4" title="Buttons">
               <div className="mb-4 flex items-center justify-between">
                 <Badge variant="outline">shadcn/ui</Badge>
               </div>
@@ -123,60 +125,60 @@ export default function PlaygroundPage(): ReactElement {
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-4">
                   <Button className="bg-brand text-foreground-light">Default</Button>
-                  <Button variant="secondary" className="bg-muted text-foreground-light">
+                  <Button className="bg-muted text-foreground-light" variant="secondary">
                     Secondary
                   </Button>
-                  <Button variant="outline" className="border-brand text-brand">
+                  <Button className="border-brand text-brand" variant="outline">
                     Outline
                   </Button>
-                  <Button variant="ghost" className="bg-card text-foreground-light">
+                  <Button className="bg-card text-foreground-light" variant="ghost">
                     Ghost
                   </Button>
-                  <Button variant="link" className="text-accent">
+                  <Button className="text-accent" variant="link">
                     Link
                   </Button>
-                  <Button variant="destructive" className="bg-brand-darker text-foreground-light">
+                  <Button className="bg-brand-darker text-foreground-light" variant="destructive">
                     Destructive
                   </Button>
                   <Button className="bg-gradient-brand text-foreground-light">
                     Gradient Button 1
                   </Button>
                   <Button
-                    variant="outline"
-                    className="bg-gradient-brand border-[3px] border-transparent text-foreground-light"
+                    className="border-[3px] border-transparent bg-gradient-brand text-foreground-light"
                     style={{ backgroundClip: 'padding-box', borderRadius: '0.75rem' }}
+                    variant="outline"
                   >
                     Gradient Outline
                   </Button>
-                  <Button variant="ghost" className="bg-gradient-muted text-foreground-light">
+                  <Button className="bg-gradient-muted text-foreground-light" variant="ghost">
                     Gradient Ghost Button
                   </Button>
-                  <Button variant="destructive" className="bg-gradient-dark text-foreground-light">
+                  <Button className="bg-gradient-dark text-foreground-light" variant="destructive">
                     Gradient Destructive Button
                   </Button>
                   <Button
-                    variant="link"
                     className="bg-gradient-brand bg-clip-text text-transparent"
+                    variant="link"
                   >
                     Gradient Link Button
                   </Button>
-                  <Button className="bg-gradient-secondary hover:bg-gradient-brand text-foreground-light">
+                  <Button className="bg-gradient-secondary text-foreground-light hover:bg-gradient-brand">
                     Hover Gradient Button
                   </Button>
                 </CardContent>
               </Card>
             </Section>
 
-            <Section title="Gradient Cards" className="space-y-4">
+            <Section className="space-y-4" title="Gradient Cards">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <Card>
                   <CardContent className="p-6">
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <div className="bg-gradient-brand rounded-lg p-6 text-foreground-light">
+                      <div className="rounded-lg bg-gradient-brand p-6 text-foreground-light">
                         <h2 className="mb-2 text-xl font-bold">Animated Gradient Card</h2>
                         <p>This card uses the animated brand gradient background.</p>
                         <Button className="mt-4 bg-white text-brand hover:bg-white/90">
@@ -189,11 +191,11 @@ export default function PlaygroundPage(): ReactElement {
                 <Card>
                   <CardContent className="p-6">
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <div className="bg-gradient-muted rounded-lg p-6 text-foreground-light">
+                      <div className="rounded-lg bg-gradient-muted p-6 text-foreground-light">
                         <h2 className="mb-2 text-xl font-bold">Muted to Accent</h2>
                         <p>This card uses a subtle gradient from muted to accent tones.</p>
                         <Button className="mt-4 bg-white text-accent hover:bg-white/90">
@@ -207,8 +209,8 @@ export default function PlaygroundPage(): ReactElement {
             </Section>
           </TabsContent>
           {/* Typography Tab */}
-          <TabsContent value="typography" className="space-y-8">
-            <Section title="Typography" className="space-y-4">
+          <TabsContent className="space-y-8" value="typography">
+            <Section className="space-y-4" title="Typography">
               <div className="mb-4 flex items-center justify-between">
                 <Badge variant="outline">Plus Jakarta Sans</Badge>
               </div>
@@ -250,16 +252,16 @@ export default function PlaygroundPage(): ReactElement {
             </Section>
           </TabsContent>
           {/* Colors Tab */}
-          <TabsContent value="colors" className="space-y-8">
+          <TabsContent className="space-y-8" value="colors">
             {colorGroups.map((group) => (
-              <Section key={group.label} title={group.label} className="space-y-4">
+              <Section key={group.label} className="space-y-4" title={group.label}>
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
                   {group.tokens.map((token) => (
                     <Card key={token} className="overflow-hidden">
                       <div
                         className="h-12 w-full"
                         style={{ backgroundColor: `hsl(var(--${token}))` }}
-                      ></div>
+                       />
                       <CardContent className="py-2">
                         <p className="text-xs font-medium">--{token}</p>
                       </CardContent>
@@ -270,15 +272,15 @@ export default function PlaygroundPage(): ReactElement {
             ))}
           </TabsContent>
           {/* Gradients Tab */}
-          <TabsContent value="gradients" className="space-y-8">
-            <Section title="Gradient Background Cards" className="space-y-4">
+          <TabsContent className="space-y-8" value="gradients">
+            <Section className="space-y-4" title="Gradient Background Cards">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {gradients.map((gradient) => (
                   <Card key={gradient} className="overflow-hidden">
                     <div
                       className="h-32 w-full rounded-t-lg"
                       style={{ backgroundImage: `var(--gradient-${gradient})` }}
-                    ></div>
+                     />
                     <CardContent className="p-6 text-foreground-light">
                       <h3 className="text-xl font-bold capitalize">
                         {gradient.replace('gradient-', '').replace(/-/g, ' ')}

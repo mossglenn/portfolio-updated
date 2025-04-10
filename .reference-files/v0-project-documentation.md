@@ -1,6 +1,6 @@
 # Project Documentation for v0
 
-Generated: 3/22/2025, 5:45:42 PM
+Generated: 4/10/2025, 1:11:12 PM
 
 ## Table of Contents
 
@@ -29,14 +29,14 @@ Generated: 3/22/2025, 5:45:42 PM
 
 #### UI Libraries
 
-- **@radix-ui/react-accordion**: ^1.2.2
+- **@radix-ui/react-accordion**: ^1.2.4
 - **@radix-ui/react-alert-dialog**: ^1.1.4
-- **@radix-ui/react-aspect-ratio**: ^1.1.1
+- **@radix-ui/react-aspect-ratio**: ^1.1.2
 - **@radix-ui/react-avatar**: ^1.1.2
 - **@radix-ui/react-checkbox**: ^1.1.3
 - **@radix-ui/react-collapsible**: ^1.1.2
 - **@radix-ui/react-context-menu**: ^2.2.4
-- **@radix-ui/react-dialog**: ^1.1.4
+- **@radix-ui/react-dialog**: ^1.1.6
 - **@radix-ui/react-dropdown-menu**: ^2.1.4
 - **@radix-ui/react-hover-card**: ^1.1.4
 - **@radix-ui/react-label**: ^2.1.1
@@ -49,7 +49,7 @@ Generated: 3/22/2025, 5:45:42 PM
 - **@radix-ui/react-select**: ^2.1.4
 - **@radix-ui/react-separator**: ^1.1.1
 - **@radix-ui/react-slider**: ^1.2.2
-- **@radix-ui/react-slot**: ^1.1.1
+- **@radix-ui/react-slot**: ^1.1.2
 - **@radix-ui/react-switch**: ^1.1.2
 - **@radix-ui/react-tabs**: ^1.1.2
 - **@radix-ui/react-toast**: ^1.2.4
@@ -75,6 +75,8 @@ Generated: 3/22/2025, 5:45:42 PM
   - `@components/*` → `./components/*`
   - `@lib/*` → `./lib/*`
   - `@styles/*` → `./styles/*`
+  - `@types/*` → `./types/*`
+  - `@data/*` → `./data/*`
 
 ### Project Structure Summary
 
@@ -106,25 +108,30 @@ Generated: 3/22/2025, 5:45:42 PM
     "docs:structure": "find . -type f -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" -not -path \"*/.next/*\" > .reference-files/project-structure.txt",
     "docs:gen": "mkdir -p .reference-files/docs && node scripts/generate-docs.js",
     "docs:project": "node scripts/document-project.js",
-    "docs:v0": "node scripts/document-project-single.js"
+    "docs:v0": "node scripts/document-project-single.js",
+    "knip": "knip",
+    "add:component": "npx shadcn@2.3.0 add",
+    "generate:colors": "python3 scripts/generate-color-reference.py"
   },
   "scriptDescriptions": {
     "docs:structure": "Generate a list of all files in the project (excluding node_modules and .git) and save it to .reference-files/project-structure.txt",
     "docs:gen": "Generate documentation for the project and save it to .reference-files/docs",
     "docs:project": "creates a comprehensive set of documentation in `.reference-files/project-docs/`for v0",
-    "docs:v0": "creates a single compregensive file for v0"
+    "docs:v0": "creates a single compregensive file for v0",
+    "add": "follow the command with the name of a shadcn/ui component to add it to the project",
+    "generate:colors": "generate a new color reference file based on current :root variables"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@hookform/resolvers": "^3.9.1",
-    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-accordion": "^1.2.4",
     "@radix-ui/react-alert-dialog": "^1.1.4",
-    "@radix-ui/react-aspect-ratio": "^1.1.1",
+    "@radix-ui/react-aspect-ratio": "^1.1.2",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.1.3",
     "@radix-ui/react-collapsible": "^1.1.2",
     "@radix-ui/react-context-menu": "^2.2.4",
-    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-dropdown-menu": "^2.1.4",
     "@radix-ui/react-hover-card": "^1.1.4",
     "@radix-ui/react-label": "^2.1.1",
@@ -137,7 +144,7 @@ Generated: 3/22/2025, 5:45:42 PM
     "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-separator": "^1.1.1",
     "@radix-ui/react-slider": "^1.2.2",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-switch": "^1.1.2",
     "@radix-ui/react-tabs": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.4",
@@ -149,6 +156,7 @@ Generated: 3/22/2025, 5:45:42 PM
     "cmdk": "^1.1.1",
     "date-fns": "3.0.0",
     "embla-carousel-react": "^8.5.2",
+    "execa": "^9.5.2",
     "framer-motion": "^10.16.4",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.483.0",
@@ -161,7 +169,8 @@ Generated: 3/22/2025, 5:45:42 PM
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.15.1",
     "sonner": "^2.0.1",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.0",
+    "tailwind-variants": "^1.0.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
     "zod": "^3.24.1"
@@ -169,7 +178,9 @@ Generated: 3/22/2025, 5:45:42 PM
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
-    "@types/node": "^20.9.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@types/node": "^20.17.24",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
@@ -185,13 +196,15 @@ Generated: 3/22/2025, 5:45:42 PM
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "globals": "^16.0.0",
+    "knip": "^5.46.0",
     "playwright": "^1.51.1",
     "postcss": "^8.4.31",
+    "postcss-load-config": "^6.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.8.2"
   }
 }
 
@@ -207,6 +220,12 @@ Generated: 3/22/2025, 5:45:42 PM
     "target": "ES6",
     "skipLibCheck": true,
     "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -220,14 +239,25 @@ Generated: 3/22/2025, 5:45:42 PM
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@types/*": ["./types/*"],
+      "@data/*": ["./data/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".reference-files/featured-projects.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".reference-files/**/*.ts",
+    "types",
+    ".reference-files/playground-page-old.tsx"
+  ],
   "exclude": ["node_modules"]
 }
 
@@ -236,101 +266,203 @@ Generated: 3/22/2025, 5:45:42 PM
 ### tailwind.config.ts
 
 ```javascript
-import type { Config } from "tailwindcss"
+import type { Config } from 'tailwindcss'
+import animate from 'tailwindcss-animate'
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import containerQueries from '@tailwindcss/container-queries'
+import aspectRatio from '@tailwindcss/aspect-ratio'
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ['class'],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    '*.{js,ts,jsx,tsx,mdx}',
   ],
-  prefix: "",
+  prefix: '',
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
+  	container: {
+  		center: true,
+  		padding: '2rem',
+  		screens: {
+  			'2xl': '1400px'
+  		}
+  	},
+  	extend: {
+  		listStyleImage: {
+  			cross: 'url("/icons/cross.png")',
+  			commit: 'url("/icons/commit-bullet.svg")',
+  			'key-foreground': 'url("/icons/key-foreground.svg")',
+  			'key-solid-foreground': 'url("/icons/key-foreground-left-large.svg")',
+  			'gem-lavender': 'url("/icons/gem-lavender.svg")'
+  		},
+  		fontFamily: {
+  			sans: [
+  				'var(--font-space-grotesk)',
+                    ...fontFamily.sans
+                ],
+  			display: [
+  				'Gimlet Sans Variable"',
+                    ...fontFamily.sans
+                ]
+  		},
+  		colors: {
+  			background: 'hsl(var(--background))',
+  			'background-alt': 'hsl(var(--background-alt))',
+  			card: 'hsl(var(--card))',
+  			'card-alt': 'hsl(var(--card-alt))',
+  			'card-background': 'hsl(var(--card-background))',
+  			'card-light': 'hsl(var(--card-light))',
+  			'card-dark': 'hsl(var(--card-dark))',
+  			foreground: 'hsl(var(--foreground))',
+  			'foreground-muted': 'hsl(var(--foreground-muted))',
+  			'foreground-light': 'hsl(var(--foreground-light))',
+  			'foreground-dark': 'hsl(var(--foreground-dark))',
+  			'foreground-lavender': 'hsl(var(--foreground-lavender))',
+  			brand: 'hsl(var(--brand))',
+  			'brand-light': 'hsl(var(--brand-light))',
+  			'brand-dark': 'hsl(var(--brand-dark))',
+  			'brand-darker': 'hsl(var(--brand-darker))',
+  			'brand-lighter': 'hsl(var(--brand-lighter))',
+  			primary: 'hsl(var(--brand))',
+  			'primary-light': 'hsl(var(--brand-light))',
+  			'primary-dark': 'hsl(var(--brand-dark))',
+  			'primary-darker': 'hsl(var(--brand-darker))',
+  			accent: 'hsl(var(--accent))',
+  			'accent-light': 'hsl(var(--accent-light))',
+  			'accent-dark': 'hsl(var(--accent-dark))',
+  			'accent-softer': 'hsl(var(--accent-softer))',
+  			secondary: 'hsl(var(--secondary))',
+  			'secondary-light': 'hsl(var(--secondary-light))',
+  			neutral: 'hsl(var(--neutral))',
+  			'neutral-dark': 'hsl(var(--neutral-dark))',
+  			muted: 'hsl(var(--muted))',
+  			'muted-dark': 'hsl(var(--muted-dark))',
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			popover: 'hsl(var(--popover))',
+  			'popover-foreground': 'hsl(var(--popover-foreground))',
+  			destructive: 'hsl(var(--destructive))',
+  			'destructive-foreground': 'hsl(var(--destructive-foreground))',
+  			sage: 'hsl(var(--sage))',
+  			sky: 'hsl(var(--sky))',
+  			'slate-light': 'hsl(var(--slate-light))',
+  			pink: 'hsl(var(--pink))',
+  			lavender: 'hsl(var(--lavender))',
+  			'lavender-light': 'hsl(var(--lavender-light))'
+  		},
+  		backgroundImage: {
+  			'gradient-brand': 'var(--gradient-brand)',
+  			'gradient-muted': 'var(--gradient-muted)',
+  			'gradient-secondary': 'var(--gradient-secondary)',
+  			'gradient-dark': 'var(--gradient-dark)',
+  			'gradient-slate-sky': 'var(--gradient-slate-sky)',
+  			'gradient-earth': 'var(--gradient-earth)',
+  			'gradient-playful': 'var(--gradient-playful)',
+  			'gradient-lavender': 'var(--gradient-lavender)',
+  			'gradient-accent-light': 'var(--gradient-accent-light)',
+  			'gradient-accent-light-vertical': 'var(--gradient-accent-light-vertical)',
+  			'gradient-lavender-light': 'var(--gradient-lavender-light)'
+  		},
+  		keyframes: {
+  			accordionDown: {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			accordionUp: {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			},
+  			slideInRight: {
+  				'0%': {
+  					opacity: '0',
+  					transform: 'translateX(2rem)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'translateX(0)'
+  				}
+  			},
+  			slideOutFromLeft: {
+  				'0%': {
+  					transform: 'translateX(-10rem)',
+  					opacity: '0',
+  					visibility: 'hidden'
+  				},
+  				'1%': {
+  					visibility: 'visible'
+  				},
+  				'20%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'translateX(0)'
+  				}
+  			},
+  			slideOutToLeft: {
+  				'0%': {
+  					transform: 'translateX(0)',
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'translateX(-100%)',
+  					opacity: '0',
+  					visibility: 'hidden'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			accordionDown: 'accordionDown 0.2s ease-out',
+  			accordionUp: 'accordionUp 0.2s ease-out',
+  			'slide-in-from-right': 'slideInRight 0.4s ease-out both',
+  			'slide-out-from-left': 'slideOutFromLeft 600ms ease-out forwards',
+  			'slide-out-to-left': 'slideOutToLeft 0.4s ease-out forwards',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		skew: {
+  			'20': '20deg',
+  			'-20': '-20deg'
+  		}
+  	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate, containerQueries, aspectRatio],
 } satisfies Config
 
 export default config
-
 
 ```
 
 ### next.config.mjs
 
 ```javascript
-let userConfig = undefined
-try {
-  userConfig = await import('./v0-user-next.config')
-} catch (e) {
-  // ignore error
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -349,28 +481,6 @@ const nextConfig = {
   },
 }
 
-mergeConfig(nextConfig, userConfig)
-
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
-    }
-  }
-}
-
 export default nextConfig
 
 ```
@@ -379,19 +489,23 @@ export default nextConfig
 
 ```javascript
 // eslint.config.js
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import globals from 'globals';
-import prettierConfig from 'eslint-config-prettier';
-import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
-});
+})
 
-export default [
+const eslintConfig = [
   {
-    ignores: ['.reference-files/**', '.reference-files/']
+    ignores: [
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/out/**',
+      '**/.reference-files/**',
+      '/.reference-files/**',
+    ],
   },
   js.configs.recommended,
   ...compat.config({
@@ -402,32 +516,23 @@ export default [
       'plugin:react-hooks/recommended',
       'plugin:jsx-a11y/recommended',
       'plugin:tailwindcss/recommended',
+      'prettier',
     ],
-    plugins: [
-      'react',
-      '@typescript-eslint',
-      'import',
-      'jsx-a11y',
-      'tailwindcss',
-    ],
+    plugins: ['react', '@typescript-eslint', 'import', 'jsx-a11y', 'tailwindcss'],
   }),
-  // Prettier plugin needs to be loaded separately in flat config
-  prettierPlugin,
-  // Prettier config needs to be loaded last to override other formatting rules
-  prettierConfig,
   {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
     rules: {
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
       'tailwindcss/no-custom-classname': 'warn',
-      'tailwindcss/classnames-order': 'error',
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
     },
     settings: {
       react: {
@@ -435,96 +540,54 @@ export default [
       },
       tailwindcss: {
         callees: ['cn', 'cva'],
+        whitelist: ['gradient-text-*'], // Allow custom classnames
       },
     },
   },
-];
-```
+]
 
-### .eslintrc.js
+export default eslintConfig
 
-```javascript
-module.exports = {
-  extends: [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:tailwindcss/recommended",
-    "prettier",
-    "plugin:storybook/recommended"
-  ],
-  plugins: [
-    "react",
-    "@typescript-eslint",
-    "import",
-    "jsx-a11y",
-    "tailwindcss",
-    "prettier"
-  ],
-  rules: {
-    "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off",
-    "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/classnames-order": "error",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
-  },
-  settings: {
-    react: {
-      version: "detect"
-    },
-    tailwindcss: {
-      callees: ["cn", "cva"]
-    }
-  }
-};
-```
-
-### .prettierrc.js
-
-```javascript
-module.exports = {
-  semi: false,
-  singleQuote: true,
-  printWidth: 100,
-  tabWidth: 2,
-  trailingComma: "es5",
-  plugins: ["prettier-plugin-tailwindcss"]
-};
 ```
 
 ## Project Structure
 
-Total files: 142
+Total files: 572
 
 ### Directories
 
 #### .
 
-- .eslintrc.js
 - .gitignore
 - .prettierignore
-- .prettierrc.js
+- color-reference.html
 - components.json
+- componentsOLD.json
 - eslint.config.js
+- knip.json
 - next-env.d.ts
 - next.config.mjs
 - package.json
 - postcss.config.mjs
+- prettier.config.js
 - tailwind.config.ts
 - tsconfig.json
 
 #### ./.reference-files
 
-- color references
+- color-reference.html
 - constructed-clarity-theme.d.ts
 - constructed-clarity-theme.ts
+- globals_BACKUP.css
+- globals_old.css
 - home-page-content.md
+- new-theme-colors.ts
+- playground-page-old.tsx
 - playground.tsx
-- project-structure.txt
+- portfolio_markdown_files.zip
+- root-css-variables-OLD.css
+- shadcn-defaults.css
+- spotlight-wide-code.txt
 - v0-project-documentation.md
 - venn_training_overlap.svg
 
@@ -538,6 +601,8 @@ Total files: 142
 - game-based-learning-design.md
 - gamified-statistics-tutor.md
 - higher-ed-course-design.md
+- preview-statistic-tutor.md
+- quotes.md
 - research-collaboration-educators-industry.md
 - research-impact-instructional-design.md
 - scalable-stem-play.md
@@ -575,7 +640,68 @@ Total files: 142
 - tailwind.config.ts
 - tsconfig.json
 
+#### ./.reference-files/unused-files/components
+
+- call-to-action.tsx
+- featured-projects.tsx
+- hero.tsx
+- markdown-content.tsx
+- portfolio-categories.tsx
+- portfolio-grid.tsx
+- portfolio-nav.tsx
+- project-layout.tsx
+- skills.tsx
+- theme-toggle.tsx
+
+#### ./.reference-files/unused-files/components/ui
+
+- accordion.tsx
+- alert.tsx
+- aspect-ratio.tsx
+- avatar.tsx
+- breadcrumb.tsx
+- calendar.tsx
+- carousel.tsx
+- chart.tsx
+- checkbox.tsx
+- collapsible.tsx
+- command.tsx
+- context-menu.tsx
+- drawer.tsx
+- dropdown-menu.tsx
+- form.tsx
+- hover-card.tsx
+- input-otp.tsx
+- menubar.tsx
+- navigation-menu.tsx
+- popover.tsx
+- progress.tsx
+- radio-group.tsx
+- resizable.tsx
+- scroll-area.tsx
+- select.tsx
+- sheet.tsx
+- skeleton.tsx
+- slider.tsx
+- table.tsx
+- toaster.tsx
+- toggle-group.tsx
+- toggle.tsx
+- tooltip.tsx
+- use-mobile.tsx
+
+#### ./.vscode
+
+- extensions.json
+- launch.json
+- settings.json
+- snippets.code-snippets
+
 #### ./app/about
+
+- page.tsx
+
+#### ./app/about/testamonials
 
 - page.tsx
 
@@ -593,142 +719,610 @@ Total files: 142
 
 - page.tsx
 
+#### ./app/portfolio/gamified-adaptive-statistics-tutor
+
+- page.tsx
+
 #### ./app/portfolio
 
 - page.tsx
 
 #### ./components
 
-- call-to-action.tsx
 - contact-form.tsx
-- featured-projects.tsx
-- footer.tsx
-- header.tsx
-- hero.tsx
-- markdown-content.tsx
-- portfolio-categories.tsx
-- portfolio-grid.tsx
-- portfolio-nav.tsx
-- project-layout.tsx
-- skills.tsx
 - theme-provider.tsx
-- theme-toggle.tsx
+
+#### ./components/layout
+
+- container.tsx
+- footer.tsx
+- navigation-desktop.tsx
+- navigation-mobile.tsx
+- navigation.tsx
+- page-layout.tsx
+- section.tsx
+
+#### ./components/sections/home
+
+- cta-section.tsx
+- expertise-section.tsx
+- featured-projects.tsx
+- hero-section.tsx
+- hero-test.tsx
+- main-content-section.tsx
+- project-one.tsx
+- project-test.tsx
+- rotating-quote-section.tsx
+- toolstack-section.tsx
 
 #### ./components/ui
 
 - accordion.tsx
-- alert.tsx
 - aspect-ratio.tsx
-- avatar.tsx
 - badge.tsx
-- breadcrumb.tsx
+- bullet-image.tsx
+- button-icon.tsx
 - button.tsx
-- calendar.tsx
 - card.tsx
-- carousel.tsx
-- chart.tsx
-- checkbox.tsx
-- collapsible.tsx
-- command.tsx
-- context-menu.tsx
-- drawer.tsx
-- dropdown-menu.tsx
-- form.tsx
-- hover-card.tsx
-- input-otp.tsx
+- iceberg-svg.tsx
 - input.tsx
 - label.tsx
-- menubar.tsx
-- navigation-menu.tsx
-- pagination.tsx
-- popover.tsx
-- progress.tsx
-- radio-group.tsx
-- resizable.tsx
-- scroll-area.tsx
-- select.tsx
+- logo-badge.tsx
 - separator.tsx
 - sheet.tsx
-- sidebar.tsx
-- skeleton.tsx
-- slider.tsx
-- sonner.tsx
+- skew-tag.tsx
+- skewed-box-container.tsx
+- skewed-box.tsx
+- skewed-button.tsx
+- skewed-nav-link.tsx
+- speech-bubble.tsx
+- spotlight-background.tsx
 - switch.tsx
-- table.tsx
 - tabs.tsx
 - textarea.tsx
 - toast.tsx
-- toaster.tsx
-- toggle-group.tsx
-- toggle.tsx
-- tooltip.tsx
-- use-mobile.tsx
 - use-toast.ts
+
+#### ./config
+
+- site.ts
 
 #### ./data
 
 - projects.ts
+- testamonials.ts
 
 #### ./hooks
 
+- use-debounce.ts
+- use-local-storage.ts
+- use-media-query.ts
 - use-mobile.tsx
+- use-mounted.ts
+- use-scroll.ts
+- use-skew-offset.ts
 - use-toast.ts
 
 #### ./lib
 
 - utils.ts
 
+#### ./public/fonts
+
+- Gimlet_Sans_Variable_Regular.otf
+
+#### ./public/icons
+
+- commit-bullet.svg
+- cross.svg
+- gem-lavender.svg
+- key-foreground-left-large.svg
+- key-foreground.svg
+- key-solid-foreground-left.svg
+- key-solid-foreground.svg
+- trophy-filled.svg
+
 #### ./public
 
+- key-foreground-left-large.svg
 - placeholder-user.jpg
 - placeholder.jpg
 - placeholder.svg
+- spotlight.svg
+
+#### ./public/portfolio-images
+
+- adaptive-statistics-tutor.png
+- escape-room-preview-optimized.gif
+- escape-room-preview-reoptimized.gif
+- escape-room-preview.gif
+
+#### ./public/portfolio-images/game-based-learning-design
+
+- BIOSTATSfEATURE.png
+- Balance-Scale-Levels-v5-WITH-INQUIRY.pptx
+- Beanstalk Videos – ETC s Darpa Engage 2.png
+- Beanstalk Videos – ETC s Darpa Engage 3.png
+- Beanstalk Videos – ETC s Darpa Engage.png
+- BiostaticiansTreasure.mp4
+- ENGAGE poster border.png
+- ENGAGE-poster-20120912-1.png
+- ENGAGE-poster-20120912.pdf
+- INQ-Item-by-item-slides.pdf
+- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.pdf
+- Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.png
+- Projects – ETC s Darpa Engage 2.png
+- Projects – ETC s Darpa Engage 3.png
+- Projects – ETC s Darpa Engage 4.png
+- Projects – ETC s Darpa Engage.png
+- Slide10.jpg
+- beanstalkfeature.png
+- gamedesignttm_feature.png
+- interactiveproblemset_dragging_cropped.png
+- tt,14.png
+- tt14.png
+- ttm1.png
+- ttm10.png
+- ttm11.png
+- ttm12.png
+- ttm15.png
+- ttm2.png
+- ttm3.png
+- ttm5.png
+- ttm6.png
+- ttm7.png
+- ttm8.png
+- ttm9.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor
+
+- Biostatistics Inference Instructional analysis.xlsx
+- Course  Applied Biostatistics.png
+- Escape Room Feedback.pptx
+- Escape Room Tutor Instructions.png
+- EscapeRoomComments-1.mp4
+- escape-room-statistic-tutor-hint.png
+- escaperoom.PNG
+- escaperoomfeature-1024x1024.png
+- escaperoomfeature.png
+- interactive_1.PNG
+- interactive_2.PNG
+- interactive_3.PNG
+- interactive_4.PNG
+- interactive_5.PNG
+- interactive_6.PNG
+- interactive_7.PNG
+- interactive_8.PNG
+- interactiveproblemset_dragging.PNG
+- interactiveproblemset_dragging_cropped.png
+- learning-path.svg
+- magic-book-brand-light.png
+- treasureCover.PNG
+- treasure_feature.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity
+
+- SCORM_utilities.js
+- ScormEnginePackageProperties.xsd
+- Utilities.js
+- adlcp_rootv1p2.xsd
+- browsersniff.js
+- goodbye.html
+- ims_xml.xsd
+- imscp_rootv1p1p2.xsd
+- imsmanifest.xml
+- imsmd_rootv1p2p1.xsd
+- index_scorm.html
+- metadata.xml
+- project.txt
+- scormdriver.js
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar
+
+- 12633.mp3
+- 15812.mp3
+- 15839.mp3
+- 166512.mp3
+- Mouse.mp3
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons
+
+- collapseIcon.png
+- expandIcon.png
+- photo.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css
+
+- CPLibraryAll.css
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images
+
+- animated-overlay.gif
+- ui-bg_flat_55_999999_40x100.png
+- ui-bg_flat_75_aaaaaa_40x100.png
+- ui-bg_glass_45_0078ae_1x400.png
+- ui-bg_glass_55_f8da4e_1x400.png
+- ui-bg_glass_75_79c9ec_1x400.png
+- ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ui-bg_gloss-wave_75_2191c0_500x100.png
+- ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ui-icons_0078ae_256x240.png
+- ui-icons_056b93_256x240.png
+- ui-icons_d8e7f3_256x240.png
+- ui-icons_e0fdff_256x240.png
+- ui-icons_f5e175_256x240.png
+- ui-icons_f7a50d_256x240.png
+- ui-icons_fcd113_256x240.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start
+
+- jquery-ui-1.11.4.custom.css
+- jquery-ui-1.11.4.custom.min.css
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages
+
+- Pause.gif
+- Pause2x.gif
+- Play.gif
+- Play2x.gif
+- Play_icon.png
+- arrow_right.gif
+- ccClose.png
+- checkBox_disabled.png
+- checkBox_normal.png
+- checkBox_selected.png
+- checkBox_selectedDisabled.png
+- closeReviewButton.png
+- correct_answer_normal.png
+- correct_answer_small.png
+- correct_question_normal.png
+- correct_question_small.png
+- dd_arrow.png
+- expand_icon.png
+- expand_icon@2x.png
+- gesturemobileicon.png
+- gesturemobileicon@2x.png
+- gesturemobileimage2.png
+- gesturemobilelandscape.png
+- gesturetabletimage.png
+- hotspot.gif
+- hotspot_correct_answer_normal.png
+- hotspot_incorrect_answer_normal.png
+- img_trans.gif
+- incorrect_answer_normal.png
+- incorrect_answer_small.png
+- incorrect_question_normal.png
+- incorrect_question_small.png
+- loader.gif
+- loader_transparent.gif
+- movieexpire.png
+- partial_correct_question_normal.png
+- partial_correct_question_small.png
+- placeholder.png
+- radioButton_disabled.png
+- radioButton_normal.png
+- radioButton_selected.png
+- radioButton_selectedDisabled.png
+- sequenceReview.png
+- skip_answer_normal.png
+- skip_answer_small.png
+- skip_question_normal.png
+- skip_question_small.png
+- toc.png
+- vidbg.png
+- vidfullscreen.png
+- vidpause.png
+- vidplay.png
+- vidrewind.png
+- vidslider.png
+- vidstop.png
+- vidvolume.png
+- vidvolume2.png
+- vidvolumemute.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js
+
+- CPM.js
+- CPXHRLoader.js
+- jquery-1.11.3.min.js
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons
+
+- AudioOff.png
+- AudioOn.png
+- BackGround.png
+- Backward.png
+- CC.png
+- Color.png
+- ColorSmall.png
+- Exit.png
+- FastForward.png
+- FastForward1.png
+- FastForward2.png
+- Forward.png
+- Glow.png
+- GlowSmall.png
+- Height.png
+- InnerStroke.png
+- InnerStrokeSmall.png
+- Pause.png
+- Play.png
+- Progress.png
+- Rewind.png
+- Shade.png
+- ShadeSmall.png
+- Stroke.png
+- StrokeSmall.png
+- TOC.png
+- Thumb.png
+- ThumbBase.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar
+
+- playbarScript.js
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons
+
+- blankBookmark.png
+- clear.png
+- expander.png
+- fullBookmark.png
+- go.png
+- infoClose.png
+- moreinfo.png
+- searchBtnNormal.png
+- searchBtnSelect.png
+- visited.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr
+
+- img1.json
+- img2.json
+- img3.json
+- img4.json
+- img5.json
+- img6.json
+- imgmd.json
+- loading.gif
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar
+
+- 47974.mp3
+- Mouse.mp3
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons
+
+- collapseIcon.png
+- expandIcon.png
+- photo.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css
+
+- CPLibraryAll.css
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images
+
+- animated-overlay.gif
+- ui-bg_flat_55_999999_40x100.png
+- ui-bg_flat_75_aaaaaa_40x100.png
+- ui-bg_glass_45_0078ae_1x400.png
+- ui-bg_glass_55_f8da4e_1x400.png
+- ui-bg_glass_75_79c9ec_1x400.png
+- ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ui-bg_gloss-wave_75_2191c0_500x100.png
+- ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ui-icons_0078ae_256x240.png
+- ui-icons_056b93_256x240.png
+- ui-icons_d8e7f3_256x240.png
+- ui-icons_e0fdff_256x240.png
+- ui-icons_f5e175_256x240.png
+- ui-icons_f7a50d_256x240.png
+- ui-icons_fcd113_256x240.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start
+
+- jquery-ui-1.11.4.custom.css
+- jquery-ui-1.11.4.custom.min.css
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages
+
+- Pause.gif
+- Pause2x.gif
+- Play.gif
+- Play2x.gif
+- Play_icon.png
+- arrow_right.gif
+- ccClose.png
+- checkBox_disabled.png
+- checkBox_normal.png
+- checkBox_selected.png
+- checkBox_selectedDisabled.png
+- closeReviewButton.png
+- correct_answer_normal.png
+- correct_answer_small.png
+- correct_question_normal.png
+- correct_question_small.png
+- dd_arrow.png
+- expand_icon.png
+- expand_icon@2x.png
+- gesturemobileicon.png
+- gesturemobileicon@2x.png
+- gesturemobileimage2.png
+- gesturemobilelandscape.png
+- gesturetabletimage.png
+- hotspot.gif
+- hotspot_correct_answer_normal.png
+- hotspot_incorrect_answer_normal.png
+- img_trans.gif
+- incorrect_answer_normal.png
+- incorrect_answer_small.png
+- incorrect_question_normal.png
+- incorrect_question_small.png
+- loader.gif
+- loader_transparent.gif
+- movieexpire.png
+- partial_correct_question_normal.png
+- partial_correct_question_small.png
+- placeholder.png
+- radioButton_disabled.png
+- radioButton_normal.png
+- radioButton_selected.png
+- radioButton_selectedDisabled.png
+- sequenceReview.png
+- skip_answer_normal.png
+- skip_answer_small.png
+- skip_question_normal.png
+- skip_question_small.png
+- toc.png
+- vidbg.png
+- vidfullscreen.png
+- vidpause.png
+- vidplay.png
+- vidrewind.png
+- vidslider.png
+- vidstop.png
+- vidvolume.png
+- vidvolume2.png
+- vidvolumemute.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js
+
+- CPM.js
+- CPXHRLoader.js
+- jquery-1.11.3.min.js
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons
+
+- blankBookmark.png
+- clear.png
+- expander.png
+- fullBookmark.png
+- go.png
+- infoClose.png
+- moreinfo.png
+- searchBtnNormal.png
+- searchBtnSelect.png
+- visited.png
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr
+
+- img1.json
+- img10.json
+- img11.json
+- img12.json
+- img13.json
+- img14.json
+- img15.json
+- img16.json
+- img17.json
+- img18.json
+- img19.json
+- img2.json
+- img20.json
+- img21.json
+- img22.json
+- img23.json
+- img24.json
+- img25.json
+- img26.json
+- img27.json
+- img28.json
+- img29.json
+- img3.json
+- img4.json
+- img5.json
+- img6.json
+- img7.json
+- img8.json
+- img9.json
+- imgmd.json
+- loading.gif
+
+#### ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity
+
+- goodbye.html
+- index.html
+- project.txt
 
 #### ./scripts
 
 - document-project-single.js
 - document-project.js
+- generate-color-reference.py
+- move-unused-files.ts
 
-#### ./styles
+#### ./types
 
-- globals.css
+- components.ts
+- design.ts
 
 ### Files by Extension
 
-#### .js (8 files)
+#### .html (6 files)
 
 <details>
 <summary>Show files</summary>
 
-- ./.eslintrc.js
-- ./.prettierrc.js
-- ./.reference-files/project-docs/configs/.eslintrc.js
-- ./.reference-files/project-docs/configs/.prettierrc.js
-- ./.reference-files/project-docs/configs/eslint.config.js
-- ./eslint.config.js
-- ./scripts/document-project-single.js
-- ./scripts/document-project.js
+- ./.reference-files/color-reference.html
+- ./color-reference.html
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/goodbye.html
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/index_scorm.html
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/goodbye.html
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/index.html
 
 </details>
 
-#### .ts (9 files)
+#### .ts (21 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./.reference-files/constructed-clarity-theme.d.ts
 - ./.reference-files/constructed-clarity-theme.ts
+- ./.reference-files/new-theme-colors.ts
 - ./.reference-files/project-docs/configs/tailwind.config.ts
 - ./components/ui/use-toast.ts
+- ./config/site.ts
 - ./data/projects.ts
+- ./data/testamonials.ts
+- ./hooks/use-debounce.ts
+- ./hooks/use-local-storage.ts
+- ./hooks/use-media-query.ts
+- ./hooks/use-mounted.ts
+- ./hooks/use-scroll.ts
+- ./hooks/use-skew-offset.ts
 - ./hooks/use-toast.ts
 - ./lib/utils.ts
 - ./next-env.d.ts
+- ./scripts/move-unused-files.ts
 - ./tailwind.config.ts
+- ./types/components.ts
+- ./types/design.ts
 
 </details>
 
-#### .md (20 files)
+#### .css (11 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./.reference-files/globals_BACKUP.css
+- ./.reference-files/globals_old.css
+- ./.reference-files/root-css-variables-OLD.css
+- ./.reference-files/shadcn-defaults.css
+- ./app/globals.css
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/CPLibraryAll.css
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/CPLibraryAll.css
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
+
+</details>
+
+#### .md (22 files)
 
 <details>
 <summary>Show files</summary>
@@ -742,6 +1336,8 @@ Total files: 142
 - ./.reference-files/portfolio_markdown_files/game-based-learning-design.md
 - ./.reference-files/portfolio_markdown_files/gamified-statistics-tutor.md
 - ./.reference-files/portfolio_markdown_files/higher-ed-course-design.md
+- ./.reference-files/portfolio_markdown_files/preview-statistic-tutor.md
+- ./.reference-files/portfolio_markdown_files/quotes.md
 - ./.reference-files/portfolio_markdown_files/research-collaboration-educators-industry.md
 - ./.reference-files/portfolio_markdown_files/research-impact-instructional-design.md
 - ./.reference-files/portfolio_markdown_files/scalable-stem-play.md
@@ -756,11 +1352,12 @@ Total files: 142
 
 </details>
 
-#### .tsx (79 files)
+#### .tsx (108 files)
 
 <details>
 <summary>Show files</summary>
 
+- ./.reference-files/playground-page-old.tsx
 - ./.reference-files/playground.tsx
 - ./.reference-files/project-docs/components/call-to-action-ee7bfdee.tsx
 - ./.reference-files/project-docs/components/contact-form-1a800515.tsx
@@ -772,74 +1369,137 @@ Total files: 142
 - ./.reference-files/project-docs/components/page-acdd547d.tsx
 - ./.reference-files/project-docs/components/page-b985b05e.tsx
 - ./.reference-files/project-docs/components/page-dfcde9f6.tsx
+- ./.reference-files/unused-files/components/call-to-action.tsx
+- ./.reference-files/unused-files/components/featured-projects.tsx
+- ./.reference-files/unused-files/components/hero.tsx
+- ./.reference-files/unused-files/components/markdown-content.tsx
+- ./.reference-files/unused-files/components/portfolio-categories.tsx
+- ./.reference-files/unused-files/components/portfolio-grid.tsx
+- ./.reference-files/unused-files/components/portfolio-nav.tsx
+- ./.reference-files/unused-files/components/project-layout.tsx
+- ./.reference-files/unused-files/components/skills.tsx
+- ./.reference-files/unused-files/components/theme-toggle.tsx
+- ./.reference-files/unused-files/components/ui/accordion.tsx
+- ./.reference-files/unused-files/components/ui/alert.tsx
+- ./.reference-files/unused-files/components/ui/aspect-ratio.tsx
+- ./.reference-files/unused-files/components/ui/avatar.tsx
+- ./.reference-files/unused-files/components/ui/breadcrumb.tsx
+- ./.reference-files/unused-files/components/ui/calendar.tsx
+- ./.reference-files/unused-files/components/ui/carousel.tsx
+- ./.reference-files/unused-files/components/ui/chart.tsx
+- ./.reference-files/unused-files/components/ui/checkbox.tsx
+- ./.reference-files/unused-files/components/ui/collapsible.tsx
+- ./.reference-files/unused-files/components/ui/command.tsx
+- ./.reference-files/unused-files/components/ui/context-menu.tsx
+- ./.reference-files/unused-files/components/ui/drawer.tsx
+- ./.reference-files/unused-files/components/ui/dropdown-menu.tsx
+- ./.reference-files/unused-files/components/ui/form.tsx
+- ./.reference-files/unused-files/components/ui/hover-card.tsx
+- ./.reference-files/unused-files/components/ui/input-otp.tsx
+- ./.reference-files/unused-files/components/ui/menubar.tsx
+- ./.reference-files/unused-files/components/ui/navigation-menu.tsx
+- ./.reference-files/unused-files/components/ui/popover.tsx
+- ./.reference-files/unused-files/components/ui/progress.tsx
+- ./.reference-files/unused-files/components/ui/radio-group.tsx
+- ./.reference-files/unused-files/components/ui/resizable.tsx
+- ./.reference-files/unused-files/components/ui/scroll-area.tsx
+- ./.reference-files/unused-files/components/ui/select.tsx
+- ./.reference-files/unused-files/components/ui/sheet.tsx
+- ./.reference-files/unused-files/components/ui/skeleton.tsx
+- ./.reference-files/unused-files/components/ui/slider.tsx
+- ./.reference-files/unused-files/components/ui/table.tsx
+- ./.reference-files/unused-files/components/ui/toaster.tsx
+- ./.reference-files/unused-files/components/ui/toggle-group.tsx
+- ./.reference-files/unused-files/components/ui/toggle.tsx
+- ./.reference-files/unused-files/components/ui/tooltip.tsx
+- ./.reference-files/unused-files/components/ui/use-mobile.tsx
 - ./app/about/page.tsx
+- ./app/about/testamonials/page.tsx
 - ./app/contact/page.tsx
 - ./app/layout.tsx
 - ./app/page.tsx
 - ./app/playground/page.tsx
+- ./app/portfolio/gamified-adaptive-statistics-tutor/page.tsx
 - ./app/portfolio/page.tsx
-- ./components/call-to-action.tsx
 - ./components/contact-form.tsx
-- ./components/featured-projects.tsx
-- ./components/footer.tsx
-- ./components/header.tsx
-- ./components/hero.tsx
-- ./components/markdown-content.tsx
-- ./components/portfolio-categories.tsx
-- ./components/portfolio-grid.tsx
-- ./components/portfolio-nav.tsx
-- ./components/project-layout.tsx
-- ./components/skills.tsx
+- ./components/layout/container.tsx
+- ./components/layout/footer.tsx
+- ./components/layout/navigation-desktop.tsx
+- ./components/layout/navigation-mobile.tsx
+- ./components/layout/navigation.tsx
+- ./components/layout/page-layout.tsx
+- ./components/layout/section.tsx
+- ./components/sections/home/cta-section.tsx
+- ./components/sections/home/expertise-section.tsx
+- ./components/sections/home/featured-projects.tsx
+- ./components/sections/home/hero-section.tsx
+- ./components/sections/home/hero-test.tsx
+- ./components/sections/home/main-content-section.tsx
+- ./components/sections/home/project-one.tsx
+- ./components/sections/home/project-test.tsx
+- ./components/sections/home/rotating-quote-section.tsx
+- ./components/sections/home/toolstack-section.tsx
 - ./components/theme-provider.tsx
-- ./components/theme-toggle.tsx
 - ./components/ui/accordion.tsx
-- ./components/ui/alert.tsx
 - ./components/ui/aspect-ratio.tsx
-- ./components/ui/avatar.tsx
 - ./components/ui/badge.tsx
-- ./components/ui/breadcrumb.tsx
+- ./components/ui/bullet-image.tsx
+- ./components/ui/button-icon.tsx
 - ./components/ui/button.tsx
-- ./components/ui/calendar.tsx
 - ./components/ui/card.tsx
-- ./components/ui/carousel.tsx
-- ./components/ui/chart.tsx
-- ./components/ui/checkbox.tsx
-- ./components/ui/collapsible.tsx
-- ./components/ui/command.tsx
-- ./components/ui/context-menu.tsx
-- ./components/ui/drawer.tsx
-- ./components/ui/dropdown-menu.tsx
-- ./components/ui/form.tsx
-- ./components/ui/hover-card.tsx
-- ./components/ui/input-otp.tsx
+- ./components/ui/iceberg-svg.tsx
 - ./components/ui/input.tsx
 - ./components/ui/label.tsx
-- ./components/ui/menubar.tsx
-- ./components/ui/navigation-menu.tsx
-- ./components/ui/pagination.tsx
-- ./components/ui/popover.tsx
-- ./components/ui/progress.tsx
-- ./components/ui/radio-group.tsx
-- ./components/ui/resizable.tsx
-- ./components/ui/scroll-area.tsx
-- ./components/ui/select.tsx
+- ./components/ui/logo-badge.tsx
 - ./components/ui/separator.tsx
 - ./components/ui/sheet.tsx
-- ./components/ui/sidebar.tsx
-- ./components/ui/skeleton.tsx
-- ./components/ui/slider.tsx
-- ./components/ui/sonner.tsx
+- ./components/ui/skew-tag.tsx
+- ./components/ui/skewed-box-container.tsx
+- ./components/ui/skewed-box.tsx
+- ./components/ui/skewed-button.tsx
+- ./components/ui/skewed-nav-link.tsx
+- ./components/ui/speech-bubble.tsx
+- ./components/ui/spotlight-background.tsx
 - ./components/ui/switch.tsx
-- ./components/ui/table.tsx
 - ./components/ui/tabs.tsx
 - ./components/ui/textarea.tsx
 - ./components/ui/toast.tsx
-- ./components/ui/toaster.tsx
-- ./components/ui/toggle-group.tsx
-- ./components/ui/toggle.tsx
-- ./components/ui/tooltip.tsx
-- ./components/ui/use-mobile.tsx
 - ./hooks/use-mobile.tsx
+
+</details>
+
+#### .zip (1 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./.reference-files/portfolio_markdown_files.zip
+
+</details>
+
+#### .js (18 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./.reference-files/project-docs/configs/.eslintrc.js
+- ./.reference-files/project-docs/configs/.prettierrc.js
+- ./.reference-files/project-docs/configs/eslint.config.js
+- ./eslint.config.js
+- ./prettier.config.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/SCORM_utilities.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/Utilities.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/CPM.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/CPXHRLoader.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/js/jquery-1.11.3.min.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/playbarScript.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/browsersniff.js
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/scormdriver.js
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/CPM.js
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/CPXHRLoader.js
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/js/jquery-1.11.3.min.js
+- ./scripts/document-project-single.js
+- ./scripts/document-project.js
 
 </details>
 
@@ -854,61 +1514,1658 @@ Total files: 142
 
 </details>
 
-#### .json (5 files)
+#### .json (47 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./.reference-files/project-docs/configs/package.json
 - ./.reference-files/project-docs/configs/tsconfig.json
+- ./.vscode/extensions.json
+- ./.vscode/launch.json
+- ./.vscode/settings.json
 - ./components.json
+- ./componentsOLD.json
+- ./knip.json
 - ./package.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img1.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img2.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img3.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img4.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img5.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/img6.json
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/imgmd.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img1.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img10.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img11.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img12.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img13.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img14.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img15.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img16.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img17.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img18.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img19.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img2.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img20.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img21.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img22.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img23.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img24.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img25.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img26.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img27.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img28.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img29.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img3.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img4.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img5.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img6.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img7.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img8.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/img9.json
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/imgmd.json
 - ./tsconfig.json
 
 </details>
 
-#### .txt (1 files)
+#### .txt (3 files)
 
 <details>
 <summary>Show files</summary>
 
-- ./.reference-files/project-structure.txt
+- ./.reference-files/spotlight-wide-code.txt
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/project.txt
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/project.txt
 
 </details>
 
-#### .svg (2 files)
+#### .svg (13 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./.reference-files/venn_training_overlap.svg
+- ./public/icons/commit-bullet.svg
+- ./public/icons/cross.svg
+- ./public/icons/gem-lavender.svg
+- ./public/icons/key-foreground-left-large.svg
+- ./public/icons/key-foreground.svg
+- ./public/icons/key-solid-foreground-left.svg
+- ./public/icons/key-solid-foreground.svg
+- ./public/icons/trophy-filled.svg
+- ./public/key-foreground-left-large.svg
 - ./public/placeholder.svg
+- ./public/portfolio-images/gamified-statistics-tutor/learning-path.svg
+- ./public/spotlight.svg
 
 </details>
 
-#### .css (2 files)
+#### .code-snippets (1 files)
 
 <details>
 <summary>Show files</summary>
 
-- ./app/globals.css
-- ./styles/globals.css
+- ./.vscode/snippets.code-snippets
 
 </details>
 
-#### .jpg (2 files)
+#### .otf (1 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/fonts/Gimlet_Sans_Variable_Regular.otf
+
+</details>
+
+#### .jpg (3 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./public/placeholder-user.jpg
 - ./public/placeholder.jpg
+- ./public/portfolio-images/game-based-learning-design/Slide10.jpg
+
+</details>
+
+#### .png (221 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/adaptive-statistics-tutor.png
+- ./public/portfolio-images/game-based-learning-design/BIOSTATSfEATURE.png
+- ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage 2.png
+- ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage 3.png
+- ./public/portfolio-images/game-based-learning-design/Beanstalk Videos – ETC s Darpa Engage.png
+- ./public/portfolio-images/game-based-learning-design/ENGAGE poster border.png
+- ./public/portfolio-images/game-based-learning-design/ENGAGE-poster-20120912-1.png
+- ./public/portfolio-images/game-based-learning-design/Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.png
+- ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 2.png
+- ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 3.png
+- ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage 4.png
+- ./public/portfolio-images/game-based-learning-design/Projects – ETC s Darpa Engage.png
+- ./public/portfolio-images/game-based-learning-design/beanstalkfeature.png
+- ./public/portfolio-images/game-based-learning-design/gamedesignttm_feature.png
+- ./public/portfolio-images/game-based-learning-design/interactiveproblemset_dragging_cropped.png
+- ./public/portfolio-images/game-based-learning-design/tt,14.png
+- ./public/portfolio-images/game-based-learning-design/tt14.png
+- ./public/portfolio-images/game-based-learning-design/ttm1.png
+- ./public/portfolio-images/game-based-learning-design/ttm10.png
+- ./public/portfolio-images/game-based-learning-design/ttm11.png
+- ./public/portfolio-images/game-based-learning-design/ttm12.png
+- ./public/portfolio-images/game-based-learning-design/ttm15.png
+- ./public/portfolio-images/game-based-learning-design/ttm2.png
+- ./public/portfolio-images/game-based-learning-design/ttm3.png
+- ./public/portfolio-images/game-based-learning-design/ttm5.png
+- ./public/portfolio-images/game-based-learning-design/ttm6.png
+- ./public/portfolio-images/game-based-learning-design/ttm7.png
+- ./public/portfolio-images/game-based-learning-design/ttm8.png
+- ./public/portfolio-images/game-based-learning-design/ttm9.png
+- ./public/portfolio-images/gamified-statistics-tutor/Course  Applied Biostatistics.png
+- ./public/portfolio-images/gamified-statistics-tutor/Escape Room Tutor Instructions.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/collapseIcon.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/expandIcon.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/TOC_icons/photo.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play_icon.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/ccClose.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_disabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_selected.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/closeReviewButton.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/correct_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/dd_arrow.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/expand_icon.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/expand_icon@2x.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileicon.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobileimage2.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturemobilelandscape.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/gesturetabletimage.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/incorrect_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/movieexpire.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/partial_correct_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/partial_correct_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/placeholder.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_disabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_selected.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/sequenceReview.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/skip_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/toc.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidbg.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidfullscreen.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidpause.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidplay.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidrewind.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidslider.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidstop.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolume.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolume2.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/vidvolumemute.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOff.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/AudioOn.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/BackGround.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Backward.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/CC.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Color.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ColorSmall.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Exit.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward1.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/FastForward2.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Forward.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Glow.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/GlowSmall.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Height.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStroke.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/InnerStrokeSmall.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Pause.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Play.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Progress.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Rewind.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Shade.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ShadeSmall.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Stroke.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/StrokeSmall.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/TOC.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/Thumb.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/playbar/PlaybarIcons/ThumbBase.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/blankBookmark.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/clear.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/expander.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/fullBookmark.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/go.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/infoClose.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/moreinfo.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/toc/tocIcons/visited.png
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-statistic-tutor-hint.png
+- ./public/portfolio-images/gamified-statistics-tutor/escaperoomfeature-1024x1024.png
+- ./public/portfolio-images/gamified-statistics-tutor/escaperoomfeature.png
+- ./public/portfolio-images/gamified-statistics-tutor/interactiveproblemset_dragging_cropped.png
+- ./public/portfolio-images/gamified-statistics-tutor/magic-book-brand-light.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/collapseIcon.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/expandIcon.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/TOC_icons/photo.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_55_999999_40x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_45_0078ae_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_55_f8da4e_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_glass_75_79c9ec_1x400.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_0078ae_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_056b93_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_d8e7f3_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_e0fdff_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f5e175_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_f7a50d_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/ui-icons_fcd113_256x240.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play_icon.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/ccClose.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_disabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_selected.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/checkBox_selectedDisabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/closeReviewButton.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/correct_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/dd_arrow.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/expand_icon.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/expand_icon@2x.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileicon@2x.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobileimage2.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturemobilelandscape.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/gesturetabletimage.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot_correct_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot_incorrect_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/incorrect_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/movieexpire.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/partial_correct_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/placeholder.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_disabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_selected.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/radioButton_selectedDisabled.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/sequenceReview.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_answer_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_answer_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_question_normal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/skip_question_small.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/toc.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidbg.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidfullscreen.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidpause.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidplay.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidrewind.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidslider.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidstop.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolume.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolume2.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/vidvolumemute.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/blankBookmark.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/clear.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/expander.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/fullBookmark.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/go.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/infoClose.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/moreinfo.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnNormal.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/searchBtnSelect.png
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/toc/tocIcons/visited.png
+- ./public/portfolio-images/gamified-statistics-tutor/treasure_feature.png
+
+</details>
+
+#### .gif (25 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/escape-room-preview-optimized.gif
+- ./public/portfolio-images/escape-room-preview-reoptimized.gif
+- ./public/portfolio-images/escape-room-preview.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/css/start/images/animated-overlay.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Pause.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Pause2x.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/Play2x.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/arrow_right.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/hotspot.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/img_trans.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/loader.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/assets/htmlimages/loader_transparent.gif
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/dr/loading.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/css/start/images/animated-overlay.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Pause.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Pause2x.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/Play2x.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/arrow_right.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/hotspot.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/img_trans.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/loader.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/assets/htmlimages/loader_transparent.gif
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/dr/loading.gif
+
+</details>
+
+#### .pptx (2 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/game-based-learning-design/Balance-Scale-Levels-v5-WITH-INQUIRY.pptx
+- ./public/portfolio-images/gamified-statistics-tutor/Escape Room Feedback.pptx
+
+</details>
+
+#### .mp4 (2 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/game-based-learning-design/BiostaticiansTreasure.mp4
+- ./public/portfolio-images/gamified-statistics-tutor/EscapeRoomComments-1.mp4
+
+</details>
+
+#### .pdf (3 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/game-based-learning-design/ENGAGE-poster-20120912.pdf
+- ./public/portfolio-images/game-based-learning-design/INQ-Item-by-item-slides.pdf
+- ./public/portfolio-images/game-based-learning-design/Mt.-Lebanon-School-District-Markham-Elementary-4th-Grade-Patti-McAuley.pdf
+
+</details>
+
+#### .xlsx (1 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/gamified-statistics-tutor/Biostatistics Inference Instructional analysis.xlsx
+
+</details>
+
+#### .xsd (5 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ScormEnginePackageProperties.xsd
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/adlcp_rootv1p2.xsd
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ims_xml.xsd
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imscp_rootv1p1p2.xsd
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imsmd_rootv1p2p1.xsd
+
+</details>
+
+#### .mp3 (7 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/12633.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/15812.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/15839.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/166512.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/ar/Mouse.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar/47974.mp3
+- ./public/portfolio-images/gamified-statistics-tutor/stats-zoo-learning-activity/ar/Mouse.mp3
+
+</details>
+
+#### .xml (2 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/imsmanifest.xml
+- ./public/portfolio-images/gamified-statistics-tutor/escape-room-learning-activity/metadata.xml
+
+</details>
+
+#### .PNG (11 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./public/portfolio-images/gamified-statistics-tutor/escaperoom.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_1.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_2.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_3.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_4.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_5.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_6.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_7.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactive_8.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/interactiveproblemset_dragging.PNG
+- ./public/portfolio-images/gamified-statistics-tutor/treasureCover.PNG
+
+</details>
+
+#### .py (1 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./scripts/generate-color-reference.py
 
 </details>
 
 ## Component Patterns
 
 This section contains 5 representative components from your project.
+
+### ./.reference-files/playground-page-old.tsx
+
+```tsx
+'use client'
+import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Separator } from '@/components/ui/separator'
+import { Badge } from '@/components/ui/badge'
+import { PageLayout } from '@/components/layout/page-layout'
+import { Container } from '@/components/layout/container'
+import { Section } from '@/components/layout/section'
+import { ReactElement } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+export default function PlaygroundPage(): ReactElement {
+  return (
+    <PageLayout>
+      <Container>
+        <div className="mb-8 flex flex-col gap-2">
+          <h1 className="text-4xl font-bold text-[var(--color-light-text)]">Design System</h1>
+          <p className="text-[var(--color-muted-text)]">
+            A showcase of UI components and design tokens used in this project.
+          </p>
+        </div>
+
+        <Tabs defaultValue="components" className="mb-12 w-full">
+          <TabsList className="mb-8 grid w-full grid-cols-4">
+            <TabsTrigger value="components">Components</TabsTrigger>
+            <TabsTrigger value="typography">Typography</TabsTrigger>
+            <TabsTrigger value="colors">Colors</TabsTrigger>
+            <TabsTrigger value="gradients">Gradients</TabsTrigger>
+          </TabsList>
+
+          {/* Components Tab */}
+          <TabsContent value="components" className="space-y-8">
+            {/* Buttons Section */}
+            <Section title="Buttons" className="space-y-4">
+              <div className="mb-4 flex items-center justify-between">
+                <Badge variant="outline">shadcn/ui</Badge>
+              </div>
+              <Separator className="mb-4" />
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Button Variants</CardTitle>
+                  <CardDescription>Different button styles for various contexts</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-4">
+                  <Button className="bg-[var(--color-brand)] text-[var(--color-light-text)]">
+                    Default
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    className="bg-[var(--color-muted-text)] text-[var(--color-light-text)]"
+                  >
+                    Secondary
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-[var(--color-brand)] text-[var(--color-brand)]"
+                  >
+                    Outline
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="bg-[var(--color-card)] text-[var(--color-light-text)]"
+                  >
+                    Ghost
+                  </Button>
+                  <Button variant="link" className="text-[var(--color-accent)]">
+                    Link
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    className="bg-[var(--color-dark)] text-[var(--color-light-text)]"
+                  >
+                    Destructive
+                  </Button>
+                  <Button className="bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-accent)] text-[var(--color-light-text)]">
+                    Gradient Button 1
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-[3px] border-transparent bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-accent)] text-[var(--color-light-text)]"
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(to right, var(--color-brand), var(--color-accent))',
+                      backgroundClip: 'padding-box',
+                      borderRadius: '0.75rem',
+                      borderWidth: '2px',
+                    }}
+                  >
+                    Gradient Outline
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-muted-text)] text-[var(--color-light-text)]"
+                  >
+                    Gradient Ghost Button
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    className="bg-gradient-to-r from-[var(--color-destructive)] to-[var(--color-dark)] text-[var(--color-light-text)]"
+                  >
+                    Gradient Destructive Button
+                  </Button>
+                  <Button
+                    variant="link"
+                    className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-light-text)] bg-clip-text text-transparent"
+                  >
+                    Gradient Link Button
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    className="bg-gradient-to-r from-[var(--color-muted-text)] to-[var(--color-brand)] text-[var(--color-light-text)]"
+                  >
+                    Gradient Secondary Button
+                  </Button>
+                  <Button className="bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-amber)] text-[var(--color-light-text)] hover:from-[var(--color-amber)] hover:to-[var(--color-brand)]">
+                    Hover Gradient Button
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Highlighted Button Section */}
+              <Section title="Highlighted Buttons" className="space-y-4">
+                <div className="flex items-center justify-center gap-4">
+                  <Button className="bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-accent)] text-[var(--color-light-text)]">
+                    Highlighted Button
+                  </Button>
+                </div>
+              </Section>
+            </Section>
+
+            {/* Gradient Card Background */}
+            <Section title="Gradient Cards" className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div
+                  className="rounded-lg p-6"
+                  style={{
+                    background: `linear-gradient(to bottom right, var(--color-brand), var(--color-muted-text))`,
+                    color: 'white',
+                  }}
+                >
+                  <h3 className="mb-2 text-xl font-bold">Gradient Card</h3>
+                  <p>
+                    This card uses a gradient background from var(--color-brand) to
+                    var(--color-muted-text).
+                  </p>
+                  <Button className="mt-4 bg-white text-[var(--color-accent)] hover:bg-white/90">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+            </Section>
+            <Section>
+              {/* Card with Gradient Background */}
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `linear-gradient(to bottom right, var(--primary), var(--accent))`, // Gradient from brand color to accent color
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Stunning Gradient Background
+                      </h2>
+                      <p className="text-xl">
+                        This card features a linear gradient from the brand color to the accent
+                        color, making it visually appealing and dynamic.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Learn More
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `linear-gradient(to top left, var(--background), var(--muted))`, // Dark to light gradient
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Dark to Light Gradient
+                      </h2>
+                      <p className="text-xl">
+                        This card has a gradient that transitions from a dark background to a
+                        lighter muted color, giving it a modern and elegant feel.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Learn More
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `linear-gradient(to right, var(--muted), var(--accent-light))`, // Subtle gradient from muted to a light accent
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Soft Gradient with Accent
+                      </h2>
+                      <p className="text-xl">
+                        A subtle gradient from muted tones to a lighter accent color, creating a
+                        refined and professional look.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--accent)] hover:bg-white/90">
+                        Discover More
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `linear-gradient(to bottom right, var(--accent), var(--primary))`, // Bold vibrant gradient
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Bold and Vibrant
+                      </h2>
+                      <p className="text-xl">
+                        A vibrant gradient between accent and brand colors that grabs attention and
+                        adds a pop of color to the page.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Explore Now
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `linear-gradient(to bottom, var(--background), var(--muted))`, // Simple gradient with darker edges
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Simple Gradient with Darker Edges
+                      </h2>
+                      <p className="text-xl">
+                        A straightforward gradient from dark to muted tones, providing a minimalist
+                        feel while adding a touch of elegance.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Learn More
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-xl border-[var(--border)] p-6"
+                      style={{
+                        background: `linear-gradient(to right, var(--muted-light), var(--accent-light))`, // Soft gradient with rounded border
+                        color: 'white',
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-white">
+                        Soft Gradient with Rounded Border
+                      </h2>
+                      <p className="text-xl">
+                        A soft gradient background with rounded corners, perfect for showcasing
+                        products or services in a subtle, elegant way.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--accent)] hover:bg-white/90">
+                        Get Started
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="mb-6 text-left">
+                      <h2 className="mt-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-transparent">
+                        Gradient Text Title
+                      </h2>
+                      <h1 className="mt-2 text-[clamp(1.5rem,9vw,4rem)] font-bold">
+                        A Beautiful <span className="gradient-text-ochre">Design</span>
+                      </h1>
+                    </div>
+                    <p className="mb-8 text-xl text-[var(--muted-foreground)]">
+                      This card uses solid colors for the background and gradient text to create a
+                      dynamic effect. It highlights important content using color gradients.
+                    </p>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <Button size="lg" asChild>
+                        <Link href="/work">
+                          View my work <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link href="/contact">Get in touch</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `var(--card)`, // Solid background color
+                        border: `3px solid transparent`,
+                        borderImage: `linear-gradient(to right, var(--primary), var(--accent)) 1`,
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)]">
+                        Gradient Border Card
+                      </h2>
+                      <p className="text-xl text-[var(--muted-foreground)]">
+                        This card uses a gradient border to give the content a dynamic and modern
+                        look while maintaining a solid background for the card itself.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Explore Now
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="mb-6 text-left">
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)]">
+                        Gradient Button Card
+                      </h2>
+                      <p className="text-xl text-[var(--muted-foreground)]">
+                        This card features a gradient button while maintaining a solid background
+                        color for the card. The button adds an extra pop of color and visual
+                        interest.
+                      </p>
+                    </div>
+                    <Button className="mt-4 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white hover:bg-opacity-[0.8]">
+                      Get Started
+                    </Button>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="rounded-lg p-6"
+                      style={{
+                        background: `var(--card)`,
+                        boxShadow: `0px 4px 6px rgba(0, 0, 0, 0.1), 0px 8px 20px rgba(0, 0, 0, 0.15), inset 0 0 0 3px linear-gradient(to bottom right, var(--primary), var(--accent))`,
+                      }}
+                    >
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)]">
+                        Gradient Shadow Card
+                      </h2>
+                      <p className="text-xl text-[var(--muted-foreground)]">
+                        This card features a dynamic gradient shadow for a unique effect, giving the
+                        card a sense of depth while maintaining a solid background.
+                      </p>
+                      <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                        Learn More
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div
+                      className="relative rounded-lg p-6"
+                      style={{
+                        backgroundImage: `url('https://source.unsplash.com/random')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      <div className="absolute inset-0 rounded-lg bg-black/40"></div>
+                      <div className="relative z-10 text-left text-white">
+                        <h2 className="mt-2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-transparent">
+                          Gradient Text Overlay
+                        </h2>
+                        <p className="text-xl">
+                          This card features gradient text overlaying a background image, creating
+                          an eye-catching effect.
+                        </p>
+                        <Button className="mt-4 bg-white text-[var(--primary)] hover:bg-white/90">
+                          Discover More
+                        </Button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              {/* Card with Dark Background */}
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="mb-6 text-left">
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)] text-opacity-80">
+                        Dark Theme Card
+                      </h2>
+                      <h1 className="mt-2 text-[clamp(1.5rem,9vw,4rem)] font-bold">
+                        Clean and Modern <span className="gradient-text-ochre">Design</span>
+                      </h1>
+                    </div>
+                    <p className="mb-8 text-xl text-[var(--muted-foreground)]">
+                      This card uses a darker background color to bring out the importance of the
+                      content. It features subtle text gradients to highlight key concepts.
+                    </p>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <Button size="lg" asChild>
+                        <Link href="/work">
+                          View my work <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link href="/contact">Get in touch</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              {/* Gradient Card Example */}
+              <Card className="mb-12">
+                <CardContent className="p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="mb-6 text-left">
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)] text-opacity-80">
+                        Gradient Card Title
+                      </h2>
+                      <h1 className="mt-2 text-[clamp(1.5rem,9vw,4rem)] font-bold">
+                        Beautiful <span className="gradient-text-ochre">Design</span>
+                      </h1>
+                      <h1 className="mt-2 text-right text-[clamp(1.5rem,6vw,3rem)] font-bold">
+                        with a difference.
+                      </h1>
+                    </div>
+                    <p className="mb-8 text-xl text-[var(--muted-foreground)]">
+                      This is a gradient card styled with the updated color palette. It transitions
+                      smoothly and highlights important text with color gradients.
+                    </p>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <Button size="lg" asChild>
+                        <Link href="/work">
+                          View my work <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link href="/contact">Get in touch</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+
+              {/* Plain Card with Border */}
+              <Card className="mb-12 border border-[var(--border)]">
+                <CardContent className="bg-[var(--card)] p-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="mb-6 text-left">
+                      <h2 className="mt-2 text-[clamp(1.5rem,7.5vw,3rem)] font-bold text-[var(--foreground)] text-opacity-80">
+                        Simple Border Card
+                      </h2>
+                      <h1 className="mt-2 text-[clamp(1.5rem,9vw,4rem)] font-bold">
+                        Elegant Design
+                      </h1>
+                    </div>
+                    <p className="mb-8 text-xl text-[var(--muted-foreground)]">
+                      This is a simple bordered card with a clean design, using the core brand
+                      colors and layout for a more traditional style.
+                    </p>
+                    <div className="flex flex-col gap-4 sm:flex-row">
+                      <Button size="lg" asChild>
+                        <Link href="/work">
+                          View my work <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link href="/contact">Get in touch</Link>
+                      </Button>
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </Section>
+          </TabsContent>
+
+          {/* Typography Tab */}
+          <TabsContent value="typography" className="space-y-8">
+            <Section title="Typography" className="space-y-4">
+              <div className="mb-4 flex items-center justify-between">
+                <Badge variant="outline">Plus Jakarta Sans</Badge>
+              </div>
+              <Separator className="mb-4" />
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Headings</CardTitle>
+                  <CardDescription>
+                    Typography scale for headings using Plus Jakarta Sans
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <h1 className="text-4xl font-extrabold">Heading 1</h1>
+                  <h2 className="text-3xl font-semibold">Heading 2</h2>
+                  <h3 className="text-2xl font-semibold">Heading 3</h3>
+                  <h4 className="text-xl font-semibold">Heading 4</h4>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Body Text</CardTitle>
+                  <CardDescription>Typography for body content</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <p className="leading-7">
+                    The king, seeing how much happier his subjects were, realized the error of his
+                    ways and promised to rule with fairness and compassion.
+                  </p>
+                  <p className="text-sm text-foreground">
+                    This is smaller text, often used for secondary information.
+                  </p>
+                  <p className="text-lg font-medium">
+                    This is larger text, often used for important information.
+                  </p>
+                </CardContent>
+              </Card>
+            </Section>
+          </TabsContent>
+
+          {/* Colors Tab */}
+          <TabsContent value="colors" className="space-y-8">
+            <Section title="Color Palette" className="space-y-4">
+              <div className="mb-4 flex items-center justify-between">
+                <Badge variant="outline">Design Tokens</Badge>
+              </div>
+              <Separator className="mb-4" />
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>CSS Variable Colors</CardTitle>
+                  <CardDescription>Display of CSS variables and their HSL values</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                  <div>
+                    <div
+                      className="h-16 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-brand)' }}
+                    ></div>
+                    <div className="text-sm font-medium">--color-brand</div>
+                    <div className="text-xs text-foreground">HSL(260, 58%, 52%)</div>
+                  </div>
+                  <div>
+                    <div
+                      className="h-16 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-accent)' }}
+                    ></div>
+                    <div className="text-sm font-medium">--color-accent</div>
+                    <div className="text-xs text-foreground">HSL(30, 90%, 57%)</div>
+                  </div>
+                  <div>
+                    <div
+                      className="h-16 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-muted-text)' }}
+                    ></div>
+                    <div className="text-sm font-medium">--color-muted-text</div>
+                    <div className="text-xs text-foreground">HSL(240, 10%, 65%)</div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Shades of Brand Color</CardTitle>
+                  <CardDescription>Shades of the brand color for UI components</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 gap-2 md:grid-cols-6">
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#734CA9' }}
+                    ></div>
+                    <div className="text-xs font-medium">Brand Color</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
+                  </div>
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#5C3C87' }}
+                    ></div>
+                    <div className="text-xs font-medium">Darker Shade</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
+                  </div>
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#4A2D6B' }}
+                    ></div>
+                    <div className="text-xs font-medium">Darkest Shade</div>
+                    <div className="text-xs text-foreground">#4A2D6B</div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>CSS Variable Color Swatches</CardTitle>
+                  <CardDescription>Colors defined in globals.css for UI components</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 gap-2 md:grid-cols-6">
+                  {/* Brand Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-brand)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-brand</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
+                  </div>
+
+                  {/* Light Violet */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-light)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-light</div>
+                    <div className="text-xs text-foreground">#D1A7E4</div>
+                  </div>
+
+                  {/* Deep Purple */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-dark)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-dark</div>
+                    <div className="text-xs text-foreground">#39344B</div>
+                  </div>
+
+                  {/* Neutral Light Gray */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-neutral)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-neutral</div>
+                    <div className="text-xs text-foreground">#BEB8CD</div>
+                  </div>
+
+                  {/* Darker Violet */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-dark-text)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-dark-text</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
+                  </div>
+
+                  {/* Amber Accent */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-accent)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-accent</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
+                  </div>
+
+                  {/* Light Text */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-light-text)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-light-text</div>
+                    <div className="text-xs text-foreground">#FFFFFF</div>
+                  </div>
+
+                  {/* Muted Purple */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-muted-text)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-muted-text</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
+                  </div>
+
+                  {/* Background Dark Slate */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-background)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-background</div>
+                    <div className="text-xs text-foreground">#292A3E</div>
+                  </div>
+
+                  {/* Card Background */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-card)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-card</div>
+                    <div className="text-xs text-foreground">#343A47</div>
+                  </div>
+
+                  {/* Lighter Brand Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-brand-light)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-brand-light</div>
+                    <div className="text-xs text-foreground">#8C74C2</div>
+                  </div>
+
+                  {/* Darker Brand Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-brand-dark)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-brand-dark</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
+                  </div>
+
+                  {/* Darker Shade of Brand Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-brand-darker)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-brand-darker</div>
+                    <div className="text-xs text-foreground">#4A2D6B</div>
+                  </div>
+
+                  {/* Lighter Amber */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-accent-light)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-accent-light</div>
+                    <div className="text-xs text-foreground">#F0B36D</div>
+                  </div>
+
+                  {/* Darker Amber */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-accent-dark)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-accent-dark</div>
+                    <div className="text-xs text-foreground">#C26A2A</div>
+                  </div>
+
+                  {/* Muted Light */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-muted-light)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-muted-light</div>
+                    <div className="text-xs text-foreground">#6A4D72</div>
+                  </div>
+
+                  {/* Muted Dark */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: 'var(--color-muted-dark)' }}
+                    ></div>
+                    <div className="text-xs font-medium">--color-muted-dark</div>
+                    <div className="text-xs text-foreground">#4A2D52</div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>All Gradient Colors in UI Theme</CardTitle>
+                  <CardDescription>Colors used in gradients for UI components</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 gap-2 md:grid-cols-6">
+                  {/* Brand Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#734CA9' }}
+                    ></div>
+                    <div className="text-xs font-medium">Brand Color</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
+                  </div>
+
+                  {/* Amber Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#E3A34E' }}
+                    ></div>
+                    <div className="text-xs font-medium">Amber</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
+                  </div>
+
+                  {/* Sage Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#A3B7A3' }}
+                    ></div>
+                    <div className="text-xs font-medium">Sage</div>
+                    <div className="text-xs text-foreground">#A3B7A3</div>
+                  </div>
+
+                  {/* Dark Purple */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#292A3E' }}
+                    ></div>
+                    <div className="text-xs font-medium">Dark Purple</div>
+                    <div className="text-xs text-foreground">#292A3E</div>
+                  </div>
+
+                  {/* Light Sky Blue */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#A3C8D6' }}
+                    ></div>
+                    <div className="text-xs font-medium">Sky Blue</div>
+                    <div className="text-xs text-foreground">#A3C8D6</div>
+                  </div>
+
+                  {/* Soft Blue */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#6B8FA6' }}
+                    ></div>
+                    <div className="text-xs font-medium">Soft Blue</div>
+                    <div className="text-xs text-foreground">#6B8FA6</div>
+                  </div>
+
+                  {/* Muted Text */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#BEB8CD' }}
+                    ></div>
+                    <div className="text-xs font-medium">Muted Text</div>
+                    <div className="text-xs text-foreground">#BEB8CD</div>
+                  </div>
+
+                  {/* Dark Blue */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#3A3D55' }}
+                    ></div>
+                    <div className="text-xs font-medium">Dark Blue</div>
+                    <div className="text-xs text-foreground">#3A3D55</div>
+                  </div>
+
+                  {/* Ochre Color */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#E3A34E' }}
+                    ></div>
+                    <div className="text-xs font-medium">Ochre</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
+                  </div>
+
+                  {/* Lavender */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#B6A0D2' }}
+                    ></div>
+                    <div className="text-xs font-medium">Lavender</div>
+                    <div className="text-xs text-foreground">#B6A0D2</div>
+                  </div>
+
+                  {/* Pink to Lavender Gradient */}
+                  <div className="space-y-1">
+                    <div
+                      className="h-12 w-full rounded-md"
+                      style={{ backgroundColor: '#F1A0D1' }}
+                    ></div>
+                    <div className="text-xs font-medium">Pink</div>
+                    <div className="text-xs text-foreground">#F1A0D1</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </Section>
+          </TabsContent>
+
+          {/* Gradients Tab */}
+          <TabsContent value="gradients" className="space-y-8">
+            <Section title="Gradient Backgrounds" className="space-y-6">
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#734CA9] to-[#E3A34E]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Purple to Amber Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#734CA9] to-[#E3A34E]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#292A3E] to-[#3A3D55]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Dark to Light Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#292A3E] to-[#3A3D55]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#E3A34E] to-[#A3B7A3]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Amber to Sage Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#E3A34E] to-[#A3B7A3]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#734CA9] to-[#6B8FA6]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Muted Purple to Soft Blue Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#734CA9] to-[#6B8FA6]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#292A3E] to-[#A3C8D6]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Deep Slate to Sky Blue Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#292A3E] to-[#A3C8D6]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#E3A34E] to-[#A7C5A3]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Ochre to Sage Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#E3A34E] to-[#A7C5A3]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#F1A0D1] to-[#9C7DFF]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Soft Pink to Lavender Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#F1A0D1] to-[#9C7DFF]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-gradient-to-r from-[#734CA9] to-[#B6A0D2]">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Dark Purple to Light Lavender Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-to-r from-[#734CA9] to-[#B6A0D2]
+                </code>
+              </div>
+              <div>
+                <ul>
+                  <li>
+                    Amber to Sage: A warm-to-cool gradient for a professional yet vibrant
+                    appearance.
+                  </li>
+                  <li>
+                    Muted Purple to Soft Blue: Subtle gradient with calming and complementary tones.
+                  </li>
+                  <li>Deep Slate to Sky Blue:Cool gradient providing balance and calmness.</li>
+                  <li>Ochre to Sage:A natural earthy gradient for grounding tones.</li>
+                  <li>Soft Pink to Lavender: Playful and light gradient for a gentle aesthetic</li>
+                  <li>
+                    Dark Purple to Light Lavender: A monochromatic gradient that sticks to one
+                    family of colors for a harmonious effect.
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-1">
+                <div className="bg-gradient-animated flex h-24 items-center justify-center rounded-lg">
+                  <span className="text-xl font-bold text-white drop-shadow-md">
+                    Animated Brand Gradient
+                  </span>
+                </div>
+                <code className="text-xs text-foreground">
+                  bg-gradient-animated (custom class)
+                </code>
+              </div>
+            </Section>
+
+            <Section title="Text Gradients" className="space-y-4">
+              <div className="space-y-1">
+                <h2 className="bg-gradient-to-r from-[#734CA9] to-[#E3A34E] bg-clip-text text-4xl font-bold text-transparent">
+                  Gradient Text Example
+                </h2>
+                <code className="text-xs text-foreground">
+                  text-transparent bg-clip-text bg-gradient-to-r from-[#734CA9] to-[#E3A34E]
+                </code>
+              </div>
+              <div className="space-y-1">
+                <h2 className="text-gradient-animated text-4xl font-bold">
+                  Animated Gradient Text
+                </h2>
+                <code className="text-xs text-foreground">
+                  text-gradient-animated (custom class)
+                </code>
+              </div>
+            </Section>
+          </TabsContent>
+        </Tabs>
+      </Container>
+    </PageLayout>
+  )
+}
+
+```
+
+#### Analysis
+
+- **Type**: Client Component
+- **Imports**: 12 dependencies
+  - lucide-react
+  - @/components/ui/button
+  - @/components/ui/card
+  - @/components/ui/tabs
+  - @/components/ui/separator
+  - @/components/ui/badge
+  - @/components/layout/page-layout
+  - @/components/layout/container
+  - @/components/layout/section
+  - react
+  - framer-motion
+  - next/link
+- **Props Interface**: No
+- **Hooks Used**: None
+- **Styling**: Tailwind/CSS Classes, Inline Styles
 
 ### ./.reference-files/playground.tsx
 
@@ -925,13 +3182,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PlaygroundPage() {
   return (
-    <main className="p-8 space-y-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">UI Component Playground</h1>
+    <main className="mx-auto max-w-4xl space-y-8 p-8">
+      <h1 className="mb-4 text-3xl font-bold">UI Component Playground</h1>
 
       {/* Buttons */}
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">Buttons</h2>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex flex-wrap gap-4">
           <Button>Default</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="destructive">Destructive</Button>
@@ -955,7 +3212,7 @@ export default function PlaygroundPage() {
       {/* Form Inputs */}
       <section className="space-y-2">
         <h2 className="text-xl font-semibold">Form Elements</h2>
-        <div className="flex flex-col gap-4 max-w-sm">
+        <div className="flex max-w-sm flex-col gap-4">
           <Input placeholder="Example input" />
           <Switch id="example-switch" />
         </div>
@@ -1014,16 +3271,16 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-lg bg-primary text-primary-foreground p-8 md:p-12"
+          className="relative overflow-hidden rounded-lg bg-primary p-8 text-primary-foreground md:p-12"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/80" />
-          <div className="relative z-10 flex flex-col items-center text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Ready to Collaborate?</h2>
-            <p className="text-lg md:text-xl max-w-2xl">
+          <div className="relative z-10 flex flex-col items-center space-y-6 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Ready to Collaborate?</h2>
+            <p className="max-w-2xl text-lg md:text-xl">
               Let&apos;s discuss how we can create innovative learning solutions that drive real impact for your
               organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" variant="secondary" className="px-8">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
@@ -1031,7 +3288,7 @@ export default function CallToAction() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white hover:bg-white/10 px-8"
+                className="border-white bg-transparent px-8 hover:bg-white/10"
               >
                 <Link href="/portfolio">Explore Portfolio</Link>
               </Button>
@@ -1170,13 +3427,13 @@ export default function FeaturedProjects() {
   return (
     <section className="py-12 md:py-16">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl">
+        <div className="mb-12 flex flex-col items-center space-y-4 text-center">
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Featured Projects</h2>
+          <p className="max-w-2xl text-foreground">
             Explore my portfolio of innovative instructional design solutions that solve real learning challenges.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-2 mt-6">
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
             {filters.map((filter) => (
               <Badge
                 key={filter}
@@ -1190,7 +3447,7 @@ export default function FeaturedProjects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.path}
@@ -1198,20 +3455,20 @@ export default function FeaturedProjects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col">
+              <Card className="flex h-full flex-col overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg?height=600&width=800"}
                     alt={project.label}
                     fill
-                    className="object-cover transition-transform hover:scale-105 duration-500"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <CardHeader>
                   <CardTitle>{project.label}</CardTitle>
                   <CardDescription>{project.subLabel}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="grow">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 3).map((tag) => (
                       <Badge key={tag} variant="secondary">
@@ -1225,7 +3482,7 @@ export default function FeaturedProjects() {
                   <Button asChild variant="ghost" className="w-full justify-between">
                     <Link href={project.path}>
                       View Case Study
-                      <ChevronRight className="h-4 w-4 ml-2" />
+                      <ChevronRight className="ml-2 size-4" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -1234,7 +3491,7 @@ export default function FeaturedProjects() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
+        <div className="mt-12 flex justify-center">
           <Button asChild variant="outline" size="lg">
             <Link href="/portfolio">View All Projects</Link>
           </Button>
@@ -1264,80 +3521,6 @@ export default function FeaturedProjects() {
 - **Hooks Used**: useState
 - **Styling**: Tailwind/CSS Classes
 
-### ./.reference-files/project-docs/components/footer-8b216e7d.tsx
-
-```tsx
-import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
-
-export default function Footer() {
-  return (
-    <footer className="border-t">
-      <div className="container py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-3">
-            <h3 className="text-lg font-semibold">ID Portfolio</h3>
-            <p className="text-sm text-muted-foreground">
-              Innovative instructional design solutions that bridge research, learning science, and real-world
-              application.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
-            <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link href="/portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Portfolio
-              </Link>
-              <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </Link>
-            </nav>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Connect</h3>
-            <div className="flex space-x-4">
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-              </Link>
-              <Link href="mailto:contact@example.com" aria-label="Email">
-                <Mail className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ID Portfolio. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  )
-}
-
-
-```
-
-#### Analysis
-
-- **Type**: Function Component
-- **Imports**: 2 dependencies
-  - next/link
-  - lucide-react
-- **Props Interface**: No
-- **Hooks Used**: None
-- **Styling**: Tailwind/CSS Classes
-
 ## Code Generation Guidelines
 
 This section provides guidelines for generating code that is compatible with this project.
@@ -1355,7 +3538,7 @@ This section provides guidelines for generating code that is compatible with thi
 
 ### TypeScript Compatibility
 
-- **TypeScript Version**: ^5.2.2
+- **TypeScript Version**: ^5.8.2
 - Use explicit type annotations for function parameters and return types
 - Define interfaces for component props
 - Use type imports: `import type { X } from 'y'`
@@ -1367,10 +3550,3 @@ This section provides guidelines for generating code that is compatible with thi
 ### File Naming Conventions
 
 - Use kebab-case for file names (e.g., `button-group.tsx`)
-
-### Code Formatting
-
-- Project uses Prettier for code formatting
-- Don't use semicolons at the end of statements
-- Use single quotes for strings
-- Keep lines under 100 characters
