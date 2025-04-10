@@ -56,7 +56,7 @@ export default function Header() {
               href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.href ? "text-primary" : "text-muted-foreground",
+                pathname === item.href ? "text-primary" : "text-foreground",
               )}
             >
               {item.name}
@@ -94,7 +94,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "block py-2 text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href ? "text-primary" : "text-muted-foreground",
+                  pathname === item.href ? "text-primary" : "text-foreground",
                 )}
                 onClick={() => setIsOpen(false)}
               >

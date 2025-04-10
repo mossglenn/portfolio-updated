@@ -57,21 +57,21 @@ export default function ProjectLayout({
                   <Badge key={tag}>{tag}</Badge>
                 ))}
               </div>
-              <p className="text-xl text-muted-foreground">{project.subLabel}</p>
+              <p className="text-xl text-foreground">{project.subLabel}</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <h3 className="font-semibold">Client</h3>
-                <p className="text-muted-foreground">{content.client}</p>
+                <p className="text-foreground">{content.client}</p>
               </div>
               <div>
                 <h3 className="font-semibold">Year</h3>
-                <p className="text-muted-foreground">{content.year}</p>
+                <p className="text-foreground">{content.year}</p>
               </div>
               <div>
                 <h3 className="font-semibold">Role</h3>
-                <p className="text-muted-foreground">{content.role}</p>
+                <p className="text-foreground">{content.role}</p>
               </div>
             </div>
           </div>

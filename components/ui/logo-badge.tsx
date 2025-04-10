@@ -1,7 +1,8 @@
 'use client'
 
-import * as React from 'react'
 import Link from 'next/link'
+import * as React from 'react'
+
 import { cn } from '@/lib/utils'
 
 interface LogoBadgeProps {
@@ -26,12 +27,12 @@ export function LogoBadge({
     <div className={cn('relative inline-block', className)}>
       {/* Skewed foreground layer */}
       <Link
-        href={href}
         className={cn(
           'relative z-10 mr-2 inline-flex items-center justify-center rounded-md px-4 py-2 shadow-md',
           negSkew,
           backgroundColorClass
         )}
+        href={href}
       >
         <span
           className={cn(

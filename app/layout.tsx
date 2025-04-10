@@ -1,11 +1,14 @@
-import type React from 'react'
-import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { Space_Grotesk } from 'next/font/google'
-import './globals.css'
+import { type ReactElement } from 'react'
+
 import { ThemeProvider } from '@/components/theme-provider'
 import { siteConfig } from '@/config/site'
-import { ReactElement } from 'react'
+
+import type { Metadata } from 'next'
+import type React from 'react'
+
+import './globals.css'
 
 // Initialize the Plus Jakarta Sans font
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

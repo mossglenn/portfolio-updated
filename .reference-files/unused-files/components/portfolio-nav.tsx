@@ -54,7 +54,7 @@ export default function PortfolioNav() {
                     <li key={project.path}>
                       <Link
                         href={project.path}
-                        className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                        className="block rounded-md px-3 py-2 text-sm text-foreground hover:bg-muted hover:text-foreground"
                       >
                         {project.label}
                       </Link>

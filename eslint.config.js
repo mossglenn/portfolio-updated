@@ -15,6 +15,8 @@ const eslintConfig = [
       '**/out/**',
       '**/.reference-files/**',
       '/.reference-files/**',
+      '**/learning-objects/**',
+      '**/scripts/**',
     ],
   },
   js.configs.recommended,
@@ -33,7 +35,7 @@ const eslintConfig = [
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      'react/prop-types': 'warn',
       'tailwindcss/no-custom-classname': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -43,6 +45,36 @@ const eslintConfig = [
         },
       ],
       '@typescript-eslint/explicit-module-boundary-types': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
+      'react/self-closing-comp': 'error',
+      'react/jsx-sort-props': [
+        'warn',
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          reservedFirst: true,
+        },
+      ],
     },
     settings: {
       react: {

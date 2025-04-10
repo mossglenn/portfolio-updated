@@ -5098,7 +5098,7 @@ function X2JS(matchers, attrPrefix, ignoreRoot) {
                     if (result[childName] != null) {
                         if (!(result[childName] instanceof Array)) {
                             var tmpObj = result[childName];
-                            result[childName] = new Array();
+                            result[childName] = [];
                             result[childName][0] = tmpObj;
                             result[childName + "_asArray"] = result[childName];
                         }
@@ -9083,7 +9083,7 @@ Dash.dependencies.DashMetricsExtensions = function() {
         if (metrics === null) {
             return [];
         }
-        return !!metrics.HttpList ? metrics.HttpList : [];
+        return metrics.HttpList ? metrics.HttpList : [];
     }, getCurrentDroppedFrames = function(metrics) {
         if (metrics === null) {
             return null;
@@ -10306,7 +10306,7 @@ MediaPlayer.dependencies.Stream = function() {
                 processors.reset(errored);
                 processors = null;
             }
-            if (!!eventController) {
+            if (eventController) {
                 eventController.reset();
             }
             streamProcessors = [];
@@ -13262,7 +13262,7 @@ MediaPlayer.dependencies.StreamController = function() {
             this.manifestUpdater.setManifest(manifest);
         },
         reset: function() {
-            if (!!activeStream) {
+            if (activeStream) {
                 detachEvents.call(this, activeStream);
             }
             this.timeSyncController.unsubscribe(MediaPlayer.dependencies.TimeSyncController.eventList.ENAME_TIME_SYNCHRONIZATION_COMPLETED, this.timelineConverter);
@@ -13638,7 +13638,7 @@ MediaPlayer.dependencies.ProtectionExtensions.prototype = {
                     cp = cps[cpIdx];
                     if (cp.schemeIdUri.toLowerCase() === ks.schemeIdURI) {
                         var initData = ks.getInitData(cp);
-                        if (!!initData) {
+                        if (initData) {
                             supportedKS.push({
                                 ks: this.keySystems[ksIdx],
                                 initData: initData

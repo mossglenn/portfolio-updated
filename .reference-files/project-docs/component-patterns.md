@@ -23,11 +23,11 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">About Me</h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground">
               Passionate instructional designer with expertise in creating innovative, research-based learning
               experiences.
             </p>
-            <div className="space-y-4 text-muted-foreground">
+            <div className="space-y-4 text-foreground">
               <p>
                 With over a decade of experience in the field of instructional design, I've dedicated my career to
                 creating learning experiences that are not only effective but also engaging and impactful. My approach
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center space-y-4 mb-8">
             <h2 className="text-3xl font-bold tracking-tighter">My Approach</h2>
-            <p className="text-muted-foreground max-w-2xl">
+            <p className="text-foreground max-w-2xl">
               I believe in creating learning experiences that are evidence-based, learner-centered, and results-driven.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       <section className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
           <h2 className="text-3xl font-bold tracking-tighter">Education & Certifications</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-foreground max-w-2xl">
             Continuous learning is a core value that drives my professional development.
           </p>
         </div>
@@ -117,15 +117,15 @@ export default function AboutPage() {
             <CardContent className="space-y-4">
               <div>
                 <h3 className="font-semibold">Ph.D. in Learning Sciences</h3>
-                <p className="text-muted-foreground">University of Education, 2018</p>
+                <p className="text-foreground">University of Education, 2018</p>
               </div>
               <div>
                 <h3 className="font-semibold">M.Ed. in Instructional Design</h3>
-                <p className="text-muted-foreground">Design Institute, 2014</p>
+                <p className="text-foreground">Design Institute, 2014</p>
               </div>
               <div>
                 <h3 className="font-semibold">B.A. in Psychology</h3>
-                <p className="text-muted-foreground">State University, 2012</p>
+                <p className="text-foreground">State University, 2012</p>
               </div>
             </CardContent>
           </Card>
@@ -137,15 +137,15 @@ export default function AboutPage() {
             <CardContent className="space-y-4">
               <div>
                 <h3 className="font-semibold">Certified Professional in Learning Performance (CPLP)</h3>
-                <p className="text-muted-foreground">Association for Talent Development</p>
+                <p className="text-foreground">Association for Talent Development</p>
               </div>
               <div>
                 <h3 className="font-semibold">Learning Experience Design Certificate</h3>
-                <p className="text-muted-foreground">Design Academy</p>
+                <p className="text-foreground">Design Academy</p>
               </div>
               <div>
                 <h3 className="font-semibold">Accessibility in Learning Design</h3>
-                <p className="text-muted-foreground">Inclusive Learning Institute</p>
+                <p className="text-foreground">Inclusive Learning Institute</p>
               </div>
             </CardContent>
           </Card>
@@ -187,7 +187,7 @@ export default function ContactPage() {
       <section className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">Get in Touch</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
+          <p className="text-xl text-foreground max-w-2xl">
             Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
@@ -238,7 +238,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold tracking-tighter mb-4">Let&apos;s Collaborate</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-foreground">
                 <p>
                   I&apos;m always interested in new projects and collaborations. Whether you have a specific project in mind
                   or just want to explore possibilities, I&apos;d love to hear from you.
@@ -257,7 +257,7 @@ export default function ContactPage() {
 
             <div>
               <h2 className="text-2xl font-bold tracking-tighter mb-4">Availability</h2>
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 I&apos;m currently available for freelance projects, consulting, and speaking engagements. My typical
                 response time is within 24-48 hours.
               </p>
@@ -584,7 +584,7 @@ export default function FeaturedProjects() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="text-foreground max-w-2xl">
             Explore my portfolio of innovative instructional design solutions that solve real learning challenges.
           </p>
 
@@ -689,7 +689,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">ID Portfolio</h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-foreground">
               Innovative instructional design solutions that bridge research, learning science, and real-world
               application.
             </p>
@@ -698,16 +698,16 @@ export default function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-sm text-foreground hover:text-primary transition-colors">
                 Home
               </Link>
-              <Link href="/portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/portfolio" className="text-sm text-foreground hover:text-primary transition-colors">
                 Portfolio
               </Link>
-              <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/about" className="text-sm text-foreground hover:text-primary transition-colors">
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/contact" className="text-sm text-foreground hover:text-primary transition-colors">
                 Contact
               </Link>
             </nav>
@@ -717,19 +717,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
               <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Github className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
               </Link>
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Linkedin className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
               </Link>
               <Link href="mailto:contact@example.com" aria-label="Email">
-                <Mail className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Mail className="h-5 w-5 text-foreground hover:text-primary transition-colors" />
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-6 border-t text-center text-sm text-foreground">
           <p>&copy; {new Date().getFullYear()} ID Portfolio. All rights reserved.</p>
         </div>
       </div>
@@ -811,7 +811,7 @@ export default function Header() {
               href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.href ? "text-primary" : "text-muted-foreground",
+                pathname === item.href ? "text-primary" : "text-foreground",
               )}
             >
               {item.name}
@@ -849,7 +849,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "block py-2 text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href ? "text-primary" : "text-muted-foreground",
+                  pathname === item.href ? "text-primary" : "text-foreground",
                 )}
                 onClick={() => setIsOpen(false)}
               >

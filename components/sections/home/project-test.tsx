@@ -1,13 +1,16 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { SkewedBox } from '@/components/ui/skewed-box'
-import { useSkewOffset } from '@/hooks/use-skew-offset'
+import { motion } from 'framer-motion'
 import { ArrowRight, Bot, Brain, Gamepad2, Timer } from 'lucide-react'
-import { ReactElement } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { type ReactElement } from 'react'
+
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 import { SkewTag } from '@/components/ui/skew-tag'
-import { motion } from 'framer-motion'
+import { SkewedBox } from '@/components/ui/skewed-box'
+import { useSkewOffset } from '@/hooks/use-skew-offset'
+
+
 
 export function ProjectTest(): ReactElement {
   const { ref, offset, mounted, width } = useSkewOffset()
@@ -21,8 +24,8 @@ export function ProjectTest(): ReactElement {
     <Card className="@container">
       <CardContent className="p-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
           <div
@@ -43,7 +46,7 @@ export function ProjectTest(): ReactElement {
               F<span className="text-inherit-075">EATURED </span>P
               <span className="text-inherit-075">ROJECT</span>
             </SkewedBox>
-            <SkewedBox className="pl-offset pr-offset w-max max-w-full bg-brand" ref={ref}>
+            <SkewedBox ref={ref} className="pl-offset pr-offset w-max max-w-full bg-brand">
               <h1 className="font-display text-2xl font-bold">From Complex to Efficient</h1>
             </SkewedBox>
             <div
@@ -55,8 +58,8 @@ export function ProjectTest(): ReactElement {
               <p className="text-accent">Gamified, Personalized Statistics Tutor</p>
             </div>
             <div>
-              {/* eslint-disable-next-line tailwindcss/classnames-order */}
-              <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
+              { }
+              <p className="mb-4 font-display text-2xl font-bold leading-tight @md:text-2xl">
                 Instead of digitizing the content, <br className="hidden" /> I{' '}
                 <span className="text-gradient-lavender-light">
                   reimagined the learning experience.
@@ -67,18 +70,18 @@ export function ProjectTest(): ReactElement {
           <div className="hidden max-w-[300px] pl-8 md:float-right md:block">
             <Link href="/work">
               <Image
-                src="portfolio-images/escape-room-preview.gif"
                 alt="Animation of the Escape Room gamified statistics tutor highlighting a learner misconception."
                 className="rounded-md object-contain py-4 pr-4"
-                width={471}
                 height={353}
                 sizes="(min-width: 768px) 384px, 100vw"
+                src="portfolio-images/escape-room-preview.gif"
+                width={471}
               />
             </Link>
           </div>
           <div>
-            {/* eslint-disable-next-line tailwindcss/classnames-order */}
-            <p className="font-display @md:text-2xl mb-4 text-2xl font-bold leading-tight">
+            { }
+            <p className="mb-4 font-display text-2xl font-bold leading-tight @md:text-2xl">
               Instead of digitizing the content, <br className="hidden" /> I{' '}
               <span className="text-gradient-lavender-light">
                 reimagined the learning experience.
@@ -95,12 +98,12 @@ export function ProjectTest(): ReactElement {
             <div className="md:hidden">
               <Link href="/work">
                 <Image
-                  src="portfolio-images/escape-room-preview.gif"
                   alt="Animation of the Escape Room gamified statistics tutor highlighting a learner misconception."
                   className="rounded-md object-contain py-4 pr-4"
-                  width={471}
                   height={353}
                   sizes="(min-width: 768px) 384px, 100vw"
+                  src="portfolio-images/escape-room-preview.gif"
+                  width={471}
                 />
               </Link>
             </div>
@@ -117,9 +120,9 @@ export function ProjectTest(): ReactElement {
               </SkewTag>
             ))}
           </div>
-          {/* eslint-disable-next-line tailwindcss/classnames-order */}
-          <div className="@sm:flex-row mt-4 flex flex-col justify-center gap-4">
-            <Button size="lg" variant="secondary" className="text-base" asChild>
+          { }
+          <div className="mt-4 flex flex-col justify-center gap-4 @sm:flex-row">
+            <Button asChild className="text-base" size="lg" variant="secondary">
               <Link href="/work">
                 Learn More <ArrowRight className="ml-2 size-4" />
               </Link>

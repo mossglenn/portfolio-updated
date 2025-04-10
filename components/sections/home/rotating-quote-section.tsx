@@ -1,10 +1,12 @@
-import { useEffect, useState, useRef } from 'react'
-import { Card, CardContent } from '@/components/ui/card'
-import { testimonials } from '@/data/testamonials'
 import { AnimatePresence, motion } from 'framer-motion'
-import { SkewedBox } from '@/components/ui/skewed-box'
-import { ReactElement } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useEffect, useState, useRef } from 'react'
+import { type ReactElement } from 'react'
+
+import { Card, CardContent } from '@/components/ui/card'
+import { SkewedBox } from '@/components/ui/skewed-box'
+import { testimonials } from '@/data/testamonials'
+
 
 export default function RotatingQuoteCard(): ReactElement {
   const [index, setIndex] = useState(0)
@@ -40,50 +42,50 @@ export default function RotatingQuoteCard(): ReactElement {
     <div className="mx-auto w-full max-w-xl">
       {/* Hidden pre-rendered quotes for height calculation */}
       <div
-        className="pointer-events-none absolute h-0 overflow-hidden opacity-0"
         ref={hiddenContainerRef}
+        className="pointer-events-none absolute h-0 overflow-hidden opacity-0"
       >
         {testimonials.map((q) => (
           <div
+            dangerouslySetInnerHTML={{ __html: `&quot;${q.text}&quot;` }}
             key={q.id}
             className="text-xl font-semibold italic"
-            dangerouslySetInnerHTML={{ __html: `&quot;${q.text}&quot;` }}
           />
         ))}
       </div>
 
       <Card>
         <CardContent className="space-y-4 p-6 text-center">
-          <SkewedBox className="font-display w-full bg-brand px-4 py-2 text-lg font-bold">
+          <SkewedBox className="w-full bg-brand px-4 py-2 font-display text-lg font-bold">
             Testamonials
           </SkewedBox>
-          <div style={{ minHeight: maxHeight }} className="relative">
+          <div className="relative" style={{ minHeight: maxHeight }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={quote.id}
-                initial={{ opacity: 0, scale: 0.95, rotateX: -15 }}
                 animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                exit={{ opacity: 0, scale: 0.95, rotateX: 15 }}
-                transition={{ duration: 0.6, ease: 'easeInOut' }}
                 className="flex flex-col items-center justify-center"
+                exit={{ opacity: 0, scale: 0.95, rotateX: 15 }}
+                initial={{ opacity: 0, scale: 0.95, rotateX: -15 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
               >
                 <div
-                  className="text-lg font-medium text-muted"
                   dangerouslySetInnerHTML={{ __html: `&ldquo;${quote.category}&rdquo;` }}
-                ></div>
+                  className="text-lg font-medium text-muted"
+                 />
                 <div
-                  className="text-xl font-semibold italic text-foreground"
                   dangerouslySetInnerHTML={{ __html: `&ldquo;${quote.text}&rdquo;` }}
+                  className="text-xl font-semibold italic text-foreground"
                 />
               </motion.div>
             </AnimatePresence>
             <div className="absolute inset-y-0 -left-8 flex items-center pl-2">
-              <button onClick={handlePrev} className="transition-transform hover:scale-110">
+              <button className="transition-transform hover:scale-110" onClick={handlePrev}>
                 <ChevronLeft className="size-6 text-muted" />
               </button>
             </div>
             <div className="absolute inset-y-0 -right-8 flex items-center pr-2">
-              <button onClick={handleNext} className="transition-transform hover:scale-110">
+              <button className="transition-transform hover:scale-110" onClick={handleNext}>
                 <ChevronRight className="size-6 text-muted" />
               </button>
             </div>

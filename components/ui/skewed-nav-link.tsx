@@ -1,8 +1,9 @@
 'use client'
 
-import * as React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import * as React from 'react'
+
 import { cn } from '@/lib/utils'
 
 interface SkewedNavLinkProps {
@@ -32,12 +33,12 @@ export function SkewedNavLink({
         )}
       >
         <Link
-          href={href}
-          onClick={onClick}
           className={cn(
             'inline-block skew-x-20 px-4 py-2 text-sm font-bold transition-colors duration-200',
             isActive ? 'text-foreground-light' : 'text-foreground hover:text-card'
           )}
+          href={href}
+          onClick={onClick}
         >
           {children}
         </Link>

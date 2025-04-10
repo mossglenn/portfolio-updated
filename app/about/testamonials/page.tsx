@@ -1,10 +1,11 @@
 'use client'
 
-import { PageLayout } from '@/components/layout/page-layout'
-import { Card, CardContent } from '@/components/ui/card'
-import { Section } from '@/components/layout/section'
+import { type ReactElement } from 'react'
+
 import { Container } from '@/components/layout/container'
-import { ReactElement } from 'react'
+import { PageLayout } from '@/components/layout/page-layout'
+import { Section } from '@/components/layout/section'
+import { Card, CardContent } from '@/components/ui/card'
 
 export default function Testamonials(): ReactElement {
   return (

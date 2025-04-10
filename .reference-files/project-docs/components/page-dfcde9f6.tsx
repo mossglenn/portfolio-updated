@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="container px-4 md:px-6">
         <div className="mb-8 flex flex-col items-center space-y-4 text-center">
           <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">Get in Touch</h1>
-          <p className="max-w-2xl text-xl text-muted-foreground">
+          <p className="max-w-2xl text-xl text-foreground">
             Let&apos;s discuss how we can collaborate on your next instructional design project.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Let&apos;s Collaborate</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-foreground">
                 <p>
                   I&apos;m always interested in new projects and collaborations. Whether you have a specific project in mind
                   or just want to explore possibilities, I&apos;d love to hear from you.
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             <div>
               <h2 className="mb-4 text-2xl font-bold tracking-tighter">Availability</h2>
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 I&apos;m currently available for freelance projects, consulting, and speaking engagements. My typical
                 response time is within 24-48 hours.
               </p>

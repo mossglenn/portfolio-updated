@@ -14,11 +14,11 @@ export default function AboutPage() {
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">About Me</h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground">
               Passionate instructional designer with expertise in creating innovative, research-based learning
               experiences.
             </p>
-            <div className="space-y-4 text-muted-foreground">
+            <div className="space-y-4 text-foreground">
               <p>
                 With over a decade of experience in the field of instructional design, I've dedicated my career to
                 creating learning experiences that are not only effective but also engaging and impactful. My approach
@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="mb-8 flex flex-col items-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter">My Approach</h2>
-            <p className="max-w-2xl text-muted-foreground">
+            <p className="max-w-2xl text-foreground">
               I believe in creating learning experiences that are evidence-based, learner-centered, and results-driven.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
       <section className="container px-4 md:px-6">
         <div className="mb-8 flex flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter">Education & Certifications</h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="max-w-2xl text-foreground">
             Continuous learning is a core value that drives my professional development.
           </p>
         </div>
@@ -108,15 +108,15 @@ export default function AboutPage() {
             <CardContent className="space-y-4">
               <div>
                 <h3 className="font-semibold">Ph.D. in Learning Sciences</h3>
-                <p className="text-muted-foreground">University of Education, 2018</p>
+                <p className="text-foreground">University of Education, 2018</p>
               </div>
               <div>
                 <h3 className="font-semibold">M.Ed. in Instructional Design</h3>
-                <p className="text-muted-foreground">Design Institute, 2014</p>
+                <p className="text-foreground">Design Institute, 2014</p>
               </div>
               <div>
                 <h3 className="font-semibold">B.A. in Psychology</h3>
-                <p className="text-muted-foreground">State University, 2012</p>
+                <p className="text-foreground">State University, 2012</p>
               </div>
             </CardContent>
           </Card>
@@ -128,15 +128,15 @@ export default function AboutPage() {
             <CardContent className="space-y-4">
               <div>
                 <h3 className="font-semibold">Certified Professional in Learning Performance (CPLP)</h3>
-                <p className="text-muted-foreground">Association for Talent Development</p>
+                <p className="text-foreground">Association for Talent Development</p>
               </div>
               <div>
                 <h3 className="font-semibold">Learning Experience Design Certificate</h3>
-                <p className="text-muted-foreground">Design Academy</p>
+                <p className="text-foreground">Design Academy</p>
               </div>
               <div>
                 <h3 className="font-semibold">Accessibility in Learning Design</h3>
-                <p className="text-muted-foreground">Inclusive Learning Institute</p>
+                <p className="text-foreground">Inclusive Learning Institute</p>
               </div>
             </CardContent>
           </Card>

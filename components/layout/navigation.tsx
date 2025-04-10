@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ReactElement } from 'react'
-import { LogoBadge } from '@components/ui/logo-badge'
-import { Container } from '@components/layout/container'
-import NavigationMobile from '@/components/layout/navigation-mobile'
+import { type ReactElement } from 'react'
+
 import NavigationDesktop from '@/components/layout/navigation-desktop'
+import NavigationMobile from '@/components/layout/navigation-mobile'
+import { Container } from '@components/layout/container'
+import { LogoBadge } from '@components/ui/logo-badge'
 export default function Navigation(): ReactElement {
   const [scrolled, setScrolled] = useState(false)
 

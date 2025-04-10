@@ -1,7 +1,9 @@
-import Link from 'next/link'
 import { Mail, Linkedin, Github } from 'lucide-react'
+import Link from 'next/link'
+import { type ReactElement } from 'react'
+
 import { siteConfig } from '@/config/site'
-import { ReactElement } from 'react'
+
 
 export function Footer(): ReactElement {
   return (
@@ -11,28 +13,28 @@ export function Footer(): ReactElement {
           <div className="text-lg font-medium">{siteConfig.name}</div>
           <div className="flex items-center gap-6">
             <Link
+              className="text-foreground transition-colors hover:text-primary"
               href={`mailto:${siteConfig.contact.email}`}
-              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Mail className="size-5" />
               <span className="sr-only">Email</span>
             </Link>
             <Link
+              className="text-foreground transition-colors hover:text-primary"
               href={siteConfig.links.linkedin}
-              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Linkedin className="size-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
+              className="text-foreground transition-colors hover:text-primary"
               href={siteConfig.links.github}
-              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Github className="size-5" />
               <span className="sr-only">GitHub</span>
             </Link>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-foreground">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </div>
         </div>

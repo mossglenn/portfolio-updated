@@ -618,7 +618,7 @@ export default function PlaygroundPage(): ReactElement {
                     The king, seeing how much happier his subjects were, realized the error of his
                     ways and promised to rule with fairness and compassion.
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-foreground">
                     This is smaller text, often used for secondary information.
                   </p>
                   <p className="text-lg font-medium">
@@ -649,7 +649,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-brand)' }}
                     ></div>
                     <div className="text-sm font-medium">--color-brand</div>
-                    <div className="text-xs text-muted-foreground">HSL(260, 58%, 52%)</div>
+                    <div className="text-xs text-foreground">HSL(260, 58%, 52%)</div>
                   </div>
                   <div>
                     <div
@@ -657,7 +657,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-accent)' }}
                     ></div>
                     <div className="text-sm font-medium">--color-accent</div>
-                    <div className="text-xs text-muted-foreground">HSL(30, 90%, 57%)</div>
+                    <div className="text-xs text-foreground">HSL(30, 90%, 57%)</div>
                   </div>
                   <div>
                     <div
@@ -665,7 +665,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-muted-text)' }}
                     ></div>
                     <div className="text-sm font-medium">--color-muted-text</div>
-                    <div className="text-xs text-muted-foreground">HSL(240, 10%, 65%)</div>
+                    <div className="text-xs text-foreground">HSL(240, 10%, 65%)</div>
                   </div>
                 </CardContent>
               </Card>
@@ -682,7 +682,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#734CA9' }}
                     ></div>
                     <div className="text-xs font-medium">Brand Color</div>
-                    <div className="text-xs text-muted-foreground">#734CA9</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
                   </div>
                   <div className="space-y-1">
                     <div
@@ -690,7 +690,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#5C3C87' }}
                     ></div>
                     <div className="text-xs font-medium">Darker Shade</div>
-                    <div className="text-xs text-muted-foreground">#5C3C87</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
                   </div>
                   <div className="space-y-1">
                     <div
@@ -698,7 +698,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#4A2D6B' }}
                     ></div>
                     <div className="text-xs font-medium">Darkest Shade</div>
-                    <div className="text-xs text-muted-foreground">#4A2D6B</div>
+                    <div className="text-xs text-foreground">#4A2D6B</div>
                   </div>
                 </CardContent>
               </Card>
@@ -715,7 +715,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-brand)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-brand</div>
-                    <div className="text-xs text-muted-foreground">#734CA9</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
                   </div>
 
                   {/* Light Violet */}
@@ -725,7 +725,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-light)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-light</div>
-                    <div className="text-xs text-muted-foreground">#D1A7E4</div>
+                    <div className="text-xs text-foreground">#D1A7E4</div>
                   </div>
 
                   {/* Deep Purple */}
@@ -735,7 +735,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-dark)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-dark</div>
-                    <div className="text-xs text-muted-foreground">#39344B</div>
+                    <div className="text-xs text-foreground">#39344B</div>
                   </div>
 
                   {/* Neutral Light Gray */}
@@ -745,7 +745,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-neutral)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-neutral</div>
-                    <div className="text-xs text-muted-foreground">#BEB8CD</div>
+                    <div className="text-xs text-foreground">#BEB8CD</div>
                   </div>
 
                   {/* Darker Violet */}
@@ -755,7 +755,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-dark-text)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-dark-text</div>
-                    <div className="text-xs text-muted-foreground">#5C3C87</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
                   </div>
 
                   {/* Amber Accent */}
@@ -765,7 +765,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-accent)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-accent</div>
-                    <div className="text-xs text-muted-foreground">#E3A34E</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
                   </div>
 
                   {/* Light Text */}
@@ -775,7 +775,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-light-text)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-light-text</div>
-                    <div className="text-xs text-muted-foreground">#FFFFFF</div>
+                    <div className="text-xs text-foreground">#FFFFFF</div>
                   </div>
 
                   {/* Muted Purple */}
@@ -785,7 +785,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-muted-text)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-muted-text</div>
-                    <div className="text-xs text-muted-foreground">#5C3C87</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
                   </div>
 
                   {/* Background Dark Slate */}
@@ -795,7 +795,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-background)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-background</div>
-                    <div className="text-xs text-muted-foreground">#292A3E</div>
+                    <div className="text-xs text-foreground">#292A3E</div>
                   </div>
 
                   {/* Card Background */}
@@ -805,7 +805,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-card)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-card</div>
-                    <div className="text-xs text-muted-foreground">#343A47</div>
+                    <div className="text-xs text-foreground">#343A47</div>
                   </div>
 
                   {/* Lighter Brand Color */}
@@ -815,7 +815,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-brand-light)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-brand-light</div>
-                    <div className="text-xs text-muted-foreground">#8C74C2</div>
+                    <div className="text-xs text-foreground">#8C74C2</div>
                   </div>
 
                   {/* Darker Brand Color */}
@@ -825,7 +825,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-brand-dark)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-brand-dark</div>
-                    <div className="text-xs text-muted-foreground">#5C3C87</div>
+                    <div className="text-xs text-foreground">#5C3C87</div>
                   </div>
 
                   {/* Darker Shade of Brand Color */}
@@ -835,7 +835,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-brand-darker)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-brand-darker</div>
-                    <div className="text-xs text-muted-foreground">#4A2D6B</div>
+                    <div className="text-xs text-foreground">#4A2D6B</div>
                   </div>
 
                   {/* Lighter Amber */}
@@ -845,7 +845,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-accent-light)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-accent-light</div>
-                    <div className="text-xs text-muted-foreground">#F0B36D</div>
+                    <div className="text-xs text-foreground">#F0B36D</div>
                   </div>
 
                   {/* Darker Amber */}
@@ -855,7 +855,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-accent-dark)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-accent-dark</div>
-                    <div className="text-xs text-muted-foreground">#C26A2A</div>
+                    <div className="text-xs text-foreground">#C26A2A</div>
                   </div>
 
                   {/* Muted Light */}
@@ -865,7 +865,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-muted-light)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-muted-light</div>
-                    <div className="text-xs text-muted-foreground">#6A4D72</div>
+                    <div className="text-xs text-foreground">#6A4D72</div>
                   </div>
 
                   {/* Muted Dark */}
@@ -875,7 +875,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: 'var(--color-muted-dark)' }}
                     ></div>
                     <div className="text-xs font-medium">--color-muted-dark</div>
-                    <div className="text-xs text-muted-foreground">#4A2D52</div>
+                    <div className="text-xs text-foreground">#4A2D52</div>
                   </div>
                 </CardContent>
               </Card>
@@ -893,7 +893,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#734CA9' }}
                     ></div>
                     <div className="text-xs font-medium">Brand Color</div>
-                    <div className="text-xs text-muted-foreground">#734CA9</div>
+                    <div className="text-xs text-foreground">#734CA9</div>
                   </div>
 
                   {/* Amber Color */}
@@ -903,7 +903,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#E3A34E' }}
                     ></div>
                     <div className="text-xs font-medium">Amber</div>
-                    <div className="text-xs text-muted-foreground">#E3A34E</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
                   </div>
 
                   {/* Sage Color */}
@@ -913,7 +913,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#A3B7A3' }}
                     ></div>
                     <div className="text-xs font-medium">Sage</div>
-                    <div className="text-xs text-muted-foreground">#A3B7A3</div>
+                    <div className="text-xs text-foreground">#A3B7A3</div>
                   </div>
 
                   {/* Dark Purple */}
@@ -923,7 +923,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#292A3E' }}
                     ></div>
                     <div className="text-xs font-medium">Dark Purple</div>
-                    <div className="text-xs text-muted-foreground">#292A3E</div>
+                    <div className="text-xs text-foreground">#292A3E</div>
                   </div>
 
                   {/* Light Sky Blue */}
@@ -933,7 +933,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#A3C8D6' }}
                     ></div>
                     <div className="text-xs font-medium">Sky Blue</div>
-                    <div className="text-xs text-muted-foreground">#A3C8D6</div>
+                    <div className="text-xs text-foreground">#A3C8D6</div>
                   </div>
 
                   {/* Soft Blue */}
@@ -943,7 +943,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#6B8FA6' }}
                     ></div>
                     <div className="text-xs font-medium">Soft Blue</div>
-                    <div className="text-xs text-muted-foreground">#6B8FA6</div>
+                    <div className="text-xs text-foreground">#6B8FA6</div>
                   </div>
 
                   {/* Muted Text */}
@@ -953,7 +953,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#BEB8CD' }}
                     ></div>
                     <div className="text-xs font-medium">Muted Text</div>
-                    <div className="text-xs text-muted-foreground">#BEB8CD</div>
+                    <div className="text-xs text-foreground">#BEB8CD</div>
                   </div>
 
                   {/* Dark Blue */}
@@ -963,7 +963,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#3A3D55' }}
                     ></div>
                     <div className="text-xs font-medium">Dark Blue</div>
-                    <div className="text-xs text-muted-foreground">#3A3D55</div>
+                    <div className="text-xs text-foreground">#3A3D55</div>
                   </div>
 
                   {/* Ochre Color */}
@@ -973,7 +973,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#E3A34E' }}
                     ></div>
                     <div className="text-xs font-medium">Ochre</div>
-                    <div className="text-xs text-muted-foreground">#E3A34E</div>
+                    <div className="text-xs text-foreground">#E3A34E</div>
                   </div>
 
                   {/* Lavender */}
@@ -983,7 +983,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#B6A0D2' }}
                     ></div>
                     <div className="text-xs font-medium">Lavender</div>
-                    <div className="text-xs text-muted-foreground">#B6A0D2</div>
+                    <div className="text-xs text-foreground">#B6A0D2</div>
                   </div>
 
                   {/* Pink to Lavender Gradient */}
@@ -993,7 +993,7 @@ export default function PlaygroundPage(): ReactElement {
                       style={{ backgroundColor: '#F1A0D1' }}
                     ></div>
                     <div className="text-xs font-medium">Pink</div>
-                    <div className="text-xs text-muted-foreground">#F1A0D1</div>
+                    <div className="text-xs text-foreground">#F1A0D1</div>
                   </div>
                 </CardContent>
               </Card>
@@ -1009,7 +1009,7 @@ export default function PlaygroundPage(): ReactElement {
                     Purple to Amber Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#734CA9] to-[#E3A34E]
                 </code>
               </div>
@@ -1019,7 +1019,7 @@ export default function PlaygroundPage(): ReactElement {
                     Dark to Light Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#292A3E] to-[#3A3D55]
                 </code>
               </div>
@@ -1029,7 +1029,7 @@ export default function PlaygroundPage(): ReactElement {
                     Amber to Sage Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#E3A34E] to-[#A3B7A3]
                 </code>
               </div>
@@ -1039,7 +1039,7 @@ export default function PlaygroundPage(): ReactElement {
                     Muted Purple to Soft Blue Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#734CA9] to-[#6B8FA6]
                 </code>
               </div>
@@ -1049,7 +1049,7 @@ export default function PlaygroundPage(): ReactElement {
                     Deep Slate to Sky Blue Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#292A3E] to-[#A3C8D6]
                 </code>
               </div>
@@ -1059,7 +1059,7 @@ export default function PlaygroundPage(): ReactElement {
                     Ochre to Sage Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#E3A34E] to-[#A7C5A3]
                 </code>
               </div>
@@ -1069,7 +1069,7 @@ export default function PlaygroundPage(): ReactElement {
                     Soft Pink to Lavender Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#F1A0D1] to-[#9C7DFF]
                 </code>
               </div>
@@ -1079,7 +1079,7 @@ export default function PlaygroundPage(): ReactElement {
                     Dark Purple to Light Lavender Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-to-r from-[#734CA9] to-[#B6A0D2]
                 </code>
               </div>
@@ -1107,7 +1107,7 @@ export default function PlaygroundPage(): ReactElement {
                     Animated Brand Gradient
                   </span>
                 </div>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   bg-gradient-animated (custom class)
                 </code>
               </div>
@@ -1118,7 +1118,7 @@ export default function PlaygroundPage(): ReactElement {
                 <h2 className="bg-gradient-to-r from-[#734CA9] to-[#E3A34E] bg-clip-text text-4xl font-bold text-transparent">
                   Gradient Text Example
                 </h2>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   text-transparent bg-clip-text bg-gradient-to-r from-[#734CA9] to-[#E3A34E]
                 </code>
               </div>
@@ -1126,7 +1126,7 @@ export default function PlaygroundPage(): ReactElement {
                 <h2 className="text-gradient-animated text-4xl font-bold">
                   Animated Gradient Text
                 </h2>
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-foreground">
                   text-gradient-animated (custom class)
                 </code>
               </div>

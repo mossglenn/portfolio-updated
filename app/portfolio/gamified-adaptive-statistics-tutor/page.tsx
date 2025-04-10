@@ -1,9 +1,4 @@
 'use client'
-import { Container } from '@/components/layout/container'
-import { PageLayout } from '@/components/layout/page-layout'
-import { Section } from '@/components/layout/section'
-import { Card, CardContent } from '@/components/ui/card'
-import { SkewedBox } from '@/components/ui/skewed-box'
 import {
   ArrowRightLeft,
   Brain,
@@ -19,16 +14,21 @@ import {
   ToggleRight,
   TrendingUp,
 } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { type ReactElement } from 'react'
+
+import { Container } from '@/components/layout/container'
+import { PageLayout } from '@/components/layout/page-layout'
+import { Section } from '@/components/layout/section'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-
-import { ReactElement } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Card, CardContent } from '@/components/ui/card'
+import { SkewedBox } from '@/components/ui/skewed-box'
 
 /* 
 route: portfolio/gamified-adaptive-statistics-tutor
@@ -52,10 +52,10 @@ export default function GamifiedStatisticsTutor(): ReactElement {
       <Container>
         <Section className="space-y-8">
           <div>
-            <h1 className="font-display my-4 text-3xl font-bold sm:text-4xl">
+            <h1 className="my-4 font-display text-3xl font-bold sm:text-4xl">
               From Frustration to Confidence:
             </h1>
-            <h1 className="font-display mb-8 text-2xl font-bold text-brand-light sm:text-3xl">
+            <h1 className="mb-8 font-display text-2xl font-bold text-brand-light sm:text-3xl">
               A <span className="text-lavender-light">Gamified</span>,{' '}
               <span className="text-lavender-light">Adaptive</span> Approach to Complex Learning
             </h1>
@@ -66,7 +66,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
             </SkewedBox>
             <Card className="mb-6">
               <CardContent>
-                <Accordion type="single" collapsible>
+                <Accordion collapsible type="single">
                   <AccordionItem value="toc">
                     <AccordionTrigger>Table of Contents</AccordionTrigger>
                     <AccordionContent>
@@ -149,12 +149,12 @@ export default function GamifiedStatisticsTutor(): ReactElement {
             <Card className="border-brand-light">
               <CardContent>
                 <h2
+                  className="my-4 font-display text-2xl font-bold text-accent"
                   id="project-overview"
-                  className="font-display my-4 text-2xl font-bold text-accent"
                 >
                   Project Overview
                 </h2>
-                <div className="font-display text-accent-softer my-6 -ml-4 flex flex-row align-middle font-bold">
+                <div className="my-6 -ml-4 flex flex-row align-middle font-display font-bold text-accent-softer">
                   <Construction className="mr-4 inline" />
                   Design Challenge
                 </div>
@@ -165,9 +165,14 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                   practice activities offer no immediate help when learners get stuck and
                   frustrated.
                 </div>
-                <div className="font-display text-accent-softer my-6 mt-8 flex align-middle font-bold">
+                <div className="my-6 mt-8 flex align-middle font-display font-bold text-accent-softer">
                   <div className="-ml-4 mr-4 size-5">
-                    <img src="/icons/trophy-filled.svg" alt="trophy icon" />
+                    <Image
+                      alt="trophy icon"
+                      height={24}
+                      src="/icons/trophy-filled.svg"
+                      width={24}
+                    />
                   </div>
                   Design Solution
                 </div>
@@ -201,14 +206,14 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                 </div>
               </CardContent>
             </Card>
-            <p className="mb-2"></p>
+            <p className="mb-2" />
           </div>
           <Card>
             <CardContent>
-              <h2 id="design-challenge" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="design-challenge">
                 Background & Design Challenge
               </h2>
-              <h2 className="font-display mt-4 text-xl font-bold text-brand-light">
+              <h2 className="mt-4 font-display text-xl font-bold text-brand-light">
                 Moving Learning Online Creates an Opportunity
               </h2>
               <p className="mb-4">
@@ -217,7 +222,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                 ICRE moved its Biostatistics course online, it created an opportunity to go beyond
                 simply digitizing assignments.
               </p>
-              <h2 className="font-display mt-4 text-xl font-bold text-brand-light">
+              <h2 className="mt-4 font-display text-xl font-bold text-brand-light">
                 Confused Learners Don&apos;t Improve
               </h2>
               <p className="mb-4">
@@ -234,7 +239,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           </Card>
           <Card>
             <CardContent>
-              <h2 id="design-solution" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="design-solution">
                 Solution & Design Approach
               </h2>
               <p className="mb-4">
@@ -242,15 +247,15 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                 part of the ICRE&apos;s online Biostatistics course.
               </p>
               <p>This system improved on the traditional problem sets in two ways:</p>
-              <h2 className="font-display mt-4 text-xl font-bold text-brand-light">
+              <h2 className="mt-4 font-display text-xl font-bold text-brand-light">
                 1) Adaptive Learning Paths
               </h2>
               <div className="float-right my-6 ml-4">
                 <Image
-                  src="/portfolio-images/gamified-statistics-tutor/learning-path.svg"
                   alt="Learning Paths"
-                  width={100}
                   height={100}
+                  src="/portfolio-images/gamified-statistics-tutor/learning-path.svg"
+                  width={100}
                 />
               </div>
               <p className="mb-4">
@@ -259,15 +264,15 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                 steps and helped the learner identify the causes of continuing errors before moving
                 on to later steps.
               </p>
-              <h2 className="font-display mt-4 text-xl font-bold text-brand-light">
+              <h2 className="mt-4 font-display text-xl font-bold text-brand-light">
                 2) Gamified Interactivity
               </h2>
               <div className="float-right my-6 ml-4">
                 <Image
-                  src="/portfolio-images/gamified-statistics-tutor/magic-book-brand-light.png"
                   alt="Learning Paths"
-                  width={100}
                   height={100}
+                  src="/portfolio-images/gamified-statistics-tutor/magic-book-brand-light.png"
+                  width={100}
                 />
               </div>
               <p className="mb-4">
@@ -284,7 +289,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
 
           <Card>
             <CardContent>
-              <h2 id="escape-room" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="escape-room">
                 Escape Room Challenge
               </h2>
               <p className="mb-4">
@@ -297,10 +302,10 @@ export default function GamifiedStatisticsTutor(): ReactElement {
               </p>
               <div className="my-6">
                 <Image
-                  src="/portfolio-images/gamified-statistics-tutor/escaperoom.PNG"
                   alt="Learning Paths"
-                  width={300}
                   height={300}
+                  src="/portfolio-images/gamified-statistics-tutor/escaperoom.PNG"
+                  width={300}
                 />
               </div>
               <p className="mb-4">
@@ -325,15 +330,15 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           </Card>
           <Card>
             <CardContent>
-              <h2 id="treasure-hunt" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="treasure-hunt">
                 Treasure Hunt Adventure
               </h2>
               <div className="my-6">
                 <Image
-                  src="/portfolio-images/gamified-statistics-tutor/interactive_5.PNG"
                   alt="Learning Paths"
-                  width={300}
                   height={300}
+                  src="/portfolio-images/gamified-statistics-tutor/interactive_5.PNG"
+                  width={300}
                 />
               </div>
               <p className="mb-4">
@@ -358,10 +363,10 @@ export default function GamifiedStatisticsTutor(): ReactElement {
               </ul>
               <div className="my-6">
                 <Image
-                  src="/portfolio-images/gamified-statistics-tutor/interactive_4.PNG"
                   alt="Learning Paths"
-                  width={300}
                   height={300}
+                  src="/portfolio-images/gamified-statistics-tutor/interactive_4.PNG"
+                  width={300}
                 />
               </div>
             </CardContent>
@@ -369,8 +374,8 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           <Card>
             <CardContent>
               <h2
+                className="mb-6 mt-4 font-display text-xl font-bold text-accent"
                 id="efficient-learning"
-                className="font-display mb-6 mt-4 text-xl font-bold text-accent"
               >
                 Efficient Learning
               </h2>
@@ -409,8 +414,8 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           <Card>
             <CardContent>
               <h2
+                className="mb-6 mt-4 font-display text-xl font-bold text-accent"
                 id="personalized-feedback"
-                className="font-display mb-6 mt-4 text-xl font-bold text-accent"
               >
                 Personalized, Adaptive Feedback
               </h2>
@@ -443,7 +448,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           </Card>
           <Card>
             <CardContent>
-              <h2 id="my-role" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="my-role">
                 My Role
               </h2>
 
@@ -485,7 +490,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
           </Card>
           <Card>
             <CardContent>
-              <h2 id="results-impact" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="results-impact">
                 Results & Impact
               </h2>
               <ul className="mb-6 ml-8 space-y-4">
@@ -516,7 +521,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
 
           <Card>
             <CardContent>
-              <h2 id="key-takeaways" className="font-display my-4 text-2xl font-bold">
+              <h2 className="my-4 font-display text-2xl font-bold" id="key-takeaways">
                 Key Takeaways
               </h2>
               <ul className="mb-6 ml-8 space-y-4 text-lg">
@@ -566,7 +571,7 @@ export default function GamifiedStatisticsTutor(): ReactElement {
                         'Engagement',
                         'STEM',
                       ].map((tag) => (
-                        <span key={tag} className="bg-card-light rounded-full px-2 py-0.5 text-xs">
+                        <span key={tag} className="rounded-full bg-card-light px-2 py-0.5 text-xs">
                           {tag}
                         </span>
                       ))}

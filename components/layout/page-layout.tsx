@@ -1,7 +1,10 @@
-import type React from 'react'
-import Navigation from '@/components/layout/navigation'
+import { type ReactElement } from 'react'
+
 import { Footer } from '@/components/layout/footer'
-import { ReactElement } from 'react'
+import Navigation from '@/components/layout/navigation'
+
+import type React from 'react'
+
 
 interface PageLayoutProps {
   children: React.ReactNode

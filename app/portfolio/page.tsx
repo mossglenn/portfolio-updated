@@ -1,5 +1,6 @@
+import { type ReactElement } from 'react'
+
 import type { Metadata } from 'next'
-import { ReactElement } from 'react'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Instructional Design Portfolio',

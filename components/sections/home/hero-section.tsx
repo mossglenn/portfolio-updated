@@ -1,28 +1,29 @@
 'use client'
 
-import Link from 'next/link'
-import { ArrowBigRight, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { ArrowBigRight, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { type ReactElement } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { ReactElement } from 'react'
 
 export function HeroSection(): ReactElement {
   return (
     <Card className="mb-4">
       <CardContent className="p-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
           <div
-            title="hero-content"
             className="grid gap-6 md:grid-cols-3 md:grid-rows-[auto_auto] md:items-start"
+            title="hero-content"
           >
             {/* Hero Text */}
             <div className="order-1 w-full md:col-span-2 md:row-start-1">
-              <div title="hero-text" className="font-display w-full text-balance text-left md:my-8">
+              <div className="w-full text-balance text-left font-display md:my-8" title="hero-text">
                 <h2 className="mt-2 pb-2 text-[clamp(1.5rem,7.5vw,2.5rem)] leading-none text-foreground/80">
                   I don&apos;t build courses.
                 </h2>
@@ -78,19 +79,19 @@ export function HeroSection(): ReactElement {
             {/* CTA Buttons */}
             <div className="order-3 md:col-span-2 md:row-start-2">
               <div
-                title="cta-buttons"
                 className="flex flex-col gap-4 sm:flex-row md:-ml-12 md:justify-center"
+                title="cta-buttons"
               >
-                <Button size="lg" asChild>
+                <Button asChild size="lg">
                   <Link href="/work">
                     View my work <ArrowRight className="ml-2 size-4" />
                   </Link>
                 </Button>
                 <Button
-                  size="lg"
-                  variant="outline"
                   asChild
                   className="hover:bg-gradient-card-background transition-colors duration-300"
+                  size="lg"
+                  variant="outline"
                 >
                   <Link href="/contact">Get in touch</Link>
                 </Button>

@@ -1,8 +1,9 @@
 'use client'
 
-import { tv, type VariantProps } from 'tailwind-variants'
-import { cn } from '@/lib/utils'
 import React from 'react'
+import { tv, type VariantProps } from 'tailwind-variants'
+
+import { cn } from '@/lib/utils'
 
 const skewTag = tv({
   base: 'inline-block -skew-x-20 rounded-md px-3 py-1 transition-colors text-xs font-medium',
@@ -10,7 +11,7 @@ const skewTag = tv({
     variant: {
       default: 'bg-card-light text-foreground hover:bg-accent/80',
       accent: 'bg-accent text-accent-foreground hover:bg-accent-dark',
-      ghost: 'bg-transparent text-muted-foreground border border-input hover:bg-muted/50',
+      ghost: 'bg-transparent text-foreground border border-input hover:bg-muted/50',
     },
   },
   defaultVariants: {
@@ -35,7 +36,7 @@ export function SkewTag({
   return (
     <span className={cn(skewTag({ variant }), className)} {...props}>
       <span className={cn('inline-flex skew-x-20 items-center gap-1 align-middle', innerClassName)}>
-        {Icon && <Icon className="size-4" aria-hidden="true" />} {children}
+        {Icon && <Icon aria-hidden="true" className="size-4" />} {children}
       </span>
     </span>
   )

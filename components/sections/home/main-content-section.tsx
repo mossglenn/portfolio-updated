@@ -1,12 +1,11 @@
-import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
+import { Cpu, Microscope, Origami, PersonStanding } from 'lucide-react'
+import { type ReactElement } from 'react'
+
 import { Card, CardContent } from '@/components/ui/card'
 import { Iceberg } from '@/components/ui/iceberg-svg'
 import { SkewTag } from '@/components/ui/skew-tag'
 import { SkewedBox } from '@/components/ui/skewed-box'
-import { motion } from 'framer-motion'
-import { ArrowBigRight, ArrowRight, Cpu, Microscope, Origami, PersonStanding } from 'lucide-react'
-import Link from 'next/link'
-import { ReactElement } from 'react'
 
 export function MainContentSection(): ReactElement {
   const tags = [
@@ -19,18 +18,18 @@ export function MainContentSection(): ReactElement {
     <Card className="@container">
       <CardContent className="p-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-display mb-2 text-2xl font-bold md:text-3xl">
+          <h2 className="mb-2 font-display text-2xl font-bold md:text-3xl">
             When Training Doesn&apos;t Work:
           </h2>
           <div className="mb-6 flex -skew-x-20 rounded-md bg-brand py-2 pl-4 text-2xl font-bold md:text-3xl">
-            <div className="font-display inline-block skew-x-20">The Hidden Problem</div>
+            <div className="inline-block skew-x-20 font-display">The Hidden Problem</div>
           </div>
 
-          <div className="0 mb-8 rounded-r-lg border-l-4 border-primary p-2">
+          <div className="mb-8 rounded-r-lg border-l-4 border-primary p-2">
             <div className="mb-4 flex">
               <div className="text-xl text-foreground/90">You:</div>
               <div className="speech-bubble ml-8 rounded-2xl bg-slate-light px-4 py-2">
@@ -81,7 +80,7 @@ export function MainContentSection(): ReactElement {
               .
             </p>
             <div className="relative my-8">
-              <blockquote className="font-display border-l-2 border-primary pl-8 text-2xl font-bold italic text-foreground">
+              <blockquote className="border-l-2 border-primary pl-8 font-display text-2xl font-bold italic text-foreground">
                 <span className="text-brand-light"> When we build training around content, </span>
                 <span className="text-gradient-accent-light-vertical">
                   we miss the opportunity to design solutions.
