@@ -1,13 +1,83 @@
 /* globals.css */
-@import '../styles/theme/color-tokens.css'
-@import '../styles/theme/gradient-tokens.css'
 
 /* Tailwind Layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ======================= */
+/* 🎈 Base CSS Variables   */
+/* ======================= */
 @layer base {
+  :root {
+    /* === Accent === */
+    --accent: 35 76% 60%;
+    --accent-dark: 25 65% 46%;
+    --accent-light: 35 80% 80%;
+    --accent-softer: 46 68% 72%;
+
+    /* === Background === */
+    --background: 237 19% 15%;
+    --background-alt: 237 19% 20%;
+
+    /* === Brand === */
+    --brand: 267 39% 48%;
+    --brand-dark: 267 39% 39%;
+    --brand-darker: 267 42% 30%;
+    --brand-light: 267 39% 61%;
+    --brand-lighter: 267 39% 70%;
+
+    /* === Card === */
+    --card: 240 20% 20%;
+    --card-alt: 216 30% 20%;
+    --card-dark: 267 20% 18%;
+    --card-light: 240 16% 70%;
+
+    /* === Foreground === */
+    --foreground: 43 50% 95%;
+    --foreground-dark: 220 10% 8%;
+    --foreground-light: 0 0% 100%;
+    --foreground-lavender: 270 36% 92%;
+    --foreground-muted: 267 39% 39%;
+
+    /* === Muted === */
+    --muted: 310 18% 37%;
+    --muted-dark: 310 28% 25%;
+
+    /* === Neutral === */
+    --neutral: 258 22% 76%;
+    --neutral-dark: 258 10% 65%;
+
+    /* === Secondary === */
+    --secondary: 234 21% 27%;
+    --secondary-light: 234 21% 39%;
+
+    /* === System/UI === */
+    --border: 43 20% 75%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 43 20% 85%;
+    --popover: 43 30% 90%;
+    --popover-foreground: 220 10% 8%;
+    --ring: 38 70% 55%;
+
+    /* === Visual Tokens (Project-Specific) === */
+    --ice-layer-1: 210 40% 60%;
+    --ice-layer-2: 210 45% 46%;
+    --ice-layer-3: 215 50% 32%;
+    --ice-layer-4: 225 52% 22%;
+    --ice-top: 220 40% 80%;
+    --ice-water: 220 40% 27%;
+
+    /* === Additional Colors === */
+    --lavender: 256 100% 75%;
+    --lavender-light: 270 36% 75%;
+    --pink: 324 69% 79%;
+    --sage: 125 18% 71%;
+    --sky: 195 42% 74%;
+    --slate-light: 234 21% 27%;
+  }
+
   .project-title-card {
     --caption-max-adjust: calc(var(--offset) * 3);
   }
@@ -24,6 +94,14 @@
     font-weight: 1 999;
     font-stretch: 75% 125%;
     font-display: swap;
+  }
+
+  .theme-test {
+    --card-background: 267.1, 52.54%, 11.57%;
+  }
+
+  .theme-experimental {
+    --background: 220, 10%, 8%;
   }
 
   html {
@@ -68,6 +146,14 @@
     padding-right: var(--offset);
   }
 
+  .text-outline {
+    text-shadow:
+      2px 2px 1px hsl(var(--brand)),
+      -2px -2px 1px hsl(var(--brand)),
+      2px -2px 1px hsl(var(--brand)),
+      -2px 2px 1px hsl(var(--brand));
+  }
+
   .speech-bubble {
     position: relative;
     display: inline-block;
@@ -100,62 +186,6 @@
 
   .text-inherit-200 {
     font-size: 2em;
-  }
-
-  /* === Gradient Text Utilities === */
-  .text-gradient-brand {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-brand);
-  }
-
-  .text-gradient-muted {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-muted);
-  }
-
-  .text-gradient-secondary {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-secondary);
-  }
-
-  .text-gradient-dark {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-dark);
-  }
-
-  .text-gradient-slate-sky {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-slate-sky);
-  }
-
-  .text-gradient-earth {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-earth);
-  }
-
-  .text-gradient-playful {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-playful);
-  }
-
-  .text-gradient-lavender {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-lavender);
-  }
-
-  .text-gradient-accent-light {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent-light);
-  }
-
-  .text-gradient-accent-light-vertical {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent-light-vertical);
-  }
-
-  .text-gradient-lavender-light {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-lavender-light);
   }
 
   .animated-gradient {

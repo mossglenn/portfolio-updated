@@ -24,7 +24,7 @@ export function HeroTest(): ReactElement {
             </h2>
             <h1 className="text-md-squish mt-2 max-w-full text-[clamp(1.25rem,8vw,3.5rem)] font-bold leading-none">
               <span className="text-inherit-085">I</span>{' '}
-              <span className="text-gradient-accent-lighter-left font-black">design solutions</span>
+              <span className="text-gradient-lavender-light font-black">design solutions</span>
             </h1>
             <h2 className="text-md-squish-subtext text-[clamp(1.5rem,7vw,3rem)] font-bold md:pr-8 md:text-right">
               that make a difference.
@@ -77,7 +77,7 @@ export function HeroTest(): ReactElement {
               </Button>
               <Button
                 asChild
-                className="hover:bg-gradient-card-background transition-colors duration-300"
+                className="transition-colors duration-300 hover:bg-gradient-brand"
                 size="lg"
                 variant="outline"
               >

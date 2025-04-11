@@ -36,7 +36,7 @@ const eslintConfig = [
     rules: {
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'warn',
-      'tailwindcss/no-custom-classname': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

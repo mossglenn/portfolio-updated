@@ -2,8 +2,8 @@ import containerQueries from '@tailwindcss/container-queries'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 import animate from 'tailwindcss-animate'
 
-import { colors } from './styles/theme/colors'
-import { backgroundImage } from './styles/theme/gradients'
+import { themeBackgroundImages } from './styles/theme/tailwind/backgrounds'
+import { themeColors } from './styles/theme/tailwind/colors'
 
 import type { Config } from 'tailwindcss'
 
@@ -36,8 +36,8 @@ const config = {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
         display: ['Gimlet Sans Variable"', ...fontFamily.sans],
       },
-      colors,
-      backgroundImage,
+      colors: themeColors,
+      backgroundImage: themeBackgroundImages,
       keyframes: {
         'accordion-down': {
           from: {

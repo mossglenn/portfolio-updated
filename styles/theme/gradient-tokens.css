@@ -1,0 +1,21 @@
+@import './styles/theme/color-tokens.css';
+
+--gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
+--gradient-muted: linear-gradient(to right, hsl(var(--brand)), hsl(var(--muted)));
+--gradient-secondary: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
+--gradient-dark: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--secondary)));
+--gradient-slate-sky: linear-gradient(to right, hsl(var(--background-alt)), hsl(var(--sky)));
+--gradient-earth: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
+--gradient-playful: linear-gradient(to right, hsl(var(--pink)), hsl(var(--lavender)));
+--gradient-lavender: linear-gradient(to right, hsl(var(--brand)), hsl(var(--lavender-light)));
+--gradient-accent-light: linear-gradient(hsl(var(--accent)), hsl(var(--accent-softer)));
+--gradient-accent-light-vertical: linear-gradient(
+  to bottom,
+  hsl(var(--accent)),
+  hsl(var(--accent-softer))
+);
+--gradient-lavender-light: linear-gradient(
+  to right,
+  hsl(var(--lavender)),
+  hsl(var(--lavender-light))
+);
