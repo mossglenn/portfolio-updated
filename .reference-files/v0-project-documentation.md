@@ -1,6 +1,6 @@
 # Project Documentation for v0
 
-Generated: 4/10/2025, 6:24:29 PM
+Generated: 4/10/2025, 11:19:09 PM
 
 ## Table of Contents
 
@@ -66,7 +66,7 @@ Generated: 4/10/2025, 6:24:29 PM
 
 #### TypeScript Configuration
 
-- **Target**: ES6
+- **Target**: ES2020
 - **Module**: esnext
 - **JSX**: preserve
 - **Strict Mode**: Enabled
@@ -152,6 +152,7 @@ Generated: 4/10/2025, 6:24:29 PM
     "@radix-ui/react-toggle": "^1.1.1",
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
+    "@tailwindcss/postcss": "^4.1.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -162,7 +163,6 @@ Generated: 4/10/2025, 6:24:29 PM
     "input-otp": "^1.4.2",
     "lucide-react": "^0.483.0",
     "next": "^15.1.0",
-    "next-themes": "^0.4.6",
     "react": "18.2.0",
     "react-day-picker": "8.10.1",
     "react-dom": "18.2.0",
@@ -186,7 +186,7 @@ Generated: 4/10/2025, 6:24:29 PM
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.1.0",
     "eslint-config-prettier": "^10.1.1",
@@ -204,9 +204,10 @@ Generated: 4/10/2025, 6:24:29 PM
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
     "ts-prune": "^0.10.3",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   }
 }
 
@@ -219,7 +220,7 @@ Generated: 4/10/2025, 6:24:29 PM
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "target": "ES6",
+    "target": "ES2020",
     "skipLibCheck": true,
     "strict": true,
     "alwaysStrict": true,
@@ -259,7 +260,9 @@ Generated: 4/10/2025, 6:24:29 PM
     ".next/types/**/*.ts",
     ".reference-files/**/*.ts",
     "types",
-    ".reference-files/playground-page-old.tsx"
+    ".reference-files/playground-page-old.tsx",
+    "next.config.mjs",
+    ".eslint/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
@@ -273,8 +276,8 @@ import containerQueries from '@tailwindcss/container-queries'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 import animate from 'tailwindcss-animate'
 
-import { colors } from './styles/theme/colors'
-import { backgroundImage } from './styles/theme/gradients'
+import { themeBackgroundImages } from './styles/theme/tailwind/backgrounds'
+import { themeColors } from './styles/theme/tailwind/colors'
 
 import type { Config } from 'tailwindcss'
 
@@ -307,8 +310,8 @@ const config = {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
         display: ['Gimlet Sans Variable"', ...fontFamily.sans],
       },
-      colors,
-      backgroundImage,
+      colors: themeColors,
+      backgroundImage: themeBackgroundImages,
       keyframes: {
         'accordion-down': {
           from: {
@@ -384,6 +387,35 @@ export default config
 
 ```
 
+### next.config.mjs
+
+```javascript
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+  experimental: {
+    webpackBuildWorker: true,
+    parallelServerBuildTraces: true,
+    parallelServerCompiles: true,
+  },
+}
+
+export default nextConfig
+
+```
+
 ### eslint.config.js
 
 ```javascript
@@ -425,7 +457,7 @@ const eslintConfig = [
     rules: {
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'warn',
-      'tailwindcss/no-custom-classname': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -483,7 +515,7 @@ export default eslintConfig
 
 ## Project Structure
 
-Total files: 572
+Total files: 576
 
 ### Directories
 
@@ -496,9 +528,10 @@ Total files: 572
 - eslint.config.js
 - knip.json
 - next-env.d.ts
-- next.config.ts
+- next.config.mjs
+- out.css
 - package.json
-- postcss.config.mjs
+- postcss.config.cjs
 - prettier.config.js
 - tailwind.config.ts
 - tsconfig.json
@@ -510,6 +543,7 @@ Total files: 572
 - constructed-clarity-theme.ts
 - globals_BACKUP.css
 - globals_old.css
+- globals-backup.css
 - home-page-content.md
 - new-theme-colors.ts
 - playground-page-old.tsx
@@ -1187,8 +1221,13 @@ Total files: 572
 
 #### ./styles/theme
 
+- color-tokens.css
+- gradient-tokens.css
+
+#### ./styles/theme/tailwind
+
+- backgrounds.ts
 - colors.ts
-- gradients.ts
 
 #### ./types
 
@@ -1211,7 +1250,7 @@ Total files: 572
 
 </details>
 
-#### .ts (24 files)
+#### .ts (23 files)
 
 <details>
 <summary>Show files</summary>
@@ -1233,32 +1272,35 @@ Total files: 572
 - ./hooks/use-toast.ts
 - ./lib/utils.ts
 - ./next-env.d.ts
-- ./next.config.ts
 - ./scripts/move-unused-files.ts
-- ./styles/theme/colors.ts
-- ./styles/theme/gradients.ts
+- ./styles/theme/tailwind/backgrounds.ts
+- ./styles/theme/tailwind/colors.ts
 - ./tailwind.config.ts
 - ./types/components.ts
 - ./types/design.ts
 
 </details>
 
-#### .css (11 files)
+#### .css (15 files)
 
 <details>
 <summary>Show files</summary>
 
 - ./.reference-files/globals_BACKUP.css
 - ./.reference-files/globals_old.css
+- ./.reference-files/globals-backup.css
 - ./.reference-files/root-css-variables-OLD.css
 - ./.reference-files/shadcn-defaults.css
 - ./app/globals.css
+- ./out.css
 - ./public/learning-objects/escape-room-learning-activity/assets/css/CPLibraryAll.css
 - ./public/learning-objects/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
 - ./public/learning-objects/escape-room-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
 - ./public/learning-objects/stats-zoo-learning-activity/assets/css/CPLibraryAll.css
 - ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.css
 - ./public/learning-objects/stats-zoo-learning-activity/assets/css/start/jquery-ui-1.11.4.custom.min.css
+- ./styles/theme/color-tokens.css
+- ./styles/theme/gradient-tokens.css
 
 </details>
 
@@ -1448,7 +1490,7 @@ Total files: 572
 <summary>Show files</summary>
 
 - ./.reference-files/project-docs/configs/next.config.mjs
-- ./postcss.config.mjs
+- ./next.config.mjs
 
 </details>
 
@@ -1544,6 +1586,15 @@ Total files: 572
 <summary>Show files</summary>
 
 - ./.vscode/snippets.code-snippets
+
+</details>
+
+#### .cjs (1 files)
+
+<details>
+<summary>Show files</summary>
+
+- ./postcss.config.cjs
 
 </details>
 
@@ -3475,7 +3526,7 @@ This section provides guidelines for generating code that is compatible with thi
 
 ### TypeScript Compatibility
 
-- **TypeScript Version**: ^5.8.2
+- **TypeScript Version**: ^5.8.3
 - Use explicit type annotations for function parameters and return types
 - Define interfaces for component props
 - Use type imports: `import type { X } from 'y'`

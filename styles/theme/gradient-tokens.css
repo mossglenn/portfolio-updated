@@ -1,5 +1,4 @@
-@import './styles/theme/color-tokens.css';
-
+:root {
 --gradient-brand: linear-gradient(to right, hsl(var(--brand)), hsl(var(--accent)));
 --gradient-muted: linear-gradient(to right, hsl(var(--brand)), hsl(var(--muted)));
 --gradient-secondary: linear-gradient(to right, hsl(var(--accent)), hsl(var(--sage)));
@@ -19,3 +18,4 @@
   hsl(var(--lavender)),
   hsl(var(--lavender-light))
 );
+}
